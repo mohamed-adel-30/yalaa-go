@@ -1,0 +1,140 @@
+<div class="loading" *ngIf="!singleCatData">
+  loading...
+</div>
+<!-- <div  *ngIf="singleCatData && singleCatData.length==0"  >
+  no data found
+  </div> -->
+
+<div *ngIf="singleCatData " class="container" style="border: 2px solid pink;">
+
+  <div class="row justify-content-between">
+
+    <div class="col-md-5">
+      <p>
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+          aria-expanded="false" aria-controls="collapseExample">
+          Location
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+
+          <div *ngFor="let place of uniqe ;let item = index;">
+            <input #item id="{{place}}" class="location" type="checkbox" name="{{item}}" value={{place}}
+              (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+            <label for="vehicle3">{{place}}</label><br><br>
+          </div>
+        </div>
+      </div>
+
+
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+          aria-expanded="false" aria-controls="collapseExample">
+          Rate
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample2">
+        <div class="card card-body">
+
+
+          <input #one type="checkbox" [id]="samaa" name="1" value="1"
+            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+          <label for="vehicle3">1</label><br><br>
+          <input #two type="checkbox" name="2" value="2"
+            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+          <label for="vehicle3">2</label><br><br>
+          <input #three type="checkbox" name="3" value="3"
+            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+          <label for="vehicle3">3</label><br><br>
+          <input #four type="checkbox" name="4" value="4"
+            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+          <label for="vehicle3">4</label><br><br>
+          <input #five type="checkbox" name="5" value="5"
+            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+          <label for="vehicle3">5</label><br><br>
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+      <input #reservation type="checkbox" name="reservation" value="reservation"
+        (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
+      <label for="reservation">reservation</label><br><br>
+
+      <input #status type="checkbox" name="status" value="status"
+        (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
+      <label for="status">open</label><br><br>
+
+      <input #kidfriendly type="checkbox" name="kid-friendly" value="kid-friendly"
+        (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
+      <label for="kid-friendly">kid-friendly</label><br><br>
+
+
+
+    </div>
+
+
+    <div class="col-md-6">
+      <h1>{{singleCatData.name}}</h1>
+      <h3>{{singleCatData.id}}</h3>
+      <p>{{singleCatData.desc}}</p>
+      <ul>
+        <div *ngIf="check==false">
+
+          <li *ngFor="let place of singleSelecetedPlaces " style="border: 2px solid red;">
+            <h5 routerLink="/place/{{place.id}}">{{place.name}}</h5>
+
+            <a *ngIf="placeLoggedin==true" (click)="checkingFavs(place)">
+              <i [ngStyle]='{color:checkFav[place.id]==true?"red":"black"}' class="fas fa-heart">esraa</i>
+            </a>
+            <p>{{place.location}}</p>
+            <p>{{place.avgrate}}</p>
+            <p>{{place["kid-friendly"]}}</p>
+            <button class="btn btn-danger" *ngIf="place.reservation=='true'">reservation</button>
+            <button class="btn btn-danger" *ngIf="place.reservation=='false'"> no-reservation</button>
+
+          </li>
+
+        </div>
+
+
+        <div *ngIf="check==true">
+
+          <li *ngFor="let place of filteredData " style="border: 2px solid red;">
+            <h5 routerLink="/place/{{place.id}}">{{place.name}}</h5>
+            <a *ngIf="placeLoggedin==true" (click)="checkingFavs()">
+              <i [ngStyle]='{color:checkFav==true?"red":"black"}' class="fas fa-heart">esraa</i>
+            </a>
+            <p>{{place.location}}</p>
+            <p>{{place.avgrate}}</p>
+            <p>{{place["kid-friendly"]}}</p>
+            <button class="btn btn-danger" *ngIf="place.reservation=='true'">reservation</button>
+            <button class="btn btn-danger" *ngIf="place.reservation=='false'"> no-reservation</button>
+
+          </li>
+
+        </div>
+
+
+
+
+
+      </ul>
+      <hr>
+      <h1>{{singleCatId}}</h1>
+    </div>
+
+
+  </div>
+
+
+</div>

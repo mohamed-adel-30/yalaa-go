@@ -1,0 +1,155 @@
+<!-- <div class="container" style="border: 1px solid red ;text-align: center;">
+  <input type="text" #name>
+  <input type="email" #email>
+<input type="password" #password>
+
+<button class="btn btn-primary"(click)="addUser(name,email,password)" > Signup</button>
+<button class="btn btn-danger" routerLink="/login"> login</button>
+</div> -->
+<!-- SignUp -->
+<!-- 
+<div class="container mt-5">
+  <div class="row justify-content-center">
+      <div class="col-6">
+          <form class="form-group" [formGroup]='myForm' (ngSubmit)="onSubmit(myForm)">
+              <div class="row m-0">
+
+                  <input formControlName="name" placeholder="Your name" class="form-control my-1">
+                  <div class="text-danger my-1" *ngIf="myForm.get('name').hasError('required') && myForm.touched">
+                      this name is requeired
+                  </div>
+
+                  <input formControlName="email" placeholder="Your email" class="form-control my-1">
+                  <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('pattern')">
+                      mail must be "abc@abc.com"
+                  </div>
+                  <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('required') && myForm.touched ">
+                      mail is requeired
+                  </div>
+                  <input formControlName="confirmEmail" placeholder="confirm email" class="form-control my-1">
+                  <div class="text-danger my-1" *ngIf="myForm.value.confirmEmail !== myForm.value.email && myForm.touched">
+                      mail doesn't match
+                  </div>
+
+                  <input formControlName="password" placeholder="password" type="password" class="form-control my-1">
+                  <div class="text-danger my-1" *ngIf="myForm.controls.password.hasError('required') && myForm.touched ">
+                      password is requeired
+                  </div>
+                  <div class="text-danger my-1" *ngIf="myForm.controls.password.hasError('pattern')">
+                      password must be at least 5 charachters and contain at least upper char, low char, number
+                  </div>
+
+
+                  <input formControlName="confirmPassword" placeholder="confirm password" type="password" class="form-control my-1">
+
+                  <div class="text-danger my-1" *ngIf="myForm.value.confirmPassword !== myForm.value.password && myForm.touched">
+                      test doesn't match
+                  </div>
+
+                  <button class="btn btn-primary form-control my-1" type="submit" [disabled]="!myForm.valid || myForm.value.confirmPassword !== myForm.value.password || myForm.value.confirmEmail !== myForm.value.email">Sign up</button>
+                  
+                  <button class="btn btn-danger" routerLink="/login"> login</button>
+                   [disabled]="!myForm.valid || myForm.value.confirmPassword !== myForm.value.password || myForm.value.confirmEmail !== myForm.value.email 
+              </div>
+          </form>
+      </div>
+
+  </div>
+</div> -->
+
+<!-- {{myForm.controls.confirmEmail.value !== myForm.controls.email.value}} -->
+<!-- {{myForm.controls.email.hasError('pattern')}} -->
+<!-- {{myForm.controls.password.hasError('pattern')}} -->
+<!-- {{myForm.value.confirmPassword !== myForm.value.password}} -->
+
+
+<!-- <div class="container my-5">
+  <div class="row justify-content-center">
+      <div class="col-6">
+          <form action="">
+
+          </form>
+      </div>
+  </div>
+</div>
+  <div class="row justify-content-center">
+      <div class="col-6">
+          <form action="">
+
+          </form>
+      </div>
+  </div>
+</div> -->
+
+<!-- ============================================= -->
+<section class="login container-fluid">
+    <section class="login-wrapper row">
+
+        <section class="loginimg col-md-6 "> 
+            <figure>
+                <img src="https://i.postimg.cc/wMJG6K0G/Download-premium-psd-of-Young-caucasian-girl-with-an-orange-ball.png" alt="">
+            </figure>
+        </section>
+
+            <section class="form-wrapper col-md-6 ">
+                <form class="form-group container" [formGroup]='myForm' (ngSubmit)="onSubmit(myForm)">
+                    
+                    <div class="logo ">
+                        <img src="https://i.postimg.cc/1RNT06sr/logo.png" alt="">
+                      </div>
+                    <div class="name">
+                        <label for="">name</label>
+                        <input formControlName="name" placeholder="enter your full name" >
+                    </div>
+                    <div class="text-danger my-1" *ngIf="myForm.get('name').hasError('required') && myForm.touched">
+                    this name is requeired
+                    </div>
+
+                    <div class="email">
+                        <label for="">email</label>
+                        <input formControlName="email" placeholder="Your email" >
+                    </div>
+                    <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('pattern')">
+                        mail must be "abc@abc.com"
+                    </div>
+                    <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('required') && myForm.touched ">
+                        mail is requeired
+                    </div>
+
+                    <div class="password">
+                        <label for="">password</label>
+                        <input formControlName="password" placeholder="password" type="password" >
+                    </div>
+                    <div class="text-danger my-1" *ngIf="myForm.controls.password.hasError('required') && myForm.touched ">
+                        password is requeired
+                    </div>
+                    <div class="text-danger my-1" *ngIf="myForm.controls.password.hasError('pattern')">
+                        password must be at least 5 charachters and contain at least upper char, low char, number
+                    </div>
+
+                    <div class="confirmpass">
+                        <label for="">confirm password</label>
+                        <input formControlName="confirmPassword" placeholder="confirm password" type="password" >
+                    </div>
+
+                    <div class="text-danger my-1" *ngIf="myForm.value.confirmPassword !== myForm.value.password && myForm.touched">
+                        test doesn't match
+                    </div>
+
+                    <div class="checkbox ">
+                        <input type="checkBox">
+                        <label class="">I agree to all terms and conditions</label>
+                    </div>
+
+                    <div class="button">
+                        <button type="submit" [disabled]="!myForm.valid || myForm.value.confirmPassword !== myForm.value.password " >Sign up</button>
+                    </div>
+
+                    <div class="button loginbtn">
+                       Already have an account? <span routerLink="/login"> log in</span>
+                    </div>
+                </form>
+            </section>
+
+    </section>
+</section>

@@ -1,0 +1,53 @@
+@import './../../styles.scss';
+nav {
+    z-index: 9999;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+    li {
+        a {
+            font-size: $paragrphSize;
+            color: #fff;
+            white-space: nowrap;
+        }
+        a:hover {
+            color: #d1b346;
+        }
+        p {
+            cursor: pointer;
+        }
+    }
+    i {
+        font-size: $paragrphSize;
+    }
+    .form {
+        position: relative;
+        input {
+            display: none;
+            font-size: $paragrphSize;
+        }
+        .searchResults {
+            position: absolute;
+            left: 0.5%;
+            top: 100%;
+            z-index: 9999;
+            a {
+                text-decoration: none;
+                font-size: $paragrphSize;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:560px) {
+    nav {
+        position: static;
+        background-color: #000000;
+    }
+}

@@ -1,0 +1,83 @@
+.login{
+    margin-top: 56px;
+    figure{
+        height: 100vh;
+        img{
+            max-height: 100%;
+        }
+    }
+}
+.form-wrapper{
+    background-color: #111;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.logo{
+    color: #ffa21d;
+}
+form{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 70%;
+    width: 80%;
+    margin: 0 auto;
+}
+.email , .password {
+    display: flex;
+    border-bottom: 1px solid #999;
+    align-items: center;
+}
+.email input , .password input {
+    border: none;
+    background:none;
+    padding: 10px;
+    color: #999;
+}
+.pass p {
+    text-align: right;
+    color: #999;
+    font-size: 12px;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+}
+.checkbox input{
+    background-color: #999;
+}
+.checkbox label{
+    margin: 0;
+    padding-left: 15px;
+    color: #999;
+}
+button{
+    border: none;
+    padding: 10px 40px;
+    border-radius: 30px;
+    background-color: #ffa21d;
+    align-content: center;
+    color: #111111;
+    text-transform: capitalize;
+}
+.signup {
+    color: #999;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+}
+.signup span{
+    color: #ffa21d;
+}
+.errormsg p{
+    color:   red;
+}
+@media (max-width:500px){
+    .loginimg{
+        display: none;
+    }
+}

@@ -1,0 +1,65 @@
+.gallary .thumbnails .thumb-img{
+  width: 20%;
+
+}
+.selected{
+  border: 1px solid red;
+}
+.places-section{
+  padding-bottom: 100px;
+}
+.nreaMe-section{
+  padding-bottom: 100px;
+ .title{
+  text-align: center;
+  color: #ffa21d;
+  font-size: 60px;
+  line-height: 1.5;
+  padding-bottom: 50px;
+  height: 84px;
+} 
+.imgs{
+  text-align: center;
+}
+}
+.container-self{
+  width: 90%;
+  margin: auto;
+}
+.status{
+  color: #00b467;
+  line-height: 1.2;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
+}
+.specific-progress{
+  display: inline-block;
+  height: 12px;
+  width: 24%;
+}
+
+.specific-progress-warning
+{
+  height: 20px;
+  display: inline-block;
+  background-color: #ffa21d;
+}
+.full-start-color{
+  color: #ffa21d;
+}
+.empty-start-color{color: #ddd;}
+.reviewsRange h3{
+  height: 45px;
+  font-size: 32px;
+  color: #ffa21d;
+  font-weight: normal;
+}
+.userComm-section{
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.reviewsWrite{
+  color: #ffa21d;
+  font-size:25px
+}

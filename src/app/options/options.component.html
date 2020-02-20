@@ -1,0 +1,10 @@
+<h2>{{i.name}}</h2>
+<h3>-{{i.price}}$</h3>
+<hr>
+{{i.desc}}
+<hr>
+<button type="button" class="btn btn-info m-1" (click)="removingOption(i.price,i)">-</button>
+<span style="padding: 8px; border: 1px solid black;">{{count}}</span>
+<button type="button" class="btn btn-info m-1" (click)="addingOption(i.price,i)">+</button>
+<p>total-{{totalOfOneGame}}</p>
+<h1>{{total}}</h1>

@@ -1,0 +1,14 @@
+<div>
+  <h1>comments</h1>
+  <div>
+    <input #inputComment type="text">
+    <button (click)="addComment(inputComment)">add comment</button>
+    <app-rates [id]="singlePlaceId"></app-rates>
+  </div>
+  <ul>
+    <li *ngFor="let i of showedComments">
+      {{i.userId}}-{{i.userName}}-{{i.comment}}
+      <h1>{{i.rate}}</h1>
+    </li>
+  </ul>
+</div>
