@@ -26,6 +26,7 @@ export class CommentsComponent implements OnInit {
   SpesificRate;
   SpesificRateArr;
   user;
+  inputDisplay = false;
 
 
 
@@ -88,9 +89,9 @@ export class CommentsComponent implements OnInit {
         }
 
         this.httpService.postComments(body, headers).subscribe(data => {
-          console.log(data);
+
           this.showedComments.push(data)
-          console.log("puuuuuuuuuuuuuuuuuuuuush")
+
         })
         param.value = "";
       }, 1000)
@@ -133,19 +134,16 @@ export class CommentsComponent implements OnInit {
       }
     }
   }
-  // edit btn
-  // para = document.getElementById('custome-para');
-  inputDisplay = false;
+
+
 
   editComm(id) {
     this.inputDisplay = true
     setTimeout(() => {
       let input;
       input = Array.from(document.getElementsByClassName(id))
-      console.log("aaaaaaaaaaaaaaaaaaaa")
-      console.log(input[0])
-      input[0].setAttribute("style", "display:block; border: 1px solid blue;");
-    }, 50)
+      input[0].setAttribute("style", "display:block;");
+    }, 10)
 
   }
 
@@ -206,5 +204,5 @@ export class CommentsComponent implements OnInit {
 
 
   }
-  // edit btn
+
 }

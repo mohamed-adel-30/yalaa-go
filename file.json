@@ -1331,7 +1331,7 @@
       "id": 3
     },
     {
-      "comment": "realluhkhkhshkSHSjhassjhd",
+      "comment": "edited again",
       "placeId": "4 ",
       "userId": 6,
       "userName": "esraa",
@@ -1357,6 +1357,20 @@
         2
       ],
       "id": 5
+    },
+    {
+      "comment": "edited ",
+      "placeId": "4 ",
+      "userId": 6,
+      "userName": "esraa",
+      "userImg": "",
+      "rate": 3,
+      "arrOfRate": [
+        0,
+        1,
+        2
+      ],
+      "id": 6
     }
   ],
   "rates": [
@@ -1489,6 +1503,11 @@
       "placeId": "4",
       "userId": 6,
       "id": 4
+    },
+    {
+      "placeId": "4 ",
+      "userId": 6,
+      "id": 5
     }
   ],
   "history": [
