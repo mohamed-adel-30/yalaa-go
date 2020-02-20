@@ -1,52 +1,55 @@
-<div class="container-self">
+<div class="container-self container-font">
   <div class="row justify-content-between places-section">
     <div class="loading" *ngIf="!singlePlaceData">
       loading...
     </div>
 
-    <div *ngIf="singlePlaceData" class='col-4 gallary'>
+<!-- start img slider  -->
+    <div *ngIf="singlePlaceData" class='col-5 gallary'>
       <div class="master-img">
-        <img src="{{singlePlaceData.mainImage}}" class="img-fluid">
+        <img src="{{singlePlaceData.mainImage}}" class="img-fluid master-img2">
       </div>
-      <div class="thumbnails">
-        <img src="../../assets/right-arrow-angle.png">
-        <img *ngFor="let x of singlePlaceData.imgs" src="{{x}}" class="img-fluid thumb-img" #trylocal
-          (click)='onClick(trylocal)'>
-        <img src="../../assets/left-arrow-angle.png">
+      <div class="thumbnails thumb-style">
+        <i class="fas fa-chevron-left pr-2" #leftArrow (click)='onLeftClick(leftArrow)'></i>
+        <img *ngFor="let x of singlePlaceData.imgs" src="{{x}}" class="img-fluid thumb-img mr-1" #img (click)='onClick(img)'>
+        <i class="fas fa-chevron-right " #rightArrow (click)='onRightClick(rightArrow)'></i>
       </div>
     </div>
+<!-- end img slider  -->
 
 
-    <div *ngIf="singlePlaceData " class='col-8'>
-      <div class="container">
+
+    <div *ngIf="singlePlaceData " class='col-7 place-desc'>
+      <div class="container pb-5">
         <h1>
           {{singlePlaceData.name}}
         </h1>
-
-
-        <a *ngIf="placeLoggedin==true" (click)="checkingFavs()">
-          <i [ngStyle]='{color:checkFav==true?"red":"black"}' class="fas fa-heart">esraa</i>
-        </a>
-
-
+        <!-- ............heart.........// -->
+<a *ngIf="placeLoggedin==true" (click)="checkingFavs()">
+  <i [ngStyle]='{color:checkFav==true?"red":"black"}' class="fas fa-heart">esraa</i>
+</a>
+<!-- .................// -->
         <p>{{singlePlaceData.desc}}</p>
         <address>
-          <span>Address: </span> <span>{{singlePlaceData.address}}</span>
+          <span class="specificSpan">Address:  </span> <span>{{singlePlaceData.address}}</span>
         </address>
-        <p><span>phone:</span>{{singlePlaceData.contact.phone}}</p>
-        <p><span>open hours:</span>{{singlePlaceData.openHours}}</p>
-        <p><span>Payment Method:</span>{{singlePlaceData.paymentMethod}}</p>
-        <p class="status"><span></span>{{singlePlaceData.status}}</p>
-
-
-
-
-
-      </div>
-
-
+        <p><span class="specificSpan">phone:</span>{{singlePlaceData.contact.phone}}</p>
+        <p><span class="specificSpan">open hours:</span>{{singlePlaceData.openHours}}</p>
+        <p><span class="specificSpan">Payment Method:</span>{{singlePlaceData.paymentMethod}}</p>
+        <p class="status" [ngStyle]="{'color':singlePlaceData.status === 'open now' ? '#00b467' : 'red' }"><i class="fas fa-check-circle"
+          *ngIf='singlePlaceData.status=="open now"; else closed'></i> 
+          <ng-template #closed>
+            <i class="fas fa-times-circle" ></i>
+          </ng-template>
+          {{singlePlaceData.status}}</p>
+          <button type="button" class="btn btn-outline-secondary"
+          *ngIf='singlePlaceData.reservation=="true"'>Online Booking</button>
+     </div>
     </div>
-    <section class="row nreaMe-section">
+
+
+
+    <section class=" nreaMe-section">
       <div class="title col-md-12">
         <h2>Near Me</h2>
       </div>
@@ -59,59 +62,19 @@
         <div class='col-md-4'><img src="../../assets/a-morning-can-t-get-better.png" class="img-fluid"></div>
       </div>
     </section>
-    <section class=" row userComm-section">
-      <div class="col-8 reviewsRange">
-        <h3>60 Reviews</h3>
 
-        <div>
-          <i class="fas fa-star full-start-color" *ngFor="let rate of arrRates"></i>
-          <div class="progress specific-progress ml-3">
-            <span class="  progress-bar  specific-progress-warning " role="progressbar" style="width: 75%"
-              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
-          </div>
-        </div>
-        <div>
-          <i class="fas fa-star full-start-color" *ngFor="let rate of arrsecRates"></i>
-          <i class="fas fa-star empty-start-color" *ngFor="let rate of arrfifthRates"></i>
-          <div class="progress specific-progress ml-3">
-            <span class="  progress-bar  specific-progress-warning " role="progressbar" style="width: 60%"
-              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
-          </div>
-        </div>
-        <div>
-          <i class="fas fa-star full-start-color" *ngFor="let rate of arrthirdRates"></i>
-          <i class="fas fa-star empty-start-color" *ngFor="let rate of arrfourthRates"></i>
-          <div class="progress specific-progress ml-3">
-            <span class="  progress-bar  specific-progress-warning " role="progressbar" style="width: 50%"
-              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
-          </div>
-        </div>
-        <div>
-          <i class="fas fa-star full-start-color" *ngFor="let rate of arrfourthRates"></i>
-          <i class="fas fa-star empty-start-color" *ngFor="let rate of arrthirdRates"></i>
-          <div class="progress specific-progress ml-3">
-            <span class="  progress-bar  specific-progress-warning " role="progressbar" style="width: 30%"
-              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
-          </div>
-        </div>
-        <div>
-          <i class="fas fa-star full-start-color" *ngFor="let rate of arrfifthRates"></i>
-          <i class="fas fa-star empty-start-color" *ngFor="let rate of arrsecRates"></i>
-          <div class="progress specific-progress ml-3">
-            <span class="  progress-bar  specific-progress-warning " role="progressbar" style="width: 20%"
-              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
-          </div>
-        </div>
-      </div>
-      <div class="col-3 reviewsWrite">Write review</div>
-      <div class="col-12 border-bottom"></div>
-    </section>
+
+
+    <div class="col-12 border-bottom-div"></div>
 
   </div>
 
   <app-comments></app-comments>
+</div>
 
 
+
+<!-- games  -->
   <button class="btn btn-danger" (click)="savingSelectedGames()">
     Go to Payment
   </button>
@@ -129,3 +92,4 @@
 
     </div>
   </div>
+<!-- games  -->

@@ -62,12 +62,42 @@ export class PlacesComponent implements OnInit {
       this.finalTotal = data;
 
     })
+    
   }
 
   ngOnInit() {
 
     this.finalTotal = 0;
   }
+
+
+  // start img slider code
+  mainImg ;
+  leftArrow;
+  rightArrow;
+  onClick(img){
+
+    this.mainImg = document.getElementsByClassName('master-img2')[0]
+    this.mainImg.src = img.src
+    console.log(this.mainImg)
+    img.classList.add("selected");
+    img.nextElementSibling.classList.remove('selected')
+        img.previousElementSibling.classList.remove('selected');
+
+        document.querySelectorAll(".thumb-img")[0].addEventListener('click',function(){
+          document.querySelectorAll(".thumb-img")[2].classList.remove('selected')
+        })
+  }
+
+  onLeftClick(leftArrow){
+this.leftArrow=document.querySelector('.selected')
+this.leftArrow.previousElementSibling.click()
+  }
+  onRightClick(rightArrow){
+    this.rightArrow=document.querySelector('.selected')
+    this.rightArrow.nextElementSibling.click()
+      }
+  // end img slider code
 
 
 

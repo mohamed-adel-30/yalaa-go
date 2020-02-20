@@ -72,11 +72,17 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
       user = this.service.getData("user")
       // console.log("hhhhhhhhhhhhhhhh")
       // console.log(user)
+      let arr=[];
+      for(let i=0;i<this.value;i++)
+      {
+        arr.push(i)
+      }
       let body =
       {
         "value": this.value,
         "placeId": this.id,
-        "userId": user.id
+        "userId": user.id,
+        "arrOfVals":arr
       }
       this.service.postRate(body, headers).subscribe(data => {
         // console.log(data);

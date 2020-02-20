@@ -1,0 +1,66 @@
+figure img{
+    border-radius: 50%;
+}
+.container-font{
+  font-family: 'Poppins', sans-serif;
+}
+.cutom-btn{
+    background-color: orange;
+}
+.custom-input{
+    width: 50%;
+}
+.specific-progress{
+    display: inline-block;
+    height: 12px;
+    width: 24%;
+  }
+  
+  .specific-progress-warning
+  {
+    height: 20px;
+    display: inline-block;
+    background-color: #ffa21d;
+  }
+  .full-start-color{
+    color: #ffa21d;
+  }
+  .empty-start-color{color: #ddd;}
+  .reviewsRange h3{
+    height: 45px;
+    font-size: 32px;
+    color: #ffa21d;
+    font-weight: normal;
+  }
+  .userComm-section{
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+  }
+  .add-comm{
+      padding: 20px 0 0 0;
+  }
+  
+  .rate-commts{
+      .userName{
+          font-size: 16px;
+      }
+  }
+  .reviewsWrite{
+    color: #ffa21d;
+    font-size:25px
+  }
+  .all-comm{
+      background-color: #fff;
+  }
+  .custome-input{
+    border: none;
+  }
+
+  polygon {
+    fill: orange;
+  }
+  polygon.empty-start-color{
+    fill: #ddd;
+  }
+  
