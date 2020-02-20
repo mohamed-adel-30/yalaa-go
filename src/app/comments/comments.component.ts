@@ -25,6 +25,7 @@ export class CommentsComponent implements OnInit {
   rates;
   SpesificRate;
   SpesificRateArr;
+  user;
 
 
 
@@ -42,6 +43,7 @@ export class CommentsComponent implements OnInit {
       })
 
     })
+    this.user = this.httpService.getData("user");
     this.placeLoggedin = this.httpService.getData("loggedin");
 
 
@@ -70,20 +72,10 @@ export class CommentsComponent implements OnInit {
 
           }
         }
-        console.log(this.SpesificRate)
-        // for(let i=0; i<this.SpesificRate ;i++){
-        //   this.dumyarray.push(i)
-
-        // }
 
       })
-      // .......
-
-
 
       setTimeout(() => {
-
-
         let headers = { "Conetent-Type": "application/json" }
         let body = {
           "comment": param.value,
@@ -98,13 +90,10 @@ export class CommentsComponent implements OnInit {
         this.httpService.postComments(body, headers).subscribe(data => {
           console.log(data);
           this.showedComments.push(data)
+          console.log("puuuuuuuuuuuuuuuuuuuuush")
         })
         param.value = "";
-
       }, 1000)
-
-
-
 
     }
     else {
@@ -150,10 +139,35 @@ export class CommentsComponent implements OnInit {
 
   editComm(id) {
     this.inputDisplay = true
+    setTimeout(() => {
+      let input;
+      input = Array.from(document.getElementsByClassName(id))
+      console.log("aaaaaaaaaaaaaaaaaaaa")
+      console.log(input[0])
+      input[0].setAttribute("style", "display:block; border: 1px solid blue;");
+    }, 50)
 
   }
 
   addingEdidtedComment(id) {
+
+    // ........rates..//
+    this.httpService.getRates().subscribe(data => {
+      this.rates = data;
+      console.log(user)
+      for (let rate of this.rates) {
+        console.log(rate, rate.placeId, this.singlePlaceId, rate.userId, user.id)
+        if (rate.placeId == this.singlePlaceId && rate.userId == user.id) {
+          this.SpesificRate = rate.value;
+          this.SpesificRateArr = rate.arrOfVals;
+          console.log(rate.value)
+
+        }
+      }
+
+    })
+    // .....///
+
     let index;
     index = this.findingIndex(id);
     let user;

@@ -50,17 +50,16 @@
                 </div>
             </div>
 
-            <!-- <a class="btn" href=""><i class="fas fa-user-circle text-light"></i></a> -->
-            <div class="dropdown">
-                <button *ngIf="headerLoggedin == true || loggenfromlocalstorage==true ; else loggedOut"
-                    class="btn   dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            <div *ngIf="headerLoggedin == true || loggenfromlocalstorage==true ; else loggedOut" class="dropdown">
+                <button class="btn   dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle text-light"></i>
+                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                        <a routerLink="/user-profile" class="dropdown-item w-100 btn btn-danger">profile</a>
+                        <a class="btn btn-danger dropdown-item" (click)="loggingOut()">logout</a>
+                    </div>
                 </button>
-                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                    <a routerLink="/user-profile" class="dropdown-item w-100 btn btn-danger">profile</a>
-                    <a class="btn btn-danger dropdown-item" (click)="loggingOut()">logout</a>
-                </div>
+
             </div>
         </div>
 

@@ -21,8 +21,9 @@
           <polygon points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
           </polygon>
         </svg>
-        <svg *ngFor="let rate of arrfifthRates" height="25" width="25" class="star rating" >
-          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
+        <svg *ngFor="let rate of arrfifthRates" height="25" width="25" class="star rating">
+          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"
+            style="fill-rule:nonzero;">
           </polygon>
         </svg>
         <div class="progress specific-progress ml-3">
@@ -35,8 +36,9 @@
           <polygon points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
           </polygon>
         </svg>
-        <svg *ngFor="let rate of arrfourthRates" height="25" width="25" class="star rating" >
-          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
+        <svg *ngFor="let rate of arrfourthRates" height="25" width="25" class="star rating">
+          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"
+            style="fill-rule:nonzero;">
           </polygon>
         </svg>
         <div class="progress specific-progress ml-3">
@@ -49,9 +51,10 @@
           <polygon points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
           </polygon>
         </svg>
-        
-        <svg *ngFor="let rate of arrthirdRates" height="25" width="25" class="star rating" >
-          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
+
+        <svg *ngFor="let rate of arrthirdRates" height="25" width="25" class="star rating">
+          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"
+            style="fill-rule:nonzero;">
           </polygon>
         </svg>
         <div class="progress specific-progress ml-3">
@@ -64,8 +67,9 @@
           <polygon points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
           </polygon>
         </svg>
-        <svg *ngFor="let rate of arrsecRates" height="25" width="25" class="star rating" >
-          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
+        <svg *ngFor="let rate of arrsecRates" height="25" width="25" class="star rating">
+          <polygon class='empty-start-color' points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"
+            style="fill-rule:nonzero;">
           </polygon>
         </svg>
         <div class="progress specific-progress ml-3">
@@ -94,7 +98,7 @@
   <!--end add comment -->
 
 
-  <div class="row border-bottom pt-3 pb-3 rate-commts" *ngFor="let comment of showedComments">
+  <div class="row border-bottom pt-3 pb-3 rate-commts" *ngFor="let comment of showedComments ; let index=i">
     <figure class="col-1">
       <img src="../../assets/avatar.png" class="img-fluid">
       <h5 class="userName pl-2">{{comment.userName}}</h5>
@@ -109,23 +113,26 @@
       </div>
       <ng-template #visiblePara>
         <div id="custome-para">
-          <p >{{comment.comment}}</p>
+          <p>{{comment.comment}}</p>
+          <div *ngIf="comment.userId==user.id" class="col-4">
+            <!-- delet btn -->
+            <button (click)='deleteComm(comment.id)'>Delete</button>
+            <!-- edit btn -->
+            <button (click)='editComm(comment.id)'>Edit</button>
+          </div>
 
         </div>
-       
       </ng-template>
-      <div *ngIf='inputDisplay ; else visiblePara'>
-        <input  id="{{comment.id}}" type="text" value="{{comment.comment}}"  #inputval> 
+
+      <div style="display: none;" class="{{comment.id}}"
+        *ngIf='inputDisplay && comment.userId==user.id ; else visiblePara'>
+        <input id="{{comment.id}}" type="text" value="{{comment.comment}}" #inputval>
         <button (click)="addingEdidtedComment(comment.id)">Add</button>
       </div>
-     
+
     </div>
-    <div class="col-4">
-      <!-- delet btn -->
-      <button (click)='deleteComm(comment.id)'>Delete</button>
-       <!-- edit btn -->
-      <button (click)='editComm(comment.id)'>Edit</button>
-    </div>
+
+
   </div>
 </div>
 
