@@ -98,7 +98,7 @@
   <!--end add comment -->
 
 
-  <div class="row border-bottom pt-3 pb-3 rate-commts" *ngFor="let comment of showedComments ; let index=i">
+  <div class="row border-bottom pt-3 pb-3 rate-commts" *ngFor="let comment of showedComments ; let i=index">
     <figure class="col-1">
       <img src="../../assets/avatar.png" class="img-fluid">
       <h5 class="userName pl-2">{{comment.userName}}</h5>
@@ -118,16 +118,16 @@
             <!-- delet btn -->
             <button (click)='deleteComm(comment.id)'>Delete</button>
             <!-- edit btn -->
-            <button (click)='editComm(comment.id)'>Edit</button>
+            <button (click)='editComm(comment.id,i)'>Edit</button>
           </div>
 
         </div>
       </ng-template>
 
       <div style="display: none;" class="{{comment.id}}"
-        *ngIf='inputDisplay && comment.userId==user.id ; else visiblePara'>
+        *ngIf='inputDisplay[i] && comment.userId==user.id ; else visiblePara'>
         <input id="{{comment.id}}" type="text" value="{{comment.comment}}" #inputval>
-        <button (click)="addingEdidtedComment(comment.id)">Add</button>
+        <button (click)="addingEdidtedComment(comment.id,i)">Add</button>
       </div>
 
     </div>

@@ -1331,46 +1331,36 @@
       "id": 3
     },
     {
-      "comment": "edited again",
+      "comment": "afteeeer1wwwwww",
       "placeId": "4 ",
       "userId": 6,
       "userName": "esraa",
       "userImg": "",
-      "rate": 3,
+      "rate": 5,
       "arrOfRate": [
         0,
         1,
-        2
+        2,
+        3,
+        4
       ],
       "id": 4
     },
     {
-      "comment": "jasgfdagsd",
+      "comment": "after 2dddddsdddadwqrddd",
       "placeId": "4 ",
       "userId": 6,
       "userName": "esraa",
       "userImg": "",
-      "rate": 3,
+      "rate": 5,
       "arrOfRate": [
         0,
         1,
-        2
+        2,
+        3,
+        4
       ],
       "id": 5
-    },
-    {
-      "comment": "edited ",
-      "placeId": "4 ",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 3,
-      "arrOfRate": [
-        0,
-        1,
-        2
-      ],
-      "id": 6
     }
   ],
   "rates": [
@@ -1486,6 +1476,19 @@
         2
       ],
       "id": 13
+    },
+    {
+      "value": 5,
+      "placeId": "4 ",
+      "userId": 6,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 14
     }
   ],
   "favourites": [

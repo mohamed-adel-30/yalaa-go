@@ -26,7 +26,7 @@ export class CommentsComponent implements OnInit {
   SpesificRate;
   SpesificRateArr;
   user;
-  inputDisplay = false;
+  inputDisplay = [];
 
 
 
@@ -39,7 +39,11 @@ export class CommentsComponent implements OnInit {
       this.httpService.getComments().subscribe(data => {
         this.comments = data;
         this.gettingCommentsOfSinglePlace(this.singlePlaceId)
+        for (let i of this.comments) {
+          this.inputDisplay.push(false)
+          console.log(this.inputDisplay);
 
+        }
 
       })
 
@@ -137,8 +141,8 @@ export class CommentsComponent implements OnInit {
 
 
 
-  editComm(id) {
-    this.inputDisplay = true
+  editComm(id, i) {
+    this.inputDisplay[i] = true
     setTimeout(() => {
       let input;
       input = Array.from(document.getElementsByClassName(id))
@@ -147,7 +151,7 @@ export class CommentsComponent implements OnInit {
 
   }
 
-  addingEdidtedComment(id) {
+  addingEdidtedComment(id, i) {
 
     // ........rates..//
     this.httpService.getRates().subscribe(data => {
@@ -189,7 +193,7 @@ export class CommentsComponent implements OnInit {
       this.httpService.editComment(id, body, headers).subscribe(
         (data) => { console.log('editttt') }
       )
-      this.inputDisplay = false;
+      this.inputDisplay[i] = false;
       let obj;
 
       setTimeout(() => {
@@ -198,10 +202,9 @@ export class CommentsComponent implements OnInit {
           console.log(obj);
           this.showedComments.splice(index, 1, obj);
         })
-      }, 500)
+      }, 300)
 
-    }, 500)
-
+    }, 10)
 
   }
 
