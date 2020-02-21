@@ -139,8 +139,6 @@ export class CommentsComponent implements OnInit {
     }
   }
 
-
-
   editComm(id, i) {
     this.inputDisplay[i] = true
     setTimeout(() => {
@@ -191,18 +189,19 @@ export class CommentsComponent implements OnInit {
       }
 
       this.httpService.editComment(id, body, headers).subscribe(
-        (data) => { console.log('editttt') }
-      )
-      this.inputDisplay[i] = false;
-      let obj;
+        (data) => {
+          console.log('editttt')
 
-      setTimeout(() => {
-        this.httpService.getSingleComments(id).subscribe(data => {
-          obj = data;
-          console.log(obj);
-          this.showedComments.splice(index, 1, obj);
-        })
-      }, 300)
+          this.inputDisplay[i] = false;
+          let obj;
+          this.httpService.getSingleComments(id).subscribe(data => {
+            obj = data;
+            console.log(obj);
+            this.showedComments.splice(index, 1, obj);
+          })
+
+        }
+      )
 
     }, 10)
 
