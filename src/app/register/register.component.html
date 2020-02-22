@@ -118,7 +118,7 @@
 
                     <div class="password">
                         <label for="">password</label>
-                        <input formControlName="password" placeholder="password" type="password" >
+                        <input formControlName="password" placeholder="password" type="password" appPassword >
                     </div>
                     <div class="text-danger my-1" *ngIf="myForm.controls.password.hasError('required') && myForm.touched ">
                         password is requeired
@@ -129,7 +129,7 @@
 
                     <div class="confirmpass">
                         <label for="">confirm password</label>
-                        <input formControlName="confirmPassword" placeholder="confirm password" type="password" >
+                        <input formControlName="confirmPassword" placeholder="confirm password" type="password" appPassword >
                     </div>
 
                     <div class="text-danger my-1" *ngIf="myForm.value.confirmPassword !== myForm.value.password && myForm.touched">

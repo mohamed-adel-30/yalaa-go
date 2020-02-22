@@ -67,9 +67,6 @@ export class RegisterComponent implements OnInit {
         "email": form.value.email,
         "password": form.value.password,
         "image": "",
-        "rate": 1,
-        "favourites": [],
-        "history": [],
         "visa": 0
       }
       let headers = { "Conetent-Type": "application/json" }

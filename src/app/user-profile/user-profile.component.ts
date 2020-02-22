@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from './../http-service.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import * as $ from "jquery"
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -9,6 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class UserProfileComponent implements OnInit {
   myForm: FormGroup;
+  toggle = false;
+  newObj;
 
   user;
   usersData;
@@ -87,10 +89,13 @@ export class UserProfileComponent implements OnInit {
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(/^[a-z]\w{1,}@[a-z]{1,}.com$/)]),
       password: new FormControl(this.user.password, [Validators.required, Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{5,}$/)])
     });
+
+
   }
-  check(form: FormGroup) {
+
+  checkMail(mail) {
     for (let index = 0; index < this.usersData.length; index++) {
-      if (form.value.email === this.usersData[index].email) {
+      if (mail == this.usersData[index].email) {
         this.checker = false;
         break;
       }
@@ -102,26 +107,38 @@ export class UserProfileComponent implements OnInit {
     return this.checker;
   }
 
-  onSubmit(form: FormGroup) {
-    let headers = { "Content-Type": "application/json" }
-    if (this.check(form)) {
-      let newObj = {
-        "name": form.value.name,
-        "email": form.value.email,
-        "password": form.value.password,
+  showEditForm() {
+    this.toggle = !this.toggle
+  }
+
+
+  checkPass(pass, name, mail, passs) {
+    if (this.checkMail(mail.value) == false && this.user.email != mail.value) {
+      alert('mail found');
+      return;
+    }
+
+    if (pass.value == this.user.password && this.user.email == mail.value) {
+
+      this.newObj = {
+        "name": name.value,
+        "email": mail.value,
+        "password": passs.value,
         "image": this.user.image,
-        "rate": this.user.rate,
-        "favourites": this.user.favourites,
-        "history": this.user.history,
-        "visa": this.user.visa
+        "visa": this.user.visa,
+        "id": this.user.id
       }
-      this.service.updateUserData(this.user.id, newObj, headers).subscribe(data => {
+
+
+      let headers = { "Content-Type": "application/json" };
+      this.service.updateUserData(this.user.id, this.newObj, headers).subscribe(data => {
         console.log(data);
       });
-      this.service.setData("user", newObj);
+      this.service.setData("user", this.newObj);
     }
     else {
-      alert("mail already exixts")
+      alert('wrong password');
+
     }
   }
 

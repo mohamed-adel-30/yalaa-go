@@ -25,7 +25,14 @@ setup() {
     const parent = this.el.nativeElement.parentNode;
     const span = document.createElement('span');
     span.classList.add('far');
-    span.classList.add('fa-eye');
+    span.classList.add('fa-eye-slash');
+    span.style.color="orange";
+    span.style.fontSize="14px";
+    span.style.position="relative";
+    span.style.left="92%";
+    span.style.bottom="20px";
+    span.style.width="10px";
+
     // span.innerHTML = `Show password`;<i class="far fa-eye"></i><i class="far fa-eye-slash"></i>
     span.addEventListener('click', (event) => {
       this.toggle(span);
