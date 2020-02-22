@@ -542,7 +542,7 @@
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
       "status": "closed",
-      "reservation": "false",
+      "reservation": "true",
       "kid-friendly": "false",
       "contact": {
         "phone": "0123456859",
@@ -597,7 +597,7 @@
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
       "status": "closed",
-      "reservation": "false",
+      "reservation": "true",
       "kid-friendly": "false",
       "contact": {
         "phone": "0123456859",
@@ -712,7 +712,7 @@
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
       "status": "open now",
-      "reservation": "false",
+      "reservation": "true",
       "kid-friendly": "false",
       "contact": {
         "phone": "0123456859",
@@ -950,346 +950,476 @@
     {
       "id": 1,
       "name": "Puzzle Breakout.",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
+      "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "300",
       "placeId": "14",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 2,
       "name": "Danger Lock.",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "250",
       "placeId": "12",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 3,
       "name": "Riddle IQ.",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "250",
       "placeId": "12",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 4,
       "name": "Epic Escape.",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "200",
       "placeId": "12",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 5,
       "name": "The Crypt.",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "350",
       "placeId": "8",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 6,
       "name": "clue hunter.",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "300",
       "placeId": "8",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 7,
       "name": "Quest For Escape.",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "200",
       "placeId": "8",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 8,
       "name": "Escape Artists",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "200",
       "placeId": "7",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 9,
       "name": "SherLock Escape",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "200",
       "placeId": "7",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 10,
       "name": "the climp",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Windows Mixed Reality, and other SteamVR-compatible headsets. Recommended ...",
       "price": "200",
       "placeId": "14",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 11,
       "name": "the climp",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Windows Mixed Reality, and other SteamVR-compatible headsets. Recommended ...",
       "price": "200",
       "placeId": "13",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 12,
       "name": "blood & truth",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Windows Mixed Reality, and other SteamVR-compatible headsets. Recommended ...",
       "price": "150",
       "placeId": "13",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 13,
       "name": "bing pong",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "13",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 14,
       "name": "play ground ",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "50",
       "placeId": "11",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 15,
       "name": "pool",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "100",
       "placeId": "11",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 16,
       "name": "kids pool",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "25",
       "placeId": "11",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 17,
       "name": "ice skatting",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
       "price": "60",
       "placeId": "10",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 18,
       "name": "play ground ",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "50",
       "placeId": "10",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 19,
       "name": "Trampoline ",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Trampoline for Kids with Handle,Foldable Kids Trampoline for Play ",
       "price": "80",
       "placeId": "10",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 20,
       "name": "cinema ",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Discover the perfect movie for you, find session times and book tickets ",
       "price": "80",
       "placeId": "9",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 21,
       "name": "tivoli cinema ",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Discover the perfect movie for you, find session times and book tickets",
       "price": "80",
       "placeId": "9",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 22,
       "name": "ice skatting ",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
       "price": "80",
       "placeId": "6",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 23,
       "name": "ice skatting(lessons) ",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
       "price": "500",
       "placeId": "6",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 24,
       "name": "san stifano cinema",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Discover the perfect movie for you, find session times and book tickets",
       "price": "70",
       "placeId": "5",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 25,
       "name": "bowling",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " For all bowling lovers in alexandria.",
       "price": "50",
       "placeId": "5",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 26,
       "name": "bing",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "5",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 27,
       "name": "billiards",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "60",
       "placeId": "5",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 28,
       "name": "VR games",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "100",
       "placeId": "5",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 29,
       "name": "bing",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "5",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 30,
       "name": " cinema",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Discover the perfect movie for you, find session times and book tickets",
       "price": "70",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 31,
       "name": "bowling",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " For all bowling lovers in alexandria.",
       "price": "50",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 32,
       "name": "bing",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 33,
       "name": "billiards",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "60",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 34,
       "name": "VR games",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "100",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 35,
       "name": "bing",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 36,
       "name": "pool",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "100",
       "placeId": "3",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 37,
       "name": "kids pool",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "25",
       "placeId": "3",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 38,
       "name": "bowling",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " For all bowling lovers in alexandria.",
       "price": "50",
       "placeId": "1",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 39,
       "name": "bing",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "1",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 40,
       "name": "billiards",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "60",
       "placeId": "1",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 41,
       "name": "VR games",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "100",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 42,
       "name": "bing",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "4",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     },
     {
       "id": 43,
       "name": "africano trip",
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
       "desc": " Most of the landscapes and their accompanying plants and animals in a national park are kept in their natural state..",
       "price": "200",
       "placeId": "1",
-      "img": ""
+      "img": "http://placehold.it/200/200"
     }
   ],
   "comments": [
@@ -1307,7 +1437,30 @@
         3,
         4
       ],
-      "id": 1
+      "id": 17
+    },
+    {
+      "comment": "goood",
+      "placeId": "10",
+      "userId": 6,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 18
+    },
+    {
+      "comment": "it's awesome placeee",
+      "placeId": "7",
+      "userId": 6,
+      "userName": "esraa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 19
     }
   ],
   "rates": [
@@ -1388,30 +1541,16 @@
       "id": 10
     },
     {
-      "value": 5,
-      "placeId": "6",
-      "userId": 13,
-      "arrOfVals": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 11
-    },
-    {
-      "value": 5,
-      "placeId": "6",
+      "value": 4,
+      "placeId": "7",
       "userId": 6,
       "arrOfVals": [
         0,
         1,
         2,
-        3,
-        4
+        3
       ],
-      "id": 12
+      "id": 11
     }
   ],
   "favourites": [
@@ -1426,9 +1565,14 @@
       "id": 3
     },
     {
-      "placeId": "4",
+      "placeId": 5,
       "userId": 6,
-      "id": 4
+      "id": 5
+    },
+    {
+      "placeId": 4,
+      "userId": 6,
+      "id": 6
     }
   ],
   "history": [
