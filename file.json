@@ -1456,6 +1456,12 @@
       "placeId": "3",
       "userId": 13,
       "id": 12
+    },
+    {
+      "value": 5,
+      "placeId": "2",
+      "userId": 15,
+      "id": 13
     }
   ],
   "favourites": [
