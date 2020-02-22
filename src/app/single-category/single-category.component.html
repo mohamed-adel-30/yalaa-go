@@ -1,140 +1,203 @@
-<div class="loading" *ngIf="!singleCatData">
-  loading...
-</div>
-<!-- <div  *ngIf="singleCatData && singleCatData.length==0"  >
-  no data found
-  </div> -->
-
-<div *ngIf="singleCatData " class="container" style="border: 2px solid pink;">
-
-  <div class="row justify-content-between">
-
-    <div class="col-md-5">
-      <p>
-
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-          aria-expanded="false" aria-controls="collapseExample">
-          Location
-        </button>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-
-          <div *ngFor="let place of uniqe ;let item = index;">
-            <input #item id="{{place}}" class="location" type="checkbox" name="{{item}}" value={{place}}
-              (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
-            <label for="vehicle3">{{place}}</label><br><br>
-          </div>
-        </div>
+<section class="category container-fluid">
+  <section class="category-wrapper row">
+    <div class="loading" *ngIf="!singleCatData">
+      loading...
+    </div>
+    
+     <div class="canvas" *ngIf="singleCatData ">
+      <div class="filter-canvas"> 
+        <button class="btn btn-primary ">{{singleCatData.name}}</button>
+      </div>
+    </div> 
+    <section class="category-wrapper__containt d-flex col-12" *ngIf="singleCatData ">
+      
+      <!-- start filter section -->
+      <div class="filter col-md-3 col-sm-12">
+      
+      <div class="filter-header d-md-flex align-items-baseline">
+        <i class="fas fa-sort-down "></i> <h3>filter by:</h3>
       </div>
 
+      <div class="filter-content d-flex flex-column justify-content-between offset-1">
+        <!-- filter-location -->
+        
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            Location
+          </button>
 
-      <p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <div *ngFor="let place of uniqe ;let item = index;">
+                <input #item id="{{place}}" class="location" type="checkbox" name="{{item}}" value={{place}}
+                  (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+                <label for="vehicle3">{{place}}</label>
+              </div>
+            </div>
+          </div>
+
+        
+        <!-- filter-rate -->
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
           aria-expanded="false" aria-controls="collapseExample">
           Rate
         </button>
-      </p>
-      <div class="collapse" id="collapseExample2">
+
+        <div class="collapse" id="collapseExample2">
+          <div class="card card-body">
+            <div>
+              <input #five type="checkbox" name="5" value="5"
+              (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+              <label for="vehicle3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </label>
+            </div>
+            <div>
+              <input #four type="checkbox" name="4" value="4"
+              (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+              <label for="vehicle3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </label>
+            </div>
+            <div>
+              <input #three type="checkbox" name="3" value="3"
+              (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+              <label for="vehicle3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </label>
+            </div>
+            <div>
+              <input #two type="checkbox" name="2" value="2"
+                (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
+              <label for="vehicle3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </label>
+            </div>
+            <div>
+              <input #one type="checkbox" [id]="samaa" name="1" value="1"
+                (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)" >
+              <label for="vehicle3"><i class="fas fa-star"></i></label>
+            </div>
+          </div>
+        </div>
+      
+      
+      <!-- filter-reservation -->
+
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+          aria-expanded="false" aria-controls="collapseExample">
+          Reservation
+      </button>
+
+        <div class="collapse" id="collapseExample3">
+          <div class="card card-body">
+            <div>
+            <input #reservation type="checkbox" name="reservation" value="reservation"
+              (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
+              <label for="reservation">online reservation</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- filter-status -->
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+          aria-expanded="false" aria-controls="collapseExample">
+          status
+        </button>
+
+        <div class="collapse" id="collapseExample4">
+          <div class="card card-body">
+            <div>
+            <input #status type="checkbox" name="status" value="status"
+            (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
+            <label for="status">open</label>
+          </div>
+          </div>
+        </div>
+        
+        <!-- filter-kid-friendly -->
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample5"
+        aria-expanded="false" aria-controls="collapseExample">
+        Kid-friendly
+      </button>
+
+      <div class="collapse" id="collapseExample5">
         <div class="card card-body">
-
-
-          <input #one type="checkbox" [id]="samaa" name="1" value="1"
-            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
-          <label for="vehicle3">1</label><br><br>
-          <input #two type="checkbox" name="2" value="2"
-            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
-          <label for="vehicle3">2</label><br><br>
-          <input #three type="checkbox" name="3" value="3"
-            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
-          <label for="vehicle3">3</label><br><br>
-          <input #four type="checkbox" name="4" value="4"
-            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
-          <label for="vehicle3">4</label><br><br>
-          <input #five type="checkbox" name="5" value="5"
-            (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
-          <label for="vehicle3">5</label><br><br>
-
-
-
-
-
-
-
-
-
+          <div>
+            <input #kidfriendly type="checkbox" name="kid-friendly" value="kid-friendly"
+            (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
+            <label for="kid-friendly">kid-friendly</label>
+          </div>
         </div>
       </div>
 
-      <input #reservation type="checkbox" name="reservation" value="reservation"
-        (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
-      <label for="reservation">reservation</label><br><br>
-
-      <input #status type="checkbox" name="status" value="status"
-        (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
-      <label for="status">open</label><br><br>
-
-      <input #kidfriendly type="checkbox" name="kid-friendly" value="kid-friendly"
-        (click)="handling(reservation,status,kidfriendly,uniqe, one, two, three, four, five)">
-      <label for="kid-friendly">kid-friendly</label><br><br>
-
-
-
+      </div>
     </div>
 
+    <!-- ===========================end filter================================ -->
 
-    <div class="col-md-6">
-      <h1>{{singleCatData.name}}</h1>
-      <h3>{{singleCatData.id}}</h3>
-      <p>{{singleCatData.desc}}</p>
-      <ul>
-        <div *ngIf="check==false">
+    <div class="places col-md-9 col-sm-12">
+      <div class="place-nav ">
+        <ul class="d-flex justify-content-between col-md-4" >
+          <li  (click)='active()'>sort by</li>
+          <li  (click)='active()'>newest places</li>
+          <li  (click)='listview()'  [ngStyle]="{'color':list === true ? 'black' : 'gray' }"><i class="fas fa-th-list"></i></li>
+          <li  (click)='galleryview()' [ngStyle]="{'color':gallery === true ? 'black' : 'gray' }"><i class="fas fa-th-large"></i></li>
+        </ul>
+      </div>
+     
+      <div class="place-contents " [ngClass]="{ 'd-flex flex-wrap  justify-content-around ': gallery==true}"  *ngIf='check==false' >
+        <!-- col-md-5 -->
+                <div  class="place-content__item d-flex " [ngClass]="{'col-md-5  flex-column':gallery === true}" *ngFor="let place of singleSelecetedPlaces ">
 
-          <li *ngFor="let place of singleSelecetedPlaces " style="border: 2px solid red;">
-            <h5 routerLink="/place/{{place.id}}">{{place.name}}</h5>
+                  <div class="place-content__item-img " >
+                    <img src="https://previews.123rf.com/images/dmytrohrynchak/dmytrohrynchak1809/dmytrohrynchak180900047/110250054-table-tennis-ping-pong-table-tennis-player-athlete-game-vector.jpg" alt="">
+                  </div>
 
-            <a *ngIf="placeLoggedin==true" (click)="checkingFavs(place)">
-              <i [ngStyle]='{color:checkFav[place.id]==true?"red":"black"}' class="fas fa-heart">esraa</i>
-            </a>
-            <p>{{place.location}}</p>
-            <p>{{place.avgrate}}</p>
-            <p>{{place["kid-friendly"]}}</p>
-            <button class="btn btn-danger" *ngIf="place.reservation=='true'">reservation</button>
-            <button class="btn btn-danger" *ngIf="place.reservation=='false'"> no-reservation</button>
+                  <div class="place-content__item-body col-md-8  "  [ngClass]="{'col-md-12 mt-4':gallery === true } " >
+                    <h3 routerLink="/place/{{place.id}}">{{place.name}}</h3>
+                    <h5>{{place.location}}</h5>
+                    <p>{{place.desc}}</p>
+                    <p class="open" *ngIf="place.status=='open now'"> open now</p>
+                    <p class="closed" *ngIf="place.status=='closed'"><i class="fas fa-times"></i> closed</p>
+                  </div>
 
-          </li>
+                </div>  
+        </div>
+    
+
+        <div *ngIf="check==true" class="place-contents"  [ngClass]="{ 'd-flex flex-wrap  justify-content-around ': gallery==true}">
+          <div *ngFor="let place of filteredData " [ngClass]="{'col-md-5  flex-column':gallery === true}" class="place-content__item d-flex">
+
+            <div class="place-content__item-img  " >
+              <img src="https://previews.123rf.com/images/dmytrohrynchak/dmytrohrynchak1809/dmytrohrynchak180900047/110250054-table-tennis-ping-pong-table-tennis-player-athlete-game-vector.jpg" alt="">
+            </div>
+
+            <div class="place-content__item-body col-md-8  "  [ngClass]="{'col-md-12 mt-4':gallery === true } " >
+              <h3 routerLink="/place/{{place.id}}">{{place.name}}</h3>
+
+              <h5>{{place.location}}</h5>
+              <p>{{place.desc}}</p>
+              <p>{{place["kid-friendly"]}}</p>
+              <p class="open" *ngIf="place.status=='open now'"> open now</p>
+              <p class="closed" *ngIf="place.status=='closed'"><i class="fas fa-times"></i> closed</p>
+            </div>
+          </div>
 
         </div>
 
-
-        <div *ngIf="check==true">
-
-          <li *ngFor="let place of filteredData " style="border: 2px solid red;">
-            <h5 routerLink="/place/{{place.id}}">{{place.name}}</h5>
-            <a *ngIf="placeLoggedin==true" (click)="checkingFavs()">
-              <i [ngStyle]='{color:checkFav==true?"red":"black"}' class="fas fa-heart">esraa</i>
-            </a>
-            <p>{{place.location}}</p>
-            <p>{{place.avgrate}}</p>
-            <p>{{place["kid-friendly"]}}</p>
-            <button class="btn btn-danger" *ngIf="place.reservation=='true'">reservation</button>
-            <button class="btn btn-danger" *ngIf="place.reservation=='false'"> no-reservation</button>
-
-          </li>
-
-        </div>
-
-
-
-
-
-      </ul>
-      <hr>
-      <h1>{{singleCatId}}</h1>
-    </div>
-
-
-  </div>
-
-
-</div>
+      </div>
+    </section>
+  </section>
+</section>
