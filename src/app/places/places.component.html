@@ -97,15 +97,18 @@
 
   <!-- games  -->
 
+  <!-- .............near me...// -->
   <section *ngIf="nearByPlacses.length>0" class=" nreaMe-section">
     <div class="title col-md-12">
       <h2>Near Me</h2>
     </div>
     <div class="imgs col-12 d-flex justify-content-center">
-      <div *ngFor="let place of nearByPlacses" class='col-md-3'>
+      <div *ngFor="let place of MAX3; let i=index" class='col-md-3'>
+
         <img src={{place.mainImage}} class="img-fluid">
         <h3 routerLink="/place/{{place.id}}">{{place.name}}</h3>
         <p>{{place.openHours}}</p>
+
       </div>
 
     </div>
