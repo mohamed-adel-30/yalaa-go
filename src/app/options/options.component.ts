@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { PlacesService } from "../places.service"
 
 @Component({
   selector: 'app-options',
   templateUrl: './options.component.html',
-  styleUrls: ['./options.component.scss']
+  styleUrls: ['./options.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class OptionsComponent implements OnInit {
   @Input() i: any;
@@ -15,10 +16,10 @@ export class OptionsComponent implements OnInit {
   operation;
   fixBug = false;
 
-
   constructor(private service: PlacesService) {
     this.service.counter = 0;
     this.service.arrOfGames = [];
+    console.log(this.i)
   }
 
   ngOnInit() {
