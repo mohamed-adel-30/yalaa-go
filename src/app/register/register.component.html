@@ -120,9 +120,9 @@
                         <label for="">password</label>
                         <input formControlName="password" placeholder="password" type="password" >
                     </div>
-                    <div class="text-danger my-1" *ngIf="myForm.controls.password.hasError('required') && myForm.touched ">
+                    <ng-template class="text-danger my-1" [ngIf]="myForm.controls.password.hasError('required') && myForm.touched ">
                         password is requeired
-                    </div>
+                    </ng-template>
                     <div class="text-danger my-1" *ngIf="myForm.controls.password.hasError('pattern')">
                         password must be at least 5 charachters and contain at least upper char, low char, number
                     </div>
