@@ -22,7 +22,8 @@ import { PlacesComponent } from './places/places.component';
 import { WeekendComponent } from './weekend/weekend.component';
 import { FilterPipe } from './filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
-import { OptionsComponent } from './options/options.component';///////sign i
+import { OptionsComponent } from './options/options.component';
+import { AppPasswordDirective } from './app-password.directive';///////sign i
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { OptionsComponent } from './options/options.component';///////sign i
     PlacesComponent,
     WeekendComponent,
     FilterPipe,
-    OptionsComponent
+    OptionsComponent,
+    AppPasswordDirective
   ],
   imports: [
     BrowserModule,

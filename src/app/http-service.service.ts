@@ -95,6 +95,14 @@ export class HttpServiceService {
     return this.http.post("http://localhost:3000/rates", body, headers);
   }
 
+  updateUserData(id, body, headers) {
+    return this.http.put("http://localhost:3000/users/" + id, body, headers);
+  }
+
+  getSinglePlace(id) {
+    return this.http.get("http://localhost:3000/places/" + id);
+  }
+
 
   // ...........general geters and getters functions from session storge...............//
   setData(key, value) {
