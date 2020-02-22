@@ -9,16 +9,17 @@
         <button class="btn btn-primary ">{{singleCatData.name}}</button>
       </div>
     </div> 
-    <section class="category-wrapper__containt d-flex col-12" *ngIf="singleCatData ">
+   
+    <section class="category-wrapper__containt flex-wrap d-flex col-md-12 col-sm-12" *ngIf="singleCatData ">
       
       <!-- start filter section -->
       <div class="filter col-md-3 col-sm-12">
       
       <div class="filter-header d-md-flex align-items-baseline">
-        <i class="fas fa-sort-down "></i> <h3>filter by:</h3>
+        <i class="fas fa-sort-down "></i> <h3>Filter by:</h3>
       </div>
 
-      <div class="filter-content d-flex flex-column justify-content-between offset-1">
+      <div class="filter-content  d-flex flex-column justify-content-between offset-1 col-sm-12">
         <!-- filter-location -->
         
           <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
@@ -31,7 +32,7 @@
               <div *ngFor="let place of uniqe ;let item = index;">
                 <input #item id="{{place}}" class="location" type="checkbox" name="{{item}}" value={{place}}
                   (click)="handling(reservation,status,kidfriendly, one, two, three, four, five)">
-                <label for="vehicle3">{{place}}</label>
+                <label for="vehicle3" >{{place}}</label>
               </div>
             </div>
           </div>
@@ -149,55 +150,77 @@
 
     <div class="places col-md-9 col-sm-12">
       <div class="place-nav ">
-        <ul class="d-flex justify-content-between col-md-4" >
-          <li  (click)='active()'>sort by</li>
-          <li  (click)='active()'>newest places</li>
+        <ul class="d-flex justify-content-between col-md-4 " >
+          <li>sort by</li>
+          <li>newest places</li>
           <li  (click)='listview()'  [ngStyle]="{'color':list === true ? 'black' : 'gray' }"><i class="fas fa-th-list"></i></li>
           <li  (click)='galleryview()' [ngStyle]="{'color':gallery === true ? 'black' : 'gray' }"><i class="fas fa-th-large"></i></li>
         </ul>
       </div>
      
-      <div class="place-contents " [ngClass]="{ 'd-flex flex-wrap  justify-content-around ': gallery==true}"  *ngIf='check==false' >
-        <!-- col-md-5 -->
-                <div  class="place-content__item d-flex " [ngClass]="{'col-md-5  flex-column':gallery === true}" *ngFor="let place of singleSelecetedPlaces ">
-
-                  <div class="place-content__item-img " >
+      <div class="place-contents " [ngClass]="{ 'd-flex flex-wrap col-md-12 justify-content-around ': gallery==true}"  *ngIf='check==false' >
+                <div  class="place-content__item d-flex flex-wrap " [ngClass]="{'col-md-5 ':gallery === true}" *ngFor="let place of singleSelecetedPlaces ">
+                  <div class="place-content__item-img col-md-4 " routerLink="/place/{{place.id}}" [ngClass]="{'col-md-12':gallery===true}">
                     <img src="https://previews.123rf.com/images/dmytrohrynchak/dmytrohrynchak1809/dmytrohrynchak180900047/110250054-table-tennis-ping-pong-table-tennis-player-athlete-game-vector.jpg" alt="">
                   </div>
-
-                  <div class="place-content__item-body col-md-8  "  [ngClass]="{'col-md-12 mt-4':gallery === true } " >
-                    <h3 routerLink="/place/{{place.id}}">{{place.name}}</h3>
+                  <div class="place-content__item-body col-md-8  col-sm-12"  [ngClass]="{'col-md-12 mt-sm-4':gallery === true } " >
+                    <h2 routerLink="/place/{{place.id}}">{{place.name}}</h2>
+                    <i *ngFor="let star of place.rates" class="fas fa-star"></i>
                     <h5>{{place.location}}</h5>
-                    <p>{{place.desc}}</p>
+                    <p >{{place.desc}}</p>
                     <p class="open" *ngIf="place.status=='open now'"> open now</p>
-                    <p class="closed" *ngIf="place.status=='closed'"><i class="fas fa-times"></i> closed</p>
-                  </div>
-
+                    <p class="closed" *ngIf="place.status=='closed'"><i class="fas fa-times closed-icon"></i> closed<p>
+                    <p class="reservation" *ngIf="place.reservation=='true'">online-reservation</p>
+                    <p class="reservation" *ngIf="place.reservation=='false'">no-reservation</p>
+                    
+                    </div>
                 </div>  
         </div>
     
 
-        <div *ngIf="check==true" class="place-contents"  [ngClass]="{ 'd-flex flex-wrap  justify-content-around ': gallery==true}">
-          <div *ngFor="let place of filteredData " [ngClass]="{'col-md-5  flex-column':gallery === true}" class="place-content__item d-flex">
+        <div *ngIf="check==true" class="place-contents"  [ngClass]="{ 'd-flex flex-wrap  justify-content-around col-md-12  ': gallery==true}">
+          <div *ngFor="let place of filteredData " [ngClass]="{'col-md-5  ':gallery === true}" class="place-content__item d-flex flex-wrap">
 
-            <div class="place-content__item-img  " >
+            <div class="place-content__item-img col-md-4 " routerLink="/place/{{place.id}}" [ngClass]="{'col-md-12':gallery===true}" >
               <img src="https://previews.123rf.com/images/dmytrohrynchak/dmytrohrynchak1809/dmytrohrynchak180900047/110250054-table-tennis-ping-pong-table-tennis-player-athlete-game-vector.jpg" alt="">
             </div>
 
-            <div class="place-content__item-body col-md-8  "  [ngClass]="{'col-md-12 mt-4':gallery === true } " >
-              <h3 routerLink="/place/{{place.id}}">{{place.name}}</h3>
+            <div class="place-content__item-body col-md-8 col-sm-12 "  [ngClass]="{'col-md-12 mt-sm-4':gallery === true } " >
+              <h2 routerLink="/place/{{place.id}}">{{place.name}}</h2>
+              <i *ngFor="let star of place.rates" class="fas fa-star"></i>
 
               <h5>{{place.location}}</h5>
               <p>{{place.desc}}</p>
-              <p>{{place["kid-friendly"]}}</p>
+              <!-- <p>{{place["kid-friendly"]}}</p> -->
               <p class="open" *ngIf="place.status=='open now'"> open now</p>
-              <p class="closed" *ngIf="place.status=='closed'"><i class="fas fa-times"></i> closed</p>
+              <p class="closed" *ngIf="place.status=='closed'"><i class="fas fa-times closed-icon"></i> closed</p>
+              <p class="reservation" *ngIf="place.reservation=='true'">online-reservation</p>
+              <p class="reservation" *ngIf="place.reservation=='false'">no-reservation</p>
             </div>
           </div>
 
         </div>
 
       </div>
+
+      <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav> -->
+
     </section>
   </section>
 </section>
