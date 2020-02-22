@@ -97,17 +97,17 @@
 
   <!-- games  -->
 
-  <section class=" nreaMe-section">
+  <section *ngIf="nearByPlacses.length>0" class=" nreaMe-section">
     <div class="title col-md-12">
       <h2>Near Me</h2>
     </div>
     <div class="imgs col-12 d-flex justify-content-center">
-      <div class='col-md-4'>
-        <img src="../../assets/72784164_3040270475987485_8617695001448546304_o.png" class="img-fluid">
+      <div *ngFor="let place of nearByPlacses" class='col-md-3'>
+        <img src={{place.mainImage}} class="img-fluid">
+        <h3 routerLink="/place/{{place.id}}">{{place.name}}</h3>
+        <p>{{place.openHours}}</p>
       </div>
-      <div class='col-md-4'><img src="../../assets/a-morning-can-t-get-better.png" class="img-fluid"></div>
 
-      <div class='col-md-4'><img src="../../assets/a-morning-can-t-get-better.png" class="img-fluid"></div>
     </div>
   </section>
 

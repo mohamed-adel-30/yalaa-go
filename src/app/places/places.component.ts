@@ -8,7 +8,7 @@ import { HttpServiceService } from '../http-service.service'
   selector: 'app-places',
   templateUrl: './places.component.html',
   styleUrls: ['./places.component.scss'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class PlacesComponent implements OnInit {
   places;
@@ -29,8 +29,9 @@ export class PlacesComponent implements OnInit {
   // ........................///
   finalTotal;
   totalSingleGame;
-// ........................
-appear=false //appear section
+  // ........................
+  appear = false //appear section
+  nearByPlacses = [];
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
 
@@ -43,6 +44,7 @@ appear=false //appear section
         data => {
           this.places = data;
           this.singlePlaceData = this.getSingleSpesifcPlace(this.singlePlaceId);
+          this.gettingNearByPlacses();
 
         }
       )
@@ -64,7 +66,7 @@ appear=false //appear section
       this.finalTotal = data;
 
     })
-    
+
   }
 
   ngOnInit() {
@@ -74,34 +76,34 @@ appear=false //appear section
 
 
   // start img slider code
-  mainImg ;
+  mainImg;
   leftArrow;
   rightArrow;
-  onClick(img){
+  onClick(img) {
 
     this.mainImg = document.getElementsByClassName('master-img2')[0]
     this.mainImg.src = img.src
     console.log(this.mainImg)
     img.classList.add("selected");
     img.nextElementSibling.classList.remove('selected')
-        img.previousElementSibling.classList.remove('selected');
+    img.previousElementSibling.classList.remove('selected');
 
-        document.querySelectorAll(".thumb-img")[0].addEventListener('click',function(){
-          document.querySelectorAll(".thumb-img")[2].classList.remove('selected')
-        })
+    document.querySelectorAll(".thumb-img")[0].addEventListener('click', function () {
+      document.querySelectorAll(".thumb-img")[2].classList.remove('selected')
+    })
   }
-  appearOptionSection(){
+  appearOptionSection() {
     this.appear = !this.appear
   }
 
-  onLeftClick(leftArrow){
-this.leftArrow=document.querySelector('.selected')
-this.leftArrow.previousElementSibling.click()
+  onLeftClick(leftArrow) {
+    this.leftArrow = document.querySelector('.selected')
+    this.leftArrow.previousElementSibling.click()
   }
-  onRightClick(rightArrow){
-    this.rightArrow=document.querySelector('.selected')
+  onRightClick(rightArrow) {
+    this.rightArrow = document.querySelector('.selected')
     this.rightArrow.nextElementSibling.click()
-      }
+  }
   // end img slider code
 
 
@@ -243,7 +245,18 @@ this.leftArrow.previousElementSibling.click()
     }
   }
 
-
+  gettingNearByPlacses() {
+    this.nearByPlacses = [];
+    for (let place of this.places) {
+      if (place.location == this.singlePlaceData.location && place.id != this.singlePlaceData.id) {
+        this.nearByPlacses.push(place)
+      }
+    }
+    // console.log("NEEEEEEEEAR  places")
+    // console.log(this.singlePlaceData)
+    // console.log(this.places)
+    // console.log(this.nearByPlacses)
+  }
 
 
 }
