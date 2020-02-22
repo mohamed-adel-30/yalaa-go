@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpServiceService } from '../http-service.service';
 
 
+
 interface Image {
   img: string;
 
@@ -51,24 +52,26 @@ export class HomeComponent implements OnInit {
   constructor(private service: HttpServiceService) {
 
 
-    setTimeout(() => {
+    // ...............................//
 
-      this.service.gettingUsers().subscribe(data => {
-        this.getuser = data;
-        console.log(this.getuser)
-        this.logged = this.service.getData("loggedin")
-        this.userfromlocal = this.service.getData("user")
-        if (this.logged == true) {
-          for (let i of this.getuser) {
+    // setTimeout(() => {
 
-            if (i.email == this.userfromlocal.email) {
-              this.service.setData("user", i)
+    //   this.service.gettingUsers().subscribe(data => {
+    //     this.getuser = data;
+    //     console.log(this.getuser)
+    //     this.logged = this.service.getData("loggedin")
+    //     this.userfromlocal = this.service.getData("user")
+    //     if (this.logged == true) {
+    //       for (let i of this.getuser) {
 
-            }
-          }
-        }
-      })
-    }, 3000)
+    //         if (i.email == this.userfromlocal.email) {
+    //           this.service.setData("user", i)
+
+    //         }
+    //       }
+    //     }
+    //   })
+    // }, 3000)
 
   }
 

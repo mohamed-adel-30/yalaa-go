@@ -21,7 +21,7 @@
     .wrapper {
         width: 90%;
         h1 {
-            color: #ffa21d;
+            color: $hcolors;
             padding-top: 15%;
             font-size: 70px;
             line-height: 0.43;
@@ -32,9 +32,28 @@
 }
 
 .yallaNo5rog {
-    margin-bottom: $sectionMargin;
-    img {
-        border: 2px solid black;
+    background-image: url("./../../assets/Home/bg-left.svg");
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    .caption {
+        padding-top: 5%;
+        h2 {
+            font-size: $h2;
+            color: $hcolors;
+            text-transform: capitalize;
+            font-family: caviardreams;
+        }
+        p {
+            font-size: $paragrphSize;
+            margin: $pargraphMargin 0;
+        }
+    }
+    .first {
+        transform: rotate(-25deg);
+    }
+    .layer {
+        transform: rotate(25deg) translateY(-21rem) translateX(-20rem);
     }
 }
 
@@ -44,31 +63,35 @@
     background-position-x: right;
     background-position-y: bottom;
     padding-bottom: 30rem;
-    h2 {
-        font-family: caviardreams;
-        font-size: $h2;
-        text-transform: capitalize;
-        line-height: 1.27;
-        margin-bottom: $pargraphMargin;
-    }
-    .details {
-        margin-bottom: $pargraphMargin;
-        p {
-            font-size: $paragrphSize;
-            line-height: 1.2;
-            font-weight: 400;
+    .aboutUs-caption {
+        padding-top: 5%;
+        h2 {
+            font-family: caviardreams;
+            font-size: $h2;
+            text-transform: capitalize;
+            line-height: 1.27;
+            margin-bottom: $pargraphMargin;
+            color: $hcolors;
         }
-        i {
-            font-size: $paragrphSize;
+        .details {
+            margin-bottom: $pargraphMargin;
+            p {
+                font-size: $paragrphSize;
+                line-height: 1.2;
+                font-weight: 400;
+            }
+            i {
+                font-size: $paragrphSize;
+            }
         }
     }
     .slider-side {
         position: relative;
         .wallpaper {
-            width: 80%;
-            height: 30rem;
+            width: 95%;
+            height: 27rem;
             border-radius: 30px;
-            background-color: #ffa21d;
+            background-color: $hcolors;
         }
         .slider {
             border-radius: 16px;
@@ -100,7 +123,7 @@
         padding: 8%;
         h2 {
             font-family: caviardreams;
-            font-size: 53px;
+            font-size: $h2;
             color: #fff;
             text-transform: capitalize;
             margin-bottom: 20px;
@@ -116,9 +139,9 @@
 .recommended {
     h2 {
         font-family: caviardreams;
-        color: #ffa21d;
+        color: $hcolors;
         text-transform: capitalize;
-        font-size: 45px;
+        font-size: 4rem;
     }
     .wrapper {
         img {
@@ -156,6 +179,11 @@
 }
 
 @media screen and (max-width:1050px) {
+    .yallaNo5rog {
+        .first {
+            transform: translateX(-5rem) rotate(-25deg);
+        }
+    }
     .aboutUs {
         .wallpaper {
             width: 100%;

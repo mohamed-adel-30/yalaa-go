@@ -17,6 +17,10 @@ export class HttpServiceService {
 
   constructor(private http: HttpClient) { }
 
+  paddUser(body, header) {
+    return this.http.post("http://localhost:3000/users", body, header)
+  }
+
 
   postComments(body, header) {
     return this.http.post("http://localhost:3000/comments", body, header)
@@ -43,23 +47,23 @@ export class HttpServiceService {
 
 
   getSingleComments(id) {
-    return this.http.get("http://localhost:3000/comments/"+id)
+    return this.http.get("http://localhost:3000/comments/" + id)
   }
-  
+
   getComments() {
     return this.http.get("http://localhost:3000/comments")
   }
-      // delete btn
-      deleteComments(id) {
-        return this.http.delete("http://localhost:3000/comments/" + id)
-      }
-        // delete btn
-    
-           // delete btn
-      editComment(id,body,header) {
-        return this.http.put("http://localhost:3000/comments/" + id,body,header)
-      }
-        // delete btn
+  // delete btn
+  deleteComments(id) {
+    return this.http.delete("http://localhost:3000/comments/" + id)
+  }
+  // delete btn
+
+  // delete btn
+  editComment(id, body, header) {
+    return this.http.put("http://localhost:3000/comments/" + id, body, header)
+  }
+  // delete btn
 
   getRates() {
     return this.http.get("http://localhost:3000/rates");

@@ -37,6 +37,12 @@ export class RegisterComponent implements OnInit {
     console.log(this.userData);
   }
 
+  // ....///
+  getuser;
+  logged;
+  userfromlocal;
+  // ....//
+
   check(form: FormGroup) {
     // debugger
     for (let index = 0; index < this.userData.length; index++) {
@@ -66,14 +72,34 @@ export class RegisterComponent implements OnInit {
         "history": [],
         "visa": 0
       }
-      // console.log(this.obj)
-      this.service.addUsers(this.obj)
-      this.router.navigate(["/"])
-      localStorage.clear();
-      this.httpService.setData("user", this.obj)
-      this.httpService.setData("loggedin", true);
-      this.loggedinheader = true;
-      this.httpService.displayProfileIcon(this.loggedinheader)
+      let headers = { "Conetent-Type": "application/json" }
+      // this.service.addUsers(this.obj)
+      this.httpService.paddUser(this.obj, headers).subscribe(data => {
+        this.router.navigate(["/"])
+        localStorage.clear();
+        this.obj.password = "********"
+        this.httpService.setData("user", this.obj)
+        this.httpService.setData("loggedin", true);
+        this.loggedinheader = true;
+        this.httpService.displayProfileIcon(this.loggedinheader)
+        // ..............................//
+        this.httpService.gettingUsers().subscribe(data => {
+          this.getuser = data;
+          console.log(this.getuser)
+          this.logged = this.httpService.getData("loggedin")
+          this.userfromlocal = this.httpService.getData("user")
+          if (this.logged == true) {
+            for (let i of this.getuser) {
+
+              if (i.email == this.userfromlocal.email) {
+                i.password = "********"
+                this.httpService.setData("user", i)
+
+              }
+            }
+          }
+        })
+      })
     }
     else {
       alert('found');

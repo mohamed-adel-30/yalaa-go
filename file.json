@@ -87,6 +87,17 @@
       "history": [],
       "visa": 0,
       "id": 13
+    },
+    {
+      "name": "omar",
+      "email": "omar@gmail.com",
+      "password": "12345Aa@",
+      "image": "",
+      "rate": 1,
+      "favourites": [],
+      "history": [],
+      "visa": 0,
+      "id": 14
     }
   ],
   "categories": [
@@ -1413,71 +1424,8 @@
   ],
   "comments": [
     {
-      "comment": "",
-      "placeId": "3",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 4,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "id": 9
-    },
-    {
-      "comment": "yeeeeeeees",
-      "placeId": "4",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 5,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 14
-    },
-    {
-      "comment": "sssssssssssssssss",
-      "placeId": "4",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 5,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 15
-    },
-    {
-      "comment": "sara shreeefHSDHKJDHAJSDAD",
-      "placeId": "4",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 5,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 16
-    },
-    {
-      "comment": "esraaaasfahfshF",
-      "placeId": "4",
+      "comment": "edited",
+      "placeId": "6",
       "userId": 6,
       "userName": "esraa",
       "userImg": "",
