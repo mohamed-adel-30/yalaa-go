@@ -45,6 +45,17 @@
       "id": 9
     },
     {
+      "name": "sara",
+      "email": "sara@gmail.com",
+      "password": "1234Aa@",
+      "image": "",
+      "rate": 1,
+      "favourites": [],
+      "history": [],
+      "visa": 0,
+      "id": 10
+    },
+    {
       "name": "samaaaa",
       "email": "sama@gmail.com",
       "password": "1234Aa@",
