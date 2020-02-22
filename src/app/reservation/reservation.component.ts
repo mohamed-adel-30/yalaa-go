@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../http-service.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation',
@@ -19,7 +20,7 @@ export class ReservationComponent implements OnInit {
   visaPassword = "";
 
 
-  constructor(private service: HttpServiceService) {
+  constructor(private service: HttpServiceService, private router: Router) {
 
     this.user = this.service.getData("user");
     this.selectedGames = this.service.getData("choosenGames");
@@ -29,8 +30,6 @@ export class ReservationComponent implements OnInit {
 
     localStorage.removeItem("finalTotal");
     localStorage.removeItem("choosenGames");
-
-
 
     for (let i of this.selectedGames) {
       let obj = {
@@ -74,17 +73,19 @@ export class ReservationComponent implements OnInit {
   }
 
   handlinSubmit() {
-    // console.log(this.createdArray)//this.user.id
-    // console.log(this.selectedGames)
+
 
     let headers = { "Conetent-Type": "application/json" }
     let body = {
       "userId": this.user.id,
       "totalPrice": this.total,
+      "visaNumber": this.visaNumber,
       "reservedGame": this.createdArray
     }
     this.service.postHistory(body, headers).subscribe(data => {
       console.log(data)
+      this.router.navigate(["/"]);
+
     })
 
 
@@ -100,7 +101,11 @@ export class ReservationComponent implements OnInit {
       }
     }
 
-    if (this.visaNumber.length == 12 && this.visaPassword.length == 4) { this.allowTosubmit = true; }
+    if (this.visaNumber.length == 12 && this.visaPassword.length == 4
+      && this.visaCVY.length == 3 && this.visaExpiredDate.length > 1) { this.allowTosubmit = true; }
+    else {
+      this.allowTosubmit = false;
+    }
 
   }
 
@@ -108,7 +113,17 @@ export class ReservationComponent implements OnInit {
     this.visaNumber = val.target.value;
     this.checking()
   }
+  visaCVY = "";
+  visaExpiredDate = "";
 
+  gettingCVY(val) {
+    this.visaCVY = val.target.value;
+    this.checking()
+  }
+  gettingExpiredDate(val) {
+    this.visaExpiredDate = val.target.value;
+    this.checking()
+  }
 
   gettingvisaPassword(val) {
     this.visaPassword = val.target.value;
