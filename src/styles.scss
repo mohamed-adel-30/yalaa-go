@@ -19,3 +19,9 @@ $hcolors:#ffa21d;
 body {
     background-color: #f2f2f2;
 }
+input:focus {
+    outline-color:transparent;
+    outline-style: none;
+    outline-width: 0px;;
+    outline-offset: 0px;
+}
