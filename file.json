@@ -1027,14 +1027,6 @@
       "id": 17
     },
     {
-      "comment": "goood",
-      "placeId": "10",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "id": 18
-    },
-    {
       "comment": "it's awesome placeee",
       "placeId": "7",
       "userId": 6,
@@ -1166,127 +1158,85 @@
   "history": [
     {
       "userId": 6,
-      "totalPrice": 80,
+      "totalPrice": 190,
+      "visaNumber": "111111111111",
       "reservedGame": [
         {
-          "id": 22,
-          "name": "ice skatting ",
+          "id": 19,
+          "name": "Trampoline ",
           "price": "80",
-          "desc": " Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
+          "desc": " Trampoline for Kids with Handle,Foldable Kids Trampoline for Play ",
           "count": 1,
-          "placeId": "6",
+          "placeId": "10",
           "img": "",
-          "hours": "7-10",
-          "date": "2020-02-04"
+          "hours": "4-6",
+          "date": "2020-02-17"
+        },
+        {
+          "id": 18,
+          "name": "play ground ",
+          "price": "50",
+          "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
+          "count": 1,
+          "placeId": "10",
+          "img": "",
+          "hours": "4-6",
+          "date": "2020-02-03"
+        },
+        {
+          "id": 17,
+          "name": "ice skatting",
+          "price": "60",
+          "desc": "Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
+          "count": 1,
+          "placeId": "10",
+          "img": "",
+          "hours": "4-6",
+          "date": "2020-02-16"
         }
       ],
       "id": 1
     },
     {
-      "totalPrice": 200,
+      "userId": 6,
+      "totalPrice": 190,
+      "visaNumber": "123412341234",
       "reservedGame": [
         {
-          "id": 38,
-          "name": "bowling",
-          "price": "50",
-          "desc": " For all bowling lovers in alexandria.",
+          "id": 17,
+          "name": "ice skatting",
+          "price": "60",
+          "desc": "Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
           "count": 1,
-          "placeId": "1",
-          "img": "",
-          "hours": "7-10",
+          "placeId": "10",
+          "img": "http://placehold.it/200/200",
+          "hours": "4-6",
+          "date": "2020-02-05"
+        },
+        {
+          "id": 18,
+          "name": "play ground ",
+          "price": "50",
+          "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
+          "count": 1,
+          "placeId": "10",
+          "img": "http://placehold.it/200/200",
+          "hours": "1-3",
           "date": "2020-02-04"
         },
         {
-          "id": 39,
-          "name": "bing",
-          "price": "50",
-          "desc": " Spin and Smash Table Tennis & Ping Pong Center",
-          "count": 2,
-          "placeId": "1",
-          "img": "",
-          "hours": "4-6",
-          "date": "2020-02-06"
-        },
-        {
-          "id": 40,
-          "name": "billiards",
-          "price": "60",
-          "desc": " Spin and Smash Table Tennis & Ping Pong Center",
-          "count": 6,
-          "placeId": "1",
-          "img": "",
-          "hours": "4-6",
-          "date": "2020-02-07"
-        },
-        {
-          "id": 43,
-          "name": "africano trip",
-          "price": "200",
-          "desc": " Most of the landscapes and their accompanying plants and animals in a national park are kept in their natural state..",
+          "id": 19,
+          "name": "Trampoline ",
+          "price": "80",
+          "desc": " Trampoline for Kids with Handle,Foldable Kids Trampoline for Play ",
           "count": 1,
-          "placeId": "1",
-          "img": "",
+          "placeId": "10",
+          "img": "http://placehold.it/200/200",
           "hours": "7-10",
-          "date": "2020-02-08"
+          "date": "2020-02-04"
         }
       ],
       "id": 2
-    },
-    {
-      "totalPrice": 280,
-      "reservedGame": [
-        {
-          "id": 17,
-          "name": "ice skatting",
-          "price": "60",
-          "desc": "Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
-          "count": 3,
-          "placeId": "10",
-          "img": "",
-          "hours": "7-10",
-          "date": "2020-02-04"
-        },
-        {
-          "id": 18,
-          "name": "play ground ",
-          "price": "50",
-          "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
-          "count": 2,
-          "placeId": "10",
-          "img": "",
-          "hours": "4-6",
-          "date": "2020-02-05"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "totalPrice": 280,
-      "reservedGame": [
-        {
-          "id": 17,
-          "name": "ice skatting",
-          "price": "60",
-          "desc": "Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
-          "count": 3,
-          "placeId": "10",
-          "img": "",
-          "hours": "7-10",
-          "date": "2020-02-04"
-        },
-        {
-          "id": 18,
-          "name": "play ground ",
-          "price": "50",
-          "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
-          "count": 2,
-          "placeId": "10",
-          "img": "",
-          "hours": "4-6",
-          "date": "2020-02-05"
-        }
-      ],
-      "id": 4
     }
   ],
   "weekEnd": [
