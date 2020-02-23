@@ -43,6 +43,10 @@ export class WeekendComponent implements OnInit {
     $('.email').css("display","none")
   })
 
+  $('.userName').click(function(){
+    alert('clicked');
+  })
+
 
   }
   onSubmit(form){

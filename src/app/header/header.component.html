@@ -4,15 +4,14 @@
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="container">
+    <div class="wrapper">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav  m-auto mt-2 mt-lg-0 ">
                 <li class="nav-item active">
                     <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -23,8 +22,7 @@
                     <a class="nav-link" routerLink="/events">Events</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Reservations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -38,29 +36,26 @@
                 </li>
             </ul>
             <div class="form-inline form my-2 my-lg-0 ">
-                <input #inputSearch class="form-control mr-sm-2 " type="search " placeholder="Search "
-                    aria-label="Search " (input)="lookingFor($event) ">
+                <input #inputSearch class="form-control mr-sm-2 " type="search " placeholder="Search " aria-label="Search " (input)="lookingFor($event) ">
 
                 <button id="searchBtn" class="btn  my-2 my-sm-0 " type="button"><i
                         class="fas fa-search text-white"></i></button>
                 <div class=" searchResults bg-light d-block  rounded text-center w-100 ">
-                    <a class="d-block text-dark style-none py-1 w-100" *ngFor="let data of wanteddata "
-                        routerLink="/place/{{data.id}} "
-                        (click)="handlingSearch(inputSearch) ">{{data.name}}-{{data.id}}</a>
+                    <a class="d-block text-dark style-none py-1 w-100" *ngFor="let data of wanteddata " routerLink="/place/{{data.id}} " (click)="handlingSearch(inputSearch) ">{{data.name}}-{{data.id}}</a>
                 </div>
             </div>
 
-            <!-- <a class="btn" href=""><i class="fas fa-user-circle text-light"></i></a> -->
-            <div class="dropdown">
-                <button *ngIf="headerLoggedin == true || loggenfromlocalstorage==true ; else loggedOut"
-                    class="btn   dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+
+            <div *ngIf="headerLoggedin == true || loggenfromlocalstorage==true ; else loggedOut" class="dropdown">
+                <button class="btn   dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                     <i class="fas fa-user-circle text-light"></i>
+                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                        <a routerLink="/user-profile" class="dropdown-item w-100 btn btn-danger">profile</a>
+                        <a class="btn btn-danger dropdown-item" (click)="loggingOut()">logout</a>
+                    </div>
                 </button>
-                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                    <a routerLink="/user-profile" class="dropdown-item w-100 btn btn-danger">profile</a>
-                    <a class="btn btn-danger dropdown-item" (click)="loggingOut()">logout</a>
-                </div>
+
             </div>
         </div>
 

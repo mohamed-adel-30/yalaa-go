@@ -1,12 +1,94 @@
-.gallary .thumbnails .thumb-img{
-  width: 20%;
+.gallary .thumb-style .thumb-img{
+  width: 23%;
+transition: all 0.3s ease-in-out;
+opacity: 0.5;
 
 }
-.selected{
-  border: 1px solid red;
+.thumb-style{
+  text-align: center;
+  padding-top: 20px;
+}
+img.selected{
+  opacity:1 !important;
 }
 .places-section{
-  padding-bottom: 100px;
+  padding-bottom: 30px;
+}
+.place-desc{
+  font-family: 'Poppins', sans-serif;
+  h1{
+    font-weight: 900;
+  }
+  .specificSpan{
+    font-weight: 700;
+  }
+}
+.games-section{
+  padding: 50px 0;
+  margin-bottom: 50px;
+}
+.games-details:hover{
+box-shadow: -1px 7px 11px 3px #e8e5e580;
+}
+.games-details{
+  border: 1px solid #dddddda8;
+  .game-name{
+    background-color: #ffa21d;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .game-img{
+    text-align: center;
+  }
+}
+.game-price{
+  font-weight: 900;
+  color: #ffa21d;
+  font-size: 25px;
+  span{
+    font-weight: 100;
+    font-size: 15px;
+  }
+}
+.game-desc{min-height: 118px;}
+.subTotal-title{
+  font-size: 25px;
+  color:#d80707;
+  font-weight: 600;
+ span {
+  font-weight: 100;
+  font-size: 20px;
+  }
+}
+
+// favourite
+.fa-heart{font-size: 30px;}
+.solid{
+  color: red;
+}
+// favourite
+polygon{
+  fill: #ffa21d;
+}
+.payment-btn{
+  background-color: #ffa21d;
+  border: #ffa21d;
+}
+.payment-btn:hover{
+  background-color: #ffa11d96;
+}
+.title{    
+  text-align: center;
+  color: #ffa21d;
+  font-size: 43px;}
+.games-card{padding-bottom: 30px;}
+.game-count{
+  text-align: center;
+  span{
+    padding: 5px 8px 8px;
+    border: 1px solid;
+  }
 }
 .nreaMe-section{
   padding-bottom: 100px;
@@ -37,6 +119,9 @@
   display: inline-block;
   height: 12px;
   width: 24%;
+}
+.container-font{
+  font-family: 'Poppins', sans-serif;
 }
 
 .specific-progress-warning
