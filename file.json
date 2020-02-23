@@ -1123,59 +1123,9 @@
   ],
   "rates": [
     {
-      "value": 4,
-      "placeId": "3",
-      "userId": 6,
-      "id": 1
-    },
-    {
-      "value": 4,
-      "placeId": "3",
-      "userId": 6,
-      "id": 2
-    },
-    {
-      "value": 4,
-      "placeId": "3",
-      "userId": 6,
-      "id": 3
-    },
-    {
       "value": 5,
       "placeId": "4",
-      "id": 4
-    },
-    {
-      "value": 5,
-      "placeId": "6",
-      "id": 5
-    },
-    {
-      "value": 3,
-      "placeId": "6",
-      "id": 6
-    },
-    {
-      "value": 5,
-      "placeId": "10",
-      "id": 7
-    },
-    {
-      "value": 4,
-      "placeId": "3",
-      "userId": 6,
-      "arrOfVals": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "id": 8
-    },
-    {
-      "value": 5,
-      "placeId": "4",
-      "userId": 6,
+      "userId": 10,
       "arrOfVals": [
         0,
         1,
@@ -1183,32 +1133,7 @@
         3,
         4
       ],
-      "id": 9
-    },
-    {
-      "value": 5,
-      "placeId": "4",
-      "userId": 6,
-      "arrOfVals": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 10
-    },
-    {
-      "value": 4,
-      "placeId": "7",
-      "userId": 6,
-      "arrOfVals": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "id": 11
+      "id": 12
     }
   ],
   "favourites": [

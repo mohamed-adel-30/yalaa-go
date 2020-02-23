@@ -74,6 +74,10 @@ export class HttpServiceService {
     return this.http.get("http://localhost:3000/favourites");
   }
 
+  updateRate(id, body) {
+    return this.http.put("http://localhost:3000/rates/" + id, body);
+  }
+
   deleteFav(id) {
     return this.http.delete("http://localhost:3000/favourites/" + id)
   }
@@ -91,8 +95,8 @@ export class HttpServiceService {
     return this.http.post("http://localhost:3000/comments", body, headers);
   }
 
-  postRate(body, headers) {
-    return this.http.post("http://localhost:3000/rates", body, headers);
+  postRate(body) {
+    return this.http.post("http://localhost:3000/rates", body);
   }
 
   updateUserData(id, body, headers) {

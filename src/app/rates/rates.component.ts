@@ -15,10 +15,10 @@ import { HttpServiceService } from './../http-service.service'
   ]
 })
 export class RatesComponent implements OnInit, ControlValueAccessor {
+  allRates;
   @Input() id;
   flag = true;
   places_;
-  rateObj = { userId: 1, value: 0 }
   public disabled: boolean;
   public value: number;
   public rating = [
@@ -67,14 +67,11 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     }
 
     if (this.flag) {
-      let headers = { "Content-Type": "application/json" }
       let user;
       user = this.service.getData("user")
-      // console.log("hhhhhhhhhhhhhhhh")
-      // console.log(user)
-      let arr=[];
-      for(let i=0;i<this.value;i++)
-      {
+
+      let arr = [];
+      for (let i = 0; i < this.value; i++) {
         arr.push(i)
       }
       let body =
@@ -82,18 +79,39 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
         "value": this.value,
         "placeId": this.id,
         "userId": user.id,
-        "arrOfVals":arr
+        "arrOfVals": arr
       }
-      this.service.postRate(body, headers).subscribe(data => {
-        // console.log(data);
-      })
+
+      for (let rate of this.allRates) {
+        if (rate.userId == user.id && rate.placeId == this.id) {
+          console.log("true");
+          console.log(rate);
+          this.service.updateRate(rate.id, body).subscribe(data => {
+            console.log(data);
+          });
+        }
+        else {
+          console.log("false");
+          this.service.postRate(body).subscribe(data => {
+            console.log(data);
+          })
+        }
+      }
+
+
+
     }
-    this.flag = false;
+    // this.flag = false;
   }
   constructor(private service: HttpServiceService) {
+    this.service.getRates().subscribe(data => {
+      this.allRates = data;
+      console.log(this.allRates);
+    })
   }
 
   ngOnInit(): void {
+
   }
 
 }
