@@ -1,7 +1,10 @@
-<nav class="navbar  navbar-expand-sm justify-content-between navbar-dark">
-    <a class="navbar-brand" href="#"><img class="w-50" src="./../../assets/Home/logo.png" alt=""></a>
-    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar  navbar-expand-sm justify-content-between align-content-center navbar-dark">
+    <a class="navbar-brand  ml-5" href="#">
+        <img class="w-50" src="./../../assets/Home/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="wrapper">
@@ -18,9 +21,9 @@
                         <p *ngFor="let cat of cats" class="dropdown-item" routerLink="/cat/{{cat.id}}">{{cat.name}}</p>
                     </div>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" routerLink="/events">Events</a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Reservations
@@ -59,9 +62,9 @@
             </div>
         </div>
 
-        <li class="nav-item">
+        <li class="nav-item ">
             <ng-template #loggedOut>
-                <a class="nav-link btn btn-light bg-light" routerLink="/register">SignUp</a>
+                <a class="nav-link signup" routerLink="/register">SignUp</a>
             </ng-template>
         </li>
 

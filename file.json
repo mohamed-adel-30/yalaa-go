@@ -165,18 +165,33 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "Mustafa Kamel",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3,4,5],
       "paymentMethod": "Ticket",
       "avgrate": 5,
-      "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
+      "mainImage": "https://www.albawabhnews.com/upload/photo/news/354/1/600x338o/481.jpg?q=1",
       "imgs": [
-        "https://i.postimg.cc/3wrgP8qk/29597227-765184363682115-8821015101476391077-n-3x.png",
-        "https://i.postimg.cc/qqQDvLNN/71651163-3026233807391152-2258242780025323520-o-3x.png",
-        "https://i.postimg.cc/Mp6MGsm4/71225889-1159888144211733-5196100801054900224-o-3x.png"
+        "https://www.shorouknews.com/uploadedimages/Other/original/masrah.jpg",
+        "https://image.shutterstock.com/image-illustration/theater-masks-drama-comedy-red-260nw-718511797.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKz1NJwH13z3qGk2sRFbgZBaTB-pSqxyKNWe87bDDld0DpXnu"
       ],
       "status": "closed",
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
-      "reservation": "false",
+      "reservation": "true",
       "kid-friendly": "false",
       "contact": {
         "phone": "0123456859",
@@ -193,6 +208,57 @@
       ],
       "address": " Alexandria Desert Rd, Gharb El Noubareya",
       "location": "Alexandria Desert Rd",
+      "comments": [
+        {
+          "userId": 1,
+          "comment": "The place isn’t the best in condition but it’s fair enough."
+        },
+        {
+          "userId": 4,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3],
+      "avgrate": 3,
+      "paymentMethod": "Ticket",
+      "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
+      "imgs": [
+        "https://i.postimg.cc/3wrgP8qk/29597227-765184363682115-8821015101476391077-n-3x.png",
+        "https://i.postimg.cc/qqQDvLNN/71651163-3026233807391152-2258242780025323520-o-3x.png",
+        "https://i.postimg.cc/Mp6MGsm4/71225889-1159888144211733-5196100801054900224-o-3x.png"
+      ],
+      "openHours": "11:00 AM - 3:00 AM",
+      "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
+      "status": "open now",
+      "reservation": "true",
+      "kid-friendly": "false",
+      "contact": {
+        "phone": "0123456859",
+        "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
+        "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Taverna Aquacity",
+      "catId": [
+        3,
+        2,
+        13
+      ],
+      "address": "Kom Hafin, Abu El Matamir, ",
+      "location": "Kom Hafin",
+      "comments": [
+        {
+          "userId": 1,
+          "comment": "The place isn’t the best in condition but it’s fair enough."
+        },
+        {
+          "userId": 4,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3,4],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -226,6 +292,17 @@
       ],
       "address": "Gate 4 - 1st Alexandria Cairo Desert Road - Alexandria, Alexandria Governorate 11432",
       "location": "Gate 4 - 1st Alexandria",
+      "comments": [
+        {
+          "userId": 2,
+          "comment": "I love this place very much because I can buy what I need easily there. Everything, clothes,food, shoes... etc And I can eat from different restaurants and sit on a Cafe. There is a wonderful cinema and a funfair for kids."
+        },
+        {
+          "userId": 1,
+          "comment": "really good time for shopping and have a good time there.  alot of places to visit coffee is good alot of brands and market is amazing too . really enjoyable  time and place I recommended for all people"
+        }
+      ],
+      "rates": [1,2],
       "avgrate": 2,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -258,6 +335,17 @@
       ],
       "address": "El-Gaish Rd, San Stifano, Qism El-Raml, Alexandria Governorate",
       "location": "san stifano",
+      "comments": [
+        {
+          "userId": 2,
+          "comment": "It is one of the places where you can enjoy drinking your cup of coffee ☕ without being bothered by anyone.. It has many shops and restaurants for shopping. I personally like going there each now and then."
+        },
+        {
+          "userId": 3,
+          "comment": "I like this place but the only problem is the sitting in the food court once you buy the food you can’t sit and enjoy your food it needed to be bigger than that more seats and tables the cinema up there is cool it’s clean and nice a bit high “price-wise” but it’s fine for me"
+        }
+      ],
+      "rates": [1,2,3,4,5],
       "avgrate": 5,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -287,6 +375,13 @@
       ],
       "address": "El-Gaish Rd, San Stifano, Qism El-Raml, Alexandria Governorate",
       "location": "san stifano",
+      "comments": [
+        {
+          "userId": 2,
+          "comment": "Perfect for beginners, the staff are good at what they do, fairly priced. I recommend 2 hours, and the ski pack for the adults,whole package for children."
+        }
+      ],
+      "rates": [1,2,3,4],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -314,6 +409,21 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "agami",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3,4],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -341,6 +451,21 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "miami",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3,4],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -369,6 +494,21 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "sidi gaber",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3],
       "avgrate": 3,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -400,6 +540,21 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "Bahri",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3,4,5],
       "avgrate": 5,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -429,6 +584,21 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "Bahri",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3],
       "avgrate": 3,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -456,6 +626,21 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "Bahri",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2],
       "avgrate": 2,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -484,6 +669,21 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "roushdy",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1],
       "avgrate": 1,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -513,6 +713,21 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "janakleece",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [1,2,3,4],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -1005,7 +1220,7 @@
       ],
       "desc": " Most of the landscapes and their accompanying plants and animals in a national park are kept in their natural state..",
       "price": "200",
-      "placeId": "1",
+      "placeId": "2",
       "img": "http://placehold.it/200/200"
     }
   ],
