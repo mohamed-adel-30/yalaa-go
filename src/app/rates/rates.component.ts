@@ -17,7 +17,6 @@ import { HttpServiceService } from './../http-service.service'
 export class RatesComponent implements OnInit, ControlValueAccessor {
   allRates;
   @Input() id;
-  flag = true;
   places_;
   public disabled: boolean;
   public value: number;
@@ -78,7 +77,6 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
       this.onTouch();
     }
 
-    if (this.flag) {
       let user = this.service.getData("user")
 
       let arr = [];
@@ -111,9 +109,6 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
         }
       })
 
-
-    }
-    // this.flag = false;
   }
   constructor(private service: HttpServiceService) {
 
