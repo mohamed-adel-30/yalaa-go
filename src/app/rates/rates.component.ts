@@ -17,7 +17,6 @@ import { HttpServiceService } from './../http-service.service'
 export class RatesComponent implements OnInit, ControlValueAccessor {
   allRates;
   @Input() id;
-  flag = true;
   places_;
   public disabled: boolean;
   public value: number;
@@ -58,18 +57,7 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     this.disabled = isDisabled;
   }
 
-  getRateId(allRates, userId, placeId) {
-    let requiredRate;
-    for (let rate of allRates) {
-      if (rate.userID == userId && rate.placeId == placeId) {
-        requiredRate = rate.id;
-      }
-      else {
-        requiredRate = rate.id;
-      }
-    }
-    return requiredRate;
-  }
+
 
   setRating(star: any) {
     if (!this.disabled) {
@@ -78,42 +66,40 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
       this.onTouch();
     }
 
-    if (this.flag) {
-      let user = this.service.getData("user")
+    let user = this.service.getData("user")
 
-      let arr = [];
-      for (let i = 0; i < this.value; i++) {
-        arr.push(i)
-      }
-      let body =
-      {
-        "value": this.value,
-        "placeId": this.id,
-        "userId": user.id,
-        "arrOfVals": arr
-      }
-
-      this.service.getRates().subscribe(data => {
-        this.allRates = data;
-
-        let filtered = this.allRates.filter(item => item.placeId == this.id && item.userId == user.id)
-
-
-        if (filtered.length > 0) {
-          this.service.updateRate(filtered[0].id, body).subscribe(data => {
-            console.log("uppppppdated" + data);
-          });
-        }
-        else {
-          this.service.postRate(body).subscribe(data => {
-            console.log("posssssted" + data);
-          })
-        }
-      })
-
-
+    let arr = [];
+    for (let i = 0; i < this.value; i++) {
+      arr.push(i)
     }
-    // this.flag = false;
+    let body =
+    {
+      "value": this.value,
+      "placeId": this.id,
+      "userId": user.id,
+      "arrOfVals": arr
+    }
+
+    this.service.getRates().subscribe(data => {
+      this.allRates = data;
+
+      let filtered = this.allRates.filter(item => item.placeId == this.id && item.userId == user.id)
+
+
+      if (filtered.length > 0) {
+        this.service.updateRate(filtered[0].id, body).subscribe(data => {
+          console.log("uppppppdated" + data);
+        });
+      }
+      else {
+        this.service.postRate(body).subscribe(data => {
+          console.log("posssssted" + data);
+        })
+      }
+    })
+
+
+
   }
   constructor(private service: HttpServiceService) {
 
