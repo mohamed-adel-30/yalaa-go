@@ -99,7 +99,6 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     })
 
 
-
   }
   constructor(private service: HttpServiceService) {
 
