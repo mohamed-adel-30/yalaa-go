@@ -1,24 +1,42 @@
+
 .login{
-    margin-top: 56px;
-    figure{
-        height: 100vh;
-        img{
-            max-height: 100%;
-        }
-    }
+    // background-image: url("https://i.postimg.cc/26pXNcnN/carnival-3008102.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    // position: absolute;
+    // bottom: 0;
+   background-image: linear-gradient(rgba(111, 111, 111, 0.5), rgba(111, 111, 111, 0.5)),  url("https://i.postimg.cc/26pXNcnN/carnival-3008102.jpg");
+
 }
+
 .form-wrapper{
-    background-color: #111;
-    height: 100vh;
+    background-color: rgba(255, 255, 255,0.9);
+    height: 80vh;
     text-align: center;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
+    margin: 5rem;
+    border-radius: 30px;
+    margin-top: 6rem;
 }
 
-.logo{
-    color: #ffa21d;
+@media (max-width:500px){
+    .form-wrapper{
+        margin: 0;
+        border-radius: 0;
+    }
 }
+.logo {
+    color: #ffa21d;
+    margin-top: 0;
+    width: 30%;
+    margin: 0 auto;
+  }
+  .logo img {
+      max-width: 100%;
+  }
 form{
     display: flex;
     flex-flow: column;
@@ -27,6 +45,9 @@ form{
     height: 70%;
     width: 80%;
     margin: 0 auto;
+}
+.email i , .password i{
+    color: #ffa21d;
 }
 .email , .password {
     display: flex;
@@ -37,24 +58,29 @@ form{
     border: none;
     background:none;
     padding: 10px;
-    color: #999;
+    color: #111;
+    font-size: 14px;
 }
 .pass p {
     text-align: right;
-    color: #999;
-    font-size: 12px;
+    color: #111;
+    font-size: 10px;
 }
 .checkbox{
     display: flex;
     align-items: center;
 }
 .checkbox input{
-    background-color: #999;
+    background-color: #111;
 }
 .checkbox label{
     margin: 0;
     padding-left: 15px;
-    color: #999;
+    color: #111;
+    font-size: 12px;
+}
+.checkbox label::placeholder{
+    font-size: 12px;
 }
 button{
     border: none;
@@ -62,22 +88,27 @@ button{
     border-radius: 30px;
     background-color: #ffa21d;
     align-content: center;
-    color: #111111;
+    color: white;
     text-transform: capitalize;
+    font-weight:500;
 }
 .signup {
-    color: #999;
-    text-transform: capitalize;
-    font-size: 0.8rem;
+    color: #111;
+   
+    font-size: 12px;
 }
 .signup span{
     color: #ffa21d;
+    cursor: pointer;
+    font-weight: 500;
 }
 .errormsg p{
-    color:   red;
+    color:   #dd583f;
+    font-size: 14px;
+    text-transform: capitalize;
 }
-@media (max-width:500px){
-    .loginimg{
-        display: none;
-    }
-}
+// @media (max-width:500px){
+//     .loginimg{
+//         display: none;
+//     }
+// }

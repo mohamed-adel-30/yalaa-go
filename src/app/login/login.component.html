@@ -1,35 +1,12 @@
-<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
-
-    <input formControlName="email" placeholder="Your email">
-  
-    <div *ngIf="myForm.controls.email.hasError('pattern')">
-      Oops, wrong pattern buddy!
-    </div> 
-  
-    <input formControlName="password" placeholder="password">
-  
-    <div *ngIf="errorcheck">
-        invalid email or password
-    </div>
-  
-    <button type="submit" [disabled]="myForm.invalid">
-      log in
-    </button>
-  </form> -->
-
-
-  <!-- ================================================== -->
-
-  
 <section class="login container-fluid">
-  <section class="login-wrapper row">
-    <section class="loginimg col-md-6"> 
+  <section class="login-wrapper row d-flex justify-content-around">
+    <!-- <section class="loginimg col-md-6"> 
       <figure>
         <img src="https://i.postimg.cc/wMJG6K0G/Download-premium-psd-of-Young-caucasian-girl-with-an-orange-ball.png" alt="">
       </figure>
-    </section>
+    </section> -->
 
-    <section class="form-wrapper col-md-6 ">
+    <section class="form-wrapper col-md-6 col-sm-12   ">
       <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="container">
 
         <div class="logo ">
@@ -55,7 +32,7 @@
         
 
           <div class="errormsg" *ngIf="errorcheck" >
-            <p>invalid email or password</p> 
+            <p>invalid email or password !</p> 
           </div>
 
           <div class="button">
@@ -65,12 +42,12 @@
           </div> 
 
           <div class="signup " routerLink="/register">
-            don't have an account? 
+            Don't have an account? 
             <span>sign up</span>
           </div>
 
         
         </form>
-    </section>
+    </section> 
   </section>
 </section>
