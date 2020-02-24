@@ -40,6 +40,9 @@ export class SingleCategoryComponent implements OnInit {
   spesifcFavId = [];
   user;
   placeLoggedin;
+  /////////switch page views//////////
+  list=true;
+  gallery;
 
 
 
@@ -330,6 +333,15 @@ export class SingleCategoryComponent implements OnInit {
     }
     return this.selctedPlaces
   }
+  ///////////switch views////////
+galleryview(){
+  this.gallery=true;
+  this.list=false;
+}
+listview(){
+  this.list=true;
+  this.gallery=false;
+}
 
 
 

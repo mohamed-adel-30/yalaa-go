@@ -32,6 +32,7 @@ export class PlacesComponent implements OnInit {
   // ........................
   appear = false //appear section
   nearByPlacses = [];
+  MAX3 = []
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
 
@@ -250,6 +251,14 @@ export class PlacesComponent implements OnInit {
     for (let place of this.places) {
       if (place.location == this.singlePlaceData.location && place.id != this.singlePlaceData.id) {
         this.nearByPlacses.push(place)
+      }
+    }
+    for (let i = 0; i < this.nearByPlacses.length; i++) {
+      if (i == 3) {
+        break;
+      }
+      else {
+        this.MAX3.push(this.nearByPlacses[i])
       }
     }
     // console.log("NEEEEEEEEAR  places")
