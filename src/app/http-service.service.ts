@@ -9,10 +9,9 @@ export class HttpServiceService {
   private headerProfileBehaviour = new BehaviorSubject(null)
   headerProfile = this.headerProfileBehaviour.asObservable();
 
+
   displayProfileIcon(loggedinparam) {
     this.headerProfileBehaviour.next(loggedinparam);
-    console.log("hello from service")
-    console.log(loggedinparam)
   }
 
   constructor(private http: HttpClient) { }
@@ -106,6 +105,7 @@ export class HttpServiceService {
   getSinglePlace(id) {
     return this.http.get("http://localhost:3000/places/" + id);
   }
+
 
 
   // ...........general geters and getters functions from session storge...............//

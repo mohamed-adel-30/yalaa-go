@@ -1115,17 +1115,28 @@
   ],
   "rates": [
     {
-      "value": 5,
+      "value": 4,
       "placeId": "4",
-      "userId": 10,
+      "userId": 14,
       "arrOfVals": [
         0,
         1,
         2,
-        3,
-        4
+        3
       ],
-      "id": 12
+      "id": 20
+    },
+    {
+      "value": 4,
+      "placeId": "4",
+      "userId": 13,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 21
     }
   ],
   "favourites": [

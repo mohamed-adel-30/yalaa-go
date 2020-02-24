@@ -58,6 +58,18 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     this.disabled = isDisabled;
   }
 
+  getRateId(allRates, userId, placeId) {
+    let requiredRate;
+    for (let rate of allRates) {
+      if (rate.userID == userId && rate.placeId == placeId) {
+        requiredRate = rate.id;
+      }
+      else {
+        requiredRate = rate.id;
+      }
+    }
+    return requiredRate;
+  }
 
   setRating(star: any) {
     if (!this.disabled) {
@@ -67,8 +79,7 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     }
 
     if (this.flag) {
-      let user;
-      user = this.service.getData("user")
+      let user = this.service.getData("user")
 
       let arr = [];
       for (let i = 0; i < this.value; i++) {
@@ -82,36 +93,39 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
         "arrOfVals": arr
       }
 
-      for (let rate of this.allRates) {
-        if (rate.userId == user.id && rate.placeId == this.id) {
-          console.log("true");
-          console.log(rate);
-          this.service.updateRate(rate.id, body).subscribe(data => {
-            console.log(data);
+      this.service.getRates().subscribe(data => {
+        this.allRates = data;
+
+        let filtered = this.allRates.filter(item => item.placeId == this.id && item.userId == user.id)
+
+
+        if (filtered.length > 0) {
+          this.service.updateRate(filtered[0].id, body).subscribe(data => {
+            console.log("uppppppdated" + data);
           });
         }
         else {
-          console.log("false");
           this.service.postRate(body).subscribe(data => {
-            console.log(data);
+            console.log("posssssted" + data);
           })
         }
-      }
-
+      })
 
 
     }
     // this.flag = false;
   }
   constructor(private service: HttpServiceService) {
+
+  }
+
+
+
+  ngOnInit(): void {
     this.service.getRates().subscribe(data => {
       this.allRates = data;
       console.log(this.allRates);
     })
-  }
-
-  ngOnInit(): void {
-
   }
 
 }
