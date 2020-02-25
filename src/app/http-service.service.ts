@@ -9,12 +9,32 @@ export class HttpServiceService {
   private headerProfileBehaviour = new BehaviorSubject(null)
   headerProfile = this.headerProfileBehaviour.asObservable();
 
+  private headerProfileBehaviourowner = new BehaviorSubject(null)
+  headerProfileowner = this.headerProfileBehaviourowner.asObservable();
+
 
   displayProfileIcon(loggedinparam) {
     this.headerProfileBehaviour.next(loggedinparam);
   }
 
+  displayProfileIconToOwner(loggedinparamowner) {
+    this.headerProfileBehaviourowner.next(loggedinparamowner);
+    console.log("hello from service")
+    console.log(loggedinparamowner)
+  }
+
+
   constructor(private http: HttpClient) { }
+  ////getting owner data
+
+  getownerdata() {
+    return this.http.get("http://localhost:3000/owners");
+  }
+
+  postownerdata(body, header) {
+    return this.http.post("http://localhost:3000/owners", body, header);
+  }
+
 
   paddUser(body, header) {
     return this.http.post("http://localhost:3000/users", body, header)
@@ -28,9 +48,15 @@ export class HttpServiceService {
   gettingData() {
     return this.http.get("http://localhost:3000/categories");
   }
-
+  // ....places.....///
   gettingPlaces() {
     return this.http.get("http://localhost:3000/places");
+  }
+  postPlaces(body, header) {
+    return this.http.post("http://localhost:3000/places", body, header)
+  }
+  PutPlaces(id, body, header) {
+    return this.http.put("http://localhost:3000/places/" + id, body, header)
   }
 
   gettingUsers() {
@@ -39,6 +65,14 @@ export class HttpServiceService {
   gettingPtions() {
     return this.http.get("http://localhost:3000/options");
   }
+  postOptions(body, header) {
+    return this.http.post("http://localhost:3000/options", body, header)
+  }
+  deleteOption(id) {
+    return this.http.delete("http://localhost:3000/options/" + id)
+  }
+
+
 
   getSingleCategory(id) {
     return this.http.get("http://localhost:3000/categories/" + id);
@@ -87,6 +121,10 @@ export class HttpServiceService {
 
   postHistory(body, headers) {
     return this.http.post("http://localhost:3000/history", body, headers);
+  }
+
+  getHistroy() {
+    return this.http.get("http://localhost:3000/history");
   }
 
 

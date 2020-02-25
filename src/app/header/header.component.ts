@@ -19,13 +19,12 @@ export class HeaderComponent implements OnInit {
   places;
   headerLoggedin;
   loggenfromlocalstorage;
+  loggenfromlocalstorageOwner;
+  ownerloggedinheader;
   constructor(private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
-
     this.httpService.gettingData().subscribe(
       data => {
         this.cats = data;
-        // console.log("heeeeeeeeeeeere")
-        // console.log(this.cats)
 
         for (let regstCat of this.cats) {
           // console.log("inside for")
@@ -38,28 +37,29 @@ export class HeaderComponent implements OnInit {
       }
     )
 
-    // console.log(this.cats)
 
     this.httpService.gettingPlaces().subscribe(data => {
       this.places = data;
-      // console.log(this.places)
     })
 
-    this.loggenfromlocalstorage = this.httpService.getData("loggedin")
-    // console.log("heeeeeeello")
-    // console.log(this.loggenfromlocalstorage)
+
+    this.loggenfromlocalstorage = this.httpService.getData("loggedin");
+    this.loggenfromlocalstorageOwner = this.httpService.getData("ownerloggedin");
 
   }
 
   ngOnInit() {
-    // this.cats=this.placeService.obj.categories;
+    // da 3shan yasm3 fi s3thaaaaaaaa
     this.httpService.headerProfile.subscribe(data => { ///object behavior
       this.headerLoggedin = data;
     })
 
+    this.httpService.headerProfileowner.subscribe(data => { ///object behavior
+      this.ownerloggedinheader = data;
+    })
     // search input toggle:
-     
-    $('#searchBtn').click(function(){
+
+    $('#searchBtn').click(function () {
       $('.form-control').toggle()
     })
 
@@ -68,9 +68,12 @@ export class HeaderComponent implements OnInit {
 
   loggingOut() {
     this.headerLoggedin = false;
+    this.ownerloggedinheader = false;
     localStorage.clear();
     this.httpService.setData("loggedin", false);
+    this.httpService.setData("ownerloggedin", false);
     this.loggenfromlocalstorage = this.httpService.getData("loggedin");
+    this.loggenfromlocalstorageOwner = this.httpService.getData("ownerloggedin")
     this.router.navigate(["/"]);
 
   }

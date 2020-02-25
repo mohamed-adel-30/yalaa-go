@@ -33,7 +33,7 @@ export class SingleCategoryComponent implements OnInit {
   setOfLocation;
 
   filteredData = [];
-  check = false;
+  // check = false;
   // .........................//
   favs: any = [];
   checkFav = [];
@@ -41,7 +41,7 @@ export class SingleCategoryComponent implements OnInit {
   user;
   placeLoggedin;
   /////////switch page views//////////
-  list=true;
+  list = true;
   gallery;
 
 
@@ -73,6 +73,7 @@ export class SingleCategoryComponent implements OnInit {
           this.repetedLocatins = [];
           this.places = data;
           this.singleSelecetedPlaces = this.getPlacesOfSingleCat(this.singleCatId);
+          this.filteredData = [...this.singleSelecetedPlaces]
 
           // .......favs.........//
           this.user = this.httpService.getData("user");
@@ -115,6 +116,9 @@ export class SingleCategoryComponent implements OnInit {
 
   ngOnInit() {
 
+
+  }
+  ngAfterViewInit() {
 
   }
 
@@ -215,7 +219,7 @@ export class SingleCategoryComponent implements OnInit {
     this.arrLocationsChecked = [];
     this.arrofChecked = [];
 
-    this.check = true;
+    // this.check = true;
     this.filteredData = [];
     // console.log('changed')
     for (let place of this.singleSelecetedPlaces) {
@@ -291,7 +295,7 @@ export class SingleCategoryComponent implements OnInit {
 
   }
   chechkingstatus(place, status) {
-    if ((place.status == "open" && status.checked) || status.checked == false) {
+    if ((place.status == "open now" && status.checked) || status.checked == false) {
 
       return true
     }
@@ -334,14 +338,14 @@ export class SingleCategoryComponent implements OnInit {
     return this.selctedPlaces
   }
   ///////////switch views////////
-galleryview(){
-  this.gallery=true;
-  this.list=false;
-}
-listview(){
-  this.list=true;
-  this.gallery=false;
-}
+  galleryview() {
+    this.gallery = true;
+    this.list = false;
+  }
+  listview() {
+    this.list = true;
+    this.gallery = false;
+  }
 
 
 
