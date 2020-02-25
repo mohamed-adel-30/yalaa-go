@@ -14,7 +14,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "events", component: AboutUsComponent },
+  { path: "ownerProfile", component: AboutUsComponent },
   { path: "Weekend", component: WeekendComponent },
   { path: "cat/:id", component: SingleCategoryComponent },
   { path: "register", component: RegisterComponent },

@@ -16,7 +16,7 @@
           <i class="fas fa-user-alt"></i>
           <input type="email" formControlName="email" placeholder="User email" class="col-12">
         </div>
-        
+
         <div class="pass ">
           <div class="password">
             <i class="fas fa-lock"></i>
@@ -26,28 +26,28 @@
         </div>
 
         <div class="checkbox ">
-          <input type="checkBox">
-          <label class="">Remember me</label>
+          <input type="checkBox" #logginOwner>
+          <label class="">I'm an owner</label>
         </div>
-        
 
-          <div class="errormsg" *ngIf="errorcheck" >
-            <p>invalid email or password !</p> 
-          </div>
 
-          <div class="button">
-            <button type="submit" [disabled]="myForm.invalid">
-              login
-            </button>
-          </div> 
+        <div class="errormsg" *ngIf="errorcheck">
+          <p>invalid email or password !</p>
+        </div>
 
-          <div class="signup " routerLink="/register">
-            Don't have an account? 
-            <span>sign up</span>
-          </div>
+        <div class="button">
+          <button type="submit" [disabled]="myForm.invalid">
+            login
+          </button>
+        </div>
 
-        
-        </form>
-    </section> 
+        <div class="signup " routerLink="/register">
+          Don't have an account?
+          <span>sign up</span>
+        </div>
+
+
+      </form>
+    </section>
   </section>
 </section>
