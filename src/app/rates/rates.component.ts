@@ -16,8 +16,10 @@ import { HttpServiceService } from './../http-service.service'
 })
 export class RatesComponent implements OnInit, ControlValueAccessor {
   allRates;
+  place;
   @Input() id;
-  places_;
+  placeRates = 0;
+  avgRateArr = [];
   public disabled: boolean;
   public value: number;
   public rating = [
@@ -58,6 +60,17 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
   }
 
 
+  calcAvgRate(filtered2) {
+    this.placeRates = 0;
+    let count = 0;
+    for (let fil of filtered2) {
+      this.placeRates += fil.value;
+      console.log(fil.value, this.placeRates);
+      count++;
+    }
+    this.placeRates = Math.round(this.placeRates / count);
+    return this.placeRates;
+  }
 
   setRating(star: any) {
     if (!this.disabled) {
@@ -83,7 +96,7 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     this.service.getRates().subscribe(data => {
       this.allRates = data;
 
-      let filtered = this.allRates.filter(item => item.placeId == this.id && item.userId == user.id)
+      let filtered = this.allRates.filter(item => item.placeId == this.id && item.userId == user.id);
 
 
       if (filtered.length > 0) {
@@ -96,10 +109,34 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
           console.log("posssssted" + data);
         })
       }
+
+      let filtered2 = this.allRates.filter(item => item.placeId == this.id);
+      let avgRate = this.calcAvgRate(filtered2);
+
+      for (let i = 0; i < avgRate; i++) {
+        this.avgRateArr.push(i);
+      }
+
+      this.service.getSinglePlace(this.id).subscribe(data => {
+        this.place = data;
+      })
+      this.place.avgrate = avgRate;
+      this.place.rates = this.avgRateArr;
+      console.log(this.place);
+
+      this.service.updatePlaceAvgRate(this.id, this.place).subscribe(data => {
+        console.log(data);
+
+      })
+      this.avgRateArr = [];
+
+
+
+
     })
 
-
   }
+
   constructor(private service: HttpServiceService) {
 
   }
@@ -110,6 +147,10 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     this.service.getRates().subscribe(data => {
       this.allRates = data;
       console.log(this.allRates);
+    });
+
+    this.service.getSinglePlace(this.id).subscribe(data => {
+      this.place = data;
     })
   }
 

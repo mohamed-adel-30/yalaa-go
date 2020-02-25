@@ -9,7 +9,7 @@
         <button class="btn btn-primary ">{{singleCatData.name}}</button>
       </div>
     </div>  -->
-    <div class="card-name">{{singleCatData.name}}</div>
+    <div *ngIf="singleCatData" class="card-name">{{singleCatData.name}}</div>
     <div class="home" routerLink="/">
 
       <svg height="40" width="90" class="svg">
