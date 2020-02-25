@@ -106,6 +106,13 @@ export class HttpServiceService {
     return this.http.get("http://localhost:3000/places/" + id);
   }
 
+  getSingleUser(id) {
+    return this.http.get("http://localhost:3000/users/" + id);
+  }
+
+  updatePlaceAvgRate(id, body) {
+    return this.http.put("http://localhost:3000/places/" + id, body);
+  }
 
 
   // ...........general geters and getters functions from session storge...............//

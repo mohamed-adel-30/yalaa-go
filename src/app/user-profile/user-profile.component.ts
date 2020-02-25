@@ -14,6 +14,7 @@ export class UserProfileComponent implements OnInit {
 
   user;
   usersData;
+  userData;
   checker;
 
 
@@ -80,14 +81,18 @@ export class UserProfileComponent implements OnInit {
     }
   }
   ngOnInit() {
+    
     this.user = this.service.getData("user");
+    this.service.getSingleUser(this.user.id).subscribe(data => {
+      this.userData = data;
+    })
+
     this.service.gettingUsers().subscribe(data => {
       this.usersData = data;
     })
     this.myForm = new FormGroup({
       name: new FormControl(this.user.name, Validators.required),
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(/^[a-z]\w{1,}@[a-z]{1,}.com$/)]),
-      password: new FormControl(this.user.password, [Validators.required, Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{5,}$/)])
     });
 
 
@@ -112,18 +117,18 @@ export class UserProfileComponent implements OnInit {
   }
 
 
-  checkPass(pass, name, mail, passs) {
+  checkPass(pass, name, mail) {
     if (this.checkMail(mail.value) == false && this.user.email != mail.value) {
       alert('mail found');
       return;
     }
 
-    if (pass.value == this.user.password && this.user.email == mail.value) {
+    if (pass.value == this.userData.password && this.user.email == mail.value) {
 
       this.newObj = {
         "name": name.value,
         "email": mail.value,
-        "password": passs.value,
+        "password": this.userData.password,
         "image": this.user.image,
         "visa": this.user.visa,
         "id": this.user.id
