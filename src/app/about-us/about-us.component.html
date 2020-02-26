@@ -20,9 +20,28 @@
 
   <div *ngIf="ownerOptions">
     <ul>
-      <li *ngFor="let i of ownerOptions" style="border:1px solid orange;">
-        optiooooooons--{{i.name}}----{{i.desc}}---{{i.price}}---{{i.id}}
-        <button class="btn btn-danger" (click)="deletinOption(i.id)">delete</button>
+      <li *ngFor="let i of ownerOptions ; let ii=index" style="border:1px solid orange;">
+        optiooooooons--
+        <div *ngIf="editArr[ii]==true;">
+          <input class="{{i.id}}" type="text" value="{{i.name}}" (input)="checkingAllowAddEdited(i.id)">
+          <input class="{{i.id}}" type="text" value="{{i.desc}}" (input)="checkingAllowAddEdited(i.id)">
+          <input class="{{i.id}}" type="number" value="{{i.price}}" (input)="checkingAllowAddEdited(i.id)">
+          <button class="btn btn-primary" (click)="canselingEditOption(ii)">Cansel</button>
+          <button class="btn btn-danger" [disabled]="allowAddEdit==false"
+            (click)="addingEdtedOption(i,ii,i.id)">add</button>
+        </div>
+
+
+
+        <div *ngIf="editArr[ii]==false;">
+          <h2>{{i.name}}</h2>
+          <h3>{{i.desc}}</h3>
+          <h3>{{i.price}}</h3>
+          <h3>---{{i.id}}--{{i}}</h3>
+          <button class="btn btn-danger" (click)="deletinOption(i.id)">delete</button>
+          <button class="btn btn-primary" (click)="editOption(ii,i.id)">edit</button>
+        </div>
+
       </li>
     </ul>
 
@@ -187,4 +206,5 @@
   <input #imgOption type="file" (change)="readURL($event)">
 
   <button [disabled]="OptionValid==true" (click)="submitiingEditedPlace()">Submit</button>
+  <button (click)="canseliing()">cansel</button>
 </div>

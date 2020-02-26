@@ -26,10 +26,11 @@ export class AboutUsComponent implements OnInit {
   OptionName: any = "";
   optionDesc: any = "";
   optionPrice: any = "";
-  imageSrc = "not yet";
+  imageSrc = "http://placehold.it/200/200";
   // .........................///
   arrOfCats = [];
   id;
+  editArr: any = [];
   constructor(private httpService: HttpServiceService, private router: Router) {
     this.owner = this.httpService.getData("owneruser");
     this.httpService.gettingPlaces().subscribe(data => {
@@ -56,16 +57,20 @@ export class AboutUsComponent implements OnInit {
       this.httpService.getHistroy().subscribe(data => {
         this.histroy = data;
         for (let i of this.histroy) {
-          if (i.reservedGame.placeId == this.owenerplace.id) {
+          if (i.reservedGame[0].placeId == this.owenerplace.id) {
             this.ownerHistory.push(i);
           }
         }
+        console.log("hiiiiiiiiiiiiistroy")
+        console.log(data)
+        console.log(this.ownerHistory)
       })
 
       this.httpService.gettingPtions().subscribe(data => {
         this.options = data;
         this.ownerOptions = [];
         for (let i of this.options) {
+          this.editArr.push(false);
           if (i.placeId == this.owenerplace.id) {
             this.ownerOptions.push(i);
           }
@@ -172,7 +177,7 @@ export class AboutUsComponent implements OnInit {
 
 
   fileData2;
-  imageSrc2 = "not yet";
+  imageSrc2 = "http://placehold.it/200/200";
 
   statusOwner;
   reservationOwner;
@@ -306,6 +311,72 @@ export class AboutUsComponent implements OnInit {
     })
 
   }
-  // test
+  canseliing() {
+    this.optionCheck = false;
+  }
 
+
+  ///edit option
+  allowAddEdit = false;
+
+  editOption(ii, id) {
+    this.editArr[ii] = true;
+  }
+
+  canselingEditOption(ii) {
+    this.editArr[ii] = false
+  }
+  checkingAllowAddEdited(id) {
+    let input;
+    input = Array.from(document.getElementsByClassName(id))
+    if (input[0].value.length > 0 && input[1].value.length > 0 && input[2].value.length > 0) {
+      this.allowAddEdit = true;
+    }
+    else {
+      this.allowAddEdit = false;
+    }
+  }
+  addingEdtedOption(i, ii, id) {
+    let input;
+    input = Array.from(document.getElementsByClassName(id))
+    console.log(input)
+    console.log(input[0].value)
+    console.log(input[1].value)
+    console.log(input[2].value)
+    this.editArr[ii] = false;
+
+    ////a7der elobject
+    let headers = { "Conetent-Type": "application/json" }
+    let obj;
+    obj = {
+      "id": i.id,
+      "name": input[0].value,
+      "imgs": [
+        "http://placehold.it/200/200"
+      ],
+      "desc": input[1].value,
+      "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
+      "price": input[2].value,
+      "placeId": this.owenerplace.id,
+      "img": "http://placehold.it/200/200"
+    }
+    this.httpService.PutOptions(id, obj, headers).subscribe(data => {
+      console.log("shatraaa ya esraaaaa")
+      console.log(data);
+      this.httpService.gettingPtions().subscribe(data => {
+        this.options = data;
+        this.ownerOptions = [];
+        for (let i of this.options) {
+          if (i.placeId == this.owenerplace.id) {
+            this.ownerOptions.push(i);
+          }
+        }
+
+      })
+
+    })
+
+
+
+  }
 }

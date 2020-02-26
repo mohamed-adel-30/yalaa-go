@@ -62,6 +62,13 @@ export class HttpServiceService {
   gettingUsers() {
     return this.http.get("http://localhost:3000/users");
   }
+
+  // ..............options............/////
+  PutOptions(id, body, header) {
+    return this.http.put("http://localhost:3000/options/" + id, body, header)
+  }
+
+
   gettingPtions() {
     return this.http.get("http://localhost:3000/options");
   }
