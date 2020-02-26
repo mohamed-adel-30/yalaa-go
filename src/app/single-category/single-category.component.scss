@@ -150,6 +150,7 @@ polygon{
 .cat-name{
     margin-top:12%;
     margin-bottom: 3%;
+    position: relative;
    
     
 }
@@ -173,12 +174,14 @@ polygon{
 }
 .card-name{
     position:absolute;
-    top:141px;
-    left: 156px;
+    top:-62px;
+    left: 90px;
     z-index: 99;
     font-size: 12px;
     font-weight: bold;
     border: 1px solid black;
-    width: 100px;
-    height: 20px;
+    // width: 81px;
+    // height: 27px;
+    text-align: center;
+   
 }

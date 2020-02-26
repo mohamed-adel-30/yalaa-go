@@ -58,6 +58,14 @@
       "image": "",
       "visa": 0,
       "id": 15
+    },
+    {
+      "name": "samaaa  tani",
+      "email": "samaa@asd.com",
+      "password": "123A!a",
+      "image": "",
+      "visa": 0,
+      "id": 16
     }
   ],
   "categories": [
@@ -179,7 +187,13 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3,4,5],
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
       "paymentMethod": "Ticket",
       "avgrate": 5,
       "mainImage": "https://www.albawabhnews.com/upload/photo/news/354/1/600x338o/481.jpg?q=1",
@@ -218,7 +232,11 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3],
+      "rates": [
+        1,
+        2,
+        3
+      ],
       "avgrate": 3,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -258,7 +276,12 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3,4],
+      "rates": [
+        1,
+        2,
+        3,
+        4
+      ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -302,7 +325,10 @@
           "comment": "really good time for shopping and have a good time there.  alot of places to visit coffee is good alot of brands and market is amazing too . really enjoyable  time and place I recommended for all people"
         }
       ],
-      "rates": [1,2],
+      "rates": [
+        1,
+        2
+      ],
       "avgrate": 2,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -345,7 +371,13 @@
           "comment": "I like this place but the only problem is the sitting in the food court once you buy the food you can’t sit and enjoy your food it needed to be bigger than that more seats and tables the cinema up there is cool it’s clean and nice a bit high “price-wise” but it’s fine for me"
         }
       ],
-      "rates": [1,2,3,4,5],
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
       "avgrate": 5,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -381,7 +413,12 @@
           "comment": "Perfect for beginners, the staff are good at what they do, fairly priced. I recommend 2 hours, and the ski pack for the adults,whole package for children."
         }
       ],
-      "rates": [1,2,3,4],
+      "rates": [
+        1,
+        2,
+        3,
+        4
+      ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -423,7 +460,12 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3,4],
+      "rates": [
+        1,
+        2,
+        3,
+        4
+      ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -465,7 +507,12 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3,4],
+      "rates": [
+        1,
+        2,
+        3,
+        4
+      ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -508,7 +555,11 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3],
+      "rates": [
+        1,
+        2,
+        3
+      ],
       "avgrate": 3,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -554,7 +605,13 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3,4,5],
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
       "avgrate": 5,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -598,7 +655,11 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3],
+      "rates": [
+        1,
+        2,
+        3
+      ],
       "avgrate": 3,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -640,7 +701,10 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2],
+      "rates": [
+        1,
+        2
+      ],
       "avgrate": 2,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -683,7 +747,9 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1],
+      "rates": [
+        1
+      ],
       "avgrate": 1,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",
@@ -727,7 +793,12 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [1,2,3,4],
+      "rates": [
+        1,
+        2,
+        3,
+        4
+      ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/R0rZrN8d/Kouta-Park.png",

@@ -9,24 +9,24 @@
         <button class="btn btn-primary ">{{singleCatData.name}}</button>
       </div>
     </div>  -->
-    <div class="card-name">{{singleCatData.name}}</div>
     <div class="home" routerLink="/">
-     
+      
       <svg  height="40" width="90" class="svg">
         <polygon points="0,0 70,0 90,20 70,40 0,40" style="fill-rule:nonzero;">
         </polygon>
       </svg>
     </div>
-
- <div class="cat-name">
-    <svg  height="40" width="120" class="svg">
-      <polygon points="0,0 100,0 120,20 100,40 0,40 20,20" style="fill-rule:nonzero;">
+    
+    <div class="cat-name">
+      <svg  height="40" width="120" class="svg">
+        <polygon points="0,0 100,0 120,20 100,40 0,40 20,20" style="fill-rule:nonzero;">
       </polygon>
     </svg>
   </div>
+  
+  <section class="category-wrapper__containt flex-wrap d-flex col-md-12 col-sm-12 p-0" *ngIf="singleCatData ">
+    <div class="card-name">{{singleCatData.name}}</div>
     
-    <section class="category-wrapper__containt flex-wrap d-flex col-md-12 col-sm-12 p-0" *ngIf="singleCatData ">
-      
       <!-- start filter section -->
       <div class="filter col-md-3 col-sm-12">
       
@@ -237,12 +237,16 @@
         </ul>
       </div>
      
-      <div class="place-contents " [ngClass]="{ 'd-flex flex-wrap col-md-12 justify-content-around ': gallery==true}"  *ngIf='check==false' >
-                <div  class="place-content__item d-flex flex-wrap " [ngClass]="{'col-md-5 ':gallery === true}" *ngFor="let place of singleSelecetedPlaces ">
+      <div class="place-contents  " [ngClass]="{ 'd-flex flex-wrap col-md-12 justify-content-around ': gallery==true}"  *ngIf='check==false' >
+
+        
+<!-- ======================test pagenation here======================== -->
+                <div  class="place-content__item d-flex flex-wrap " [ngClass]="{'col-md-5 ':gallery === true}" *ngFor="let place of pageOfItems "> <!--pageofitems insted of singleSelecetedPlaces-->
+                  
                   <div class="place-content__item-img col-md-4 " routerLink="/place/{{place.id}}" [ngClass]="{'col-md-12':gallery===true}">
                     <img src="https://previews.123rf.com/images/dmytrohrynchak/dmytrohrynchak1809/dmytrohrynchak180900047/110250054-table-tennis-ping-pong-table-tennis-player-athlete-game-vector.jpg" alt="">
                   </div>
-                  <div class="place-content__item-body col-md-8  col-sm-12"  [ngClass]="{'col-md-12 mt-sm-4':gallery === true } " >
+                  <div class="place-content__item-body col-md-8  col-sm-12"  [ngClass]="{'col-md-12   mt-sm-4':gallery === true } " >
                     <h2 routerLink="/place/{{place.id}}">{{place.name}}</h2>
                     <!-- <i *ngFor="let star of place.rates" class="fas fa-star"></i> -->
 
@@ -258,7 +262,14 @@
                     <p class="reservation" *ngIf="place.reservation=='true'">online-reservation</p>
                     <p class="reservation" *ngIf="place.reservation=='false'">no-reservation</p>
                     </div>
-                </div>  
+                  </div>  
+
+              <!-- ================pagination footer============= -->
+                <div class="pagination  d-flex justify-content-center pb-0 pt-3">
+                  <jw-pagination [items]="singleSelecetedPlaces" (changePage)="onChangePage($event)"></jw-pagination>
+              </div>
+              <!-- ================pagination footer============= -->
+
         </div>
     
        
@@ -287,25 +298,16 @@
         </div>
 
       </div>
-
-      <!-- <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav> -->
-
     </section>
   </section>
 </section>
+<!-- test pag...........-->
+<!-- <div class="card text-center m-3">
+  <h3 class="card-header">Angular 8 Pagination Example</h3>
+  <div class="card-body">
+      <div *ngFor="let item of pageOfItems">{{item.name}}</div>
+  </div>
+  <div class="card-footer pb-0 pt-3">
+      <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+  </div>
+</div> -->
