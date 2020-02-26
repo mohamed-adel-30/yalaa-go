@@ -5,7 +5,7 @@
     </div>
 
     <!-- start img slider  -->
-    <div *ngIf="singlePlaceData" class='col-5 gallary'>
+    <div *ngIf="singlePlaceData" class='col-md-5 gallary order-3 order-md-1'>
       <div class="master-img">
         <img src="{{singlePlaceData.mainImage}}" class="img-fluid master-img2">
       </div>
@@ -20,7 +20,7 @@
 
 
 
-    <div *ngIf="singlePlaceData " class='col-7 place-desc'>
+    <div *ngIf="singlePlaceData " class='col-md-7 order-1  order-md-2 place-desc'>
       <div class="container pb-5">
         <div class="d-flex">
           <div class=" place-name">
@@ -64,36 +64,40 @@
           </ng-template>
           {{singlePlaceData.status}}
         </p>
-        <button type="button" class="btn btn-outline-secondary" *ngIf='singlePlaceData.reservation=="true"'>Online
-          Booking</button>
-        <button type="button" class="btn btn-outline-secondary ml-2" *ngIf='singlePlaceData.reservation=="true"'
+        <!-- <span  class="OnlineBooking" *ngIf='singlePlaceData.reservation=="true"'>Online
+          Booking</span> -->
+        <button type="button" class="btn onlinBtn ml-2 mt-3" *ngIf='singlePlaceData.reservation=="true"'
           (click)='appearOptionSection()'>
-          <i class="fas fa-angle-up" *ngIf='!appear'></i> <i class="fas fa-angle-down" *ngIf='appear'></i> </button>
+        <span  class="OnlineBooking pr-1" *ngIf='singlePlaceData.reservation=="true"'>Online Booking </span>
+          <i class="fas fa-angle-up" *ngIf='!appear'></i> <i class="fas fa-angle-down" *ngIf='appear'></i>
+         </button>
       </div>
     </div>
-  </div>
-  <!-- games  -->
 
-  <section class="row games-section" style="background-color: #fff;" *ngIf='appear'>
+    <section class="col-12  games-section order-2 order-md-3" style="background-color: #fff;" *ngIf='appear'>
     <div class="col-12 pb-5" style=" text-align: center;">
       <h2 class="title">Options</h2>
     </div>
-    <div class=" col-12 d-flex games-card justify-content-center">
-      <div class=" col-3 mr-4 games-details p-0" *ngFor="let Option of optionsOfSpesificPlace">
+    <div class=" col-12 d-flex games-card  flex-wrap justify-content-center">
+      <div class=" col-md-3 col-sm-6 mr-4  mt-2 games-details p-0" *ngFor="let Option of optionsOfSpesificPlace">
         <app-options [i]="Option"></app-options>
       </div>
     </div>
 
 
-    <div class="col-12 d-flex justify-content-around">
-      <h1 class="col-3 subTotal-title">
+    <div class="col-12 d-flex justify-content-around flex-wrap">
+      <h1 class="col-md-3 subTotal-title col-12">
         SubTotal : {{finalTotal}} <span style="font-size: 10px;"> EGP</span>
       </h1>
-      <button class="btn btn-danger payment-btn" (click)="savingSelectedGames()">
+      <button class="btn btn-danger payment-btn col-md-2 col-9" (click)="savingSelectedGames()">
         Go to Payment
       </button>
     </div>
   </section>
+  </div>
+  <!-- games  -->
+
+  
 
   <!-- games  -->
 
@@ -101,19 +105,19 @@
     <div class="title col-md-12">
       <h2>Near Me</h2>
     </div>
-    <div class="imgs col-12 d-flex justify-content-center">
-      <div class='col-md-4'>
+    <div class="imgs col-12 flex-wrap d-flex ">
+      <div class='col-md-4 col-6 p-1 pr-md-3'>
         <img src="../../assets/72784164_3040270475987485_8617695001448546304_o.png" class="img-fluid">
       </div>
-      <div class='col-md-4'><img src="../../assets/a-morning-can-t-get-better.png" class="img-fluid"></div>
+      <div class='col-md-4 col-6 p-1 pr-md-3'><img src="../../assets/a-morning-can-t-get-better.png" class="img-fluid"></div>
 
-      <div class='col-md-4'><img src="../../assets/a-morning-can-t-get-better.png" class="img-fluid"></div>
+      <div class='col-md-4 col-6 p-1 pr-md-3'><img src="../../assets/a-morning-can-t-get-better.png" class="img-fluid"></div>
     </div>
   </section>
 
 
 
-  <div class="col-12 border-bottom-div"></div>
+  <!-- <div class="col-12 border-bottom-div"></div> -->
 
 
 
