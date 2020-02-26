@@ -44,14 +44,16 @@ export class SingleCategoryComponent implements OnInit {
   list = true;
   gallery;
 
+ 
 
-
-
-
-
+  
+  
+  
+  
+  
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
-
-
+    
+  
 
 
     this.route.params.subscribe((param: Params) => {
@@ -113,14 +115,19 @@ export class SingleCategoryComponent implements OnInit {
     })
 
   }
+//   pageOfItems;
+//   ngOnInit() {
+//     // an example array of 150 items to be paged
+//     this.singleSelecetedPlaces = Array(1).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+// }
 
-  ngOnInit() {
 
-
-  }
-  ngAfterViewInit() {
-
-  }
+//   }
+ 
+// onChangePage(pageOfItems: Array<any>) {
+//     // update current page of items
+//     this.pageOfItems = pageOfItems;
+// }
 
   // .....................................//
 
@@ -350,5 +357,6 @@ export class SingleCategoryComponent implements OnInit {
 
 
 }
+
 
 

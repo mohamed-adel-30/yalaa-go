@@ -24,6 +24,7 @@ import { FilterPipe } from './filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OptionsComponent } from './options/options.component';
 import { AppPasswordDirective } from './app-password.directive';///////sign i
+import { JwPaginationComponent } from 'jw-angular-pagination';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AppPasswordDirective } from './app-password.directive';///////sign i
     WeekendComponent,
     FilterPipe,
     OptionsComponent,
-    AppPasswordDirective
+    AppPasswordDirective,
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,
