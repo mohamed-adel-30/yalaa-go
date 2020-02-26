@@ -193,6 +193,7 @@ export class CommentsComponent implements OnInit {
         (data) => {
           console.log('editttt')
 
+
           this.inputDisplay[i] = false;
           let obj;
           this.httpService.getSingleComments(id).subscribe(data => {
