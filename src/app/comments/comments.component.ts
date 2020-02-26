@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { PlacesService } from '../places.service';
 import { HttpServiceService } from '../http-service.service'
-
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -29,7 +28,7 @@ export class CommentsComponent implements OnInit {
   user;
   inputDisplay = [];
 
-
+  dropDown=false
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
     this.route.params.subscribe((param: Params) => {
@@ -57,7 +56,9 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  dropDownDelOrEdit(){
+this.dropDown=!this.dropDown
+  }
   addComment(param) {
 
     this.placeLoggedin = this.httpService.getData("loggedin");
