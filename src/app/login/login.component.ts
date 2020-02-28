@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
           this.serviceServer.setData("ownerloggedin", true)
           this.ownerloggedinheader = true
           this.serviceServer.displayProfileIconToOwner(this.ownerloggedinheader)
-          this.router.navigate(["/"]);
+          this.router.navigate(["/ownerProfile"]);
           return i;
         }
       }

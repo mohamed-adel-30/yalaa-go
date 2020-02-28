@@ -33,7 +33,8 @@ export class RegisterComponent implements OnInit {
 
   // ..............place details....................///
   fileData;
-  imageSrc = "not yet";
+  imageSrc = "../../assets/Home/defaultPlace.png";
+  imgs = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
 
   statusOwner;
   reservationOwner;
@@ -200,7 +201,7 @@ export class RegisterComponent implements OnInit {
         // this.service.addUsers(this.obj)
         this.httpService.postownerdata(this.obj, headers).subscribe(data => {
           console.log("daaaaaaaaaaaaaaaaaaaaft Owner")
-          this.router.navigate(["/"])
+          this.router.navigate(["/ownerProfile"])
           localStorage.clear();
           this.obj.password = "********"
           this.httpService.setData("owneruser", this.obj)
@@ -335,11 +336,7 @@ export class RegisterComponent implements OnInit {
       "paymentMethod": "Ticket",
       "avgrate": 5,
       "mainImage": this.imageSrc,
-      "imgs": [
-        "https://www.shorouknews.com/uploadedimages/Other/original/masrah.jpg",
-        "https://image.shutterstock.com/image-illustration/theater-masks-drama-comedy-red-260nw-718511797.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKz1NJwH13z3qGk2sRFbgZBaTB-pSqxyKNWe87bDDld0DpXnu"
-      ],
+      "imgs": this.imgs,
       "status": this.statusOwner,
       "openHours": this.openStart + "to" + this.openEnd,
       "desc": this.placeDesc,
