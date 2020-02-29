@@ -2,209 +2,589 @@
   loading...
 </div>
 
-<div *ngIf="owenerplace">
-  <h1>{{owenerplace.name}}</h1>
-  <p>{{owenerplace.desc}}</p>
-  <p>{{owenerplace.status}}</p>
-  <h2>{{owenerplace.id}}</h2>
 
+<div *ngIf="owenerplace" class="container-custom owner-container">
+  <div class="row">
 
-  <div *ngIf="ownerHistory">
-    <ul>
-      <li *ngFor="let i of ownerHistory" style="border: 1px red solid;">
-        histooooooryyy --{{i.totalPrice}}
-      </li>
-    </ul>
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col-12 owner-mainimg">
+          <img src={{owenerplace.mainImage}} alt="" srcset="">
 
-  </div>
-
-  <div *ngIf="ownerOptions">
-    <ul>
-      <li *ngFor="let i of ownerOptions ; let ii=index" style="border:1px solid orange;">
-        optiooooooons--
-        <div *ngIf="editArr[ii]==true;">
-          <input class="{{i.id}}" type="text" value="{{i.name}}" (input)="checkingAllowAddEdited(i.id)">
-          <input class="{{i.id}}" type="text" value="{{i.desc}}" (input)="checkingAllowAddEdited(i.id)">
-          <input class="{{i.id}}" type="number" value="{{i.price}}" (input)="checkingAllowAddEdited(i.id)">
-          <button class="btn btn-primary" (click)="canselingEditOption(ii)">Cansel</button>
-          <button class="btn btn-danger" [disabled]="allowAddEdit==false"
-            (click)="addingEdtedOption(i,ii,i.id)">add</button>
         </div>
 
+        <div class="row justify-content-around owner-extraimgs">
+          <div *ngFor="let i of owenerplace.imgs" class=" col-3">
+            <img src={{i}} alt="" srcset="">
+          </div>
 
-
-        <div *ngIf="editArr[ii]==false;">
-          <h2>{{i.name}}</h2>
-          <h3>{{i.desc}}</h3>
-          <h3>{{i.price}}</h3>
-          <h3>---{{i.id}}--{{i}}</h3>
-          <button class="btn btn-danger" (click)="deletinOption(i.id)">delete</button>
-          <button class="btn btn-primary" (click)="editOption(ii,i.id)">edit</button>
         </div>
-
-      </li>
-    </ul>
-
-  </div>
-
-</div>
-
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  edit place
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
-      <div class="modal-body">
-        <!-- ..............place form .................// -->
-        <div class="d-flex flex-column" *ngIf="owenerplace">
+    </div>
+
+    <div class=" owner-placedetails col-md-7 p-5">
+      <h1 style="display: inline-block;font-size: 32px;" class="p-0 my-5" routerLink="/place/{{owenerplace.id}}">
+        {{owenerplace.name}}
+      </h1>
+      <p> <span class=" specificSpan">Description:</span>{{owenerplace.desc}}</p>
 
 
-          <input #placeNName placeholder="place name" (input)="verfyingPlcae(placeNName,
-          contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.name}}>
-          <!-- <div class="errormsg" *ngIf="placeNName.value.length==0">
-            *requeired -->
-          <!-- </div> -->
+      <p> <span class="specificSpan">Status:</span>{{owenerplace.status}}</p>
+      <p><span class="specificSpan">open hours:</span>{{owenerplace.openHours}}</p>
+      <p><span class="specificSpan">Facebook:</span> {{owenerplace.contact.facebook}}</p>
+      <p><span class="specificSpan">Instagrame</span> {{owenerplace.contact.instagram}}</p>
+      <p><span class="specificSpan">Contcat</span> {{owenerplace.contact.phone}}</p>
 
-          <input #contact placeholder="contact" (input)="verfyingPlcae(placeNName,
-          contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.contact.phone}}>
-          <!-- <div class="errormsg" *ngIf="11>contact.value.length">
-            *requeired
-          </div> -->
+      <p class="status" [ngStyle]="{'color':owenerplace.status === 'open now' ? '#00b467' : 'red' }"><i
+          class="fas fa-check-circle" *ngIf='owenerplace.status=="open now"; else closed'></i>
 
-          <input #address placeholder="address" (input)="verfyingPlcae(placeNName,
-          contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.address}}>
-          <!-- <div class="errormsg" *ngIf="5>address.value.length">
-            *requeired
-          </div> -->
+        {{owenerplace.status}}
+      </p>
+
+      <p class="status" [ngStyle]="{'color':owenerplace.Reservation === 'true' ? '#00b467' : 'red' }"><i
+          class="fas fa-check-circle" *ngIf='owenerplace.Reservation=="true"; else closed'></i>
+        <ng-template #closed>
+          <i class="fas fa-times-circle"></i>
+        </ng-template>
+        Reservation: <span *ngIf="owenerplace.Reservation==true ; else cantReseve">Reservable</span>
+        <ng-template #cantReseve>
+          UnReservable
+        </ng-template>
+      </p>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn btn-outline-danger owener-edit-btns  m-2 " data-toggle="modal"
+        data-target="#exampleModalLong">
+        edit place
+      </button>
+
+      <button class="btn btn-outline-primary owener-edit-btns  m-2" *ngIf="optionCheck==false" data-toggle="modal"
+        data-target="#exampleModalScrollable" (click)="addOption()">Add
+        Option</button>
+
+      <!-- <a pageScroll hre class="btn btn-outline-primary owener-edit-btns  m-2">Options</a> -->
 
 
-          <input #location placeholder="location" (input)="verfyingPlcae(placeNName,
-          contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.location}}>
-          <!-- <div class="errormsg" *ngIf="10>location.value.length">
-            *requeired
-          </div> -->
 
 
-          From :<input #openHoursStart type="time" placeholder="" (input)="verfyingPlcae(placeNName,
-          contact,address,location,desc,openHoursEnd,openHoursStart )">To
-          <input #openHoursEnd type="time" placeholder="" (input)="verfyingPlcae(placeNName,
-          contact,address,location,desc,openHoursEnd,openHoursStart )">
-          <!-- <div class="errormsg" *ngIf="5>openHoursStart.value.length || 5>openHoursEnd.value.length">
-            *requeired
-          </div> -->
+    </div>
+  </div>
 
+  <!-- ...............................................//// -->
 
-          <input #desc placeholder="description" (input)="verfyingPlcae(placeNName,
-          contact,address,location,desc,openHoursEnd,openHoursStart,true )" value={{owenerplace.desc}}>
-          <!-- <div class="errormsg" *ngIf="10>desc.value.length">
-            *requeired
-          </div> -->
-
-          <input #imgPlace type="file" (change)="readURL2($event)">
-
-          <div class="btn-group mt-4">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              status: <span *ngIf="statusOwner">{{statusOwnerText}}</span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" value="open now" (click)="gettingStatus($event)">open now</a>
-              <a class=" dropdown-item" value="closed" (click)="gettingStatus($event)">closed</a>
-            </div>
-          </div>
-
-          <div class="btn-group mt-4">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Reservation:<span *ngIf="reservationOwner">{{reservationOwnerText}}</span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" value="true" (click)="gettingReservation($event)">Yes</a>
-              <a class=" dropdown-item" value="false" (click)="gettingReservation($event)">No</a>
-            </div>
-          </div>
-
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-            aria-expanded="false" aria-controls="collapseExample">
-            select categories
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog  modal-custom" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{owenerplace.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
           </button>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-              <div *ngFor="let place of cats ;let item = index;">
-                <input #item id="{{place.id}}" class="categories" type="checkbox" name="{{item}}" value={{place.name}}
-                  (click)="selectingCats()">
-                <label for="vehicle3">{{place.name}}</label>
+        </div>
+        <div class="modal-body">
+          <!-- ..............place form .................// -->
+          <div class="d-flex flex-column model-container" *ngIf="owenerplace">
+
+            <div>
+              <label> Name :</label>
+              <input #placeNName placeholder="place name" (input)="verfyingPlcae(placeNName,
+            contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.name}}>
+            </div>
+
+            <!-- <div class="errormsg" *ngIf="placeNName.value.length==0">
+            *requeired -->
+            <!-- </div> -->
+            <div>
+              <label> Phone :</label>
+              <input #contact placeholder="contact" (input)="verfyingPlcae(placeNName,
+  contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.contact.phone}}>
+            </div>
+            <!-- <div class="errormsg" *ngIf="11>contact.value.length">
+            *requeired
+          </div> -->
+
+
+            <div>
+              <label> Address :</label>
+              <input #address placeholder="address" (input)="verfyingPlcae(placeNName,
+            contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.address}}>
+              <!-- <div class="errormsg" *ngIf="5>address.value.length">
+              *requeired
+            </div> -->
+            </div>
+
+
+
+            <div>
+              <label> Location:</label>
+              <input #location placeholder="location" (input)="verfyingPlcae(placeNName,
+  contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.location}}>
+              <!-- <div class="errormsg" *ngIf="10>location.value.length">
+    *requeired
+  </div> -->
+            </div>
+
+
+            <div>
+              <label> Open from:</label>
+              <input class="time" #openHoursStart type="time" placeholder="" value="08:56" (input)="verfyingPlcae(placeNName,
+  contact,address,location,desc,openHoursEnd,openHoursStart )">
+
+              <label> To:</label>
+              <input class="time" #openHoursEnd type="time" placeholder="" value="20:56" (input)="
+                verfyingPlcae(placeNName, contact,address,location,desc,openHoursEnd,openHoursStart )">
+              <!-- <div class="errormsg" *ngIf="5>openHoursStart.value.length || 5>openHoursEnd.value.length">
+*requeired
+</div> -->
+
+            </div>
+
+
+
+
+
+
+            <div>
+              <label for="textArea" id="label-desc" class="d-block"> Description:</label>
+              <textarea id="textArea" #desc placeholder="description" (input)="verfyingPlcae(placeNName,
+  contact,address,location,desc,openHoursEnd,openHoursStart,true )" value={{owenerplace.desc}}>
+            </textarea>
+              <!-- <div class="errormsg" *ngIf="10>desc.value.length">
+    *requeired
+  </div> -->
+            </div>
+
+
+            <div class="mb-3">
+              <label> Upload main picture of ypur place:</label>
+
+              <label class="custom-file-upload">
+                <input class="mainImg" #imgPlace type="file" (change)="readURL2($event)">
+                <i class="fa fa-cloud-upload"> Upload</i>
+              </label>
+
+
+            </div>
+
+
+
+            <div class="extra-info">
+              <div>
+                <label> Do you want to add more infortmation: <input class="moreInfoCheck" type="checkbox" #checking
+                    (click)="askIfaddingExtraInfo(checking)"></label>
+
+              </div>
+
+              <div *ngIf="addExtra==true" class="extraInfo-wrapper">
+                <div class="py-4 my-2">
+                  <label>Upload More Picutres:</label>
+                  <label class="custom-file-upload">
+                    <input type="file" (change)="readURLGeneral($event,0)">
+                    <i class="fa fa-cloud-upload"> </i>
+                  </label>
+                  <label class="custom-file-upload">
+                    <input type="file" (change)="readURLGeneral($event,1)">
+                    <i class="fa fa-cloud-upload"> </i>
+                  </label>
+                  <label class="custom-file-upload">
+                    <input type="file" (change)="readURLGeneral($event,2)">
+                    <i class="fa fa-cloud-upload"> </i>
+                  </label>
+                </div>
+
+                <div>
+                  <label> Facebook Account:</label>
+                  <input type="text" #facebook placeholder="Facebook Page" value={{owenerplace.contact.facebook}}>
+
+                </div>
+
+                <div>
+                  <label> Instagrame Account:</label>
+                  <input type="text" #instgrame placeholder="Instagrame Page" value={{owenerplace.contact.instagram}}>
+                </div>
+
+                <button class="btn owener-btns" (click)="addingExtraInfo(facebook,instgrame,checking)">Submit</button>
+
               </div>
             </div>
-          </div>
-          <div class="errormsg" *ngIf=" celectedArr.length == 0 || celectedArr.length>3">
-            *requeired and maximum 3 categories
-          </div>
 
-          <div class="btn-group mt-4">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
+
+
+
+
+
+
+
+            <button class="btn owener-btns cats-btn" type="button" data-toggle="collapse" data-target="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              select categories
             </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" value="true" (click)="gettingKidsArea($event)">Yes</a>
-              <a class=" dropdown-item" value="false" (click)="gettingKidsArea($event)">No</a>
+            <div class="collapse container-fluid" id="collapseExample">
+              <div class="card card-body " class="row ">
+                <div class="col-md-4" *ngFor="let place of cats ;let item = index;">
+                  <input #item id="{{place.id}}" type="checkbox" name="{{item}}" value={{place.name}}
+                    (click)="selectingCats()" class=" specialInput mx-1"
+                    [checked]="this.owenerplace.catId.indexOf(place.id.toString()) > -1">
+                  <label for="vehicle3">{{place.name}}</label>
+                </div>
+              </div>
             </div>
+            <div class="errormsg" *ngIf=" celectedArr.length == 0 || celectedArr.length>3">
+              *requeired and maximum 3 categories
+            </div>
+
+
+
+            <div class="dropDowns">
+              <div class="btn-group mt-4">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  status: <span *ngIf="statusOwner">{{statusOwnerText}}</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" value="open now" (click)="gettingStatus($event)">open now</a>
+                  <a class=" dropdown-item" value="closed" (click)="gettingStatus($event)">closed</a>
+                </div>
+              </div>
+
+              <div class="btn-group mt-4">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  Reservation:<span *ngIf="reservationOwner">{{reservationOwnerText}}</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" value="true" (click)="gettingReservation($event)">Yes</a>
+                  <a class=" dropdown-item" value="false" (click)="gettingReservation($event)">No</a>
+                </div>
+              </div>
+
+              <div class="btn-group mt-4">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" value="true" (click)="gettingKidsArea($event)">Yes</a>
+                  <a class=" dropdown-item" value="false" (click)="gettingKidsArea($event)">No</a>
+                </div>
+              </div>
+
+            </div>
+
+
+
           </div>
 
+          <!-- ............................................./// -->
         </div>
 
-        <!-- ............................................./// -->
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" [disabled]="chechDiv == false" class="btn btn-primary" (click)="addPlaceToThisOwner()"
-          data-dismiss="modal">Save
-          changes</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" [disabled]="chechDiv == false" class="btn btn-primary" (click)="addPlaceToThisOwner()"
+            data-dismiss="modal">Save
+            changes</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- ....................endModel........................../// -->
+  <!-- ...............histroey..//-->
+
+
+
+  <div *ngIf="owenerplace">
+
+    <section class="ownerReegisterationHistory my-5">
+      <div *ngIf="ownerHistory" class=" ownerRregisterationHistory-wrapper">
+        <h2 class="specificSpan"> Reservations</h2>
+        <div *ngFor="let i of reverseAlertArr" class="  my-5  p-5 row ownerReegisterationHistory-solo">
+
+          <div class=" col-md-11 ">
+            <p><span class="specificSpan">Reservation Id:</span>{{i.id}}</p>
+            <span class="specificSpan"> client Name:</span>{{i.userName}} <span class="specificSpan"> Total price
+              :</span> {{i.totalPrice}} EGP
+            <button *ngIf="i.state==false ;else seen" (click)="removingFalse(i,i.id)" class='unseenBtn'> <i
+                class="fas fa-circle"></i> </button>
+            <ng-template #seen>
+              <button disabled class='seenBtn'> <i class="fas fa-check-circle"></i></button>
+            </ng-template>
+          </div>
+          <div class="col-md-1"> <button class="btn delete-history-btn px-2 py-1" (click)=" deletingHistory(i.id)"><i
+                class="fas fa-times"></i></button>
+          </div>
+
+          <div class="col-md-12">
+            <p> <span class="specificSpan"> Games Reserved:</span> </p>
+            <div class="row p-3">
+
+              <div *ngFor="let game of i.reservedGame ;let j=index" class="col-md-5 p-0">
+                <h5>Game Name: {{game.name}}</h5>
+
+                <button class="moreinfo-btn custom-file-upload btn  my-1" data-toggle="collapse"
+                  [attr.data-target]="'#s'+game.id+i.id">
+                  More
+                  Info</button>
+
+                <div id="s{{game.id}}{{i.id}}" class="collapse">
+                  <p> <span class="specificSpan">Numbers of Tieckets:</span>{{game.count}} Each {{game.price}}</p>
+                  <p><span class="specificSpan">Reserved Time:</span> {{game.hours}}<span
+                      class="specificSpan">Day:</span>
+                    {{game.date}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+  <!-- ........................./// -->
+
+  <div *ngIf="ownerOptions">
+
+
+    <section class="col-12   games-section order-2 order-md-3 mt-5" *ngIf="ownerOptions.length>0"
+      style="background-color: #fff;">
+      <div class="col-12 pb-5">
+        <h2 id="Options" class="title" class="text-center">
+          Options</h2>
+      </div>
+      <div class=" col-12 d-flex games-card  flex-wrap justify-content-center">
+        <div class=" col-md-3 col-sm-6 mr-4  mt-2 games-details p-0" *ngFor="let i of ownerOptions ; let ii=index">
+
+          <div *ngIf="editArr[ii]==false;">
+            <h4 class="game-name pt-2 pb-2">{{i.name}}</h4>
+            <!-- <img *ngFor="let x of i.imgs" src="{{x}}"> -->
+            <div class="game-img">
+              <img src="{{i.img}}" class="game-img pt-2 pb-4">
+            </div>
+            <h5 class="game-price pl-3 pr-3"> {{i.price}} <span style="font-size: 10px;">EGP</span></h5>
+            <hr>
+            <p class="pl-3 pr-3 game-desc">{{i.desc}}</p>
+            <div class="row justify-content-center">
+              <button class="btn btn-outline-danger p-2 m-2" data-toggle="modal"
+                data-target="#exampleModal">Delete</button>
+
+              <!-- ....// -->
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Are you sure ypu want to delete "{{i.name}}""
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        (click)="deletinOption(i.id)">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- ...../// -->
+              <button class="btn btn-outline-primary p-2  px-3 m-2" (click)="editOption(ii,i.id)">Edit</button>
+            </div>
+
+
+          </div>
+
+          <div class="Option-Edit" *ngIf="editArr[ii]==true;">
+            <h4 class="game-name pt-2 pb-2"><input class="{{i.id}}" type="text" value="{{i.name}}"
+                (input)="checkingAllowAddEdited(i.id)"></h4>
+
+            <!-- <img *ngFor="let x of i.imgs" src="{{x}}"> -->
+            <div class="game-img">
+              <img src="{{i.img}}" class="game-img pt-2 pb-4">
+              <label class="custom-file-upload">
+                <input type="file" (change)="readURLOption($event)">
+                <i class="fa fa-cloud-upload"> </i>
+              </label>
+            </div>
+            <h5 class="game-price pl-3 pr-3"> <input class="{{i.id}}" type="number" value="{{i.price}}"
+                (input)="checkingAllowAddEdited(i.id)"><span style="font-size: 10px;">EGP</span></h5>
+
+            <hr>
+            <p class="pl-3 pr-3 game-desc"><input class="{{i.id}}" type="text" value="{{i.desc}}"
+                (input)="checkingAllowAddEdited(i.id)"></p>
+
+            <div class="row justify-content-center">
+              <button class="btn btn-outline-primary p-2 m-2" (click)="canselingEditOption(ii)">Cancel</button>
+              <button class="btn btn-outline-danger p-2 m-2" [disabled]="allowAddEdit==false"
+                (click)="addingEdtedOption(i,ii,i.id)">Add</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- <button class="title Option-Title mx-5 my-3 " *ngIf="optionCheck==false" data-toggle="modal"
+        data-target="#exampleModalScrollable" (click)="addOption()">Add
+        Option</button> -->
+
+      <!-- ...............model test......................///? -->
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+            <button type="button" disabled class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- ............Add Option.................///? -->
+
+            <div class="col-md-3" class="Option-Edit2">
+
+
+              <h4 class="game-name pt-2 pb-2"><input #OptionName placeholder="Option Name"
+                  (input)="verfyingOption(OptionName,optionDesc,optionPrice)"></h4>
+              <div class="errormsg" *ngIf="OptionName.value.length==0">
+                *requeired
+              </div>
+
+
+              <div class="game-img">
+                <img src="../../assets/Home/defaultPlace.png" class="game-img pt-2 pb-4">
+                <label class="custom-file-upload">
+                  <input #imgOption type="file" (change)="readURL($event)">
+                  <i class="fa fa-cloud-upload"> </i>
+                </label>
+              </div>
+              <h5 class="game-price pl-3 pr-3"> <input #optionPrice placeholder="Option price" type="number"
+                  (input)="verfyingOption(OptionName,optionDesc,optionPrice)"> <span style="font-size: 10px;">EGP</span>
+              </h5>
+              <div class="errormsg" *ngIf="optionPrice.value.length==0">
+                *requeired
+              </div>
+
+              <hr>
+              <p class="pl-3 pr-3 game-desc"> <input #optionDesc placeholder="Option desc"
+                  (input)="verfyingOption(OptionName,optionDesc,optionPrice)"></p>
+              <div class="errormsg" *ngIf="optionDesc.value.length==0">
+                *requeired
+              </div>
+
+              <!-- <button [disabled]="OptionValid==true" (click)="submitiingNewOption()">Submit</button>
+                <button (click)="canseliing()">cansel</button> -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="canseliing()">Close</button>
+            <button type="button" class="btn btn-primary" [disabled]="OptionValid==true" (click)="submitiingNewOption()"
+              data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </section> -->
+    <!-- ..........test................./// -->
+
+  </div>
+
 </div>
 
 
 
 
 
-<button *ngIf="optionCheck==false" (click)="addOption()">Add Option</button>
-<div *ngIf="optionCheck==true">
 
-  <input #OptionName placeholder="Option Name" (input)="verfyingOption(OptionName,optionDesc,optionPrice)">
-  <div class="errormsg" *ngIf="OptionName.value.length==0">
-    *requeired
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ............Add Option.................///? -->
+<!-- <section class="row " style="background-color: #fff;">
+
+  <div class="col-md-3" class="Option-Edit" *ngIf="optionCheck==true">
+
+
+    <h4 class="game-name pt-2 pb-2"><input #OptionName placeholder="Option Name"
+        (input)="verfyingOption(OptionName,optionDesc,optionPrice)"></h4>
+    <div class="errormsg" *ngIf="OptionName.value.length==0">
+      *requeired
+    </div>
+
+
+    <div class="game-img">
+      <img src="../../assets/Home/defaultPlace.png" class="game-img pt-2 pb-4">
+      <label class="custom-file-upload">
+        <input #imgOption type="file" (change)="readURL($event)">
+        <i class="fa fa-cloud-upload"> </i>
+      </label>
+    </div>
+    <h5 class="game-price pl-3 pr-3"> <input #optionPrice placeholder="Option price" type="number"
+        (input)="verfyingOption(OptionName,optionDesc,optionPrice)"> <span style="font-size: 10px;">EGP</span>
+    </h5>
+    <div class="errormsg" *ngIf="optionPrice.value.length==0">
+      *requeired
+    </div>
+
+
+
+    <hr>
+    <p class="pl-3 pr-3 game-desc"> <input #optionDesc placeholder="Option desc"
+        (input)="verfyingOption(OptionName,optionDesc,optionPrice)"></p>
+    <div class="errormsg" *ngIf="optionDesc.value.length==0">
+      *requeired
+    </div>
+
+
+
+    <button [disabled]="OptionValid==true" (click)="submitiingNewOption()">Submit</button>
+    <button (click)="canseliing()">cansel</button>
+
+
   </div>
+</section> -->
 
-  <input #optionDesc placeholder="Option desc" (input)="verfyingOption(OptionName,optionDesc,optionPrice)">
-  <div class="errormsg" *ngIf="optionDesc.value.length==0">
-    *requeired
-  </div>
-
-  <input #optionPrice placeholder="Option price" type="number"
-    (input)="verfyingOption(OptionName,optionDesc,optionPrice)">
-  <div class="errormsg" *ngIf="optionPrice.value.length==0">
-    *requeired
-  </div>
-  <input #imgOption type="file" (change)="readURL($event)">
-
-  <button [disabled]="OptionValid==true" (click)="submitiingEditedPlace()">Submit</button>
-  <button (click)="canseliing()">cansel</button>
-</div>
+<!-- ......................................////? -->

@@ -9,24 +9,24 @@
         <button class="btn btn-primary ">{{singleCatData.name}}</button>
       </div>
     </div>  -->
-    <div *ngIf="singleCatData" class="card-name">{{singleCatData.name}}</div>
     <div class="home" routerLink="/">
-
-      <svg height="40" width="90" class="svg">
+      
+      <svg  height="40" width="90" class="svg">
         <polygon points="0,0 70,0 90,20 70,40 0,40" style="fill-rule:nonzero;">
         </polygon>
       </svg>
     </div>
-
+    
     <div class="cat-name">
-      <svg height="40" width="120" class="svg">
+      <svg  height="40" width="120" class="svg">
         <polygon points="0,0 100,0 120,20 100,40 0,40 20,20" style="fill-rule:nonzero;">
-        </polygon>
-      </svg>
-    </div>
-
-    <section class="category-wrapper__containt flex-wrap d-flex col-md-12 col-sm-12 p-0" *ngIf="singleCatData ">
-
+      </polygon>
+    </svg>
+  </div>
+  
+  <section class="category-wrapper__containt flex-wrap d-flex col-md-12 col-sm-12 p-0" *ngIf="singleCatData ">
+    <div class="card-name">{{singleCatData.name}}</div>
+    
       <!-- start filter section -->
       <div class="filter col-md-3 col-sm-12">
 

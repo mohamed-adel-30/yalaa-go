@@ -23,25 +23,47 @@ export class AboutUsComponent implements OnInit {
   optionCheck = false;
   OptionValid = true;
   fileData: File;
+  fileDataOption: File;
   OptionName: any = "";
   optionDesc: any = "";
   optionPrice: any = "";
-  imageSrc = "http://placehold.it/200/200";
+  imageSrc = "../../assets/Home/defaultPlace.png";
+  imgs = ["../../assets/Home/defaultPlace.png"];
+  editedOptionImg = "../../assets/Home/defaultPlace.png";
+  imgsEditedOption = ["../../assets/Home/defaultPlace.png"];
+
   // .........................///
   arrOfCats = [];
   id;
   editArr: any = [];
+  // ..................notfications....///
+  alertArr = [];
+  reverseAlertArr = [];
+  // ...........................///
   constructor(private httpService: HttpServiceService, private router: Router) {
-    this.owner = this.httpService.getData("owneruser");
+    this.celectedArr = [1]
+    this.owner = this.httpService.getData("owneruser"); ///3ayzin n3ml param ablha
     this.httpService.gettingPlaces().subscribe(data => {
       this.places = data;
       for (let place of this.places) {
 
         if (place.ownerId == this.owner.id) {
           this.owenerplace = place;
+          this.statusOwner = this.owenerplace.status;
+          this.statusOwnerText = this.owenerplace.status;
+          this.reservationOwner = this.owenerplace.reservation;
+          this.reservationOwnerText = this.owenerplace.reservation;
+          this.placename = this.owenerplace.name;
+          this.placecontact = this.owenerplace.contact.phone;
+          this.placeaddres = this.owenerplace.address;
+          this.placelocation = this.owenerplace.location;
+          this.placeDesc = this.owenerplace.desc;
+          this.openStart = this.owenerplace.openHours;
+          this.openEnd = this.owenerplace.openHours;
           break;
         }
       }
+
 
       this.httpService.gettingData().subscribe(data => {
         this.cats = data;
@@ -51,19 +73,27 @@ export class AboutUsComponent implements OnInit {
             this.arrOfCats.push(this.id)
             // console.log(this.arrOfCats)
           }, 10)
+
         }
 
       })
       this.httpService.getHistroy().subscribe(data => {
         this.histroy = data;
+        this.ownerHistory = []
         for (let i of this.histroy) {
           if (i.reservedGame[0].placeId == this.owenerplace.id) {
             this.ownerHistory.push(i);
           }
         }
-        console.log("hiiiiiiiiiiiiistroy")
-        console.log(data)
-        console.log(this.ownerHistory)
+        this.alertArr = []
+        for (let i of this.ownerHistory) {
+          if (i.state == false) {
+            this.alertArr.push(i);
+          }
+
+        }
+        this.reverseAlertArr = this.ownerHistory.reverse();
+        this.httpService.getNotifivations(this.alertArr.length)
       })
 
       this.httpService.gettingPtions().subscribe(data => {
@@ -102,6 +132,30 @@ export class AboutUsComponent implements OnInit {
   }
 
 
+
+  // editedOptionImg
+  readURLOption(event: any) {
+    this.fileDataOption = <File>event.target.files[0];
+    this.previewOption();
+  }
+  previewOption() {
+    var mimeType = this.fileDataOption.type;
+    if (mimeType.match(/image\/*/) == null) {
+      return;
+    }
+    let reader;
+    reader = new FileReader();
+    reader.readAsDataURL(this.fileDataOption);
+    reader.onload = _event => {
+      this.editedOptionImg = reader.result;
+      this.verfyingOption(this.OptionName, this.optionDesc, this.optionPrice, false)
+
+    }
+  }
+
+
+
+
   verfyingOption(OptionName, optionDesc, optionPrice, state = true) {
     if (state == true) {
       this.OptionName = OptionName.value;
@@ -118,20 +172,22 @@ export class AboutUsComponent implements OnInit {
   }
 
   //ha3mml el object
-  submitiingEditedPlace() {
+  submitiingNewOption() {
     this.optionCheck = false;
     let optionObj;
     let headers = { "Conetent-Type": "application/json" }
     optionObj = {
       "name": this.OptionName,
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
+      "imgs": this.imgs,
       "desc": this.optionDesc,
       "price": this.optionPrice,
       "placeId": this.owenerplace.id,
       "img": this.imageSrc
     }
+
+    this.imageSrc = "../../assets/Home/defaultPlace.png";
+    this.imgs = ["../../assets/Home/defaultPlace.png"];
+
 
     this.httpService.postOptions(optionObj, headers).subscribe(data => {
       console.log("heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet")
@@ -177,7 +233,50 @@ export class AboutUsComponent implements OnInit {
 
 
   fileData2;
-  imageSrc2 = "http://placehold.it/200/200";
+  imageSrc2 = "../../assets/Home/defaultPlace.png";
+  imgs2 = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
+  filedDataGerenal = [];
+  imgs2before = [...this.imgs2];
+  addExtra = false;
+
+  //ectra info adding
+  readURLGeneral(event: any, i) {
+    this.filedDataGerenal[i] = <File>event.target.files[0];
+    this.previewGerneral(i);
+  }
+  previewGerneral(i) {
+    var mimeType = this.filedDataGerenal[i].type;
+    if (mimeType.match(/image\/*/) == null) {
+      return;
+    }
+    let reader;
+    reader = new FileReader();
+    reader.readAsDataURL(this.filedDataGerenal[i]);
+    reader.onload = _event => {
+      this.imgs2before[i] = reader.result;
+      this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
+    }
+  }
+
+  askIfaddingExtraInfo(checking) {
+    console.log(checking.checked)
+    if (checking.checked == true) {
+      this.addExtra = true
+    }
+    else { this.addExtra = false }
+  }
+
+  addingExtraInfoConfirm = false;
+  addingExtraInfo(facebook, instgrame, checking) {
+    this.facebookBeforeConfirmation = facebook.value;
+    this.instgrameBeforaConfirmation = instgrame.value;
+    this.addExtra = false;
+    checking.checked = false
+    this.addingExtraInfoConfirm = true;
+  }
+
+
+
 
   statusOwner;
   reservationOwner;
@@ -190,27 +289,33 @@ export class AboutUsComponent implements OnInit {
   placeaddres = "";
   placelocation = "";
   checkbox = false; //byashof hal hoa owener wala la
-  chechDiv = true;
+  chechDiv = false;
   placeDesc: any = "";
   openStart: any = "";
   openEnd: any = "";
   cats;
   celectedArr = [];
+  facebook = "facebook Page"
+  instgrame = "instgrame Page"
+  facebookBeforeConfirmation = this.facebook;
+  instgrameBeforaConfirmation = this.instgrame;
+
 
   readURL2(event: any) {
     this.fileData2 = <File>event.target.files[0];
-    this.preview();
+    this.preview2();
   }
   preview2() {
-    var mimeType = this.fileData.type;
+    var mimeType = this.fileData2.type;
     if (mimeType.match(/image\/*/) == null) {
       return;
     }
     let reader;
     reader = new FileReader();
-    reader.readAsDataURL(this.fileData);
+    reader.readAsDataURL(this.fileData2);
     reader.onload = _event => {
       this.imageSrc2 = reader.result;
+
       this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
     }
   }
@@ -220,6 +325,8 @@ export class AboutUsComponent implements OnInit {
     this.statusOwnerText = val.target.text;
     this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
   }
+
+
   gettingReservation(val) {
     this.reservationOwner = val.srcElement.attributes.value.value;
     this.reservationOwnerText = val.target.text;
@@ -273,8 +380,28 @@ export class AboutUsComponent implements OnInit {
   // ........................t7der object el place...................//
 
   addPlaceToThisOwner() {
+    if (this.addingExtraInfoConfirm == true) {
+
+      this.facebook = this.facebookBeforeConfirmation;
+      this.instgrame = this.instgrameBeforaConfirmation;
+      this.imgs2 = [...this.imgs2before];
+      this.addingExtraInfoConfirm = false;
+    }
 
     let headers = { "Conetent-Type": "application/json" }
+
+    let oldimg = this.owenerplace.mainImage;
+    let oldimgs = this.owenerplace.imgs;
+    if (this.imageSrc2 == "../../assets/Home/defaultPlace.png") {
+      this.imageSrc2 = oldimg;
+    }
+    let test = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
+    console.log(this.imgs2)
+
+
+    if (this.imgs2[0] == test[0] && this.imgs2[1] == test[1] && this.imgs2[2] == test[2]) {
+      this.imgs2 = oldimgs;
+    }
     this.placeObj = {
       "name": this.placename,
       "catId": this.celectedArr,
@@ -283,12 +410,8 @@ export class AboutUsComponent implements OnInit {
       "rates": [1, 2, 3, 4, 5],
       "paymentMethod": "Ticket",
       "avgrate": 5,
-      "mainImage": this.imageSrc,
-      "imgs": [
-        "https://www.shorouknews.com/uploadedimages/Other/original/masrah.jpg",
-        "https://image.shutterstock.com/image-illustration/theater-masks-drama-comedy-red-260nw-718511797.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKz1NJwH13z3qGk2sRFbgZBaTB-pSqxyKNWe87bDDld0DpXnu"
-      ],
+      "mainImage": this.imageSrc2,
+      "imgs": this.imgs2,
       "status": this.statusOwner,
       "openHours": this.openStart + "to" + this.openEnd,
       "desc": this.placeDesc,
@@ -296,8 +419,8 @@ export class AboutUsComponent implements OnInit {
       "kid-friendly": this.kidsOwner,
       "contact": {
         "phone": this.placecontact,
-        "facebook": "",
-        "instagram": ""
+        "facebook": this.facebook,
+        "instagram": this.instgrame
       },
       "ownerId": this.owner.id
     }
@@ -307,6 +430,8 @@ export class AboutUsComponent implements OnInit {
       console.log("shatreeeeeeeeeeeeeeeen eee7na el 3 ")
 
       console.log(data);
+      this.imageSrc2 = "../../assets/Home/defaultPlace.png";
+      this.imgs2 = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
       this.router.navigate(["/place", this.idPlace])
     })
 
@@ -339,27 +464,33 @@ export class AboutUsComponent implements OnInit {
   addingEdtedOption(i, ii, id) {
     let input;
     input = Array.from(document.getElementsByClassName(id))
-    console.log(input)
-    console.log(input[0].value)
-    console.log(input[1].value)
-    console.log(input[2].value)
+    // console.log(input)
+    // console.log(input[0].value)
+    // console.log(input[1].value)
+    // console.log(input[2].value)
     this.editArr[ii] = false;
 
     ////a7der elobject
     let headers = { "Conetent-Type": "application/json" }
+    let oldimg = i.img;
+    if (this.editedOptionImg == "../../assets/Home/defaultPlace.png") {
+      this.editedOptionImg = oldimg
+    }
     let obj;
     obj = {
       "id": i.id,
       "name": input[0].value,
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
+      "imgs": this.imgsEditedOption,
       "desc": input[1].value,
       "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": input[2].value,
       "placeId": this.owenerplace.id,
-      "img": "http://placehold.it/200/200"
+      "img": this.editedOptionImg
     }
+
+    this.editedOptionImg = "../../assets/Home/defaultPlace.png";
+    this.imgsEditedOption = ["../../assets/Home/defaultPlace.png"];
+
     this.httpService.PutOptions(id, obj, headers).subscribe(data => {
       console.log("shatraaa ya esraaaaa")
       console.log(data);
@@ -379,4 +510,65 @@ export class AboutUsComponent implements OnInit {
 
 
   }
+
+  // ................................notifations functionss..........//
+  removingFalse(i, id) {
+    i.state = true;
+    let headers = { "Conetent-Type": "application/json" }
+
+    this.httpService.PutHistory(id, i, headers).subscribe(data => {
+
+
+      this.httpService.getHistroy().subscribe(data => {
+        this.histroy = data;
+        this.ownerHistory = []
+        for (let i of this.histroy) {
+          if (i.reservedGame[0].placeId == this.owenerplace.id) {
+            this.ownerHistory.push(i);
+          }
+        }
+        this.alertArr = []
+        for (let i of this.ownerHistory) {
+          if (i.state == false) {
+            this.alertArr.push(i);
+          }
+
+        }
+        this.reverseAlertArr = this.ownerHistory.reverse();
+        this.httpService.getNotifivations(this.alertArr.length)
+      })
+
+    })
+
+
+  }
+
+  deletingHistory(id) {
+    this.httpService.deleteHistory(id).subscribe(data => {
+      console.log(data)
+
+      // .......test..........///
+      this.httpService.getHistroy().subscribe(data => {
+        this.histroy = data;
+        this.ownerHistory = []
+        for (let i of this.histroy) {
+          if (i.reservedGame[0].placeId == this.owenerplace.id) {
+            this.ownerHistory.push(i);
+          }
+        }
+        this.alertArr = []
+        for (let i of this.ownerHistory) {
+          if (i.state == false) {
+            this.alertArr.push(i);
+          }
+
+        }
+        this.reverseAlertArr = this.ownerHistory.reverse();
+        this.httpService.getNotifivations(this.alertArr.length)
+      })
+      // ....................///
+
+    })
+  }
+  // .......................///
 }

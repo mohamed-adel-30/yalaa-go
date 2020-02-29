@@ -71,36 +71,36 @@
           Booking</span> -->
         <button type="button" class="btn onlinBtn ml-2 mt-3" *ngIf='singlePlaceData.reservation=="true"'
           (click)='appearOptionSection()'>
-        <span  class="OnlineBooking pr-1" *ngIf='singlePlaceData.reservation=="true"'>Online Booking </span>
+          <span class="OnlineBooking pr-1" *ngIf='singlePlaceData.reservation=="true"'>Online Booking </span>
           <i class="fas fa-angle-up" *ngIf='!appear'></i> <i class="fas fa-angle-down" *ngIf='appear'></i>
-         </button>
+        </button>
       </div>
     </div>
 
     <section class="col-12  games-section order-2 order-md-3" style="background-color: #fff;" *ngIf='appear'>
-    <div class="col-12 pb-5" style=" text-align: center;">
-      <h2 class="title">Options</h2>
-    </div>
-    <div class=" col-12 d-flex games-card  flex-wrap justify-content-center">
-      <div class=" col-md-3 col-sm-6 mr-4  mt-2 games-details p-0" *ngFor="let Option of optionsOfSpesificPlace">
-        <app-options [i]="Option"></app-options>
+      <div class="col-12 pb-5" style=" text-align: center;">
+        <h2 class="title">Options</h2>
       </div>
-    </div>
+      <div class=" col-12 d-flex games-card  flex-wrap justify-content-center">
+        <div class=" col-md-3 col-sm-6 mr-4  mt-2 games-details p-0" *ngFor="let Option of optionsOfSpesificPlace">
+          <app-options [i]="Option"></app-options>
+        </div>
+      </div>
 
 
-    <div class="col-12 d-flex justify-content-around flex-wrap">
-      <h1 class="col-md-3 subTotal-title col-12">
-        SubTotal : {{finalTotal}} <span style="font-size: 10px;"> EGP</span>
-      </h1>
-      <button class="btn btn-danger payment-btn col-md-2 col-9" (click)="savingSelectedGames()">
-        Go to Payment
-      </button>
-    </div>
-  </section>
+      <div class="col-12 d-flex justify-content-around flex-wrap">
+        <h1 class="col-md-3 subTotal-title col-12">
+          SubTotal : {{finalTotal}} <span style="font-size: 10px;"> EGP</span>
+        </h1>
+        <button class="btn btn-danger payment-btn col-md-2 col-9" (click)="savingSelectedGames()">
+          Go to Payment
+        </button>
+      </div>
+    </section>
   </div>
   <!-- games  -->
 
-  
+
 
   <!-- games  -->
 
@@ -111,6 +111,7 @@
     </div>
     <div class="imgs col-12 d-flex justify-content-center">
       <div *ngFor="let place of MAX3; let i=index" class='col-md-3'>
+
 
         <img src={{place.mainImage}} class="img-fluid">
         <h3 routerLink="/place/{{place.id}}">{{place.name}}</h3>

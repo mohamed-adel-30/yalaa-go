@@ -77,7 +77,9 @@ export class ReservationComponent implements OnInit {
 
     let headers = { "Conetent-Type": "application/json" }
     let body = {
+      "userName": this.user.name,
       "userId": this.user.id,
+      "state": false,
       "totalPrice": this.total,
       "visaNumber": this.visaNumber,
       "reservedGame": this.createdArray

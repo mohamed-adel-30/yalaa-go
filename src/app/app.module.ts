@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,8 @@ import { FilterPipe } from './filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OptionsComponent } from './options/options.component';
 import { AppPasswordDirective } from './app-password.directive';///////sign i
+import { JwPaginationComponent } from 'jw-angular-pagination';
+
 
 
 @NgModule({
@@ -45,16 +47,17 @@ import { AppPasswordDirective } from './app-password.directive';///////sign i
     WeekendComponent,
     FilterPipe,
     OptionsComponent,
-    AppPasswordDirective
+    AppPasswordDirective,
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule, ////sign in
-    CarouselModule ,
-    BrowserAnimationsModule 
-    
+    CarouselModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

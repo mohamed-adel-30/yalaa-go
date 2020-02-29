@@ -5,12 +5,21 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpServiceService {
   private headerProfileBehaviour = new BehaviorSubject(null)
   headerProfile = this.headerProfileBehaviour.asObservable();
 
   private headerProfileBehaviourowner = new BehaviorSubject(null)
   headerProfileowner = this.headerProfileBehaviourowner.asObservable();
+
+
+  private notificationCounterBehavior = new BehaviorSubject(0);
+  notificationCounter = this.notificationCounterBehavior.asObservable();
+
+  getNotifivations(l) {
+    this.notificationCounterBehavior.next(l);
+  }
 
 
   displayProfileIcon(loggedinparam) {
@@ -132,6 +141,12 @@ export class HttpServiceService {
 
   getHistroy() {
     return this.http.get("http://localhost:3000/history");
+  }
+  PutHistory(id, body, headers) {
+    return this.http.put("http://localhost:3000/history/" + id, body, headers);
+  }
+  deleteHistory(id) {
+    return this.http.delete("http://localhost:3000/history/" + id)
   }
 
 

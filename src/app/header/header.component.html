@@ -22,9 +22,7 @@
                         <p *ngFor="let cat of cats" class="dropdown-item" routerLink="/cat/{{cat.id}}">{{cat.name}}</p>
                     </div>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" routerLink="/events">Events</a>
-                </li> -->
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,26 +52,37 @@
             </div>
 
 
-            <div *ngIf="headerLoggedin == true || loggenfromlocalstorage==true ||ownerloggedinheader==true ||loggenfromlocalstorageOwner ==true   ; else loggedOut"
-                class="dropdown">
-                <button class="btn   dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
 
-                    <i class="fas fa-user-circle text-light"></i>
-                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                        <ng-template #notAnOwner>
-                            <a routerLink="/user-profile" class="dropdown-item w-100 btn btn-danger">profile</a>
-                        </ng-template>
+            <div
+                *ngIf="headerLoggedin == true || loggenfromlocalstorage==true ||ownerloggedinheader==true ||loggenfromlocalstorageOwner ==true   ; else loggedOut">
+
+                <i *ngIf="ownerloggedinheader==true  ||loggenfromlocalstorageOwner ==true " style="color: orange;"
+                    class="fas fa-bell">{{notifications}}</i>
+
+                <!-- <p *ngIf="headerLoggedin == true || loggenfromlocalstorage==true">hello {{user.name}}</p> -->
+                <div class="dropdown">
+                    <button class="btn   dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+
+                        <i class="fas fa-user-circle text-light"></i>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                            <ng-template #notAnOwner>
+                                <a routerLink="/user-profile" class="dropdown-item w-100 btn btn-danger">profile</a>
+                            </ng-template>
 
 
-                        <a *ngIf="ownerloggedinheader==true  ||loggenfromlocalstorageOwner ==true  ;else notAnOwner"
-                            routerLink="/ownerProfile" class="dropdown-item w-100 btn btn-danger">Owner profile</a>
+                            <a *ngIf="ownerloggedinheader==true  ||loggenfromlocalstorageOwner ==true  ;else notAnOwner"
+                                routerLink="/ownerProfile/{{owner.name}}"
+                                class="dropdown-item w-100 btn btn-danger">Owner
+                                profile</a>
 
-                        <a class="btn btn-danger dropdown-item" (click)="loggingOut()">logout</a>
-                    </div>
-                </button>
+                            <a class="btn btn-danger dropdown-item" (click)="loggingOut()">logout</a>
+                        </div>
+                    </button>
 
+                </div>
             </div>
+
         </div>
 
         <li class="nav-item ">
