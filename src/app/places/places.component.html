@@ -57,7 +57,7 @@
         <p><span class="specificSpan">phone:</span>{{singlePlaceData.contact.phone}}</p>
         <p><span class="specificSpan">open hours:</span>{{singlePlaceData.openHours}}</p>
         <p><span class="specificSpan">Payment Method:</span>{{singlePlaceData.paymentMethod}}</p>
-        <p class="status" [ngStyle]="{'color':singlePlaceData.status === 'open now' ? '#00b467' : 'red' }"><i
+        <p class="status" [ngStyle]="{'color':singlePlaceData.status === 'open now' ? '#67b493' : '#dd583f' }"><i
             class="fas fa-check-circle" *ngIf='singlePlaceData.status=="open now"; else closed'></i>
           <ng-template #closed>
             <i class="fas fa-times-circle"></i>

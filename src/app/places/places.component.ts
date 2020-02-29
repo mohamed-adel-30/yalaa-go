@@ -71,7 +71,7 @@ export class PlacesComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
     this.finalTotal = 0;
   }
 

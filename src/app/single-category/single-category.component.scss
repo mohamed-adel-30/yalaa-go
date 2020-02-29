@@ -112,6 +112,7 @@ label {
 }
 .place-content__item-img img{
     max-width: 100%;
+    min-width: 100%;
     border-radius: 10px;
     
 }
@@ -160,9 +161,13 @@ polygon{
 }
 .cat-name polygon{
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: table;
+    text-indent: 90px;
+    word-wrap: break-word;
 }
 .home  {
-   
+    position: relative;
     margin-top:12%;
     margin-bottom: 3%;
     margin-right: -21px;
@@ -176,6 +181,15 @@ polygon{
     fill:#fff;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
 }
+.home i{
+    position: absolute;
+    top:33%;
+    left: 33%;
+}
+.home i:hover{
+    color: #ffa21d;
+    cursor: pointer;
+}
 .card-name{
     position:absolute;
     top:-62px;
@@ -188,4 +202,19 @@ polygon{
     // height: 27px;
     text-align: center;
    
+}
+.fav .solid{
+    color: #dd583f;
+    font-size: 1.3rem;
+}
+#emptyHeart{
+    color: #111;
+    font-size: 1.3rem;
+}
+svg text{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px;
+    text-transform: capitalize;
+    
 }

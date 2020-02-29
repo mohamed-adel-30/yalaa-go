@@ -3,7 +3,7 @@ nav {
     z-index: 9999;
     background-color: rgba($color: #000000, $alpha: 0.5);
     margin: 0 auto;
-    // position: fixed;
+    position: fixed;
     width: 100%;
     .wrapper {
         width: 90%;
@@ -32,7 +32,7 @@ nav {
         position: relative;
         input {
             display: none;
-            font-size: 18px;
+            font-size: 14px;
         }
         .searchResults {
             position: absolute;

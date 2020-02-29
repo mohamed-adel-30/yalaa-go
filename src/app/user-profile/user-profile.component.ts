@@ -95,6 +95,7 @@ export class UserProfileComponent implements OnInit {
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(/^[a-z]\w{1,}@[a-z]{1,}.com$/)]),
     });
 
+// ===============pagination========//
 
   }
 
