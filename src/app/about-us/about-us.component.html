@@ -62,7 +62,11 @@
         data-target="#exampleModalScrollable" (click)="addOption()">Add
         Option</button>
 
-      <!-- <a pageScroll hre class="btn btn-outline-primary owener-edit-btns  m-2">Options</a> -->
+      <button class="btn btn-outline-primary owener-edit-btns  m-2" data-toggle="modal"
+        data-target="#exampleModalCenter" (click)="showingMap()">Google
+        Map</button>
+
+
 
 
 
@@ -507,10 +511,56 @@
   </div>
 
 </div>
+<!-- ....google map 2 ..........................///-->
+<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+  <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+</agm-map>
 
 
+<!-- app.component.html -->
+<!-- <button *ngIf="showmap==false" (click)="showingMap()">show map</button> -->
+<!-- <div class="container" *ngIf="showmap==true">
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"></agm-marker>
+  </agm-map>
 
 
+  <button (click)="savingLocationMap()">
+    save me
+  </button>
+</div> -->
+<!-- ............................../// -->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal-custom" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Google Map</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="model-container">
+
+          <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+            <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+              (dragEnd)="markerDragEnd($event)"></agm-marker>
+          </agm-map>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancelingMap()">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="savingLocationMap()">Save
+          changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
