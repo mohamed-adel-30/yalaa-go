@@ -10,6 +10,7 @@ import { HttpServiceService } from '../http-service.service'
 export class CommentsComponent implements OnInit {
 
   comments;
+  Writecomments=false
   CommentsOfSpesificPlace = [];
   showedComments = [];
   singlePlaceId;
@@ -61,6 +62,7 @@ this.dropDown=!this.dropDown
   }
   addComment(param) {
 
+    this.Writecomments = true
     this.placeLoggedin = this.httpService.getData("loggedin");
     if (this.placeLoggedin == true) {
       let user;

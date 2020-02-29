@@ -54,7 +54,10 @@
         <address>
           <span class="specificSpan">Address: </span> <span>{{singlePlaceData.address}}</span>
         </address>
-        <p><span class="specificSpan">phone:</span>{{singlePlaceData.contact.phone}}</p>
+        <p><span class="specificSpan">phone: <a href="tel:0123456859">
+          <i class="fas fa-phone-alt mr-3 ml-3" aria-hidden="true" ></i>
+        </a> </span>{{singlePlaceData.contact.phone}}
+          </p>
         <p><span class="specificSpan">open hours:</span>{{singlePlaceData.openHours}}</p>
         <p><span class="specificSpan">Payment Method:</span>{{singlePlaceData.paymentMethod}}</p>
         <p class="status" [ngStyle]="{'color':singlePlaceData.status === 'open now' ? '#00b467' : 'red' }"><i

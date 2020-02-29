@@ -265,11 +265,13 @@
         }
       ],
       "rates": [
+        0,
         1,
         2,
-        3
+        3,
+        4
       ],
-      "avgrate": 3,
+      "avgrate": 5,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/v8KgktNr/africano-Park.png",
       "imgs": [
@@ -357,11 +359,8 @@
           "comment": "really good time for shopping and have a good time there.  alot of places to visit coffee is good alot of brands and market is amazing too . really enjoyable  time and place I recommended for all people"
         }
       ],
-      "rates": [
-        1,
-        2
-      ],
-      "avgrate": 2,
+      "rates": [],
+      "avgrate": null,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/DfJB70q3/carrefourcity-Center.jpg",
       "imgs": [
@@ -372,7 +371,7 @@
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
       "status": "open now",
-      "reservation": "false",
+      "reservation": "true",
       "kid-friendly": "true",
       "contact": {
         "phone": "0123456859",
@@ -493,10 +492,10 @@
         }
       ],
       "rates": [
+        0,
         1,
         2,
-        3,
-        4
+        3
       ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
@@ -1029,18 +1028,6 @@
   ],
   "options": [
     {
-      "id": 1,
-      "name": "Puzzle Breakout.",
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
-      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
-      "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
-      "price": "300",
-      "placeId": "15",
-      "img": "http://placehold.it/200/200"
-    },
-    {
       "id": 2,
       "name": "Danger Lock.",
       "imgs": [
@@ -1170,7 +1157,7 @@
       "desc": "Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "13",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 14,
@@ -1258,7 +1245,7 @@
       "desc": " Discover the perfect movie for you, find session times and book tickets",
       "price": "80",
       "placeId": "9",
-      "img": "http://placehold.it/200/200"
+      "img": "https://lh3.googleusercontent.com/proxy/sTACEdVDmUl6zjBeqmeT0CSAXo6v5MfEA1qeEICrksAgXshvma9ffWe-aGtTS43tQ1hJJyr8EKFeSFrFameMbwPdBLIizGZo98cIQGuVB_Ir2NZrMblYHcxeQs-1WaUDQbWohqqcYCXZ48Yn5aoQ4Un55Gp8VTPzYlHUPHiGKW1G2eSUedqg7jZ0"
     },
     {
       "id": 22,
@@ -1269,7 +1256,7 @@
       "desc": " Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
       "price": "80",
       "placeId": "6",
-      "img": "http://placehold.it/200/200"
+      "img": "https://img.itinari.com/pages/images/original/71ae911d-e08a-471f-8b7d-0edbb27422b0-istock-909502164.jpg?ch=DPR&dpr=1&w=1600&s=fe21ea26b8a5cfadf10175f3f4f0593b"
     },
     {
       "id": 23,
@@ -1280,7 +1267,7 @@
       "desc": " Public skating, family sessions, ice events, bar/cafe offering hot drinks, Figure Skating School, private lessons",
       "price": "500",
       "placeId": "6",
-      "img": "http://placehold.it/200/200"
+      "img": "https://img.itinari.com/pages/images/original/71ae911d-e08a-471f-8b7d-0edbb27422b0-istock-909502164.jpg?ch=DPR&dpr=1&w=1600&s=fe21ea26b8a5cfadf10175f3f4f0593b"
     },
     {
       "id": 24,
@@ -1291,7 +1278,7 @@
       "desc": " Discover the perfect movie for you, find session times and book tickets",
       "price": "70",
       "placeId": "5",
-      "img": "http://placehold.it/200/200"
+      "img": "https://mediawatanguide.elwatannews.com/Places/logos/Medium/194290_194307_cinema.jpg"
     },
     {
       "id": 25,
@@ -1302,7 +1289,7 @@
       "desc": " For all bowling lovers in alexandria.",
       "price": "50",
       "placeId": "5",
-      "img": "http://placehold.it/200/200"
+      "img": "https://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg-2.jpg"
     },
     {
       "id": 26,
@@ -1313,7 +1300,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "5",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 27,
@@ -1324,7 +1311,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "60",
       "placeId": "5",
-      "img": "http://placehold.it/200/200"
+      "img": "https://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg-2.jpg"
     },
     {
       "id": 28,
@@ -1335,7 +1322,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "100",
       "placeId": "5",
-      "img": "http://placehold.it/200/200"
+      "img": "https://i.postimg.cc/nVN6nrNW/uriel-soberanes-Mx-Vk-WPi-JALs-unsplash.png"
     },
     {
       "id": 29,
@@ -1346,7 +1333,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "5",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 30,
@@ -1357,7 +1344,7 @@
       "desc": " Discover the perfect movie for you, find session times and book tickets",
       "price": "70",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://www.festo.com/group/en/repo/assets/00007-4d-cinema-media-mation-1532x900px.jpg"
     },
     {
       "id": 31,
@@ -1368,7 +1355,7 @@
       "desc": " For all bowling lovers in alexandria.",
       "price": "50",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg-2.jpg"
     },
     {
       "id": 32,
@@ -1379,7 +1366,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 33,
@@ -1390,7 +1377,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "60",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_3DBilliardsPoolAndSnooker_image1600w.jpg"
     },
     {
       "id": 34,
@@ -1401,7 +1388,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "100",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://i.postimg.cc/nVN6nrNW/uriel-soberanes-Mx-Vk-WPi-JALs-unsplash.png"
     },
     {
       "id": 35,
@@ -1412,7 +1399,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 36,
@@ -1423,7 +1410,7 @@
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "100",
       "placeId": "3",
-      "img": "http://placehold.it/200/200"
+      "img": "https://www.bluehaven.com/wp-content/gallery/st-louis-inground-pool.jpg"
     },
     {
       "id": 37,
@@ -1434,7 +1421,7 @@
       "desc": "Ball Pool -2 Hoppers -Soft Building Blocks -Floor Padding -No Fencing. Baby Tunnel Slide Set. mobile playground. Ball Pool.",
       "price": "25",
       "placeId": "3",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/romrodinka/romrodinka1806/romrodinka180600194/103465738-happy-little-kid-boy-having-fun-in-an-swimming-pool-active-happy-preschool-child-learning-to-swim-wi.jpg"
     },
     {
       "id": 38,
@@ -1445,18 +1432,18 @@
       "desc": " For all bowling lovers in alexandria.",
       "price": "50",
       "placeId": "1",
-      "img": "http://placehold.it/200/200"
+      "img": "https://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg-2.jpg"
     },
     {
       "id": 39,
-      "name": "bing",
+      "name": "ping",
       "imgs": [
         "http://placehold.it/200/200"
       ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "1",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 40,
@@ -1467,7 +1454,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "60",
       "placeId": "1",
-      "img": "http://placehold.it/200/200"
+      "img": "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_3DBilliardsPoolAndSnooker_image1600w.jpg"
     },
     {
       "id": 41,
@@ -1478,29 +1465,29 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "100",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://i.postimg.cc/nVN6nrNW/uriel-soberanes-Mx-Vk-WPi-JALs-unsplash.png"
     },
     {
       "id": 42,
       "name": "bing",
       "imgs": [
-        "http://placehold.it/200/200"
+        "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
       ],
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "50",
       "placeId": "4",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 43,
       "name": "africano trip",
       "imgs": [
-        "http://placehold.it/200/200"
+        "https://previews.123rf.com/images/dclipart/dclipart1501/dclipart150100066/35292153-travel-africa-african-landscape-vector-emblem-.jpg"
       ],
       "desc": " Most of the landscapes and their accompanying plants and animals in a national park are kept in their natural state..",
       "price": "200",
       "placeId": "2",
-      "img": "http://placehold.it/200/200"
+      "img": "https://previews.123rf.com/images/dclipart/dclipart1501/dclipart150100066/35292153-travel-africa-african-landscape-vector-emblem-.jpg"
     },
     {
       "id": 44,
@@ -1527,64 +1514,6 @@
     }
   ],
   "comments": [
-    {
-      "comment": "yeeeeeeees",
-      "placeId": "4",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 5,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 14
-    },
-    {
-      "comment": "sssssssssssssssss",
-      "placeId": "4",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 5,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 15
-    },
-    {
-      "comment": "sara shreeefHSDHKJDHAJSDAD",
-      "placeId": "4",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 5,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "id": 16
-    },
-    {
-      "comment": "esraaaasfahfshF",
-      "placeId": "4",
-      "userId": 6,
-      "userName": "esraa",
-      "userImg": "",
-      "rate": 5,
-      "saraaa": 2,
-      "id": 5
-    },
     {
       "comment": "kqkwgkqgyjqef",
       "placeId": "6",
@@ -1698,6 +1627,134 @@
         3
       ],
       "id": 15
+    },
+    {
+      "comment": "goood place",
+      "placeId": "4",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 16
+    },
+    {
+      "comment": "",
+      "placeId": "2",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 17
+    },
+    {
+      "comment": "goooood placeee",
+      "placeId": "2",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 18
+    },
+    {
+      "comment": "fff",
+      "placeId": "7",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 19
+    },
+    {
+      "comment": "sasa",
+      "placeId": "7",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 20
+    },
+    {
+      "comment": "",
+      "placeId": "7",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 21
+    },
+    {
+      "comment": "ddd",
+      "placeId": "7",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 22
+    },
+    {
+      "comment": "dddddeeeeee",
+      "placeId": "7",
+      "userId": 10,
+      "userName": "saraaaa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 23
+    },
+    {
+      "comment": "hhh",
+      "placeId": "6",
+      "userId": 8,
+      "userName": "samaa",
+      "userImg": "",
+      "id": 24
     }
   ],
   "rates": [
@@ -1724,6 +1781,42 @@
         4
       ],
       "id": 2
+    },
+    {
+      "value": 4,
+      "placeId": "4",
+      "userId": 10,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 3
+    },
+    {
+      "value": 4,
+      "placeId": "2",
+      "userId": 10,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 4
+    },
+    {
+      "value": 4,
+      "placeId": "7",
+      "userId": 10,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 5
     }
   ],
   "favourites": [
@@ -1741,6 +1834,16 @@
       "placeId": 8,
       "userId": 16,
       "id": 4
+    },
+    {
+      "placeId": 7,
+      "userId": 10,
+      "id": 5
+    },
+    {
+      "placeId": "2",
+      "userId": 10,
+      "id": 6
     }
   ],
   "history": [

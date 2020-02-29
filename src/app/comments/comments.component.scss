@@ -27,7 +27,7 @@ figure img{
     color: #ffa21d;
   }
   .empty-start-color{color: #ddd;}
-  .reviewsRange h3{
+  h3.reviewsRange {
     height: 45px;
     font-size: 32px;
     color: #ffa21d;
@@ -44,14 +44,17 @@ figure img{
   
   .rate-commts{
       .userName{
-          font-size: 16px;
+          font-size: 13px;
           text-transform: capitalize;
+          font-weight: 600;
       }
   }
+  .userImg img{width: 45px;}
   .reviewsWrite{
     color: #ffa21d;
-    font-size:25px
+    font-size:20px
   }
+  .reviewsCustomer{color: #ffa21d;font-size: 20px;}
   .all-comm{
       background-color: #fff;
   }
