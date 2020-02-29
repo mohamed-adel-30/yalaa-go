@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, NgZone } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { PlacesService } from '../places.service';
 import { HttpServiceService } from '../http-service.service'
+import { MapsAPILoader } from '@agm/core';
+import { mapToMapExpression } from '@angular/compiler/src/render3/util';
 
 
 @Component({
@@ -11,6 +13,18 @@ import { HttpServiceService } from '../http-service.service'
   encapsulation: ViewEncapsulation.None
 })
 export class PlacesComponent implements OnInit {
+
+  // ...................google map ..............///
+  // ...................google map 2 ............//
+  title: string = 'AGM project';
+  latitude: number;
+  longitude: number;
+  zoom: number;
+  address: string;
+  geoCoder: any;
+
+
+  // ...........................................///
   places;
   singlePlace; 0
   // ........///
@@ -34,7 +48,8 @@ export class PlacesComponent implements OnInit {
   nearByPlacses = [];
   MAX3 = []
 
-  constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
+  constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router, private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone) {
 
     this.route.params.subscribe((param: Params) => {
       this.singlePlaceId = param["id"];
@@ -46,6 +61,8 @@ export class PlacesComponent implements OnInit {
           this.places = data;
           this.singlePlaceData = this.getSingleSpesifcPlace(this.singlePlaceId);
           this.gettingNearByPlacses();
+          this.latitude = this.singlePlaceData.lat;
+          this.longitude = this.singlePlaceData.long;
 
         }
       )
@@ -73,8 +90,24 @@ export class PlacesComponent implements OnInit {
   ngOnInit() {
 
     this.finalTotal = 0;
+    // .........google map......///
+
+    this.mapsAPILoader.load().then(() => {
+      this.setCurrentLocation();
+
+    });
+    // ......................///
+
   }
 
+  // google map ..................////
+  private setCurrentLocation() {
+    if ('geolocation' in navigator) {
+
+      this.zoom = 15;
+    }
+  }
+  // ..........................///
 
   // start img slider code
   mainImg;

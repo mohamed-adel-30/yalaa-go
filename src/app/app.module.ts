@@ -25,7 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OptionsComponent } from './options/options.component';
 import { AppPasswordDirective } from './app-password.directive';///////sign i
 import { JwPaginationComponent } from 'jw-angular-pagination';
-
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -56,7 +56,13 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
     HttpClientModule,
     ReactiveFormsModule, ////sign in
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    //imagine modules here
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCyy8m7McixPLtTCZykj7VyXg1GyHWdp7I',
+      language: "en",
+      libraries: ["geometry", "places"]
+    })
 
   ],
   providers: [],

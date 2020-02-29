@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { HttpServiceService } from '../http-service.service';
 import { Router } from '@angular/router';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { mapToMapExpression } from '@angular/compiler/src/render3/util';
+import { MapsAPILoader, MouseEvent, GoogleMapsScriptProtocol } from '@agm/core';
 
 @Component({
   selector: 'app-about-us',
@@ -9,6 +11,16 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
+  // ...................google map 2 ............//
+  title: string = 'AGM project';
+  latitude: number;
+  longitude: number;
+  zoom: number;
+  address: string;
+  geoCoder: any;
+
+  @ViewChild('search', { static: false }) public searchElementRef: ElementRef;
+  // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,...../
   histroy;
   ownerHistory = [];
   places;
@@ -40,7 +52,11 @@ export class AboutUsComponent implements OnInit {
   alertArr = [];
   reverseAlertArr = [];
   // ...........................///
-  constructor(private httpService: HttpServiceService, private router: Router) {
+  constructor(private httpService: HttpServiceService, private router: Router, private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone) {
+    // ...................google map ......................///
+
+    // .....................................///
     this.celectedArr = [1]
     this.owner = this.httpService.getData("owneruser"); ///3ayzin n3ml param ablha
     this.httpService.gettingPlaces().subscribe(data => {
@@ -53,6 +69,9 @@ export class AboutUsComponent implements OnInit {
           this.statusOwnerText = this.owenerplace.status;
           this.reservationOwner = this.owenerplace.reservation;
           this.reservationOwnerText = this.owenerplace.reservation;
+          this.kidsOwner = this.owenerplace["kid-friendly"];
+          this.kidsOwnerText = this.owenerplace["kid-friendly"];
+
           this.placename = this.owenerplace.name;
           this.placecontact = this.owenerplace.contact.phone;
           this.placeaddres = this.owenerplace.address;
@@ -60,6 +79,13 @@ export class AboutUsComponent implements OnInit {
           this.placeDesc = this.owenerplace.desc;
           this.openStart = this.owenerplace.openHours;
           this.openEnd = this.owenerplace.openHours;
+          // .............map Google......////
+          this.mapsAPILoader.load().then(() => {
+            this.setCurrentLocation();
+
+          });
+
+          // .....................////
           break;
         }
       }
@@ -111,7 +137,59 @@ export class AboutUsComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
+
+  // ..........................google map ............///
+  // Get Current Location Coordinates
+  private setCurrentLocation() {
+    if (this.owenerplace.lat) {
+      this.latitude = this.owenerplace.lat;
+      this.longitude = this.owenerplace.long;
+      this.zoom = 15;
+    }
+    else {
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.latitude = position.coords.latitude;
+          this.longitude = position.coords.longitude;
+          this.zoom = 15;
+          // this.getAddress(this.latitude, this.longitude);
+        });
+      }
+
+    }
+  }
+
+
+  markerDragEnd($event: MouseEvent) {
+    console.log($event);
+    this.latitude = $event.coords.lat;
+    this.longitude = $event.coords.lng;
+    // this.getAddress(this.latitude, this.longitude);
+  }
+  showmap = false;
+  showingMap() {
+    this.showmap = true;
+  }
+  savingLocationMap() {
+    let headers = { "Conetent-Type": "application/json" }
+    this.owenerplace.lat = this.latitude;
+    this.owenerplace.long = this.longitude;
+    this.httpService.PutPlaces(this.owenerplace.id, this.owenerplace, headers).subscribe(data => {
+      console.log(this.owenerplace)
+      console.log(data);
+      this.showmap = false;
+    })
+
+  }
+  cancelingMap() {
+    this.mapsAPILoader.load().then(() => {
+      this.setCurrentLocation();
+
+    });
+  }
+  // .................................................///
   readURL(event: any) {
     this.fileData = <File>event.target.files[0];
     this.preview();

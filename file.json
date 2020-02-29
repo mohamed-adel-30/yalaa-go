@@ -1029,12 +1029,16 @@
         "instagram": ""
       },
       "ownerId": 5,
-      "id": 19
+      "id": 19,
+      "lat": 31.199467353466414,
+      "long": 29.926646930316164
     },
     {
       "name": "omar edted again222s",
       "catId": [
-        1
+        "1",
+        "4",
+        "7"
       ],
       "address": "sedi gabr",
       "location": "sedigabr",
@@ -1054,17 +1058,19 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "open now",
-      "openHours": "08:56to20:56to08:56to20:56",
+      "openHours": "08:56to20:56to08:56to20:56to08:56to20:56to08:56to20:56",
       "desc": "gerat plaw sjd1111j",
       "reservation": "true",
-      "kid-friendly": "false",
+      "kid-friendly": "true",
       "contact": {
         "phone": "012111895511111221",
         "facebook": "facebook Page",
         "instagram": "instgrame Page"
       },
       "ownerId": 6,
-      "id": 20
+      "id": 20,
+      "lat": 31.19555474421837,
+      "long": 29.89582134807128
     },
     {
       "name": "yaraaabsssssssddd",
@@ -1578,27 +1584,16 @@
       "img": "http://placehold.it/200/200"
     },
     {
-      "id": 44,
-      "name": "game1 edited agaaain",
+      "id": 45,
+      "name": "gwekgekyjjj",
       "imgs": [
-        "http://placehold.it/200/200"
+        "../../assets/Home/defaultPlace.png"
       ],
-      "desc": "bla bla bla",
+      "desc": "1111",
       "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
-      "price": "121",
+      "price": "qweuiyique",
       "placeId": 19,
       "img": "http://placehold.it/200/200"
-    },
-    {
-      "name": "gwekgeky",
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
-      "desc": "qweuiyique",
-      "price": "1111",
-      "placeId": 19,
-      "img": "http://placehold.it/200/200",
-      "id": 45
     },
     {
       "id": 46,
@@ -1634,6 +1629,17 @@
       "placeId": 21,
       "img": "../../assets/Home/defaultPlace.png",
       "id": 59
+    },
+    {
+      "name": "samaa game",
+      "imgs": [
+        "../../assets/Home/defaultPlace.png"
+      ],
+      "desc": "asdgyfdffsfud",
+      "price": "131",
+      "placeId": 20,
+      "img": "../../assets/Home/defaultPlace.png",
+      "id": 60
     }
   ],
   "comments": [
@@ -1981,27 +1987,6 @@
         }
       ],
       "id": 7
-    },
-    {
-      "userName": "esraa",
-      "userId": 16,
-      "state": false,
-      "totalPrice": 111,
-      "visaNumber": "123412341234",
-      "reservedGame": [
-        {
-          "id": 47,
-          "name": "game 1",
-          "price": "111",
-          "desc": "ggggg",
-          "count": 1,
-          "placeId": 20,
-          "img": "../../assets/Home/defaultPlace.png",
-          "hours": "7-10",
-          "date": "2020-02-04"
-        }
-      ],
-      "id": 8
     }
   ],
   "weekEnd": [

@@ -122,6 +122,18 @@
 
 
   <!-- <div class="col-12 border-bottom-div"></div> -->
+  <!-- ...................... google map ........................../// -->
+  <!-- ....google map 2 ..........................///-->
+  <div *ngIf="singlePlaceData.lat">
+
+
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
+
+  </div>
+
+  <!-- ....................................................//// -->
 
 
 
