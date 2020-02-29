@@ -401,8 +401,13 @@
           "comment": "really good time for shopping and have a good time there.  alot of places to visit coffee is good alot of brands and market is amazing too . really enjoyable  time and place I recommended for all people"
         }
       ],
-      "rates": [],
-      "avgrate": null,
+      "rates": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/DfJB70q3/carrefourcity-Center.jpg",
       "imgs": [
@@ -1902,6 +1907,22 @@
       "userName": "samaa",
       "userImg": "",
       "id": 24
+    },
+    {
+      "comment": "verrrrry goood place",
+      "placeId": "4",
+      "userId": 13,
+      "userName": "hend diab",
+      "userImg": "",
+      "rate": 5,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 25
     }
   ],
   "rates": [
@@ -1940,6 +1961,19 @@
         3
       ],
       "id": 3
+    },
+    {
+      "value": 5,
+      "placeId": "4",
+      "userId": 13,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 4
     }
   ],
   "favourites": [

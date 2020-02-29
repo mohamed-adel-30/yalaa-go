@@ -9,8 +9,9 @@ import { HttpServiceService } from '../http-service.service'
 })
 export class CommentsComponent implements OnInit {
 
+  limit = 4;
   comments;
-  Writecomments=false
+  Writecomments = false
   CommentsOfSpesificPlace = [];
   showedComments = [];
   singlePlaceId;
@@ -29,8 +30,15 @@ export class CommentsComponent implements OnInit {
   user;
   inputDisplay = [];
 
-  dropDown=false;
-  pageOfItems=[];
+  dropDown = false;
+  pageOfItems = [];
+
+  showMore() {
+    this.limit = 20;
+  };
+  showLess() {
+    this.limit = 4;
+  };
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
     this.route.params.subscribe((param: Params) => {
@@ -46,7 +54,7 @@ export class CommentsComponent implements OnInit {
           console.log(this.inputDisplay);
 
         }
-        
+
 
       })
 
@@ -62,16 +70,16 @@ export class CommentsComponent implements OnInit {
   ngOnInit() {
     // an example array of 150 items to be paged
     // this.showedComments = Array(1).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
-}
-// onChangePage(pageOfItems: Array<any>) {
-//     // update current page of items
-//     this.pageOfItems = pageOfItems;
-// }
+  }
+  // onChangePage(pageOfItems: Array<any>) {
+  //     // update current page of items
+  //     this.pageOfItems = pageOfItems;
+  // }
 
 
-////////////////////end pagination///////////
-  dropDownDelOrEdit(){
-this.dropDown=!this.dropDown
+  ////////////////////end pagination///////////
+  dropDownDelOrEdit() {
+    this.dropDown = !this.dropDown
   }
   addComment(param) {
 
@@ -111,7 +119,7 @@ this.dropDown=!this.dropDown
 
         this.httpService.postComments(body, headers).subscribe(data => {
 
-          this.showedComments.push(data)
+          this.showedComments.unshift(data);
         })
         param.value = "";
       }, 1000)
