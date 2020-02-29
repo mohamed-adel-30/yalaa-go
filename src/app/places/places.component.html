@@ -55,9 +55,9 @@
           <span class="specificSpan">Address: </span> <span>{{singlePlaceData.address}}</span>
         </address>
         <p><span class="specificSpan">phone: <a href="tel:0123456859">
-          <i class="fas fa-phone-alt mr-3 ml-3" aria-hidden="true" ></i>
-        </a> </span>{{singlePlaceData.contact.phone}}
-          </p>
+              <i class="fas fa-phone-alt mr-3 ml-3" aria-hidden="true"></i>
+            </a> </span>{{singlePlaceData.contact.phone}}
+        </p>
         <p><span class="specificSpan">open hours:</span>{{singlePlaceData.openHours}}</p>
         <p><span class="specificSpan">Payment Method:</span>{{singlePlaceData.paymentMethod}}</p>
         <p class="status" [ngStyle]="{'color':singlePlaceData.status === 'open now' ? '#67b493' : '#dd583f' }"><i
@@ -127,12 +127,16 @@
   <!-- <div class="col-12 border-bottom-div"></div> -->
   <!-- ...................... google map ........................../// -->
   <!-- ....google map 2 ..........................///-->
-  <div *ngIf="singlePlaceData.lat">
+
+  <div *ngIf="singlePlaceData">
+    <div *ngIf="singlePlaceData.lat">
 
 
-    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-    </agm-map>
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
+
+    </div>
 
   </div>
 

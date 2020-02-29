@@ -559,9 +559,9 @@ export class AboutUsComponent implements OnInit {
       "id": i.id,
       "name": input[0].value,
       "imgs": this.imgsEditedOption,
-      "desc": input[1].value,
+      "desc": input[2].value,
       "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
-      "price": input[2].value,
+      "price": input[1].value,
       "placeId": this.owenerplace.id,
       "img": this.editedOptionImg
     }
