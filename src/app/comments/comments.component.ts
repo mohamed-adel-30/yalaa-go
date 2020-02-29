@@ -29,7 +29,8 @@ export class CommentsComponent implements OnInit {
   user;
   inputDisplay = [];
 
-  dropDown=false
+  dropDown=false;
+  pageOfItems=[];
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
     this.route.params.subscribe((param: Params) => {
@@ -45,6 +46,7 @@ export class CommentsComponent implements OnInit {
           console.log(this.inputDisplay);
 
         }
+        
 
       })
 
@@ -55,8 +57,19 @@ export class CommentsComponent implements OnInit {
 
   }
 
+  ///////////////////start pagination////////////////////
+
   ngOnInit() {
-  }
+    // an example array of 150 items to be paged
+    // this.showedComments = Array(1).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+}
+// onChangePage(pageOfItems: Array<any>) {
+//     // update current page of items
+//     this.pageOfItems = pageOfItems;
+// }
+
+
+////////////////////end pagination///////////
   dropDownDelOrEdit(){
 this.dropDown=!this.dropDown
   }
@@ -99,7 +112,6 @@ this.dropDown=!this.dropDown
         this.httpService.postComments(body, headers).subscribe(data => {
 
           this.showedComments.push(data)
-
         })
         param.value = "";
       }, 1000)

@@ -4,34 +4,29 @@
       loading...
     </div>
 
-    <!-- <div class="canvas" *ngIf="singleCatData ">
-      <div class="filter-canvas"> 
-        <button class="btn btn-primary ">{{singleCatData.name}}</button>
-      </div>
-    </div>  -->
     <div class="home" routerLink="/">
-      
+      <i class="fas fa-home"></i>
       <svg  height="40" width="90" class="svg">
         <polygon points="0,0 70,0 90,20 70,40 0,40" style="fill-rule:nonzero;">
         </polygon>
       </svg>
     </div>
     
-    <div class="cat-name">
-      <svg  height="40" width="120" class="svg">
-        <polygon points="0,0 100,0 120,20 100,40 0,40 20,20" style="fill-rule:nonzero;">
-      </polygon>
-    </svg>
+    <div class="cat-name" *ngIf="singleCatData" >
+      <svg height="40" width="150" class="d-flex align-item-center justify-content-center">
+        <polygon points="0,0 130,0 150,20 130,40 0,40 20,20" style="fill-rule:nonzero;">
+        </polygon>
+        <text class="text-wrap" fill="#111" font-size="10" font-family="Verdana" x="23" y="23">{{singleCatData.name}}</text>
+      </svg>
   </div>
   
   <section class="category-wrapper__containt flex-wrap d-flex col-md-12 col-sm-12 p-0" *ngIf="singleCatData ">
-    <div class="card-name">{{singleCatData.name}}</div>
+    
     
       <!-- start filter section -->
       <div class="filter col-md-3 col-sm-12">
 
         <div class="filter-header d-md-flex align-items-baseline">
-          <i class="fas fa-sort-down "></i>
           <h3>Filter by:</h3>
         </div>
 
@@ -223,39 +218,40 @@
           </ul>
         </div>
 
-
-        <!-- *ngIf="check==true"  -->
         <div class="place-contents"
           [ngClass]="{ 'd-flex flex-wrap  justify-content-around col-md-12  ': gallery==true}">
-          <div *ngFor="let place of filteredData " [ngClass]="{'col-md-5  ':gallery === true}"
+          <div *ngFor="let place of pageOfItems card-body" [ngClass]="{'col-md-5  ':gallery === true}"
             class="place-content__item d-flex flex-wrap">
 
             <div class="place-content__item-img col-md-4 " routerLink="/place/{{place.id}}"
               [ngClass]="{'col-md-12':gallery===true}">
-              <img
+              <!-- <img
                 src="https://previews.123rf.com/images/dmytrohrynchak/dmytrohrynchak1809/dmytrohrynchak180900047/110250054-table-tennis-ping-pong-table-tennis-player-athlete-game-vector.jpg"
-                alt="">
+                alt=""> -->
+                <img src="{{place.mainImage}}" alt="">
+               
             </div>
 
             <div class="place-content__item-body col-md-8 col-sm-12 "
               [ngClass]="{'col-md-12 mt-sm-4':gallery === true } ">
 
-              <a *ngIf="placeLoggedin==true" (click)="checkingFavs(place)">
 
+
+              <!--================= fav icon============== -->
+            <div class="placeName d-flex flex-row align-items-center">
+              <h2 routerLink="/place/{{place.id}}" class="mr-2">{{place.name}}</h2>
+
+              <a *ngIf="placeLoggedin==true" (click)="checkingFavs(place)" class="fav">
                 <i *ngIf='checkFav[place.id]==true; else emptyHeart' class="fas fa-heart solid"></i>
                 <ng-template #emptyHeart>
-                  <i class="far fa-heart"></i>
+                  <i class="far fa-heart emptyHeart" id="emptyHeart"></i>
                 </ng-template>
               </a>
 
-              <h2 routerLink="/place/{{place.id}}">{{place.name}}</h2>
-
+            </div>
               <!-- <a *ngIf="placeLoggedin==true" (click)="checkingFavs(place)">
                 <i [ngStyle]='{color:checkFav[place.id]==true?"red":"black"}' class="fas fa-heart"></i>
               </a> -->
-
-
-
               <i *ngFor="let star of place.rates" class="fas fa-star"></i>
 
               <h5>{{place.location}}</h5>
@@ -268,7 +264,13 @@
             </div>
           </div>
 
+          
         </div>
+        <!-- pagination footer -->
+
+        <div class=" pb-0 pt-3 d-flex justify-content-center">
+          <jw-pagination [items]="filteredData" (changePage)="onChangePage($event)"></jw-pagination>
+      </div>
 
       </div>
 

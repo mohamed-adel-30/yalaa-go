@@ -43,6 +43,7 @@ export class SingleCategoryComponent implements OnInit {
   /////////switch page views//////////
   list = true;
   gallery;
+  pageOfItems;
 
 
 
@@ -107,31 +108,23 @@ export class SingleCategoryComponent implements OnInit {
               this.arrOfLocations.push(this.id)
             }, 2000)
           }
-          // console.log(this.arrOfLocations)
-
+          // console.log(this.arrOfLocations
         }
       )
 
     })
 
   }
-
+  
   ngOnInit() {
-
-  }
-  //   pageOfItems;
-  //   ngOnInit() {
-  //     // an example array of 150 items to be paged
-  //     this.singleSelecetedPlaces = Array(1).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
-  // }
-
-
-  //   }
-
-  // onChangePage(pageOfItems: Array<any>) {
-  //     // update current page of items
-  //     this.pageOfItems = pageOfItems;
-  // }
+    // an example array of 150 items to be paged
+    this.filteredData = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+}
+ 
+onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
+}
 
   // .....................................//
 

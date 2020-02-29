@@ -74,7 +74,8 @@
 
 
     <!-- placesData -->
-    <div *ngFor='let fav of userFavouritesPlaces' style="margin-bottom: 100px;">
+    <h1>history</h1>
+    <div *ngFor='let fav of userFavouritesPlaces ' style="margin-bottom: 100px;">
       <ul [id]=fav.id>
         <li>
           <a routerLink="/place/{{fav.id}}">{{fav.name}}</a>
@@ -91,5 +92,12 @@
         <button (click)="removeFav($event)">remove</button>
       </ul>
     </div>
+
+    <!-- <div class=" pb-0 pt-3 d-flex justify-content-center">
+      <jw-pagination [items]="userFavouritesPlaces" (changePage)="onChangePage($event)"></jw-pagination>
+  </div> -->
+
+
+
   </div>
 </div>
