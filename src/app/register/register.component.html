@@ -87,20 +87,22 @@
                         </div>
                     </div>
                     <div class="d-flex flex-row justify-content-between my-3 ">
-                        <div class="opentime d-flex flex-row justify-content-between col-5">
-                            <p class="col-6">Open from:</p><input class="col-6" #openHoursStart type="time" placeholder="" (input)="verfyingPlcae(placeNName,
+                        <div class="opentime d-flex flex-row justify-content-between align-items-center col-6">
+                            <label >Open from:</label>
+                            <input class="col-6" #openHoursStart type="time" placeholder="" (input)="verfyingPlcae(placeNName,
                             contact,address,location,desc,openHoursEnd,openHoursStart )">
                         </div>
-                        <div class="opentime d-flex flex-row justify-content-between col-5">
-                            <p class="col-6">Open to:</p><input class="col-6" #openHoursEnd type="time" placeholder="" (input)="verfyingPlcae(placeNName,
+                        <div class="opentime d-flex flex-row justify-content-between col-5 align-items-center">
+                            <label class="col-6"> to:</label>
+                            <input class="col-6" #openHoursEnd type="time" placeholder="" (input)="verfyingPlcae(placeNName,
                             contact,address,location,desc,openHoursEnd,openHoursStart )">
                         </div>
                     </div>
                     <div class="errormsg" *ngIf="5>openHoursStart.value.length || 5>openHoursEnd.value.length">
                         *requeired
-                    </div>
 
-                    <div class="my-3">
+
+                     <div class="my-3">
                         <textarea #desc placeholder="description" (input)="verfyingPlcae(placeNName,
                         contact,address,location,desc,openHoursEnd,openHoursStart,true )"></textarea>
 
@@ -108,11 +110,29 @@
                             *requeired
                         </div>
                     </div>
-                    <div class="my-3">
+
+                   <!-- <div class="my-3">
                         <input class="file" #imgPlace type="file" (change)="readURL($event)">
                     </div>
                     <div class="btn-group my-3 ">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                     
+
+                    <div class="  my-3" id="img">
+                        <label > Upload main picture of your place:</label>
+          
+                        <label class="custom-file-upload">
+                          <input class="mainImg" #imgPlace type="file" (change)="readURL($event)">
+                          <i class="fa fa-cloud-upload"> Upload</i>
+                        </label>
+                      </div> 
+
+                    <!-- <input class="file " #imgPlace type="file" (change)="readURL($event)">  -->
+                    <div class=" my-3 dropdown d-flex flex-row flex-wrap justify-content-between">
+                    <div class="btn-group col-sm-12 col-md-4 ">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+
                             status: <span *ngIf="statusOwner">{{statusOwnerText}}</span>
                         </button>
                         <div class="dropdown-menu">
@@ -121,8 +141,9 @@
                         </div>
                     </div>
 
-                    <div class="btn-group my-3">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="btn-group col-sm-12 col-md-4 my-3">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             Reservation:<span *ngIf="reservationOwner">{{reservationOwnerText}}</span>
                         </button>
                         <div class="dropdown-menu">
@@ -131,13 +152,27 @@
                         </div>
                     </div>
 
-                    <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <div class="btn-group col-sm-12 col-md-4 my-3">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" value="true" (click)="gettingKidsArea($event)">Yes</a>
+                            <a class=" dropdown-item" value="false" (click)="gettingKidsArea($event)">No</a>
+                        </div>
+                    </div>
+                </div>
+
+                    <button  type="button" data-toggle="collapse" data-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample">
                         select categories
                     </button>
                     <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <div *ngFor="let place of cats ;let item = index;">
-                                <input #item id="{{place.id}}" class="categories" type="checkbox" name="{{item}}" value={{place.name}} (click)="selectingCats()">
+                        <div class="card card-body d-flex flex-row flex-wrap ">
+                            <div *ngFor="let place of cats ;let item = index;" class="d-flex  col-4 align-items-center">
+                                <input #item id="{{place.id}}" class="categories " type="checkbox" name="{{item}}"
+                                    value={{place.name}} (click)="selectingCats()">
                                 <label for="vehicle3">{{place.name}}</label>
                             </div>
                         </div>
@@ -147,15 +182,16 @@
                     </div>
 
 
-                    <div class="btn-group my-3">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <!-- <div class="btn-group ">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" value="true" (click)="gettingKidsArea($event)">Yes</a>
                             <a class=" dropdown-item" value="false" (click)="gettingKidsArea($event)">No</a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <!-- ............................................./// -->

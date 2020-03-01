@@ -43,6 +43,7 @@ export class AboutUsComponent implements OnInit {
   imgs = ["../../assets/Home/defaultPlace.png"];
   editedOptionImg = "../../assets/Home/defaultPlace.png";
   imgsEditedOption = ["../../assets/Home/defaultPlace.png"];
+  pageOfItems;
 
   // .........................///
   arrOfCats = [];
@@ -137,7 +138,9 @@ export class AboutUsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+     // .................................................///
+    // an example array of 150 items to be paged
+    this.reverseAlertArr = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
   }
 
   // ..........................google map ............///
@@ -189,7 +192,14 @@ export class AboutUsComponent implements OnInit {
 
     });
   }
-  // .................................................///
+ 
+
+
+onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
+}
+
   readURL(event: any) {
     this.fileData = <File>event.target.files[0];
     this.preview();

@@ -54,9 +54,7 @@ form {
 .confirmpass input {
     border: none;
     background: none;
-    // padding: 10px;
     color: #ddd;
-    width: 100%;
     padding-left: 0;
     padding-top: 0;
     font-size: $inputSize;
@@ -126,32 +124,90 @@ button {
     font-size: 10px;
     text-transform: capitalize;
 }
+  
+.opentime p{
+  color: #ddd;
+  font-size: 14px;
 
-.opentime p {
-    color: #ddd;
-    font-size: 14px;
 }
 
 .place-form .opentime input {
     border-bottom: none;
 }
-
-.file {
-    color: #ddd;
+.opentime label{
+  color: #ddd;
 }
-
-.place-form input,
-.place-form textarea {
-    border: none;
-    background: none;
-    // padding: 10px;
-    color: #ddd;
-    width: 100%;
-    padding-left: 0;
-    padding-top: 0;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
+.file{
+  color: #ddd;
 }
+.place-form input ,.place-form textarea {
+  border: none;
+  background: none;
+  // padding: 10px;
+  color: #ddd;
+  // width: 100%;
+  padding-left: 0;
+  padding-top: 0;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+.mainImg{
+  border: none;
+  width: 50%;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-upload {
+    border: 2px solid #ffa21d;
+    display: inline-block;
+    padding: 4px 6px;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: #ffa21d;
+    color: white;
+    margin: 5px;
+    font-family: Montserrat;
+    font-size: 12px;
+    
+    i{
+      color: white;
+     
+  }
+  }
+    
+  .custom-file-upload:hover{
+    color: #ffa21d;
+    border: #ffa21d 2px solid ;
+    background-color: #111;
+    i{
+      color: #ffa21d;
+    }
+  }
+  #img label{
+    color: #ddd;
+  }
+  .dropdown button{
+    color: #ffa21d;
+    border: #ffa21d 2px solid ;
+    background-color: #111;
+  }
+  .card-body label{
+    font-size:14px;
+    align-content:flex-start;
+    
+  }
+  input[type="checkbox"] {
+   
+  }
+  .dropdown button{
+    padding: 5px 13px;
+    // border: none;
+  }
+
+// light version
 
 // light version
 // .login{
