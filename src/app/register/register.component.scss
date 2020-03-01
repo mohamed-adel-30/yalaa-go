@@ -9,21 +9,12 @@
 
 .form-wrapper {
     background-color: #111;
-    height: 90vh;
     text-align: center;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
     margin: 5rem;
     border-radius: 30px;
-}
-
-.owner {
-    height: 350vh;
-}
-
-.place-form {
-    height: 200vh;
 }
 
 @media (max-width:500px) {
@@ -44,9 +35,8 @@ form {
     flex-flow: column;
     justify-content: space-between;
     align-content: center;
-    height: 90%;
     width: 90%;
-    margin: 0 auto;
+    margin: 8% auto;
 }
 
 .email,

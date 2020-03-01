@@ -9,7 +9,6 @@
 
 .form-wrapper {
     background-color: #111;
-    height: 80vh;
     text-align: center;
     display: flex;
     flex-flow: column;
@@ -42,9 +41,8 @@ form {
     flex-flow: column;
     justify-content: space-between;
     align-content: center;
-    height: 70%;
     width: 80%;
-    margin: 0 auto;
+    margin: 12% auto;
 }
 
 .email i,

@@ -1,47 +1,47 @@
 <section class="login container-fluid">
-  <section class="login-wrapper row d-flex justify-content-around">
+    <section class="login-wrapper row d-flex justify-content-around">
 
-    <section class="form-wrapper col-md-6 col-sm-12   ">
-      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="container">
+        <section class="form-wrapper col-md-6 col-sm-12   ">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="container">
 
-        <div class="logo ">
-          <img src="https://i.postimg.cc/1RNT06sr/logo.png" alt="">
-        </div>
-        <div class="email  ">
-          <i class="fas fa-user-alt"></i>
-          <input type="email" formControlName="email" placeholder="User email" class="col-12">
-        </div>
+                <div class="logo my-3">
+                    <img src="https://i.postimg.cc/1RNT06sr/logo.png" alt="">
+                </div>
+                <div class="email my-3 ">
+                    <i class="fas fa-user-alt"></i>
+                    <input type="email" formControlName="email" placeholder="User email" class="col-12">
+                </div>
 
-        <div class="pass ">
-          <div class="password">
-            <i class="fas fa-lock"></i>
-            <input type="password" formControlName="password" placeholder="Password" class="col-12">
-          </div>
-        </div>
+                <div class="pass my-3">
+                    <div class="password">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" formControlName="password" placeholder="Password" class="col-12">
+                    </div>
+                </div>
 
-        <div class="checkbox ">
-          <input type="checkBox" #logginOwner>
-          <label class="">I'm an owner</label>
-        </div>
+                <div class="checkbox my-3">
+                    <input type="checkBox" #logginOwner>
+                    <label class="">I'm an owner</label>
+                </div>
 
-        <div class="errormsg" *ngIf="errorcheck">
-          <p>invalid email or password !</p>
-        </div>
+                <div class="errormsg my-3" *ngIf="errorcheck">
+                    <p>invalid email or password !</p>
+                </div>
 
-        <div class="button">
-          <button type="submit" [disabled]="myForm.invalid">
+                <div class="button my-3">
+                    <button type="submit" [disabled]="myForm.invalid">
             login
           </button>
-        </div>
+                </div>
 
-        <div class="signup " routerLink="/register">
-          Don't have an account?
-          <span>sign up</span>
-        </div>
+                <div class="signup my-3" routerLink="/register">
+                    Don't have an account?
+                    <span>sign up</span>
+                </div>
 
-      </form>
+            </form>
+        </section>
     </section>
-  </section>
 </section>
 
 

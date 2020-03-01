@@ -116,6 +116,7 @@ input[type="file"] {
 }
 
 .modal-custom {
+    margin-top: 10%;
     .moreInfoCheck {
         width: 3%;
         border: none;
@@ -143,7 +144,7 @@ input[type="file"] {
         color: grey;
         line-height: 1.2;
         font-family: Montserrat;
-        font-size: $paragrphSize;
+        font-size: $inputSize;
         margin: 0 auto;
         margin-bottom: 20px;
         padding: 10px;
@@ -215,7 +216,7 @@ input[type="file"] {
     font-size: 25px;
     span {
         font-weight: 100;
-        font-size: 15px;
+        font-size: $inputSize;
     }
 }
 
