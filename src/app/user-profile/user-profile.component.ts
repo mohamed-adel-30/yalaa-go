@@ -76,12 +76,14 @@ export class UserProfileComponent implements OnInit {
         this.service.deleteFav(fav.id).subscribe(data => {
           console.log(data);
         });
-        event.srcElement.parentNode.remove();
+        event.srcElement.parentNode.style.opacity = ".5";
+        event.target.style.color = "grey";
+        event.target.style.cursor = "pointer";
       }
     }
   }
   ngOnInit() {
-    
+
     this.user = this.service.getData("user");
     this.service.getSingleUser(this.user.id).subscribe(data => {
       this.userData = data;
@@ -95,7 +97,7 @@ export class UserProfileComponent implements OnInit {
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(/^[a-z]\w{1,}@[a-z]{1,}.com$/)]),
     });
 
-// ===============pagination========//
+    // ===============pagination========//
 
   }
 
