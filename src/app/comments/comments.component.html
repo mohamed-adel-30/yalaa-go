@@ -142,8 +142,11 @@
 
     </div>
   </div>
-  <button ng-show="limit == 4" (click)="showMore()"> Show More </button>
-  <button ng-show="limit > 20" (click)="showLess()"> Show Less </button>
+
+  <div class="show" *ngIf='showedComments.length>0'>
+    <a *ngIf="limit == 4" (click)="showMore()"> Show More </a>
+    <a *ngIf="limit > 10" (click)="showLess()"> Show Less </a>
+  </div>
 
 
   <!-- <div class="pb-0 pt-3">

@@ -78,7 +78,6 @@ export class UserProfileComponent implements OnInit {
         });
         event.srcElement.parentNode.style.opacity = ".5";
         event.target.style.color = "grey";
-        event.target.style.cursor = "pointer";
       }
     }
   }

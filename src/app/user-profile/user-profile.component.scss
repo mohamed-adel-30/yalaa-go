@@ -22,9 +22,9 @@ ul {
   padding-top: $sectionMargin;
 
   .user-section {
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
-    box-shadow: 5px 5px 12px -2px rgba(0, 0, 0, .8), -5px -5px 12px -2px rgba(0, 0, 0, .8);
+    box-shadow: 5px 5px 12px -2px #000000cc, -5px -5px 12px -2px rgba(0, 0, 0, .8);
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.9)
   }
@@ -177,6 +177,7 @@ ul {
     position: absolute;
     font-size: 28px;
     right: 28px;
+    cursor: pointer;
   }
 
   .fav-heading {
