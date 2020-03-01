@@ -40,6 +40,7 @@ export class AboutUsComponent implements OnInit {
   alertArr = [];
   reverseAlertArr = [];
   // ...........................///
+  pageOfItems;
   constructor(private httpService: HttpServiceService, private router: Router) {
     this.celectedArr = [1]
     this.owner = this.httpService.getData("owneruser"); ///3ayzin n3ml param ablha
@@ -111,7 +112,15 @@ export class AboutUsComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
+    // an example array of 150 items to be paged
+    this.reverseAlertArr = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+}
+
+onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
+}
+
   readURL(event: any) {
     this.fileData = <File>event.target.files[0];
     this.preview();

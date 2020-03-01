@@ -177,10 +177,7 @@ onChangePage(pageOfItems: Array<any>) {
       alert("you have to register")
       this.router.navigate(["/register"])
     }
-
   }
-
-
   addToFavs(place) {
     this.placeLoggedin = this.httpService.getData("loggedin");
 

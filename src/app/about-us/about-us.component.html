@@ -276,7 +276,7 @@
 
           </div>
 
-          <!-- ............................................./// -->
+          <!-- .....................end edite place......................../// -->
         </div>
 
         <div class="modal-footer">
@@ -293,13 +293,13 @@
   <!-- ...............histroey..//-->
 
 
-
+<!-- pagination -->
   <div *ngIf="owenerplace">
 
     <section class="ownerReegisterationHistory my-5">
       <div *ngIf="ownerHistory" class=" ownerRregisterationHistory-wrapper">
         <h2 class="specificSpan"> Reservations</h2>
-        <div *ngFor="let i of reverseAlertArr" class="  my-5  p-5 row ownerReegisterationHistory-solo">
+        <div *ngFor="let i of pageOfItems" class="  my-5  p-5 row ownerReegisterationHistory-solo">
 
           <div class=" col-md-11 ">
             <p><span class="specificSpan">Reservation Id:</span>{{i.id}}</p>
@@ -336,16 +336,13 @@
               </div>
             </div>
           </div>
-
-
-
-
         </div>
-
-
+      <!-- pagination footer -->
+        <div class="pb-0 pt-3 d-flex justify-content-around">
+          <jw-pagination [items]="reverseAlertArr" (changePage)="onChangePage($event)"></jw-pagination>
       </div>
 
-
+      </div>
     </section>
 
 

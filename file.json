@@ -47,6 +47,12 @@
       "email": "samaaaa@yahoo.com",
       "password": "123A!a",
       "id": 7
+    },
+    {
+      "name": "sama",
+      "email": "samaaamin2@gmail.com",
+      "password": "123A!a",
+      "id": 8
     }
   ],
   "users": [
@@ -580,13 +586,8 @@
           "comment": "Amazing and unique place suitable for kids and Adults."
         }
       ],
-      "rates": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "avgrate": 4,
+      "rates": [],
+      "avgrate": null,
       "paymentMethod": "Ticket",
       "mainImage": "https://media-cdn.tripadvisor.com/media/photo-s/18/09/a7/60/escape-room-alexandria.jpg",
       "imgs": [
@@ -1131,6 +1132,41 @@
       },
       "ownerId": 7,
       "id": 21
+    },
+    {
+      "name": "samaaaaa",
+      "catId": [
+        "1"
+      ],
+      "address": "11111111111111111",
+      "location": "1111111111111111111",
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "paymentMethod": "Ticket",
+      "avgrate": 5,
+      "mainImage": "../../assets/Home/defaultPlace.png",
+      "imgs": [
+        "../../assets/Home/defaultPlace.png",
+        "../../assets/Home/defaultPlace.png",
+        "../../assets/Home/defaultPlace.png"
+      ],
+      "status": "open now",
+      "openHours": "11:11to11:11",
+      "desc": "11111111111111111",
+      "reservation": "true",
+      "kid-friendly": "true",
+      "contact": {
+        "phone": "true",
+        "facebook": "",
+        "instagram": ""
+      },
+      "ownerId": 8,
+      "id": 22
     }
   ],
   "options": [
@@ -1618,8 +1654,19 @@
       "price": "1111",
       "placeId": 19,
       "img": "http://placehold.it/200/200"
+    },
+    {
+      "id": 46,
+      "name": "DSB,MSANDVS.M",
+      "imgs": [
+        "../../assets/Home/defaultPlace.png"
+      ],
+      "desc": "232",
+      "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
+      "price": "adwefeessnbmngsgdr",
+      "placeId": 22,
+      "img": "../../assets/Home/defaultPlace.png"
     }
-
   ],
   "comments": [
     {
@@ -1891,6 +1938,18 @@
         3
       ],
       "id": 3
+    },
+    {
+      "value": 5,
+      "placeId": "8",
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 4
     }
   ],
   "favourites": [
@@ -1911,7 +1970,6 @@
     },
     {
       "placeId": 7,
-
       "userId": 10,
       "id": 5
     },
@@ -1920,7 +1978,6 @@
       "userId": 10,
       "id": 6
     },
-
     {
       "placeId": "12",
       "userId": 18,
