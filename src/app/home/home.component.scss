@@ -20,6 +20,7 @@
     height: 100vh;
     .wrapper {
         width: 90%;
+        text-align: right;
         h1 {
             color: $hcolors;
             padding-top: 15%;
@@ -141,7 +142,7 @@
         font-family: caviardreams;
         color: $hcolors;
         text-transform: capitalize;
-        font-size: 4rem;
+        font-size: $h2;
     }
     .wrapper {
         img {
@@ -179,7 +180,17 @@
 }
 
 @media screen and (max-width:1050px) {
+    .hero {
+        .wrapper {
+            text-align: center;
+            h1 {
+                padding-top: 30%;
+                font-size: 24px;
+            }
+        }
+    }
     .yallaNo5rog {
+        padding-bottom: 10%;
         .first {
             transform: translateX(-5rem) rotate(-25deg);
         }

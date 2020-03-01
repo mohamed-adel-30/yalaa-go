@@ -1,22 +1,22 @@
+@import "./../../styles.scss";
 footer {
-    background-image: url("./../../assets/Home/footer.svg");
+    background-color: #000000;
     background-size: cover;
-    
     .wrapper {
         width: 90%;
         margin: 0 auto;
-        padding: 14% 0 5% 0;
+        padding: $sectionMargin;
         border-bottom: 2px solid #fff;
         figure {
             font-size: 0;
         }
         h5 {
-            color: #ffa21d;
+            color: $hcolors;
             font-weight: bold;
         }
         p {
             color: #fff;
-            font-size: 16px;
+            font-size: $paragrphSize;
             list-style: none;
         }
         a {
@@ -29,10 +29,10 @@ footer {
     .copyRight {
         width: 50%;
         p {
-            font-size: 12px;
+            font-size: $inputSize;
             color: #fff;
             span {
-                color: #ffa21d;
+                color: $hcolors;
             }
         }
     }
@@ -46,6 +46,7 @@ footer {
         }
     }
 }
-i{
-    font-size: 16px;
+
+i {
+    font-size: $paragrphSize;
 }

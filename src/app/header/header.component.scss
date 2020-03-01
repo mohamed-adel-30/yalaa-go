@@ -1,32 +1,40 @@
 @import './../../styles.scss';
 nav {
+    .person {
+        min-width: initial;
+        left: initial;
+        width: 6rem;
+        right: 0;
+    }
     z-index: 9999;
     background-color: rgba($color: #000000, $alpha: 0.5);
     margin: 0 auto;
     position: fixed;
     width: 100%;
     .wrapper {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
-        padding: 0;
-    }
-    
-    li {
-        a {
-            font-size: 16px;
-            color: #fff;
-            white-space: nowrap;
-            padding-right: 40px;
-        }
-        a:hover {
-            color: #ffa21d;
+        li {
+            a {
+                font-size: $paragrphSize;
+                color: #fff;
+                white-space: nowrap;
+                padding-right: 40px;
+            }
+            a:hover {
+                color: $hcolors;
+            }
+            p {
+                cursor: pointer;
+                font-size: $paragrphSize;
+            }
         }
         p {
             cursor: pointer;
         }
     }
     i {
-        font-size: 18px;
+        font-size: $paragrphSize;
     }
     .form {
         position: relative;
@@ -41,15 +49,38 @@ nav {
             z-index: 9999;
             a {
                 text-decoration: none;
-                font-size: 16px;
+                font-size: $paragrphSize;
             }
         }
     }
+    .dropdown-menu {
+        min-width: 8rem;
+        text-align: center
+    }
 }
+
+.nav-item {
+    list-style: none;
+}
+
+.signup {
+    color: $hcolors;
+    font-size: $paragrphSize;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 10px;
+    &:hover {
+        background-color: $hcolors;
+        cursor: pointer;
+        color: #fff;
+    }
+}
+
 .navbar-brand {
     width: 6%;
 }
-.navbar-brand img{
+
+.navbar-brand img {
     max-width: 100%;
 }
 
@@ -58,12 +89,4 @@ nav {
         position: static;
         background-color: #000000;
     }
-}
-.nav-item{
-    list-style: none;
-}
-.signup{
-    color: #ffa21d;
-    font-size: 16px;
-    font-weight: 500;
 }

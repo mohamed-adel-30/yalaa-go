@@ -2,13 +2,15 @@
 
 // spacing style
 $sectionMargin:7%;
-$pargraphMargin:3rem;
+$pargraphMargin:30px;
 $wrapper:90%;
 $wrapperMargin:0 auto;
 // fonts style
-$h2:4.5rem;
-$h3:3.5rem;
-$paragrphSize:2rem;
+$h2:40px;
+$h3:35px;
+$paragrphSize:16px;
+$inputSize:14px;
+$labelsBold:600;
 $hcolors:#ffa21d;
 // general style
 * {
@@ -18,10 +20,13 @@ $hcolors:#ffa21d;
 
 body {
     background-color: #f2f2f2;
+    background-attachment: fixed;
 }
+
 input:focus {
-    outline-color:transparent;
+    outline-color: transparent;
     outline-style: none;
-    outline-width: 0px;;
+    outline-width: 0px;
+    ;
     outline-offset: 0px;
 }

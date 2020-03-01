@@ -1,3 +1,4 @@
+@import "./../../styles.scss";
 // ............google map .............///
 agm-map {
     height: 300px;
@@ -19,6 +20,7 @@ agm-map {
 }
 
 .container-custom {
+    padding-top: $sectionMargin;
     margin: 0 auto;
     width: 90%;
 }
@@ -34,17 +36,17 @@ h1 {
 }
 
 h1:hover {
-    color: #ffa21d;
+    color: $hcolors;
 }
 
 .Option-Title {
     font-family: Montserrat;
-    font-weight: bold;
+    font-weight: $labelsBold;
     font-size: 28px;
     text-align: left;
     margin-left: 6%;
     border-radius: 30px;
-    border: 2px solid #ffa21d;
+    border: 2px solid $hcolors;
     width: 13%;
     padding: 10px 22px;
     background-color: white;
@@ -65,7 +67,7 @@ h1:hover {
 
 .owener-btns {
     font-weight: bolder;
-    background-color: #ffa21d;
+    background-color: $hcolors;
     text-align: center;
     border: none;
     color: white;
@@ -83,27 +85,27 @@ input[type="file"] {
 }
 
 .custom-file-upload {
-    border: 2px solid #ffa21d;
+    border: 2px solid $hcolors;
     display: inline-block;
     padding: 4px 6px;
     cursor: pointer;
     border-radius: 30px;
-    background-color: #ffa21d;
+    background-color: $hcolors;
     color: white;
     margin: 5px;
     font-family: Montserrat;
-    font-size: 12px;
+    font-size: $inputSize;
     i {
         color: white;
     }
 }
 
 .custom-file-upload:hover {
-    color: #ffa21d;
-    border: #ffa21d 2px solid;
+    color: $hcolors;
+    border: $hcolors 2px solid;
     background-color: white;
     i {
-        color: #ffa21d;
+        color: $hcolors;
     }
 }
 
@@ -128,7 +130,7 @@ input[type="file"] {
         color: black;
         line-height: 1.2;
         font-family: Montserrat;
-        font-size: 20px;
+        font-size: $paragrphSize;
         display: inline;
     }
     textarea,
@@ -141,7 +143,7 @@ input[type="file"] {
         color: grey;
         line-height: 1.2;
         font-family: Montserrat;
-        font-size: 20px;
+        font-size: $paragrphSize;
         margin: 0 auto;
         margin-bottom: 20px;
         padding: 10px;
@@ -163,7 +165,7 @@ input[type="file"] {
         button {
             line-height: 1.2;
             font-family: Montserrat;
-            font-size: 20px;
+            font-size: $paragrphSize;
             font-weight: bold;
             color: black;
         }
@@ -197,7 +199,7 @@ input[type="file"] {
 .games-details {
     border: 1px solid #dddddda8;
     .game-name {
-        background-color: #ffa21d;
+        background-color: $hcolors;
         color: #fff;
         text-transform: capitalize;
         text-align: center;
@@ -209,7 +211,7 @@ input[type="file"] {
 
 .game-price {
     font-weight: 900;
-    color: #ffa21d;
+    color: $hcolors;
     font-size: 25px;
     span {
         font-weight: 100;
@@ -263,10 +265,11 @@ input[type="file"] {
         color: white;
         p {
             line-height: 1.2;
+            font-size: $paragrphSize;
         }
     }
     span {
-        color: #ffa21d;
+        color: $hcolors;
     }
     .moreinfo-btn {
         font-weight: bold;
@@ -275,12 +278,12 @@ input[type="file"] {
     }
     .moreinfo-btn:hover {
         background-color: black;
-        color: #ffa21d;
+        color: $hcolors;
     }
 }
 
 .delete-history-btn {
-    color: #ffa21d;
-    border: 2px #ffa21d solid;
+    color: $hcolors;
+    border: 2px $hcolors solid;
     border-radius: 5px;
 }

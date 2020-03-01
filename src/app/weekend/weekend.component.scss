@@ -1,7 +1,12 @@
 @import './../../styles.scss';
+h2 {
+    font-size: $h3;
+    color: $hcolors;
+}
+
 .wrapper {
     width: $wrapper;
-    padding: 20% 0;
+    padding: 10% 0;
     .form-group {
         p {
             font-size: $paragrphSize;
@@ -9,9 +14,10 @@
         label {
             font-size: $paragrphSize;
         }
-        input {
+        input,
+        option,
+        select {
             font-size: $paragrphSize;
-            margin-bottom: $pargraphMargin;
         }
         button {
             font-size: $paragrphSize;
@@ -26,4 +32,23 @@
     h1 {
         font-size: 4rem;
     }
+}
+
+.confirm {
+    margin-top: 0;
+    display: none;
+}
+
+.plan {
+    font-size: $paragrphSize;
+    background-color: #ffffff;
+    box-shadow: 3px 2px 3px 2px gray;
+    border-radius: 15px;
+    p {
+        font-size: $paragrphSize;
+    }
+}
+
+.time {
+    width: 153px;
 }

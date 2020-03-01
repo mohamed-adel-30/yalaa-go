@@ -1,36 +1,154 @@
-<div class="wrapper m-auto ">
+<div class="wrapper m-auto">
     <div class="row ">
-        <div class="col-6">
-            <form class="form-group form col-12  " [formGroup]='holidayForm' (ngSubmit)="onSubmit(holidayForm)">
-                <div class="Date">
-                    <label for="">Date</label>
-                    <input formControlName="date" type="date" class="form-control" name="" id="date" aria-describedby="helpId" placeholder="">
+
+        <form [formGroup]='planForm' (ngSubmit)="onOk(planForm)" class="form-group w-100 bg-light p-5">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Your Mode:</label>
+                <div class="col-sm-10">
+                    <select formControlName="location" id="inputState" class="form-control w-25">
+                        <option value="" disabled>select Mode</option>
+                        <option>Fun</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Location:</label>
+                <div class="col-sm-10">
+                    <select formControlName="location" id="inputState" class="form-control w-25">
+                        <option value="" disabled>select location</option>
+                        <option *ngFor='let plan of locations' [value]="plan" >{{plan}}</option>
+                      </select>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="time" class="col-sm-2  col-form-label ">Prefrred Time</label>
+                <div class="col-sm-10 d-flex  w-25">
+                    <input type="time" class="form-control time mr-2" formControlName="time" id="time">
+                    <p class="mr-2">To</p>
+                    <input type="time" class="form-control time " formControlName="endTime" id="time"> </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-lg-2">
+                    <label for="">Have a Childrens</label>
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-check form-check-inline">
+                        <input formControlName="haveChild" type="radio" name="haveChild" value="true" checked>
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input formControlName="haveChild" type="radio" name="haveChild" value="false">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-warning col-2 show">Get Your Plan</button>
+        </form>
+
+        <!-- 
+        <form class="form-group  bg-light py-5" [formGroup]='planForm' (ngSubmit)="onOk(planForm)">
+            <section class="container-fluid pl-3 text-left">
+
+                <div class="location mb-4 ">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <label class="mr-5 text-warning" for="">Location: </label>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <select formControlName="location" class="bg-light w-75" name="" id="">
+                            <option value="" disabled>select location</option>
+                            <option *ngFor='let plan of locations' [value]="plan" >{{plan}}</option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div class="time d-flex align-items-center w-100 mb-4">
+                    <label for="time " class=" text-warning mr-5" for=" ">Prefer Time:</label>
+                    <input type="time" class="form-control col-3 w-100 px-4 mr-2" formControlName="time" name="" id="from" placeholder=" " aria-describedby="helpId " value="12:00 ">
+                    <label for="endtime" class=" text-center" for=" ">to</label>
+                    <input type="time" class="form-control col-3 px-4 ml-2" formControlName="endTime" name="" id="to" placeholder=" " aria-describedby="helpId " value="12:00 ">
                 </div>
 
-                <div class="time px-0 col-12">
-                    <label for="time" class="mr-5 " for="">Time</label>
-                    <input formControlName="time" type="time" name="time" id="from" class="form-control mb-0 col-12" placeholder="" aria-describedby="helpId" value="12:00">
-                    <label for="endtime" class="mr-2" for="">to</label>
-                    <input formControlName="endTime" type="time" name="endtime" id="to" class="form-control col-12" placeholder="" aria-describedby="helpId" value="12:00">
+                <div class=" haveChildren d-flex align-items-center mb-4 ">
+                    <p class="mr-5 text-warning ">Have children:</p>
+                    <input formControlName="haveChild" type="radio" name="haveChild" value="true" checked>
+                    <label class="mr-3" for="yes">yes</label>
+                    <input formControlName="haveChild" type="radio" name="haveChild" value="false">
+                    <label for="no ">no</label>
                 </div>
 
-                <div class="sendMessage">
-                    <p class="px-0 col-12">Send message to your current email</p>
-                    <input class="mr-2" type="radio" id="send" name="sendEmail" value="myEmail" checked>
-                    <label class="mr-5" for="male">yes</label>
-                    <input class="mr-2" type="radio" id="notSend" name="sendEmail" value="newEmail">
-                    <label for="female">no</label>
-                </div>
 
-                <div class="email">
-                    <input formControlName="email" type="email" class="form-control" name="" id="email" aria-describedby="helpId" placeholder="Email">
+            </section>
+            <button type="submit" class="btn btn-warning col-6 show">Get Your Plan</button>
+
+        </form>
+ -->
+
+
+
+
+    </div>
+    <div class="wrapper m-auto">
+        <div class="row mb-5" *ngFor='let plan of filteredPlans'>
+            <h2 class="mr col-md-3"> plan {{plan.prop+1}}</h2>
+
+            <div class="plan col-md-9 d-flex text-center align-items-center w-50 p-5">
+
+                <div class="col-6 text-center " *ngFor='let p of plan' class="planContainer">
+                    <img class="w-75 m-auto" src="{{p.imgs[1]}}" alt="">
+                    <!-- <p #location [id]="p.location" class="plans">{{p.location}}</p> -->
+                    <p class="plans">{{p.name}}</p>
+                    <p>{{p.openHours}}</p>
+                    <!-- <button (click)="book(location)">book</button> -->
                 </div>
-                <button type="submit" [disabled]="!holidayForm.valid" class="btn btn-primary col-12">Submit</button>
-            </form>
-        </div>
-        <div class="userName col-6 text-center" *ngFor="let n of user">
-            <h1 class="text-danger"> {{n.name}} </h1>
+            </div>
         </div>
     </div>
+    <!-- 
 
-</div>
+    <div class="m-auto confirm ">
+        <div class="row ">
+            <div class="col-6">
+                <form class="form-group form col-12  " [formGroup]='holidayForm' (ngSubmit)="onSubmit(holidayForm)">
+                    <div class="Date">
+                        <label for="">Date</label>
+                        <input formControlName="date" type="date" class="form-control" name="" id="date" aria-describedby="helpId" placeholder="">
+                    </div>
+
+                    <div class="time px-0 col-12">
+                        <label for="time" class="mr-5 " for="">Time</label>
+                        <input formControlName="time" type="time" name="time" id="from" class="form-control mb-0 col-12" placeholder="" aria-describedby="helpId" value="12:00">
+                        <label for="endtime" class="mr-2" for="">to</label>
+                        <input formControlName="endTime" type="time" name="endtime" id="to" class="form-control col-12" placeholder="" aria-describedby="helpId" value="12:00">
+                    </div>
+
+                    <div class="sendMessage">
+                        <p class="px-0 col-12">Send message to your current email</p>
+                        <input class="mr-2" type="radio" id="send" name="sendEmail" value="myEmail" checked>
+                        <label class="mr-5" for="male">yes</label>
+                        <input class="mr-2" type="radio" id="notSend" name="sendEmail" value="newEmail">
+                        <label for="female">no</label>
+                    </div>
+
+                    <div class="email">
+                        <input formControlName="email" type="email" class="form-control" name="" id="email" aria-describedby="helpId" placeholder="Email">
+                    </div>
+                    <button type="submit" [disabled]="!holidayForm.valid" class="btn btn-primary col-12">Submit</button>
+                </form>
+            </div>
+            <div class="userName col-6 text-center" *ngFor="let n of user">
+                <h1 class="text-danger"> {{n.name}} </h1>
+
+            </div>
+        </div>
+
+    </div>
+</div> -->
