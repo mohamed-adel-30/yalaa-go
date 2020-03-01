@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { PlacesService } from "../places.service"
+import { HttpServiceService } from '../http-service.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-options',
@@ -16,15 +18,16 @@ export class OptionsComponent implements OnInit {
   operation;
   fixBug = false;
 
-  constructor(private service: PlacesService) {
+  constructor(private service: PlacesService ) {
     this.service.counter = 0;
     this.service.arrOfGames = [];
-    console.log(this.i)
-  }
+    console.log(this.i);
+// -----
+
+}
 
   ngOnInit() {
-
-  }
+}
 
   removingOption(price, i) {
     if (this.count != 0) {
@@ -58,19 +61,4 @@ export class OptionsComponent implements OnInit {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-

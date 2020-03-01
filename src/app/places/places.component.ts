@@ -26,7 +26,7 @@ export class PlacesComponent implements OnInit {
 
   // ...........................................///
   places;
-  singlePlace; 0
+  singlePlace; 
   // ........///
   singlePlaceId;
   singlePlaceData; //obj

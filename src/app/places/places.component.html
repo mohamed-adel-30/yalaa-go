@@ -1,4 +1,4 @@
-<div class="container-self container-font">
+<div class="container-self container-font mt-4">
   <div class="row justify-content-between places-section">
     <div class="loading" *ngIf="!singlePlaceData">
       loading...
@@ -67,11 +67,10 @@
           </ng-template>
           {{singlePlaceData.status}}
         </p>
-        <!-- <span  class="OnlineBooking" *ngIf='singlePlaceData.reservation=="true"'>Online
-          Booking</span> -->
-        <button type="button" class="btn onlinBtn ml-2 mt-3" *ngIf='singlePlaceData.reservation=="true"'
+       
+        <button type="button" class="btn onlinBtn ml-2 mt-3"
           (click)='appearOptionSection()'>
-          <span class="OnlineBooking pr-1" *ngIf='singlePlaceData.reservation=="true"'>Online Booking </span>
+        <span  class="OnlineBooking pr-1">View Options </span>
           <i class="fas fa-angle-up" *ngIf='!appear'></i> <i class="fas fa-angle-down" *ngIf='appear'></i>
         </button>
       </div>
@@ -88,15 +87,16 @@
       </div>
 
 
-      <div class="col-12 d-flex justify-content-around flex-wrap">
-        <h1 class="col-md-3 subTotal-title col-12">
-          SubTotal : {{finalTotal}} <span style="font-size: 10px;"> EGP</span>
-        </h1>
-        <button class="btn btn-danger payment-btn col-md-2 col-9" (click)="savingSelectedGames()">
-          Go to Payment
-        </button>
-      </div>
-    </section>
+    <div class="col-12 d-flex justify-content-around flex-wrap" >
+      <h1 class="col-md-3 subTotal-title col-12">
+        SubTotal : {{finalTotal}} <span style="font-size: 10px;"> EGP</span>
+      </h1>
+      <button class="btn btn-danger payment-btn col-md-2 col-9" 
+      (click)="savingSelectedGames()" *ngIf='singlePlaceData.reservation=="true"'>
+        Go to Payment
+      </button>
+    </div>
+  </section>
   </div>
   <!-- games  -->
 

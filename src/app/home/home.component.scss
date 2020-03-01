@@ -28,33 +28,147 @@
             line-height: 0.43;
             letter-spacing: 1.74px;
             font-family: blueburry;
+            text-align: center;
         }
+    }
+}
+// ourplaces section
+.container-custome{
+    width: 90%;
+    margin: auto;
+}
+.placesTitle{text-align: center;color: #ffa21d;font-size: 45px;font-family: caviardreams;}
+.place-img img{
+height: 235px;
+border-radius: 5%;
+width: 100%;
+}
+.place-img:hover .overlay{
+    display: block;
+    transition: all 1s ease-in-out;
+}
+.place-img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+.overlay{
+    display: none;
+    background: #46454573;
+    position: absolute;
+    /* left: 28px; */
+    font-family: caviardreams;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 92%;
+    border: 30%;
+    border-radius: 5%;
+    h4{
+        font-size: 19px;
+    padding-top: 50px;
+    color: #fff;
+    }
+    p{
+        font-size: 14px;
+        color: #fff;
+    }
+    button{
+    background: #dddddd40;
+    border: 1px solid #fffdfdab;
+    font-size: 14px;
+    color: #ffa21d;
+    font-weight: 600;
+    }
+    .icons i{
+        font-size: 20px;
+    }
+    .fa-facebook-square{color: #39559F;}
+    .fa-instagram{color: #F24D57;}
+}
+.overlay button.detail-btn:hover{
+    background-color: rgba(255, 255, 255, 0.836);
+    }
+
+// category style
+.img-div{height: 190px;
+img{
+    height: 100%;
+}}
+.overlay-cat{
+    
+    background: #46454573;
+    position: absolute;
+    /* left: 28px; */
+    font-family: caviardreams;
+    top: 0;
+    height: 100%;
+    width: 89%;
+    border: 30%;
+    border-radius: 5%;
+    
+    h5{
+        font-size: 15px;
+    padding: 10px;
+    color: #fff;
+    text-decoration: underline;
+    }
+}
+// category style
+// team style
+.testemolians{
+background-image: linear-gradient(rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.79)),url(../../assets/Home/texture.jpg);
+    background-attachment: fixed;
+padding: 50px 0;}
+.person{
+    height: 284px;
+    background: #fff;
+    blockquote{
+        font-style: italic;
+    // padding: 20px 50px 20px 40px;
+    color: #777676;
+    border-left: #807e7ea9 solid 7px;
+    }
+    span{
+        font-size: 12px;
+        small{
+            color: #ffa21d;
+            font-weight: 600;
+        }
+    }
+    .div-lineHieght{
+        line-height: 4;
+    }
+    figure img{
+        border-radius: 50%;
     }
 }
 
 .yallaNo5rog {
     background-image: url("./../../assets/Home/bg-left.svg");
     background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: bottom;
+    background-position-x: -180px;
+    background-position-y: -20px;
     .caption {
         padding-top: 5%;
         h2 {
-            font-size: $h2;
+            // font-size: $h2;
+            font-size: 45px;
             color: $hcolors;
             text-transform: capitalize;
             font-family: caviardreams;
         }
         p {
-            font-size: $paragrphSize;
-            margin: $pargraphMargin 0;
+            // font-size: $paragrphSize;
+            font-size: 22px;
+            // margin: $pargraphMargin 0;
         }
     }
     .first {
         transform: rotate(-25deg);
+        // margin-top: 150px;
     }
     .layer {
-        transform: rotate(25deg) translateY(-21rem) translateX(-20rem);
+        transform: rotate(25deg) translateY(-9rem) translateX(-9rem);
     }
 }
 
@@ -63,44 +177,51 @@
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
-    padding-bottom: 30rem;
+    // padding-bottom: 30rem;
     .aboutUs-caption {
         padding-top: 5%;
         h2 {
             font-family: caviardreams;
-            font-size: $h2;
+            // font-size: $h2;
+            font-size:45px;
             text-transform: capitalize;
             line-height: 1.27;
             margin-bottom: $pargraphMargin;
             color: $hcolors;
         }
         .details {
-            margin-bottom: $pargraphMargin;
+            // margin-bottom: $pargraphMargin;
+            margin-bottom: 2rem;
             p {
-                font-size: $paragrphSize;
+                // font-size: $paragrphSize;
+                font-size: 20px;
                 line-height: 1.2;
                 font-weight: 400;
             }
             i {
-                font-size: $paragrphSize;
+                // font-size: $paragrphSize;
+                font-size: 23px;
             }
         }
     }
     .slider-side {
         position: relative;
         .wallpaper {
-            width: 95%;
-            height: 27rem;
-            border-radius: 30px;
-            background-color: $hcolors;
+            width: 93%;
+    height: 34%;
+    border-radius: 30px;
+    background-color: #ffa21d;
+    position: relative;
+            // background-color: $hcolors;
+           
         }
         .slider {
             border-radius: 16px;
-            // transform: translateY(-200px);
-            position: absolute;
-            top: 5rem;
-            right: 10%;
-            left: 10%;
+    position: relative;
+    /* top: 5rem; */
+    /* right: 10%; */
+    /* left: 10%; */
+    bottom: 154px;
             .slide {
                 top: 0;
                 border-radius: 50px;
@@ -110,40 +231,37 @@
 }
 
 .signUp {
-    background-image: url("./../../assets/Home/viviana-rishe-_6cuFnt_qCs-unsplash.jpg");
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.62)),url("./../../assets/Home/viviana-rishe-_6cuFnt_qCs-unsplash.jpg");
     background-size: cover;
     background-attachment: fixed;
-    background-position: top;
+    background-position: center center ;
     margin-bottom: $sectionMargin;
-    .overlay {
-        height: 100%;
-        width: 100%;
-        background-color: rgba($color: #000000, $alpha: 0.3);
-    }
+    // .overlay {
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: rgba($color: #000000, $alpha: 0.3);
+    // }
     .wrapper {
         padding: 8%;
         h2 {
             font-family: caviardreams;
-            font-size: $h2;
+            // font-size: $h2;
+            font-size: 53px;
             color: #fff;
             text-transform: capitalize;
             margin-bottom: 20px;
         }
-        a {
-            font-size: 27px;
-            border: none;
-            border-radius: 20px;
-        }
+       
+    }
+    .btn-custome{
+        background-color: #ffa21d;
+        font-size: 18px;
+        font-weight: 600;
     }
 }
 
 .recommended {
-    h2 {
-        font-family: caviardreams;
-        color: $hcolors;
-        text-transform: capitalize;
-        font-size: $h2;
-    }
+    
     .wrapper {
         img {
             border-radius: 16px;
