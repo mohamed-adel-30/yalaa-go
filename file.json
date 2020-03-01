@@ -33,7 +33,7 @@
   ],
   "users": [
     {
-      "name": "samaa",
+      "name": "samaa amin",
       "email": "samaa@dsfgh.com",
       "password": "123aA!",
       "image": "",
@@ -52,7 +52,7 @@
       "id": 10
     },
     {
-      "name": "samaaaa",
+      "name": "samaa amin",
       "email": "sama@gmail.com",
       "password": "1234Aa@",
       "image": "",
@@ -220,15 +220,14 @@
         }
       ],
       "rates": [
+        0,
         1,
         2,
-        3,
-        4,
-        5
+        3
       ],
       "paymentMethod": "Ticket",
-      "avgrate": 5,
-      "mainImage": "https://i.postimg.cc/fTf7bNFK/msr7elsalam.jpg",
+      "avgrate": 4,
+      "mainImage": "https://img.soutalomma.com/ArticleImgs/2018/7/29/137032-%D9%82%D8%A7%D8%B9%D8%A9-%D9%85%D8%B3%D8%B1%D8%AD-%D9%81%D8%A7%D8%B1%D8%BA%D8%A9.jpg",
       "imgs": [
         "https://www.shorouknews.com/uploadedimages/Other/original/masrah.jpg",
         "https://image.shutterstock.com/image-illustration/theater-masks-drama-comedy-red-260nw-718511797.jpg",
@@ -237,6 +236,7 @@
       "status": "closed",
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
+      "shortdesc": "This Place offers a chance to the most amazing entertainments.",
       "reservation": "true",
       "kid-friendly": "false",
       "contact": {
@@ -281,6 +281,7 @@
       ],
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
+      "shortdesc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate!",
       "status": "open now",
       "reservation": "true",
       "kid-friendly": "false",
@@ -653,6 +654,7 @@
       ],
       "openHours": "11:00 AM - 3:00 AM",
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
+      "shortdesc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate!",
       "status": "open now",
       "reservation": "true",
       "kid-friendly": "false",
@@ -1311,29 +1313,7 @@
       "desc": " Spin and Smash Table Tennis & Ping Pong Center",
       "price": "60",
       "placeId": "5",
-      "img": "https://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg-2.jpg"
-    },
-    {
-      "id": 28,
-      "name": "VR games",
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
-      "desc": " Spin and Smash Table Tennis & Ping Pong Center",
-      "price": "100",
-      "placeId": "5",
-      "img": "https://i.postimg.cc/nVN6nrNW/uriel-soberanes-Mx-Vk-WPi-JALs-unsplash.png"
-    },
-    {
-      "id": 29,
-      "name": "bing",
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
-      "desc": " Spin and Smash Table Tennis & Ping Pong Center",
-      "price": "50",
-      "placeId": "5",
-      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
+      "img": "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_3DBilliardsPoolAndSnooker_image1600w.jpg"
     },
     {
       "id": 30,
@@ -1358,17 +1338,6 @@
       "img": "https://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg-2.jpg"
     },
     {
-      "id": 32,
-      "name": "bing",
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
-      "desc": " Spin and Smash Table Tennis & Ping Pong Center",
-      "price": "50",
-      "placeId": "4",
-      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
-    },
-    {
       "id": 33,
       "name": "billiards",
       "imgs": [
@@ -1389,17 +1358,6 @@
       "price": "100",
       "placeId": "4",
       "img": "https://i.postimg.cc/nVN6nrNW/uriel-soberanes-Mx-Vk-WPi-JALs-unsplash.png"
-    },
-    {
-      "id": 35,
-      "name": "bing",
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
-      "desc": " Spin and Smash Table Tennis & Ping Pong Center",
-      "price": "50",
-      "placeId": "4",
-      "img": "https://previews.123rf.com/images/zhogolevpv/zhogolevpv1709/zhogolevpv170900012/85859174-logo-design-ping-pong-tournament-for-printing-press-and-on-t-shirts-publications-on-the-internet-vec.jpg"
     },
     {
       "id": 36,
@@ -1455,17 +1413,6 @@
       "price": "60",
       "placeId": "1",
       "img": "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_3DBilliardsPoolAndSnooker_image1600w.jpg"
-    },
-    {
-      "id": 41,
-      "name": "VR games",
-      "imgs": [
-        "http://placehold.it/200/200"
-      ],
-      "desc": " Spin and Smash Table Tennis & Ping Pong Center",
-      "price": "100",
-      "placeId": "4",
-      "img": "https://i.postimg.cc/nVN6nrNW/uriel-soberanes-Mx-Vk-WPi-JALs-unsplash.png"
     },
     {
       "id": 42,
@@ -1752,9 +1699,60 @@
       "comment": "hhh",
       "placeId": "6",
       "userId": 8,
-      "userName": "samaa",
+      "userName": "samaa amin",
       "userImg": "",
       "id": 24
+    },
+    {
+      "comment": "gooood",
+      "placeId": "1",
+      "userId": 8,
+      "userName": "samaa amin",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 25
+    },
+    {
+      "comment": "unlike",
+      "placeId": "1",
+      "userId": 8,
+      "userName": "samaa amin",
+      "userImg": "",
+      "rate": 1,
+      "arrOfRate": [
+        0
+      ],
+      "id": 26
+    },
+    {
+      "comment": "",
+      "placeId": "7",
+      "userId": 8,
+      "userName": "samaa",
+      "userImg": "",
+      "id": 27
+    },
+    {
+      "comment": "",
+      "placeId": "7",
+      "userId": 8,
+      "userName": "samaa",
+      "userImg": "",
+      "id": 28
+    },
+    {
+      "comment": "",
+      "placeId": "7",
+      "userId": 8,
+      "userName": "samaa",
+      "userImg": "",
+      "id": 29
     }
   ],
   "rates": [
@@ -1817,6 +1815,15 @@
         3
       ],
       "id": 5
+    },
+    {
+      "value": 1,
+      "placeId": "1",
+      "userId": 8,
+      "arrOfVals": [
+        0
+      ],
+      "id": 6
     }
   ],
   "favourites": [
