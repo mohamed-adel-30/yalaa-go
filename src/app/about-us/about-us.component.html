@@ -125,7 +125,8 @@
 
             <div class="row">
               <label> Location:</label>
-              <input class="p-0 mb-5 mb-md-1" class="col-md-9 mx-md-0" #location placeholder="location" (input)="verfyingPlcae(placeNName,
+              <input disabled class="p-0 mb-5 mb-md-1" class="col-md-9 mx-md-0" #location placeholder="location"
+                (input)="verfyingPlcae(placeNName,
   contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.location}}>
               <!-- <div class="errormsg" *ngIf="10>location.value.length">
     *requeired

@@ -27,7 +27,8 @@ export class RegisterComponent implements OnInit {
   loggedowner;
   userfromlocalowner;
   // ...................///
-
+  locationSelectedText;
+  locationSelected;
   getuser;
   logged;
   userfromlocal;
@@ -60,7 +61,10 @@ export class RegisterComponent implements OnInit {
   celectedArr: any = [];
   owner2;
 
-
+  places;
+  locationsRepated = [];
+  locationSet;
+  locations;
   // .................................///
   constructor(private formBuilder: FormBuilder, private service: UsersService, private router: Router, private httpService: HttpServiceService) {
 
@@ -73,6 +77,18 @@ export class RegisterComponent implements OnInit {
       console.log(error)
       console.log(error.status)
       this.router.navigate(["/error"])
+    })
+
+    this.httpService.gettingPlaces().subscribe(data => {
+      this.places = data;
+
+      for (let i of this.places) {
+        this.locationsRepated.push(i.location)
+      }
+      this.locationSet = new Set(this.locationsRepated)
+      this.locations = [...this.locationSet];
+      console.log("dddddddddddddddddd")
+      console.log(this.locations)
     })
 
   }
@@ -217,7 +233,7 @@ export class RegisterComponent implements OnInit {
         // this.service.addUsers(this.obj)
         this.httpService.postownerdata(this.obj, headers).subscribe(data => {
 
-          this.router.navigate(["/ownerProfile"])
+          this.router.navigate(["/"])
           localStorage.clear();
           this.obj.password = "********"
           this.httpService.setData("owneruser", this.obj)
@@ -276,25 +292,31 @@ export class RegisterComponent implements OnInit {
     reader.readAsDataURL(this.fileData);
     reader.onload = _event => {
       this.imageSrc = reader.result;
-      this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
+      this.verfyingPlcae(this.placename, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
     }
   }
 
   gettingStatus(val) {
     this.statusOwner = val.srcElement.attributes.value.value;
     this.statusOwnerText = val.target.text;
-    this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
+    this.verfyingPlcae(this.placename, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
+  }
+
+  gettingLocations(val) {
+    this.locationSelected = val.srcElement.attributes.value.value;
+    this.locationSelectedText = val.target.text;
+    this.verfyingPlcae(this.placename, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
   }
   gettingReservation(val) {
     this.reservationOwner = val.srcElement.attributes.value.value;
     this.reservationOwnerText = val.target.text;
-    this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
+    this.verfyingPlcae(this.placename, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
 
   }
   gettingKidsArea(val) {
     this.kidsOwner = val.srcElement.attributes.value.value;
     this.kidsOwnerText = val.target.text;
-    this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
+    this.verfyingPlcae(this.placename, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
   }
 
 
@@ -306,13 +328,12 @@ export class RegisterComponent implements OnInit {
       }
     }
 
-    this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
+    this.verfyingPlcae(this.placename, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
   }
 
-  verfyingPlcae(placeNName, contact, address, location, desc, openHoursEnd, openHoursStart, state = true) {
+  verfyingPlcae(placeNName, contact, address, desc, openHoursEnd, openHoursStart, state = true) {
     if (state == true) {
       this.placename = placeNName.value;
-      this.placelocation = location.value;
       this.placecontact = contact.value;
       this.placeaddres = address.value;
       this.placeDesc = desc.value;
@@ -320,10 +341,10 @@ export class RegisterComponent implements OnInit {
       this.openEnd = openHoursEnd.value;
     }
     // && this.imageSrc != "not yet"
-    if (this.placename.length > 0 && this.placelocation.length > 0
-      && this.placecontact.length > 0 && +this.placecontact / 1 == +this.placecontact&& this.placeaddres.length > 0 && this.placeDesc.length > 0
+    if (this.placename.length > 0
+      && this.placecontact.length > 0 && +this.placecontact / 1 == +this.placecontact && this.placeaddres.length > 0 && this.placeDesc.length > 0
       && this.openStart.length > 0 && this.celectedArr.length != 0 && this.celectedArr.length <= 3 && this.openEnd
-      && this.statusOwner && this.reservationOwner && this.kidsOwner) {
+      && this.statusOwner && this.locationSelected && this.reservationOwner && this.kidsOwner) {
 
       this.chechDiv = true;
     }
@@ -343,7 +364,7 @@ export class RegisterComponent implements OnInit {
       "name": this.placename,
       "catId": this.celectedArr,
       "address": this.placeaddres,
-      "location": this.placelocation,
+      "location": this.locationSelectedText,
       "rates": [1, 2, 3, 4, 5],
       "paymentMethod": "Ticket",
       "avgrate": 5,
@@ -355,7 +376,7 @@ export class RegisterComponent implements OnInit {
       "reservation": this.reservationOwner,
       "kid-friendly": this.kidsOwner,
       "contact": {
-        "phone": this.kidsOwner,
+        "phone": this.placecontact,
         "facebook": "",
         "instagram": ""
       },

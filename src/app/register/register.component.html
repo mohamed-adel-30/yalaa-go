@@ -58,134 +58,152 @@
 
                     <div class="my-3">
                         <input #placeNName placeholder="place name" (input)="verfyingPlcae(placeNName,
-                        contact,address,location,desc,openHoursEnd,openHoursStart )" class="input col-12 ">
+                        contact,address,desc,openHoursEnd,openHoursStart )" class="input col-12 ">
                         <div class="errormsg" *ngIf="placeNName.value.length==0">
                             *requeired
                         </div>
                     </div>
                     <div class="my-3">
                         <input class="col-12" #contact placeholder="Phone" type="text" (input)="verfyingPlcae(placeNName,
-                        contact,address,location,desc,openHoursEnd,openHoursStart )">
+                        contact,address,desc,openHoursEnd,openHoursStart )">
                         <div class="errormsg" *ngIf="11>contact.value.length || +contact.value / 1 !== +contact.value">
                             *requeired and must be numbers
                         </div>
                     </div>
                     <div class="my-3">
-                        <input #address placeholder="address"  class="col-12" (input)="verfyingPlcae(placeNName,
-                        contact,address,location,desc,openHoursEnd,openHoursStart )">
+                        <input #address placeholder="address" class="col-12" (input)="verfyingPlcae(placeNName,
+                        contact,address,desc,openHoursEnd,openHoursStart )">
                         <div class="errormsg" *ngIf="5>address.value.length">
                             *requeired
                         </div>
                     </div>
 
-                    <div class="my-3">
-                        <input #location placeholder="location"  class="col-12" (input)="verfyingPlcae(placeNName,
-                        contact,address,location,desc,openHoursEnd,openHoursStart )">
+                    <!-- <div class="my-3">
+                        <input #location placeholder="location" class="col-12" (input)="verfyingPlcae(placeNName,
+                        contact,address,desc,openHoursEnd,openHoursStart )">
                         <div class="errormsg" *ngIf="10>location.value.length">
                             *requeired
                         </div>
+                    </div> -->
+
+                    <div class="btn-group col-sm-12 col-md-4 my-3">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+
+                            Locations: <span *ngIf="statusOwner">{{locationSelectedText}}</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a *ngFor="let i of locations" class="dropdown-item" value="i"
+                                (click)="gettingLocations($event)">{{i}}</a>
+
+                        </div>
                     </div>
+
+
+
+
+
                     <div class="d-flex flex-row justify-content-between my-3 ">
                         <div class="opentime d-flex flex-row justify-content-between align-items-center col-6">
-                            <label >Open from:</label>
+                            <label>Open from:</label>
                             <input class="col-6" #openHoursStart type="time" placeholder="" (input)="verfyingPlcae(placeNName,
-                            contact,address,location,desc,openHoursEnd,openHoursStart )">
+                            contact,address,desc,openHoursEnd,openHoursStart )">
                         </div>
                         <div class="opentime d-flex flex-row justify-content-between col-5 align-items-center">
                             <label class="col-6"> to:</label>
                             <input class="col-6" #openHoursEnd type="time" placeholder="" (input)="verfyingPlcae(placeNName,
-                            contact,address,location,desc,openHoursEnd,openHoursStart )">
+                            contact,address,desc,openHoursEnd,openHoursStart )">
                         </div>
                     </div>
                     <div class="errormsg" *ngIf="5>openHoursStart.value.length || 5>openHoursEnd.value.length">
                         *requeired
-                    </div>  
+                    </div>
 
 
-                     <div class="my-3">
-                        <textarea #desc placeholder="description"  class="col-12" (input)="verfyingPlcae(placeNName,
-                        contact,address,location,desc,openHoursEnd,openHoursStart,true )"></textarea>
+                    <div class="my-3">
+                        <textarea #desc placeholder="description" class="col-12" (input)="verfyingPlcae(placeNName,
+                        contact,address,desc,openHoursEnd,openHoursStart,true )"></textarea>
 
                         <div class="errormsg" *ngIf="10>desc.value.length">
                             *requeired
                         </div>
                     </div>
 
-                   <!-- <div class="my-3">
+                    <!-- <div class="my-3">
                         <input class="file" #imgPlace type="file" (change)="readURL($event)">
                     </div>
                     <div class="btn-group my-3 ">
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                     
+
 
                     <div class="  my-3" id="img">
-                        <label > Upload main picture of your place:</label>
-          
+                        <label> Upload main picture of your place:</label>
+
                         <label class="custom-file-upload">
-                          <input class="mainImg" #imgPlace type="file" (change)="readURL($event)">
-                          <i class="fa fa-cloud-upload"> Upload</i>
+                            <input class="mainImg" #imgPlace type="file" (change)="readURL($event)">
+                            <i class="fa fa-cloud-upload"> Upload</i>
                         </label>
-                      </div> 
+                    </div>
 
                     <!-- <input class="file " #imgPlace type="file" (change)="readURL($event)">  -->
-                    <button  type="button" data-toggle="collapse" data-target="#collapseExample"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    select categories
-                </button>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body d-flex flex-row flex-wrap ">
-                        <div *ngFor="let place of cats ;let item = index;" class="d-flex  col-4 align-items-center">
-                            <input #item id="{{place.id}}" class="categories " type="checkbox" name="{{item}}"
-                                value={{place.name}} (click)="selectingCats()">
-                            <label for="vehicle3">{{place.name}}</label>
+                    <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        select categories
+                    </button>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body d-flex flex-row flex-wrap ">
+                            <div *ngFor="let place of cats ;let item = index;" class="d-flex  col-4 align-items-center">
+                                <input #item id="{{place.id}}" class="categories " type="checkbox" name="{{item}}"
+                                    value={{place.name}} (click)="selectingCats()">
+                                <label for="vehicle3">{{place.name}}</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="errormsg" *ngIf=" celectedArr.length == 0 || celectedArr.length>3">
-                    *requeired and maximum 3 categories
-                </div>
+                    <div class="errormsg" *ngIf=" celectedArr.length == 0 || celectedArr.length>3">
+                        *requeired and maximum 3 categories
+                    </div>
 
                     <div class=" my-3 dropdown d-flex flex-row flex-wrap justify-content-between">
-                    <div class="btn-group col-sm-12 col-md-4 my-3">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <div class="btn-group col-sm-12 col-md-4 my-3">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
 
-                            status: <span *ngIf="statusOwner">{{statusOwnerText}}</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" value="open now" (click)="gettingStatus($event)">open now</a>
-                            <a class=" dropdown-item" value="closed" (click)="gettingStatus($event)">closed</a>
+                                status: <span *ngIf="statusOwner">{{statusOwnerText}}</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" value="open now" (click)="gettingStatus($event)">open now</a>
+                                <a class=" dropdown-item" value="closed" (click)="gettingStatus($event)">closed</a>
+                            </div>
+                        </div>
+
+                        <div class="btn-group col-sm-12 col-md-4 my-3">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Reservation:<span *ngIf="reservationOwner">{{reservationOwnerText}}</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" value="true" (click)="gettingReservation($event)">Yes</a>
+                                <a class=" dropdown-item" value="false" (click)="gettingReservation($event)">No</a>
+                            </div>
+                        </div>
+
+                        <div class="btn-group col-sm-12 col-md-4 my-3">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" value="true" (click)="gettingKidsArea($event)">Yes</a>
+                                <a class=" dropdown-item" value="false" (click)="gettingKidsArea($event)">No</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="btn-group col-sm-12 col-md-4 my-3">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Reservation:<span *ngIf="reservationOwner">{{reservationOwnerText}}</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" value="true" (click)="gettingReservation($event)">Yes</a>
-                            <a class=" dropdown-item" value="false" (click)="gettingReservation($event)">No</a>
-                        </div>
-                    </div>
 
-                    <div class="btn-group col-sm-12 col-md-4 my-3">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" value="true" (click)="gettingKidsArea($event)">Yes</a>
-                            <a class=" dropdown-item" value="false" (click)="gettingKidsArea($event)">No</a>
-                        </div>
-                    </div>
+
                 </div>
 
-                  
-
-                    </div>
-                    
-                    <!-- <div class="btn-group ">
+                <!-- <div class="btn-group ">
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
@@ -196,10 +214,11 @@
                         </div>
                     </div> -->
 
-                <!-- </div> --> 
+                <!-- </div> -->
                 <!-- ............................................./// -->
                 <div class="button my-3">
-                    <button type="submit" [disabled]="(!myForm.valid || myForm.value.confirmPassword !== myForm.value.password ) || chechDiv==false">Sign
+                    <button type="submit"
+                        [disabled]="(!myForm.valid || myForm.value.confirmPassword !== myForm.value.password ) || chechDiv==false">Sign
                         up</button>
                 </div>
 

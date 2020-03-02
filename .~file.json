@@ -1261,6 +1261,43 @@
       },
       "ownerId": 10,
       "id": 24
+    },
+    {
+      "name": "scape room mai",
+      "catId": [
+        "1",
+        "4",
+        "7"
+      ],
+      "address": "rsrssgsa sduygusygdf isdhfiusfh",
+      "location": "Alexandria Desert Rd",
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "paymentMethod": "Ticket",
+      "avgrate": 5,
+      "mainImage": "../../assets/Home/defaultPlace.png",
+      "imgs": [
+        "../../assets/Home/defaultPlace.png",
+        "../../assets/Home/defaultPlace.png",
+        "../../assets/Home/defaultPlace.png"
+      ],
+      "status": "open now",
+      "openHours": "11:11to11:11",
+      "desc": "dfasgfajgfkjsgf",
+      "reservation": "true",
+      "kid-friendly": "true",
+      "contact": {
+        "phone": "01211189661",
+        "facebook": "",
+        "instagram": ""
+      },
+      "ownerId": 11,
+      "id": 25
     }
   ],
   "options": [
