@@ -13,6 +13,7 @@ import { HttpServiceService } from '../http-service.service';
   styleUrls: ['./single-category.component.scss']
 })
 export class SingleCategoryComponent implements OnInit {
+  error = null;
   cats;
   places;
   selctedPlaces = [];
@@ -59,7 +60,7 @@ export class SingleCategoryComponent implements OnInit {
 
     this.route.params.subscribe((param: Params) => {
       this.singleCatId = param["id"];
-      // console.log("heeeeee" + typeof (+this.singleCatId))
+
 
 
       this.httpService.gettingData().subscribe(
@@ -67,6 +68,11 @@ export class SingleCategoryComponent implements OnInit {
           this.cats = data;
           this.singleCatData = this.loopingforSpecifcCategory(this.singleCatId);
 
+        }, error => {
+          this.error = error.message;
+          console.log(error)
+          console.log(error.status)
+          this.router.navigate(["/error"])
         }
       )
 
@@ -92,6 +98,11 @@ export class SingleCategoryComponent implements OnInit {
             }
 
 
+          }, error => {
+            this.error = error.message;
+            console.log(error)
+            console.log(error.status)
+            this.router.navigate(["/error"])
           })
 
           // ..................//
@@ -104,27 +115,37 @@ export class SingleCategoryComponent implements OnInit {
           for (let i of this.uniqe) {
             setTimeout(() => {
               this.id = document.getElementById(i);
-              // console.log("ssssssssssssssssssssssssssss")
+
               this.arrOfLocations.push(this.id)
             }, 2000)
           }
-          // console.log(this.arrOfLocations
+
+        }, error => {
+          this.error = error.message;
+          console.log(error)
+          console.log(error.status)
+          this.router.navigate(["/error"])
         }
       )
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
   }
-  
+
   ngOnInit() {
     // an example array of 150 items to be paged
-    this.filteredData = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
-}
- 
-onChangePage(pageOfItems: Array<any>) {
+    this.filteredData = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}` }));
+  }
+
+  onChangePage(pageOfItems: Array<any>) {
     // update current page of items
     this.pageOfItems = pageOfItems;
-}
+  }
 
   // .....................................//
 
@@ -161,13 +182,11 @@ onChangePage(pageOfItems: Array<any>) {
     this.placeLoggedin = this.httpService.getData("loggedin");
     if (this.placeLoggedin == true) {
       this.checkFav[place.id] = false;
-      // console.log("22222222222222222")
+
       this.spesifcFavId = this.httpService.getData("favid")
-      console.log("heeeeeeeeeeere")
-      console.log(this.spesifcFavId)
-      console.log(this.spesifcFavId[place.id])
+
       this.httpService.deleteFav(this.spesifcFavId[place.id]).subscribe(data => {
-        console.log("delteing is done");
+
 
       })
 
@@ -189,17 +208,15 @@ onChangePage(pageOfItems: Array<any>) {
       }
       this.httpService.postFav(body, headers).subscribe(
         data => {
-          // console.log(data)
+
           this.checkFav[place.id] = true;
-          // this.gettingSpesificOfFavs()
+
           this.httpService.getFav().subscribe(data => {
             this.favs = data;
-            // console.log("gabnaaaaaaaaa el favs")
+
             this.gettingSpesificOfFavs(place.id)
           })
 
-
-          // console.log("1111111111111111111111111")
 
         }
       )
@@ -220,9 +237,8 @@ onChangePage(pageOfItems: Array<any>) {
     this.arrLocationsChecked = [];
     this.arrofChecked = [];
 
-    // this.check = true;
     this.filteredData = [];
-    // console.log('changed')
+
     for (let place of this.singleSelecetedPlaces) {
 
       if (this.ratingChecked(place) &&
@@ -230,8 +246,7 @@ onChangePage(pageOfItems: Array<any>) {
         this.chechkingResevartion(place, reservation) &&
         this.chechkingstatus(place, status) &&
         this.chechkkidfriendly(place, kidfriendly)) {
-        console.log("yes")
-        console.log(place)
+
         this.filteredData.push(place)
       }
     }

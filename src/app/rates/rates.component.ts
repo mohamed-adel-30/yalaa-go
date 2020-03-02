@@ -1,6 +1,7 @@
 import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 import { HttpServiceService } from './../http-service.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rates',
@@ -15,6 +16,7 @@ import { HttpServiceService } from './../http-service.service'
   ]
 })
 export class RatesComponent implements OnInit, ControlValueAccessor {
+  error = null;
   allRates;
   place;
   @Input() id;
@@ -133,11 +135,16 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
 
 
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
   }
 
-  constructor(private service: HttpServiceService) {
+  constructor(private service: HttpServiceService, private router: Router) {
 
   }
 
@@ -147,10 +154,20 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     this.service.getRates().subscribe(data => {
       this.allRates = data;
       console.log(this.allRates);
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     });
 
     this.service.getSinglePlace(this.id).subscribe(data => {
       this.place = data;
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
   }
 

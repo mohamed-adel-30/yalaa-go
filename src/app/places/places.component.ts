@@ -15,16 +15,14 @@ import { mapToMapExpression } from '@angular/compiler/src/render3/util';
 export class PlacesComponent implements OnInit {
 
   // ...................google map ..............///
-  // ...................google map 2 ............//
   title: string = 'AGM project';
   latitude: number;
   longitude: number;
   zoom: number;
   address: string;
   geoCoder: any;
-
-
   // ...........................................///
+  error = null;
   places;
   singlePlace; 
   // ........///
@@ -50,6 +48,7 @@ export class PlacesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router, private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone) {
+    this.loggin = this.httpService.getData("loggedin");
 
     this.route.params.subscribe((param: Params) => {
       this.singlePlaceId = param["id"];
@@ -70,11 +69,21 @@ export class PlacesComponent implements OnInit {
       this.httpService.gettingPtions().subscribe(data => {
         this.options = data;
         this.gettingSpesifcOptions(this.singlePlaceId)
+      }, error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
       })
 
       this.httpService.getFav().subscribe(data => {
         this.favs = data;
         this.gettingSpesificOfFavs()
+      }, error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
       })
 
 
@@ -88,19 +97,15 @@ export class PlacesComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
     this.finalTotal = 0;
     // .........google map......///
 
     this.mapsAPILoader.load().then(() => {
       this.setCurrentLocation();
-
     });
-    // ......................///
-
   }
-
-  // google map ..................////
+  // google map functions..................////
   private setCurrentLocation() {
     if ('geolocation' in navigator) {
 
@@ -232,10 +237,15 @@ export class PlacesComponent implements OnInit {
     this.placeLoggedin = this.httpService.getData("loggedin");
     if (this.placeLoggedin == true) {
       this.checkFav = false;
-      // console.log("22222222222222222")
+
       this.spesifcFavId = this.httpService.getData("favid")
       this.httpService.deleteFav(this.spesifcFavId).subscribe(data => {
-        // console.log("deleted")
+
+      }, error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
       })
 
     }
@@ -259,17 +269,11 @@ export class PlacesComponent implements OnInit {
       }
       this.httpService.postFav(body, headers).subscribe(
         data => {
-          // console.log(data)
           this.checkFav = true;
-          // this.gettingSpesificOfFavs()
           this.httpService.getFav().subscribe(data => {
             this.favs = data;
             this.gettingSpesificOfFavs()
           })
-
-
-          // console.log("1111111111111111111111111")
-
         }
       )
     }
@@ -294,10 +298,6 @@ export class PlacesComponent implements OnInit {
         this.MAX3.push(this.nearByPlacses[i])
       }
     }
-    // console.log("NEEEEEEEEAR  places")
-    // console.log(this.singlePlaceData)
-    // console.log(this.places)
-    // console.log(this.nearByPlacses)
   }
 
 

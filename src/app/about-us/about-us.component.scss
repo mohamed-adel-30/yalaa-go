@@ -1,290 +1,288 @@
 @import "./../../styles.scss";
+// @media screen and (max-width: 992px) {
+//   .modal-custom{
+//     max-width: 70% ;
+//   }
+// }
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 578px) {
+  .modal-custom {
+    max-width: 100% !important ;
+  }
+}
+
 // ............google map .............///
 agm-map {
-    height: 300px;
+  height: 300px;
 }
-
 // ..........................///
+
 .unseenBtn,
 .seenBtn {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
-
 .seenBtn i {
-    color: green;
+  color: green;
 }
-
 .unseenBtn i {
-    color: red;
+  color: red;
 }
 
 .container-custom {
-    padding-top: $sectionMargin;
-    margin: 0 auto;
-    width: 90%;
+  margin: 0 auto;
+  width: 90%;
 }
-
 img {
-    width: 100%;
-    margin: 10px;
-    ;
+  width: 100%;
 }
 
 h1 {
-    font-weight: 900;
+  font-weight: 900;
 }
-
 h1:hover {
-    color: $hcolors;
+  color: #ffa21d;
 }
-
 .Option-Title {
-    font-family: Montserrat;
-    font-weight: $labelsBold;
-    font-size: 28px;
-    text-align: left;
-    margin-left: 6%;
-    border-radius: 30px;
-    border: 2px solid $hcolors;
-    width: 13%;
-    padding: 10px 22px;
-    background-color: white;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 6%;
+  border-radius: 30px;
+  border: 2px solid #ffa21d;
+  // width: 13%;
+  padding: 10px 22px;
+  background-color: white;
 }
-
 .specificSpan {
-    font-weight: 700;
-    padding-right: 10px;
+  font-weight: 700;
+  padding-right: 10px;
 }
-
 .status {
-    color: #00b467;
-    line-height: 1.2;
-    font-family: Montserrat;
-    font-size: 20px;
-    font-weight: bold;
+  color: #00b467;
+  line-height: 1.2;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
 }
-
 .owener-btns {
-    font-weight: bolder;
-    background-color: $hcolors;
-    text-align: center;
-    border: none;
-    color: white;
+  font-weight: bolder;
+  background-color: #ffa21d;
+  text-align: center;
+  border: none;
+  color: white;
 }
-
 .owener-edit-btns {
-    font-weight: bolder;
-    text-align: center;
-    border-width: 2px;
+  font-weight: bolder;
+  text-align: center;
+  border-width: 2px;
 }
-
 // ..............styling model,,,,,,,,,//
+
 input[type="file"] {
-    display: none;
+  display: none;
 }
 
 .custom-file-upload {
-    border: 2px solid $hcolors;
-    display: inline-block;
-    padding: 4px 6px;
-    cursor: pointer;
-    border-radius: 30px;
-    background-color: $hcolors;
+  border: 2px solid #ffa21d;
+  display: inline-block;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: #ffa21d;
+  color: white;
+  margin: 5px;
+  font-family: Montserrat;
+  font-size: 12px;
+  i {
     color: white;
-    margin: 5px;
-    font-family: Montserrat;
-    font-size: $inputSize;
-    i {
-        color: white;
-    }
+  }
 }
 
 .custom-file-upload:hover {
-    color: $hcolors;
-    border: $hcolors 2px solid;
-    background-color: white;
-    i {
-        color: $hcolors;
-    }
+  color: #ffa21d;
+  border: #ffa21d 2px solid;
+  background-color: white;
+  i {
+    color: #ffa21d;
+  }
 }
 
 .model-container {
-    padding: 30px;
-    margin: auto;
-    width: 80%;
+  padding: 30px;
+  margin: auto;
+  width: 100%;
 }
 
 .modal-custom {
-    margin-top: 10%;
-    .moreInfoCheck {
-        width: 3%;
-        border: none;
+  .moreInfoCheck {
+    // width: 3%;
+    border: none;
+  }
+  .mainImg {
+    border: none;
+    width: 50%;
+  }
+  max-width: 70%;
+  label {
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+    font-family: Montserrat;
+    font-size: 20px;
+    display: inline;
+  }
+  textarea,
+  input {
+    // width: 75%;
+    border: none;
+    border-bottom: 0.5px solid #ddd;
+    background-color: transparent;
+    // font-weight: bold;
+    color: grey;
+    line-height: 1.2;
+    font-family: Montserrat;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-left: 30px;
+  }
+  textarea {
+    border: 1px solid #ddd;
+    border-radius: 30px;
+  }
+  .time {
+    border: none;
+    display: inline;
+    // width: 25%;
+  }
+  .specialInput {
+    // width: 10%;
+  }
+  .dropDowns {
+    button {
+      line-height: 1.2;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
     }
-    .mainImg {
-        border: none;
-        width: 50%;
-    }
-    max-width: 70% !important;
-    label {
-        font-weight: bold;
-        color: black;
-        line-height: 1.2;
-        font-family: Montserrat;
-        font-size: $paragrphSize;
-        display: inline;
-    }
-    textarea,
-    input {
-        width: 75%;
-        border: none;
-        border-bottom: 0.5px solid #ddd;
-        background-color: transparent;
-        // font-weight: bold;
-        color: grey;
-        line-height: 1.2;
-        font-family: Montserrat;
-        font-size: $inputSize;
-        margin: 0 auto;
-        margin-bottom: 20px;
-        padding: 10px;
-        padding-left: 30px;
-    }
-    textarea {
-        border: 1px solid #ddd;
-        border-radius: 30px;
-    }
-    .time {
-        border: none;
-        display: inline;
-        // width: 25%;
-    }
-    .specialInput {
-        width: 10%;
-    }
-    .dropDowns {
-        button {
-            line-height: 1.2;
-            font-family: Montserrat;
-            font-size: $paragrphSize;
-            font-weight: bold;
-            color: black;
-        }
-    }
-    .extraInfo-wrapper {
-        padding: 32px;
-        margin: 34px;
-        transition: 1s;
-        border-radius: 30px;
-        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.219);
-        border: none;
-    }
-    .cats-btn {
-        width: 20%;
-        margin-bottom: 10px;
-        ;
-    }
+  }
+  .extraInfo-wrapper {
+    padding: 10px;
+    // margin: 34px;
+    transition: 1s;
+    border-radius: 30px;
+    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.219);
+    border: none;
+  }
+  .Options-Wrapper {
+    overflow: hidden;
+  }
+  .cats-btn {
+    // width: 20%;
+    margin-bottom: 10px;
+  }
 }
-
 // ..............................................///
 .games-section {
-    padding: 50px 0;
-    margin-bottom: 50px;
-    box-shadow: -1px -2px 16px 21px #dddddd9e;
+  box-shadow: 0px 0px 24px 1px #dddddd9e;
+}
+image {
+  width: 100%;
 }
 
 .games-details:hover {
-    box-shadow: -1px 7px 11px 3px #e8e5e580;
+  box-shadow: -1px 7px 11px 3px #e8e5e580;
 }
-
 .games-details {
-    border: 1px solid #dddddda8;
-    .game-name {
-        background-color: $hcolors;
-        color: #fff;
-        text-transform: capitalize;
-        text-align: center;
-    }
-    .game-img {
-        text-align: center;
-    }
+  border: 1px solid #dddddda8;
+  background-color: #fff;
+  .game-name {
+    background-color: #ffa21d;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .game-img {
+    text-align: center;
+  }
 }
-
 .game-price {
-    font-weight: 900;
-    color: $hcolors;
-    font-size: 25px;
-    span {
-        font-weight: 100;
-        font-size: $inputSize;
-    }
+  font-weight: 900;
+  color: #ffa21d;
+  font-size: 25px;
+  span {
+    font-weight: 100;
+    font-size: 15px;
+  }
 }
 
 .Option-Edit {
-    input {
-        color: black;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px dotted gray;
-        padding-bottom: 5px;
-    }
+  input {
+    color: black;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dotted gray;
+    padding-bottom: 5px;
+  }
 }
 
 .Option-Edit2 {
-    border-radius: 29px;
-    padding: 10px;
-    box-shadow: 0px 0px 7px 0px #90a783;
-    input {
-        color: black;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px dotted gray;
-        padding-bottom: 5px;
-    }
+  border-radius: 29px;
+  padding: 10px;
+  box-shadow: 0px 0px 7px 0px #90a783;
+  input {
+    color: black;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dotted gray;
+    padding-bottom: 5px;
+  }
 }
 
 .games-section {
-    button {
-        font-weight: bold;
-        border-width: 2px;
-    }
+  button {
+    font-weight: bold;
+    border-width: 2px;
+  }
 }
-
 // ........................history .....................//
 .ownerRregisterationHistory-wrapper {
-    width: 80%;
-    margin: 0 auto;
-    background-color: white;
+  // width: 80%;
+  // margin: 0 auto;
+  // background-color:white;
+  border-radius: 30px;
+  padding: 20px;
+  .ownerReegisterationHistory-solo {
+    // width: 80%;
+    // margin: 0 auto;
+    background-color: #111;
     border-radius: 30px;
-    padding: 20px;
-    .ownerReegisterationHistory-solo {
-        width: 80%;
-        margin: 0 auto;
-        background-color: #111;
-        border-radius: 30px;
-        border: none;
-        color: white;
-        p {
-            line-height: 1.2;
-            font-size: $paragrphSize;
-        }
+    border: none;
+    color: white;
+    p {
+      line-height: 1.2;
     }
-    span {
-        color: $hcolors;
-    }
-    .moreinfo-btn {
-        font-weight: bold;
-        color: black;
-        border-radius: 10px;
-    }
-    .moreinfo-btn:hover {
-        background-color: black;
-        color: $hcolors;
-    }
+  }
+  span {
+    color: #ffa21d;
+  }
+  .moreinfo-btn {
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+  }
+  .moreinfo-btn:hover {
+    background-color: black;
+    color: #ffa21d;
+  }
 }
 
 .delete-history-btn {
-    color: $hcolors;
-    border: 2px $hcolors solid;
-    border-radius: 5px;
+  color: #ffa21d;
+  border: 2px #ffa21d solid;
+  border-radius: 5px;
 }

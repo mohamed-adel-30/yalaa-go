@@ -7,11 +7,11 @@ import { ActivatedRoute, Params } from '@angular/router';
   selector: 'app-options',
   templateUrl: './options.component.html',
   styleUrls: ['./options.component.scss'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class OptionsComponent implements OnInit {
   @Input() i: any;
-
+  error = null;
   count = 0;
   totalOfOneGame = 0;
   total;

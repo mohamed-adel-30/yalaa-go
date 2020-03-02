@@ -18,20 +18,17 @@ export class AboutUsComponent implements OnInit {
   zoom: number;
   address: string;
   geoCoder: any;
-
   @ViewChild('search', { static: false }) public searchElementRef: ElementRef;
   // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,...../
+  error = null;
   histroy;
   ownerHistory = [];
   places;
   owenerplace;
   owner;
   idPlace;
-
   options;
   ownerOptions = [];
-
-  // ..............//
   optionCheck = false;
   OptionValid = true;
   fileData: File;
@@ -53,11 +50,38 @@ export class AboutUsComponent implements OnInit {
   alertArr = [];
   reverseAlertArr = [];
   // ...........................///
+  fileData2;
+  imageSrc2 = "../../assets/Home/defaultPlace.png";
+  imgs2 = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
+  filedDataGerenal = [];
+  imgs2before = [...this.imgs2];
+  addExtra = false;
+  statusOwner;
+  reservationOwner;
+  kidsOwner;
+  statusOwnerText;
+  reservationOwnerText;
+  kidsOwnerText;
+  placename = "";
+  placecontact = "";
+  placeaddres = "";
+  placelocation = "";
+  checkbox = false; //byashof hal hoa owener wala la
+  chechDiv = false;
+  placeDesc: any = "";
+  openStart: any = "";
+  openEnd: any = "";
+  cats;
+  celectedArr = [];
+  facebook = "facebook Page"
+  instgrame = "instgrame Page"
+  facebookBeforeConfirmation = this.facebook;
+  instgrameBeforaConfirmation = this.instgrame;
+
   constructor(private httpService: HttpServiceService, private router: Router, private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone) {
-    // ...................google map ......................///
 
-    // .....................................///
+    // .....................getting owner place from data base................///
     this.celectedArr = [1]
     this.owner = this.httpService.getData("owneruser"); ///3ayzin n3ml param ablha
     this.httpService.gettingPlaces().subscribe(data => {
@@ -91,7 +115,7 @@ export class AboutUsComponent implements OnInit {
         }
       }
 
-
+      // .............getting categories from data base to be showen in edit place form .............///
       this.httpService.gettingData().subscribe(data => {
         this.cats = data;
         for (let i of this.cats) {
@@ -104,6 +128,8 @@ export class AboutUsComponent implements OnInit {
         }
 
       })
+
+      // ...............getting reservation histroy from data base .............///
       this.httpService.getHistroy().subscribe(data => {
         this.histroy = data;
         this.ownerHistory = []
@@ -119,6 +145,7 @@ export class AboutUsComponent implements OnInit {
           }
 
         }
+        // .............handling notifications of reservations ...........//
         this.reverseAlertArr = this.ownerHistory.reverse();
         this.httpService.getNotifivations(this.alertArr.length)
       })
@@ -134,13 +161,18 @@ export class AboutUsComponent implements OnInit {
         }
 
       })
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
   }
 
   ngOnInit() {
-     // .................................................///
+    // .................................................///
     // an example array of 150 items to be paged
-    this.reverseAlertArr = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+    this.reverseAlertArr = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}` }));
   }
 
   // ..........................google map ............///
@@ -192,14 +224,15 @@ export class AboutUsComponent implements OnInit {
 
     });
   }
- 
 
 
-onChangePage(pageOfItems: Array<any>) {
+
+  onChangePage(pageOfItems: Array<any>) {
     // update current page of items
     this.pageOfItems = pageOfItems;
-}
+  }
 
+  // .....................uploading image for edit place form............................///
   readURL(event: any) {
     this.fileData = <File>event.target.files[0];
     this.preview();
@@ -221,7 +254,7 @@ onChangePage(pageOfItems: Array<any>) {
 
 
 
-  // editedOptionImg
+  // editedOptionImg.....................//
   readURLOption(event: any) {
     this.fileDataOption = <File>event.target.files[0];
     this.previewOption();
@@ -243,7 +276,7 @@ onChangePage(pageOfItems: Array<any>) {
 
 
 
-
+  // ................edit option verfying form ................///
   verfyingOption(OptionName, optionDesc, optionPrice, state = true) {
     if (state == true) {
       this.OptionName = OptionName.value;
@@ -259,7 +292,7 @@ onChangePage(pageOfItems: Array<any>) {
 
   }
 
-  //ha3mml el object
+  // ...........new option added to data base ......................///
   submitiingNewOption() {
     this.optionCheck = false;
     let optionObj;
@@ -295,7 +328,7 @@ onChangePage(pageOfItems: Array<any>) {
 
 
   }
-
+  // .............adding and deleting options ..............///
   addOption() {
     this.optionCheck = true;
   }
@@ -313,21 +346,20 @@ onChangePage(pageOfItems: Array<any>) {
         }
 
       })
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
   }
 
-  // ..................TestBed................///
-  // ..............place details....................///
+
+  // ..............  edit place details....................///
 
 
-  fileData2;
-  imageSrc2 = "../../assets/Home/defaultPlace.png";
-  imgs2 = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
-  filedDataGerenal = [];
-  imgs2before = [...this.imgs2];
-  addExtra = false;
 
-  //ectra info adding
+  // info adding
   readURLGeneral(event: any, i) {
     this.filedDataGerenal[i] = <File>event.target.files[0];
     this.previewGerneral(i);
@@ -364,29 +396,6 @@ onChangePage(pageOfItems: Array<any>) {
   }
 
 
-
-
-  statusOwner;
-  reservationOwner;
-  kidsOwner;
-  statusOwnerText;
-  reservationOwnerText;
-  kidsOwnerText;
-  placename = "";
-  placecontact = "";
-  placeaddres = "";
-  placelocation = "";
-  checkbox = false; //byashof hal hoa owener wala la
-  chechDiv = false;
-  placeDesc: any = "";
-  openStart: any = "";
-  openEnd: any = "";
-  cats;
-  celectedArr = [];
-  facebook = "facebook Page"
-  instgrame = "instgrame Page"
-  facebookBeforeConfirmation = this.facebook;
-  instgrameBeforaConfirmation = this.instgrame;
 
 
   readURL2(event: any) {
@@ -451,7 +460,7 @@ onChangePage(pageOfItems: Array<any>) {
     }
     // && this.imageSrc != "not yet"
     if (this.placename.length > 0 && this.placelocation.length > 0
-      && this.placecontact.length > 0 && this.placeaddres.length > 0 && this.placeDesc.length > 0
+      && this.placecontact.length > 7 && +this.placecontact / 1 == +this.placecontact && this.placeaddres.length > 0 && this.placeDesc.length > 0
       && this.openStart.length > 0 && this.celectedArr.length != 0 && this.celectedArr.length <= 3 && this.openEnd
       && this.statusOwner && this.reservationOwner && this.kidsOwner) {
       console.log("finaaaaaaally")
@@ -465,7 +474,7 @@ onChangePage(pageOfItems: Array<any>) {
 
   }
   placeObj;
-  // ........................t7der object el place...................//
+  // ........................add to data base the new edited place...................//
 
   addPlaceToThisOwner() {
     if (this.addingExtraInfoConfirm == true) {
@@ -521,6 +530,11 @@ onChangePage(pageOfItems: Array<any>) {
       this.imageSrc2 = "../../assets/Home/defaultPlace.png";
       this.imgs2 = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
       this.router.navigate(["/place", this.idPlace])
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
   }
@@ -552,13 +566,9 @@ onChangePage(pageOfItems: Array<any>) {
   addingEdtedOption(i, ii, id) {
     let input;
     input = Array.from(document.getElementsByClassName(id))
-    // console.log(input)
-    // console.log(input[0].value)
-    // console.log(input[1].value)
-    // console.log(input[2].value)
     this.editArr[ii] = false;
 
-    ////a7der elobject
+    //making new object to be edited 
     let headers = { "Conetent-Type": "application/json" }
     let oldimg = i.img;
     if (this.editedOptionImg == "../../assets/Home/defaultPlace.png") {
@@ -580,8 +590,7 @@ onChangePage(pageOfItems: Array<any>) {
     this.imgsEditedOption = ["../../assets/Home/defaultPlace.png"];
 
     this.httpService.PutOptions(id, obj, headers).subscribe(data => {
-      console.log("shatraaa ya esraaaaa")
-      console.log(data);
+
       this.httpService.gettingPtions().subscribe(data => {
         this.options = data;
         this.ownerOptions = [];
@@ -593,6 +602,11 @@ onChangePage(pageOfItems: Array<any>) {
 
       })
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
 
@@ -626,6 +640,11 @@ onChangePage(pageOfItems: Array<any>) {
         this.httpService.getNotifivations(this.alertArr.length)
       })
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
 
@@ -656,6 +675,11 @@ onChangePage(pageOfItems: Array<any>) {
       })
       // ....................///
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
   }
   // .......................///

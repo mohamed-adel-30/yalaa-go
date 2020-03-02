@@ -6,14 +6,14 @@
 <div *ngIf="owenerplace" class="container-custom owner-container">
   <div class="row">
 
-    <div class="col-md-5">
+    <div class="col-md-5 order-1 order-md-0 p-4">
       <div class="row">
         <div class="col-12 owner-mainimg">
-          <img src={{owenerplace.mainImage}} alt="" srcset="">
+          <img src={{owenerplace.mainImage}} class="img-fluid" alt="" srcset="">
 
         </div>
 
-        <div class="row justify-content-around owner-extraimgs">
+        <div class="row my-4 justify-content-around d-none d-md-flex  owner-extraimgs">
           <div *ngFor="let i of owenerplace.imgs" class=" col-3">
             <img src={{i}} alt="" srcset="">
           </div>
@@ -22,8 +22,8 @@
       </div>
     </div>
 
-    <div class=" owner-placedetails col-md-7 p-5">
-      <h1 style="display: inline-block;font-size: 32px;" class="p-0 my-5" routerLink="/place/{{owenerplace.id}}">
+    <div class=" owner-placedetails col-md-7 p-4 py-1">
+      <h1 style="display: inline-block;font-size: 32px;" class="p-0 my-3" routerLink="/place/{{owenerplace.id}}">
         {{owenerplace.name}}
       </h1>
       <p> <span class=" specificSpan">Description:</span>{{owenerplace.desc}}</p>
@@ -58,7 +58,7 @@
         edit place
       </button>
 
-      <button class="btn btn-outline-primary owener-edit-btns  m-2" *ngIf="optionCheck==false" data-toggle="modal"
+      <button class="btn btn-outline-primary owener-edit-btns  m-2" data-toggle="modal"
         data-target="#exampleModalScrollable" (click)="addOption()">Add
         Option</button>
 
@@ -82,7 +82,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">{{owenerplace.name}}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" disabled data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -90,28 +90,31 @@
           <!-- ..............place form .................// -->
           <div class="d-flex flex-column model-container" *ngIf="owenerplace">
 
-            <div>
+            <div class="row">
               <label> Name :</label>
-              <input #placeNName placeholder="place name" (input)="verfyingPlcae(placeNName,
+              <input class="p-0 mb-5 mb-md-1" class="col-md-9 mx-md-0" #placeNName placeholder="place name" (input)="verfyingPlcae(placeNName,
             contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.name}}>
             </div>
 
             <!-- <div class="errormsg" *ngIf="placeNName.value.length==0">
             *requeired -->
             <!-- </div> -->
-            <div>
+            <div class="row">
               <label> Phone :</label>
-              <input #contact placeholder="contact" (input)="verfyingPlcae(placeNName,
+              <input class="p-0 mb-5 mb-md-1" class="col-md-9 mx-md-0" #contact placeholder="contact" (input)="verfyingPlcae(placeNName,
   contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.contact.phone}}>
             </div>
             <!-- <div class="errormsg" *ngIf="11>contact.value.length">
             *requeired
           </div> -->
+            <!-- <div class="errormsg" *ngIf="( +contact.value /1!==+contact.value || 11>contact.value.length)">
+              *requeired and only numbers
+            </div> -->
 
 
-            <div>
+            <div class="row">
               <label> Address :</label>
-              <input #address placeholder="address" (input)="verfyingPlcae(placeNName,
+              <input class="p-0 mb-5 mb-md-1" class="col-md-9 mx-md-0" #address placeholder="address" (input)="verfyingPlcae(placeNName,
             contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.address}}>
               <!-- <div class="errormsg" *ngIf="5>address.value.length">
               *requeired
@@ -120,9 +123,9 @@
 
 
 
-            <div>
+            <div class="row">
               <label> Location:</label>
-              <input #location placeholder="location" (input)="verfyingPlcae(placeNName,
+              <input class="p-0 mb-5 mb-md-1" class="col-md-9 mx-md-0" #location placeholder="location" (input)="verfyingPlcae(placeNName,
   contact,address,location,desc,openHoursEnd,openHoursStart )" value={{owenerplace.location}}>
               <!-- <div class="errormsg" *ngIf="10>location.value.length">
     *requeired
@@ -130,13 +133,15 @@
             </div>
 
 
-            <div>
-              <label> Open from:</label>
-              <input class="time" #openHoursStart type="time" placeholder="" value="08:56" (input)="verfyingPlcae(placeNName,
+            <div class="row align-items-center p-3 px-md-0 pb-md-5">
+              <label class=" col-6 col-md-2 p-0"> Open from:</label>
+              <input class=" col-5 col-md-4 m-0 p-0 time align-items-center" #openHoursStart type="time" placeholder=""
+                value="08:56" (input)="verfyingPlcae(placeNName,
   contact,address,location,desc,openHoursEnd,openHoursStart )">
 
-              <label> To:</label>
-              <input class="time" #openHoursEnd type="time" placeholder="" value="20:56" (input)="
+              <label class=" col-6 col-md-2 p-0"> To:</label>
+              <input class="time col-5 col-md-4  m-0 p-0 " #openHoursEnd type="time" placeholder="" value="20:56"
+                (input)="
                 verfyingPlcae(placeNName, contact,address,location,desc,openHoursEnd,openHoursStart )">
               <!-- <div class="errormsg" *ngIf="5>openHoursStart.value.length || 5>openHoursEnd.value.length">
 *requeired
@@ -149,9 +154,10 @@
 
 
 
-            <div>
+            <div class="row">
               <label for="textArea" id="label-desc" class="d-block"> Description:</label>
-              <textarea id="textArea" #desc placeholder="description" (input)="verfyingPlcae(placeNName,
+              <textarea class="p-0 mb-5 mb-md-1" class="col-md-9 mx-md-0" id="textArea" #desc placeholder="description"
+                (input)="verfyingPlcae(placeNName,
   contact,address,location,desc,openHoursEnd,openHoursStart,true )" value={{owenerplace.desc}}>
             </textarea>
               <!-- <div class="errormsg" *ngIf="10>desc.value.length">
@@ -160,9 +166,10 @@
             </div>
 
 
-            <div class="mb-3">
+            <div class="mb-3 row">
               <label> Upload main picture of ypur place:</label>
 
+              <!-- class="p-0 mb-5 mb-md-1" -->
               <label class="custom-file-upload">
                 <input class="mainImg" #imgPlace type="file" (change)="readURL2($event)">
                 <i class="fa fa-cloud-upload"> Upload</i>
@@ -181,7 +188,7 @@
               </div>
 
               <div *ngIf="addExtra==true" class="extraInfo-wrapper">
-                <div class="py-4 my-2">
+                <div class=" row py-4 px-4 my-2">
                   <label>Upload More Picutres:</label>
                   <label class="custom-file-upload">
                     <input type="file" (change)="readURLGeneral($event,0)">
@@ -197,15 +204,17 @@
                   </label>
                 </div>
 
-                <div>
+                <div class="row px-4 mb-3">
                   <label> Facebook Account:</label>
-                  <input type="text" #facebook placeholder="Facebook Page" value={{owenerplace.contact.facebook}}>
+                  <input class="p-0 m-0 mx-md-2 col-12 " type="text" #facebook placeholder="Facebook Page"
+                    value={{owenerplace.contact.facebook}}>
 
                 </div>
 
-                <div>
+                <div class="row  px-4 mb-3">
                   <label> Instagrame Account:</label>
-                  <input type="text" #instgrame placeholder="Instagrame Page" value={{owenerplace.contact.instagram}}>
+                  <input class=" p-0 m-0 mx-md-2 col-12" type=" text" #instgrame placeholder="Instagrame Page"
+                    value={{owenerplace.contact.instagram}}>
                 </div>
 
                 <button class="btn owener-btns" (click)="addingExtraInfo(facebook,instgrame,checking)">Submit</button>
@@ -297,10 +306,10 @@
   <!-- ...............histroey..//-->
 
 
-<!-- pagination -->
-  <div *ngIf="owenerplace">
 
-    <section class="ownerReegisterationHistory my-5">
+  <div class="row" *ngIf="owenerplace">
+
+    <section class="ownerReegisterationHistory my-5 col-md-7">
       <div *ngIf="ownerHistory" class=" ownerRregisterationHistory-wrapper">
         <h2 class="specificSpan"> Reservations</h2>
         <div *ngFor="let i of pageOfItems" class="  my-5  p-5 row ownerReegisterationHistory-solo">
@@ -315,8 +324,8 @@
               <button disabled class='seenBtn'> <i class="fas fa-check-circle"></i></button>
             </ng-template>
           </div>
-          <div class="col-md-1"> <button class="btn delete-history-btn px-2 py-1" (click)=" deletingHistory(i.id)"><i
-                class="fas fa-times"></i></button>
+          <div class="col-md-1 order-1  order-md-0"> <button class="btn delete-history-btn px-2 py-1"
+              (click)=" deletingHistory(i.id)"><i class="fas fa-times"></i></button>
           </div>
 
           <div class="col-md-12">
@@ -341,34 +350,26 @@
             </div>
           </div>
         </div>
-      <!-- pagination footer -->
+        <!-- pagination footer -->
         <div class="pb-0 pt-3 d-flex justify-content-around">
           <jw-pagination [items]="reverseAlertArr" (changePage)="onChangePage($event)"></jw-pagination>
-      </div>
+        </div>
 
       </div>
     </section>
 
-
-  </div>
-
-  <!-- ........................./// -->
-
-  <div *ngIf="ownerOptions">
-
-
-    <section class="col-12   games-section order-2 order-md-3 mt-5" *ngIf="ownerOptions.length>0"
-      style="background-color: #fff;">
-      <div class="col-12 pb-5">
-        <h2 id="Options" class="title" class="text-center">
+    <section class="col-md-5   games-section order-2 order-md-3 mt-5" *ngIf="ownerOptions.length>0">
+      <div class="row">
+        <h2 id="Options" class="specificSpan p-4">
           Options</h2>
       </div>
       <div class=" col-12 d-flex games-card  flex-wrap justify-content-center">
-        <div class=" col-md-3 col-sm-6 mr-4  mt-2 games-details p-0" *ngFor="let i of ownerOptions ; let ii=index">
+        <div class="overflow-hidden  col-md-5 col-sm-6 mr-4 my-5  games-details p-0"
+          *ngFor="let i of ownerOptions ; let ii=index">
 
-          <div *ngIf="editArr[ii]==false;">
+          <div class="overflow-hidden " *ngIf="editArr[ii]==false;">
             <h4 class="game-name pt-2 pb-2">{{i.name}}</h4>
-            <!-- <img *ngFor="let x of i.imgs" src="{{x}}"> -->
+
             <div class="game-img">
               <img src="{{i.img}}" class="game-img pt-2 pb-4">
             </div>
@@ -438,12 +439,18 @@
           </div>
         </div>
       </div>
-      <!-- <button class="title Option-Title mx-5 my-3 " *ngIf="optionCheck==false" data-toggle="modal"
-        data-target="#exampleModalScrollable" (click)="addOption()">Add
-        Option</button> -->
 
-      <!-- ...............model test......................///? -->
+
+
     </section>
+  </div>
+
+  <!-- ........................./// -->
+
+  <div *ngIf="ownerOptions">
+
+
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -513,22 +520,6 @@
   <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
 </agm-map>
 
-
-<!-- app.component.html -->
-<!-- <button *ngIf="showmap==false" (click)="showingMap()">show map</button> -->
-<!-- <div class="container" *ngIf="showmap==true">
-
-  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
-      (dragEnd)="markerDragEnd($event)"></agm-marker>
-  </agm-map>
-
-
-  <button (click)="savingLocationMap()">
-    save me
-  </button>
-</div> -->
-<!-- ............................../// -->
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
