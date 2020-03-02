@@ -9,6 +9,8 @@ import { HttpServiceService } from '../http-service.service'
 })
 export class CommentsComponent implements OnInit {
   error = null;
+
+  limit = 4;
   comments;
   Writecomments = false
   CommentsOfSpesificPlace = [];
@@ -32,6 +34,13 @@ export class CommentsComponent implements OnInit {
   dropDown = false;
   pageOfItems = [];
 
+  showMore() {
+    this.limit = 20;
+  };
+  showLess() {
+    this.limit = 4;
+  };
+
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
     this.route.params.subscribe((param: Params) => {
       this.singlePlaceId = param["id"];
@@ -46,6 +55,7 @@ export class CommentsComponent implements OnInit {
           console.log(this.inputDisplay);
 
         }
+
 
 
       }, error => {
@@ -115,7 +125,7 @@ export class CommentsComponent implements OnInit {
 
         this.httpService.postComments(body, headers).subscribe(data => {
 
-          this.showedComments.push(data)
+          this.showedComments.unshift(data);
         })
         param.value = "";
       }, 1000)

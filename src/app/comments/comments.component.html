@@ -97,7 +97,8 @@
   <!--end add comment -->
 
   <h4 class="reviewsCustomer pt-3" *ngIf="Writecomments">Customer Reviews</h4>
-  <div class="col-12 d-flex  border-bottom pt-3 pb-3 rate-commts" *ngFor="let comment of showedComments ; let i=index">
+  <div class="col-12 d-flex  border-bottom pt-3 pb-3 rate-commts"
+    *ngFor="let comment of showedComments  | limitTo: limit  ; let i=index">
     <figure class="col-4 col-md-1 userImg">
       <img src="../../assets/avatar.png" class="img-fluid">
       <h5 class="userName">{{comment.userName}}</h5>
@@ -143,8 +144,16 @@
     </div>
   </div>
 
+  <div class="show" *ngIf='showedComments.length>0'>
+    <a *ngIf="limit == 4" (click)="showMore()"> Show More </a>
+    <a *ngIf="limit > 10" (click)="showLess()"> Show Less </a>
+  </div>
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> newHendBranch
   <!-- <div class="pb-0 pt-3">
     <jw-pagination [items]="showedComments" (changePage)="onChangePage($event)"></jw-pagination>
 </div> -->

@@ -228,3 +228,15 @@ textarea {
 
 // .deleteBtnMob {color: red;}
 // .editBtnMob{color: green;}
+.show {
+  padding: 1rem 0;
+}
+
+.show a {
+  color: orange;
+  cursor: pointer;
+}
+
+.show a:hover {
+  text-decoration: underline;
+}

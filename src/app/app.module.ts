@@ -26,6 +26,7 @@ import { OptionsComponent } from './options/options.component';
 import { AppPasswordDirective } from './app-password.directive';///////sign i
 import { JwPaginationComponent } from 'jw-angular-pagination';
 import { AgmCoreModule } from '@agm/core';
+import { LimitToPipe } from './limit-to.pipe';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { AgmCoreModule } from '@agm/core';
     FilterPipe,
     OptionsComponent,
     AppPasswordDirective,
-    JwPaginationComponent
+    JwPaginationComponent,
+    LimitToPipe
   ],
   imports: [
     BrowserModule,

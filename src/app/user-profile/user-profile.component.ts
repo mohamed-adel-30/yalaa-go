@@ -83,7 +83,8 @@ export class UserProfileComponent implements OnInit {
         this.service.deleteFav(fav.id).subscribe(data => {
 
         });
-        event.srcElement.parentNode.remove();
+        event.srcElement.parentNode.style.opacity = ".5";
+        event.target.style.color = "grey";
       }
     }
   }
