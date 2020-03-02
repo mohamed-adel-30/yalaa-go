@@ -60,7 +60,7 @@ export class HeaderComponent implements OnInit {
     // search input toggle:
 
     $('#searchBtn').click(function () {
-      $('.form-control').toggle()
+      $('.control-header').toggle()
     })
 
 
