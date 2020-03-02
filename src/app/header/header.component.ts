@@ -12,7 +12,7 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  error = null;
   cats;
   regesterationCats = [];
   wanteddata;
@@ -23,6 +23,13 @@ export class HeaderComponent implements OnInit {
   ownerloggedinheader;
   notifications = 0;
   user;
+  histroy;
+  ownerHistory = [];
+  alertArr = [];
+  owenerplace;
+  owner;
+  lowerPlaceSearch;
+  lowerPlaceData;
   constructor(private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
     this.user = this.httpService.getData("user");
     this.httpService.gettingData().subscribe(
@@ -38,11 +45,22 @@ export class HeaderComponent implements OnInit {
         }
 
       }
-    )
+      , error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
+      })
+
 
 
     this.httpService.gettingPlaces().subscribe(data => {
       this.places = data;
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
 
@@ -51,19 +69,25 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  histroy;
-  ownerHistory = [];
-  alertArr = [];
-  owenerplace;
-  owner;
+
   ngOnInit() {
     // da 3shan yasm3 fi s3thaaaaaaaa
     this.httpService.headerProfile.subscribe(data => { ///object behavior
       this.headerLoggedin = data;
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
     this.httpService.headerProfileowner.subscribe(data => { ///object behavior
       this.ownerloggedinheader = data;
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
     // search input toggle:
 
@@ -109,6 +133,11 @@ export class HeaderComponent implements OnInit {
       })
 
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
 
@@ -129,8 +158,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["/"]);
 
   }
-  lowerPlaceSearch;
-  lowerPlaceData;
+
 
   handlingSearch(inputVal) {
     inputVal.value = "";
@@ -158,6 +186,11 @@ export class HeaderComponent implements OnInit {
 
     // console.log(this.wanteddata)
   }
+  handlingError() {
+    this.error = null;
+  }
+
+
 }
 
 

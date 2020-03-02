@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from './../http-service.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import * as $ from "jquery"
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  error = null;
   myForm: FormGroup;
   toggle = false;
   newObj;
@@ -39,7 +41,7 @@ export class UserProfileComponent implements OnInit {
     reader.readAsDataURL(this.fileData);
     reader.onload = _event => {
       this.imageSrc = reader.result;
-      console.log(this.user);
+
 
       this.user.image = reader.result;
 
@@ -48,12 +50,17 @@ export class UserProfileComponent implements OnInit {
       let headers = { "Content-Type": "application/json" };
 
       this.service.updateUserData(this.user.id, this.user, headers).subscribe(data => {
-        console.log(data);
+
+      }, error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
       });
     };
 
   }
-  constructor(private service: HttpServiceService) {
+  constructor(private service: HttpServiceService, private router: Router) {
     this.service.getFav().subscribe(data => {
       this.allFavourites = data;
       for (let fav of this.allFavourites) {
@@ -66,7 +73,7 @@ export class UserProfileComponent implements OnInit {
           this.userFavouritesPlaces.push(data);
         })
       }
-      console.log(this.userFavouritesIds);
+
     });
   }
   removeFav(event) {
@@ -74,14 +81,14 @@ export class UserProfileComponent implements OnInit {
     for (let fav of this.allFavourites) {
       if (fav.userId == this.user.id && fav.placeId == id) {
         this.service.deleteFav(fav.id).subscribe(data => {
-          console.log(data);
+
         });
         event.srcElement.parentNode.remove();
       }
     }
   }
   ngOnInit() {
-    
+
     this.user = this.service.getData("user");
     this.service.getSingleUser(this.user.id).subscribe(data => {
       this.userData = data;
@@ -95,7 +102,7 @@ export class UserProfileComponent implements OnInit {
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(/^[a-z]\w{1,}@[a-z]{1,}.com$/)]),
     });
 
-// ===============pagination========//
+    // ===============pagination========//
 
   }
 
@@ -138,7 +145,12 @@ export class UserProfileComponent implements OnInit {
 
       let headers = { "Content-Type": "application/json" };
       this.service.updateUserData(this.user.id, this.newObj, headers).subscribe(data => {
-        console.log(data);
+
+      }, error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
       });
       this.service.setData("user", this.newObj);
     }

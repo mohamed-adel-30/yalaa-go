@@ -12,6 +12,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  error = null;
   checker: boolean = true;
   userData;
   myForm: FormGroup;
@@ -67,6 +68,11 @@ export class RegisterComponent implements OnInit {
     this.httpService.gettingData().subscribe(data => {
       this.cats = data;
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
   }
@@ -85,10 +91,20 @@ export class RegisterComponent implements OnInit {
     this.service.getUsers().subscribe(data => {
       this.userData = data;
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
-    console.log(this.userData);
+
     this.httpService.getownerdata().subscribe(data => {
       this.OwnerData = data;
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
 
@@ -104,11 +120,11 @@ export class RegisterComponent implements OnInit {
         setTimeout(() => {
           this.id = document.getElementById(i.id);
           this.arrOfCats.push(this.id)
-          // console.log(this.arrOfCats)
+
         }, 10)
       }
       this.chechDiv = false;
-      console.log(this.chechDiv)
+
     } else {
       this.chechDiv = true;
     }
@@ -118,7 +134,7 @@ export class RegisterComponent implements OnInit {
     // debugger
     for (let index = 0; index < this.userData.length; index++) {
       if (form.value.email === this.userData[index].email) {
-        console.log(this.userData[index].email);
+        // console.log(this.userData[index].email);
         this.checker = false;
         break;
       }
@@ -148,7 +164,7 @@ export class RegisterComponent implements OnInit {
 
   obj;
   onSubmit(form) {
-    console.log(this.owenerCheck.nativeElement.checked)
+
     if (this.owenerCheck.nativeElement.checked == false) {
       if (this.check(form)) {
         this.obj = {
@@ -171,7 +187,7 @@ export class RegisterComponent implements OnInit {
           // ..............................//
           this.httpService.gettingUsers().subscribe(data => {
             this.getuser = data;
-            console.log(this.getuser)
+
             this.logged = this.httpService.getData("loggedin")
             this.userfromlocal = this.httpService.getData("user")
             if (this.logged == true) {
@@ -200,7 +216,7 @@ export class RegisterComponent implements OnInit {
         let headers = { "Conetent-Type": "application/json" }
         // this.service.addUsers(this.obj)
         this.httpService.postownerdata(this.obj, headers).subscribe(data => {
-          console.log("daaaaaaaaaaaaaaaaaaaaft Owner")
+
           this.router.navigate(["/ownerProfile"])
           localStorage.clear();
           this.obj.password = "********"
@@ -213,7 +229,7 @@ export class RegisterComponent implements OnInit {
           // ..............................//
           this.httpService.getownerdata().subscribe(data => {
             this.getuserowner = data;
-            console.log(this.getuserowner)
+
             this.loggedowner = this.httpService.getData("ownerloggedin")
             this.userfromlocalowner = this.httpService.getData("owneruser")
             if (this.loggedowner == true) {
@@ -223,21 +239,17 @@ export class RegisterComponent implements OnInit {
                   i.password = "********"
                   this.httpService.setData("owneruser", i);
                   this.owner2 = this.httpService.getData("owneruser");
-                  console.log("heeeeeeeeeeennnnaaaaa")
-                  console.log(this.owner2)
+
                   break;
 
                 }
               }
-              console.log("abbbbbbbbl el function")
+
               this.addPlaceToThisOwner();
             }
           })
 
-          // setTimeout(() => {
-          //   console.log("abbbbbbbbl el function")
-          //   this.addPlaceToThisOwner();
-          // }, 1000)
+
 
         })
 
@@ -293,7 +305,7 @@ export class RegisterComponent implements OnInit {
         this.celectedArr.push(i.id)
       }
     }
-    console.log(this.celectedArr)
+
     this.verfyingPlcae(this.placename, this.placelocation, this.placecontact, this.placeaddres, this.placeDesc, this.openStart, this.openEnd, false)
   }
 
@@ -312,12 +324,12 @@ export class RegisterComponent implements OnInit {
       && this.placecontact.length > 0 && this.placeaddres.length > 0 && this.placeDesc.length > 0
       && this.openStart.length > 0 && this.celectedArr.length != 0 && this.celectedArr.length <= 3 && this.openEnd
       && this.statusOwner && this.reservationOwner && this.kidsOwner) {
-      console.log("finaaaaaaally")
+
       this.chechDiv = true;
     }
     else {
       this.chechDiv = false;
-      console.log("still no");
+
 
     }
 
@@ -350,9 +362,12 @@ export class RegisterComponent implements OnInit {
       "ownerId": this.owner2.id
     }
     this.httpService.postPlaces(this.placeObj, headers).subscribe(data => {
-      console.log("heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet")
-      console.log(data)
-      console.log(this.owner2.id)
+
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
   }

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  error = null;
   email;
   password;
   myForm: FormGroup;
@@ -28,9 +28,19 @@ export class LoginComponent implements OnInit {
     this.userservice.gettingUsers().subscribe((data) => {
       this.users = data;
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
     this.serviceServer.getownerdata().subscribe((data) => {
       this.owners = data;
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
   }
 

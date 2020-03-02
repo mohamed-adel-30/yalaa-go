@@ -60,9 +60,11 @@
             </div>
 
             <div class="my-5">
-              <label for="Cardpass" class="ml-1">Card password</label>
-              <input type="password" name="" id="Cardpass" placeholder="****" (input)="gettingvisaPassword($event)">
+              <label for="Cardpass" class="ml-1">Card NameHolder</label>
+              <input type="text" name="" id="Cardpass" placeholder="****" (input)="gettingvisaPassword($event)">
             </div>
+            <!-- <div *ngIf=" cardName.test(this.visaPassword)==false">error</div>
+            <div *ngIf=" cardName.test(this.visaPassword)==true"> nooo error</div> -->
 
 
 
@@ -74,7 +76,7 @@
               </div>
 
               <div class="col-md-4">
-                <label for="CVY" class="ml-1">CVY</label>
+                <label for="CVY" class="ml-1">CVV</label>
                 <input type="number" name="" id="CVY" placeholder="123" (input)="gettingCVY($event)">
               </div>
 

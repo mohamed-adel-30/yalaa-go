@@ -8,9 +8,9 @@ import { HttpServiceService } from '../http-service.service'
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-
+  error = null;
   comments;
-  Writecomments=false
+  Writecomments = false
   CommentsOfSpesificPlace = [];
   showedComments = [];
   singlePlaceId;
@@ -29,8 +29,8 @@ export class CommentsComponent implements OnInit {
   user;
   inputDisplay = [];
 
-  dropDown=false;
-  pageOfItems=[];
+  dropDown = false;
+  pageOfItems = [];
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router) {
     this.route.params.subscribe((param: Params) => {
@@ -46,8 +46,13 @@ export class CommentsComponent implements OnInit {
           console.log(this.inputDisplay);
 
         }
-        
 
+
+      }, error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
       })
 
     })
@@ -57,21 +62,15 @@ export class CommentsComponent implements OnInit {
 
   }
 
-  ///////////////////start pagination////////////////////
+
 
   ngOnInit() {
-    // an example array of 150 items to be paged
-    // this.showedComments = Array(1).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
-}
-// onChangePage(pageOfItems: Array<any>) {
-//     // update current page of items
-//     this.pageOfItems = pageOfItems;
-// }
+
+  }
 
 
-////////////////////end pagination///////////
-  dropDownDelOrEdit(){
-this.dropDown=!this.dropDown
+  dropDownDelOrEdit() {
+    this.dropDown = !this.dropDown
   }
   addComment(param) {
 
@@ -95,6 +94,11 @@ this.dropDown=!this.dropDown
           }
         }
 
+      }, error => {
+        this.error = error.message;
+        console.log(error)
+        console.log(error.status)
+        this.router.navigate(["/error"])
       })
 
       setTimeout(() => {
@@ -132,7 +136,7 @@ this.dropDown=!this.dropDown
     }
     this.showedComments = [...this.CommentsOfSpesificPlace]
   }
-  // delete btn
+  // delete comment btn hadling
   deleteComm(id) {
     this.httpService.deleteComments(id).subscribe(
       (data) => {
@@ -146,7 +150,7 @@ this.dropDown=!this.dropDown
     )
   }
 
-  //function to know he index od specific Comment
+  //function to know the index of specific Comment
   findingIndex(id) {
     for (let i = 0; i < this.showedComments.length; i++) {
       if (this.showedComments[i].id == id) {

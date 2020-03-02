@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./reservation.component.scss']
 })
 export class ReservationComponent implements OnInit {
+  error = null;
   selctedHour: any = [];
   user;
   selectedGames = []
@@ -85,9 +86,14 @@ export class ReservationComponent implements OnInit {
       "reservedGame": this.createdArray
     }
     this.service.postHistory(body, headers).subscribe(data => {
-      console.log(data)
+
       this.router.navigate(["/"]);
 
+    }, error => {
+      this.error = error.message;
+      console.log(error)
+      console.log(error.status)
+      this.router.navigate(["/error"])
     })
 
 
@@ -95,15 +101,18 @@ export class ReservationComponent implements OnInit {
 
 
 
-
+  cardName = /^[a-zA-Z\s]*$/;
   checking() {
+
+    // let cardName=new RegExp("^[a-zA-Z\s]{0,8}$")
+
     for (let item of this.createdArray) {
       if (item.hours == "0" || item.date == "0") {
         return;
       }
     }
 
-    if (this.visaNumber.length == 12 && this.visaPassword.length == 4
+    if (this.visaNumber.length == 12 && this.visaPassword.length > 4 && this.cardName.test(this.visaPassword)
       && this.visaCVY.length == 3 && this.visaExpiredDate.length > 1) { this.allowTosubmit = true; }
     else {
       this.allowTosubmit = false;
