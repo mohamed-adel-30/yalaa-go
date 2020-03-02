@@ -11,12 +11,21 @@
                     <i class="fas fa-user-alt"></i>
                     <input type="email" formControlName="email" placeholder="User email" class="col-12">
                 </div>
+                <div class="errormsg" *ngIf="myForm.controls.email.hasError('pattern')">
+                    email must be "abc@abc.com"
+                </div>
+                <div class="errormsg" *ngIf="myForm.controls.email.hasError('required') && myForm.touched ">
+                    email is requeired
+                </div>
 
                 <div class="pass my-3">
                     <div class="password">
                         <i class="fas fa-lock"></i>
                         <input type="password" formControlName="password" placeholder="Password" class="col-12">
                     </div>
+                </div>
+                <div class="errormsg" *ngIf="myForm.controls.password.hasError('pattern')">
+                  password must be at least 5 charachters and contain at least upper char, low char, number
                 </div>
 
                 <div class="checkbox my-3">

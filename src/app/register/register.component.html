@@ -4,34 +4,32 @@
         <section class="form-wrapper  col-md-6 col-sm-12" [ngClass]="{'owner':checkbox==true}">
 
             <form class="form-group container" [formGroup]='myForm' (ngSubmit)="onSubmit(myForm)">
-
+                <!-- enter full name -->
                 <div class="logo my-3 ">
                     <img src="https://i.postimg.cc/1RNT06sr/logo.png" alt="">
                 </div>
                 <div class="name my-3">
-
                     <input formControlName="name" placeholder="enter your full name">
                 </div>
                 <div class="errormsg" *ngIf="myForm.get('name').hasError('required') && myForm.touched">
                     this name is requeired
                 </div>
 
-
+                <!-- enter email -->
                 <div class="email my-3">
-
                     <input formControlName="email" placeholder="Your email">
                 </div>
                 <div class="errormsg" *ngIf="myForm.controls.email.hasError('pattern')">
-                    mail must be "abc@abc.com"
+                    email must be "abc@abc.com"
                 </div>
                 <div class="errormsg" *ngIf="myForm.controls.email.hasError('required') && myForm.touched ">
-                    mail is requeired
+                    email is requeired
                 </div>
 
                 <div class="password my-3">
                     <input formControlName="password" placeholder="password" type="password" appPassword>
                 </div>
-
+                <!-- password -->
                 <div class="errormsg" *ngIf="myForm.controls.password.hasError('required') && myForm.touched ">
                     password is requeired
                 </div>
@@ -39,7 +37,7 @@
 
                     password must be at least 5 charachters and contain at least upper char, low char, number
                 </div>
-
+                <!-- confirm password -->
                 <div class="confirmpass my-3">
 
                     <input formControlName="confirmPassword" placeholder="confirm password" type="password" appPassword>
@@ -49,6 +47,7 @@
                     test doesn't match
                 </div>
 
+                <!-- sign up as owner -->
                 <div class="checkbox my-3">
                     <input #owner type="checkBox" (click)="clickingCheckBox()">
                     <label class="">sign up as an owner</label>
@@ -59,20 +58,20 @@
 
                     <div class="my-3">
                         <input #placeNName placeholder="place name" (input)="verfyingPlcae(placeNName,
-                        contact,address,location,desc,openHoursEnd,openHoursStart )" class="input ">
+                        contact,address,location,desc,openHoursEnd,openHoursStart )" class="input col-12 ">
                         <div class="errormsg" *ngIf="placeNName.value.length==0">
                             *requeired
                         </div>
                     </div>
                     <div class="my-3">
-                        <input #contact placeholder="Phone" type="number" (input)="verfyingPlcae(placeNName,
+                        <input class="col-12" #contact placeholder="Phone" type="text" (input)="verfyingPlcae(placeNName,
                         contact,address,location,desc,openHoursEnd,openHoursStart )">
-                        <div class="errormsg" *ngIf="11>contact.value.length">
-                            *requeired
+                        <div class="errormsg" *ngIf="11>contact.value.length || +contact.value / 1 !== +contact.value">
+                            *requeired and must be numbers
                         </div>
                     </div>
                     <div class="my-3">
-                        <input #address placeholder="address" (input)="verfyingPlcae(placeNName,
+                        <input #address placeholder="address"  class="col-12" (input)="verfyingPlcae(placeNName,
                         contact,address,location,desc,openHoursEnd,openHoursStart )">
                         <div class="errormsg" *ngIf="5>address.value.length">
                             *requeired
@@ -80,7 +79,7 @@
                     </div>
 
                     <div class="my-3">
-                        <input #location placeholder="location" (input)="verfyingPlcae(placeNName,
+                        <input #location placeholder="location"  class="col-12" (input)="verfyingPlcae(placeNName,
                         contact,address,location,desc,openHoursEnd,openHoursStart )">
                         <div class="errormsg" *ngIf="10>location.value.length">
                             *requeired
@@ -100,10 +99,11 @@
                     </div>
                     <div class="errormsg" *ngIf="5>openHoursStart.value.length || 5>openHoursEnd.value.length">
                         *requeired
+                    </div>  
 
 
                      <div class="my-3">
-                        <textarea #desc placeholder="description" (input)="verfyingPlcae(placeNName,
+                        <textarea #desc placeholder="description"  class="col-12" (input)="verfyingPlcae(placeNName,
                         contact,address,location,desc,openHoursEnd,openHoursStart,true )"></textarea>
 
                         <div class="errormsg" *ngIf="10>desc.value.length">
@@ -128,8 +128,25 @@
                       </div> 
 
                     <!-- <input class="file " #imgPlace type="file" (change)="readURL($event)">  -->
+                    <button  type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    select categories
+                </button>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body d-flex flex-row flex-wrap ">
+                        <div *ngFor="let place of cats ;let item = index;" class="d-flex  col-4 align-items-center">
+                            <input #item id="{{place.id}}" class="categories " type="checkbox" name="{{item}}"
+                                value={{place.name}} (click)="selectingCats()">
+                            <label for="vehicle3">{{place.name}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="errormsg" *ngIf=" celectedArr.length == 0 || celectedArr.length>3">
+                    *requeired and maximum 3 categories
+                </div>
+
                     <div class=" my-3 dropdown d-flex flex-row flex-wrap justify-content-between">
-                    <div class="btn-group col-sm-12 col-md-4 ">
+                    <div class="btn-group col-sm-12 col-md-4 my-3">
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
 
@@ -164,24 +181,10 @@
                     </div>
                 </div>
 
-                    <button  type="button" data-toggle="collapse" data-target="#collapseExample"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        select categories
-                    </button>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body d-flex flex-row flex-wrap ">
-                            <div *ngFor="let place of cats ;let item = index;" class="d-flex  col-4 align-items-center">
-                                <input #item id="{{place.id}}" class="categories " type="checkbox" name="{{item}}"
-                                    value={{place.name}} (click)="selectingCats()">
-                                <label for="vehicle3">{{place.name}}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="errormsg" *ngIf=" celectedArr.length == 0 || celectedArr.length>3">
-                        *requeired and maximum 3 categories
-                    </div>
+                  
 
-
+                    </div>
+                    
                     <!-- <div class="btn-group ">
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
@@ -193,7 +196,7 @@
                         </div>
                     </div> -->
 
-                </div>
+                <!-- </div> --> 
                 <!-- ............................................./// -->
                 <div class="button my-3">
                     <button type="submit" [disabled]="(!myForm.valid || myForm.value.confirmPassword !== myForm.value.password ) || chechDiv==false">Sign
@@ -208,185 +211,3 @@
 
     </section>
 </section>
-
-<!-- light version -->
-<!-- <section class="login container-fluid">
-    <section class="login-wrapper row  d-flex justify-content-around">
-
-        <section class="form-wrapper  col-md-6 col-sm-12  ">
-            <form class="form-group container" [formGroup]='myForm' (ngSubmit)="onSubmit(myForm)">
-
-                <div class="logo ">
-                    <img src="https://i.postimg.cc/1RNT06sr/logo.png" alt="">
-                </div>
-                <div class="name">
-                    <label for="">name</label>
-                    <input formControlName="name" placeholder="enter your full name">
-                </div>
-                <div class="errormsg" *ngIf="myForm.get('name').hasError('required') && myForm.touched">
-                    this name is requeired
-                </div>
-
-
-                <div class="email">
-                    <label for="">email</label>
-                    <input formControlName="email" placeholder="Your email">
-                </div>
-                <div class="errormsg" *ngIf="myForm.controls.email.hasError('pattern')">
-                    mail must be "abc@abc.com"
-                </div>
-                <div class="errormsg" *ngIf="myForm.controls.email.hasError('required') && myForm.touched ">
-                    mail is requeired
-                </div>
-
-                <div class="password">
-                    <label for="">password</label>
-                    <input formControlName="password" placeholder="password" type="password" appPassword>
-                </div>
-
-                <div class="errormsg" *ngIf="myForm.controls.password.hasError('required') && myForm.touched ">
-                    password is requeired
-                </div>
-                <div class="errormsg" *ngIf="myForm.controls.password.hasError('pattern')">
-
-                    password must be at least 5 charachters and contain at least upper char, low char, number
-                </div>
-
-                <div class="confirmpass">
-                    <label for="">confirm password</label>
-                    <input formControlName="confirmPassword" placeholder="confirm password" type="password" appPassword>
-                </div>
-
-                <div class="errormsg" *ngIf="myForm.value.confirmPassword !== myForm.value.password && myForm.touched">
-                    test doesn't match
-                </div>
-
-                <div class="checkbox ">
-                    <input #owner type="checkBox" (click)="clickingCheckBox()">
-                    <label class="">sign up as an owner</label>
-                </div>
-
-                ..............place form .................// 
-                <div class="d-flex flex-column" *ngIf="checkbox==true">
-
-
-                    <input #placeNName placeholder="place name" (input)="verfyingPlcae(placeNName,
-                    contact,address,location,desc,openHoursEnd,openHoursStart )">
-                    <div class="errormsg" *ngIf="placeNName.value.length==0">
-                        *requeired
-                    </div>
-
-                    <input #contact placeholder="contact" type="number" (input)="verfyingPlcae(placeNName,
-                    contact,address,location,desc,openHoursEnd,openHoursStart )">
-                    <div class="errormsg" *ngIf="11>contact.value.length">
-                        *requeired
-                    </div>
-
-                    <input #address placeholder="address" (input)="verfyingPlcae(placeNName,
-                    contact,address,location,desc,openHoursEnd,openHoursStart )">
-                    <div class="errormsg" *ngIf="5>address.value.length">
-                        *requeired
-                    </div>
-
-
-                    <input #location placeholder="location" (input)="verfyingPlcae(placeNName,
-                    contact,address,location,desc,openHoursEnd,openHoursStart )">
-                    <div class="errormsg" *ngIf="10>location.value.length">
-                        *requeired
-                    </div>
-
-
-                    From :<input #openHoursStart type="time" placeholder="" (input)="verfyingPlcae(placeNName,
-                    contact,address,location,desc,openHoursEnd,openHoursStart )">To
-                    <input #openHoursEnd type="time" placeholder="" (input)="verfyingPlcae(placeNName,
-                    contact,address,location,desc,openHoursEnd,openHoursStart )">
-                    <div class="errormsg" *ngIf="5>openHoursStart.value.length || 5>openHoursEnd.value.length">
-                        *requeired
-                    </div>
-
-
-                    <input #desc placeholder="description" (input)="verfyingPlcae(placeNName,
-                    contact,address,location,desc,openHoursEnd,openHoursStart,true )">
-                    <div class="errormsg" *ngIf="10>desc.value.length">
-                        *requeired
-                    </div>
-
-                    <input #imgPlace type="file" (change)="readURL($event)">
-
-                    <div class="btn-group mt-4">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            status: <span *ngIf="statusOwner">{{statusOwnerText}}</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" value="open now" (click)="gettingStatus($event)">open now</a>
-                            <a class=" dropdown-item" value="closed" (click)="gettingStatus($event)">closed</a>
-                        </div>
-                    </div>
-
-                    <div class="btn-group mt-4">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Reservation:<span *ngIf="reservationOwner">{{reservationOwnerText}}</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" value="true" (click)="gettingReservation($event)">Yes</a>
-                            <a class=" dropdown-item" value="false" (click)="gettingReservation($event)">No</a>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        select categories
-                    </button>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <div *ngFor="let place of cats ;let item = index;">
-                                <input #item id="{{place.id}}" class="categories" type="checkbox" name="{{item}}"
-                                    value={{place.name}} (click)="selectingCats()">
-                                <label for="vehicle3">{{place.name}}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="errormsg" *ngIf=" celectedArr.length == 0 || celectedArr.length>3">
-                        *requeired and maximum 3 categories
-                    </div>
-
-
-                    <div class="btn-group mt-4">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            kids-Friendly:<span *ngIf="kidsOwner">{{kidsOwnerText}}</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" value="true" (click)="gettingKidsArea($event)">Yes</a>
-                            <a class=" dropdown-item" value="false" (click)="gettingKidsArea($event)">No</a>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-
-
-              
-
-
-
-
-                <div class="button">
-                    <button type="submit"
-                        [disabled]="(!myForm.valid || myForm.value.confirmPassword !== myForm.value.password ) || chechDiv==false">Sign
-                        up</button>
-                </div>
-
-                <div class="button loginbtn">
-                    Already have an account? <span routerLink="/login"> log in</span>
-                </div>
-            </form>
-        </section>
-
-    </section>
-</section> -->

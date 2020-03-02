@@ -309,7 +309,7 @@ export class RegisterComponent implements OnInit {
     }
     // && this.imageSrc != "not yet"
     if (this.placename.length > 0 && this.placelocation.length > 0
-      && this.placecontact.length > 0 && this.placeaddres.length > 0 && this.placeDesc.length > 0
+      && this.placecontact.length > 0 && +this.placecontact / 1 == +this.placecontact&& this.placeaddres.length > 0 && this.placeDesc.length > 0
       && this.openStart.length > 0 && this.celectedArr.length != 0 && this.celectedArr.length <= 3 && this.openEnd
       && this.statusOwner && this.reservationOwner && this.kidsOwner) {
       console.log("finaaaaaaally")

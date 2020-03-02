@@ -116,9 +116,11 @@ img{
 // category style
 // team style
 .testemolians{
-background-image: linear-gradient(rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.79)),url(../../assets/Home/texture.jpg);
+background-image: linear-gradient(rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.79)),
+url(../../assets/Home/texture.jpg);
     background-attachment: fixed;
-padding: 50px 0;}
+padding: 50px 0;
+}
 .person{
     height: 284px;
     background: #fff;
