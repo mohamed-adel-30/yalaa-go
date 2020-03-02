@@ -90,7 +90,7 @@
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
 
-                            Locations: <span *ngIf="statusOwner">{{locationSelectedText}}</span>
+                            Locations: <span *ngIf="locationSelectedText">{{locationSelectedText}}</span>
                         </button>
                         <div class="dropdown-menu">
                             <a *ngFor="let i of locations" class="dropdown-item" value="i"
