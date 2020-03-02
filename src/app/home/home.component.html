@@ -1,27 +1,30 @@
 <!-- start Header section -->
 
 <div class="container-fluid  hero">
-    <div class="wrapper  m-auto">
+    <div class="wrapper text-right m-auto col-12">
         <h1>Let the journey begin...</h1>
     </div>
-    <div class="form-inline form my-2 my-lg-0 ">
-        <input #inputSearch class="form-control mr-sm-2 " type="search " placeholder="Search "
+    <!-- search -->
+    <div class="form-inline form my-2 my-lg-0 col-12 d-flex justify-content-md-center">
+        <input #inputSearch class="form-control mr-sm-2 col-6" type="search" placeholder="Search ..... "
             aria-label="Search " (input)="lookingFor($event) ">
 
-        <button id="searchBtn" class="btn  my-2 my-sm-0 " type="button"><i
-                class="fas fa-search text-white"></i></button>
-        <div class=" searchResults bg-light d-block  rounded text-center w-100 ">
-            <a class="d-block text-dark style-none py-1 w-100" *ngFor="let data of wanteddata "
-                routerLink="/place/{{data.id}} "
-                (click)="handlingSearch(inputSearch) ">{{data.name}}-{{data.id}}</a>
+        <button id="searchBtn2" class="btn btn-search  my-2 my-sm-0 " type="button"><i
+                class="fas fa-search "></i></button>
+        <div class=" searchResults bg-light d-block  rounded text-center">
+            <a class="d-block text-home-search style-none py-1 w-100" *ngFor="let data of wanteddata "
+                routerLink="/place/{{data.id}} " (click)="handlingSearch(inputSearch) ">{{data.name}}</a>
         </div>
     </div>
+
+
+    <!-- search -->
 </div>
 <!-- end Header section -->
 
 
 <!-- start our place -->
-<section class="container-custome col-12 order-1">
+<section class="container-custome col-12 order-1 our-places">
     <h2 class='placesTitle mb-4'>Our places</h2>
     <!-- <div class="col-12 d-flex">
 <figure *ngIf="places" class="col-4 place-img">
@@ -42,7 +45,7 @@
             <div *ngIf="places" class="overlay">
                 <h4>{{places[0].name}}</h4>
                 <p>{{places[0].shortdesc}}</p>
-                <button class="mb-3 btn detail-btn"  (click)='navigateToId1()'>More Details</button>
+                <button class="mb-3 btn detail-btn" (click)='navigateToId1()'>More Details</button>
                 <div class="icons">
                     <i class="fab fa-facebook-square mr-3" aria-hidden="true"></i>
                     <i class="fab fa-instagram" aria-hidden="true"></i>
@@ -52,7 +55,7 @@
         </figure>
 
         <figure *ngIf="places" class="col-4 place-img">
-          <div><img src="{{places[1].mainImage}}" class="img-fluid master-img2"></div>  
+            <div><img src="{{places[1].mainImage}}" class="img-fluid master-img2"></div>
 
             <div *ngIf="places" class="overlay">
                 <h4>{{places[1].name}}</h4>
@@ -66,7 +69,7 @@
             </div>
         </figure>
         <figure *ngIf="places" class="col-4 place-img">
-          <div><img src="{{places[9].mainImage}}" class="img-fluid master-img2"></div>  
+            <div><img src="{{places[9].mainImage}}" class="img-fluid master-img2"></div>
             <div *ngIf="places" class="overlay">
                 <h4>{{places[9].name}}</h4>
                 <p>{{places[9].shortdesc}}</p>
@@ -83,47 +86,58 @@
 </section>
 <!-- end our place -->
 <!-- start our category -->
-<div class="recommended">
+<div class="recommendedCat">
     <div class="wrapper m-auto">
         <h2 class='placesTitle mb-4'>Our categories</h2>
         <div class="row" *ngIf="options">
             <div class="col-lg-3 col-md-12">
                 <div class="row">
-                    <div (click)='toCategory5()'  class="mb-4 col-lg-12  col-4" >
-                        <div><img class="img-fluid w-100" 
-                            src="{{options[26].img}}" /></div>
-                        <div class="overlay-cat"> <h5>{{options[26].name}}</h5></div>
+                    <div (click)='toCategory5()' class="mb-4 col-lg-12  col-4 category-img">
+                        <div><img class="img-fluid w-100" src="{{options[26].img}}" /></div>
+                        <div class="overlay-cat">
+                            <h5>{{options[26].name}}</h5>
+                        </div>
                     </div>
-                    <div (click)='toCategory8()' class="mb-4 col-lg-12  col-4">
-                      <div> <img class="img-fluid  w-100" src="{{options[24].img}}" alt="" /></div> 
-                      <div class="overlay-cat"> <h5>{{options[24].name}}</h5></div>
+                    <div (click)='toCategory8()' class="mb-4 col-lg-12  col-4 category-img">
+                        <div> <img class="img-fluid  w-100" src="{{options[24].img}}" alt="" /></div>
+                        <div class="overlay-cat">
+                            <h5>{{options[24].name}}</h5>
+                        </div>
                     </div>
-                    <div (click)='toCategory7()' class="mb-4 col-lg-12  col-4">
+                    <div (click)='toCategory7()' class="mb-4 col-lg-12  col-4 category-img">
                         <div class="img-div"><img class="img-fluid w-100" src="{{options[23].img}}" alt="" /></div>
-                        <div class="overlay-cat "> <h5>{{options[23].name}}</h5></div>
+                        <div class="overlay-cat ">
+                            <h5>{{options[23].name}}</h5>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-9 col-md-12">
-                <div class="row mb-4" (click)='toCategory9()'>
+                <div class="row mb-4 category-img" (click)='toCategory9()'>
                     <div class="col-12 px-0">
-                       <div><img class="w-100" src="{{options[28].img}}" alt="" /></div> 
-                       <div class="overlay-cat w-100"> <h5>{{options[28].name}}</h5></div>
+                        <div><img class="w-100" src="{{options[28].img}}" alt="" /></div>
+                        <div class="overlay-cat w-100">
+                            <h5>{{options[28].name}}</h5>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8 img-div px-0" (click)='toCategory3()'>
-                        <div class=" img-div "><img class="w-100  "src="{{options[31].img}}"/></div>
-                        <div class="overlay-cat w-100"> <h5>{{options[31].name}}</h5></div>
+                    <div class="col-8 img-div px-0 category-img" (click)='toCategory3()'>
+                        <div class=" img-div "><img class="w-100  " src="{{options[31].img}}" /></div>
+                        <div class="overlay-cat w-100">
+                            <h5>{{options[31].name}}</h5>
+                        </div>
                         <!-- <div class="overlay text-center ">
                             <a><i class="fas fa-play-circle fa-3x"></i></a>
 
                             <h3>Kouta Park</h3>
                         </div> -->
                     </div>
-                    <div class="col-4 pr-0 " (click)='toCategory4()'>
+                    <div class="col-4 pr-0 category-img " (click)='toCategory4()'>
                         <div class=" img-div "><img class="w-100" src="{{options[20].img}}" alt="" /></div>
-                        <div class="overlay-cat"> <h5>{{options[20].name}}</h5></div>
+                        <div class="specialoverlay-cat">
+                            <h5>{{options[20].name}}</h5>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -230,7 +244,7 @@
 
 
 <!-- strat our team section -->
-<section class="testemolians container-fluid">
+<!-- <section class="testemolians container-fluid">
     <section class="testemolians__wrapper container-custome">
         <div class="info col-12">
             <h3 class="placesTitle">Our Team</h3>
@@ -244,7 +258,7 @@
                 </blockquote>
                 <div class="col-12 d-flex">
                   <figure class="col-3 p-0"><img src="../../assets/avatar.png" class="img-fluid"></figure> 
-                 <div class="col-9 div-lineHieght"><span>- <small>Jane Doe</small> CEO - ABC Inc.</span></div> 
+                 <div class="col-9 div-lineHieght"><span>- <small>Sara sherif</small> Front-End Developer.</span></div> 
                 </div>
             </article>
             <article class="col-3 person">
@@ -291,5 +305,138 @@
            
         </section>
     </section>
+</section> -->
+
+
+<!-- <section class="testemolians container-fluid">
+<div class="card-group container-custome">
+    <div class="card">
+      <div><img src="http://placehold.it/200/200" class="card-img-top img-fluid" alt="..."></div>
+      <div class="card-body">
+        <h5 class="card-title">Sara Sherif</h5>
+        <p class="card-text">Front-End Development</p>
+      </div>
+      <div class="card-footer">
+        <p class="text-muted d-flex mb-0">
+            <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
+            <i class="fab fa-github-square col-4" aria-hidden="true"></i>
+            <i class="fab fa-linkedin col-4"></i>
+        </p>
+      </div>
+    </div>
+    <div class="card">
+        <div><img src="http://placehold.it/200/1000" class="card-img-top img-fluid" alt="..."></div>
+        <div class="card-body">
+          <h5 class="card-title">Samaa Amin</h5>
+          <p class="card-text">Front-End Development</p>
+        </div>
+        <div class="card-footer">
+            <p class="text-muted d-flex mb-0">
+                <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
+                <i class="fab fa-github-square col-4" aria-hidden="true"></i>
+                <i class="fab fa-linkedin col-4"></i>
+            </p>
+        </div>
+      </div>
+      <div class="card">
+        <div><img src="http://placehold.it/200/800" class="card-img-top img-fluid" alt="..."></div>
+        <div class="card-body">
+          <h5 class="card-title">Esraa Akl</h5>
+          <p class="card-text">Front-End Development</p>
+        </div>
+        <div class="card-footer">
+            <p class="text-muted d-flex mb-0">
+                <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
+                <i class="fab fa-github-square col-4" aria-hidden="true"></i>
+                <i class="fab fa-linkedin col-4"></i>
+            </p>
+        </div>
+      </div>
+      <div class="card">
+        <div><img src="http://placehold.it/200/200" class="card-img-top img-fluid" alt="..."></div>
+        <div class="card-body">
+          <h5 class="card-title">Hend dyab</h5>
+          <p class="card-text">Front-End Development</p>
+        </div>
+        <div class="card-footer">
+            <p class="text-muted d-flex mb-0">
+                <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
+                <i class="fab fa-github-square col-4" aria-hidden="true"></i>
+                <i class="fab fa-linkedin col-4"></i>
+            </p>
+        </div>
+      </div>
+      <div class="card">
+        <div><img src="http://placehold.it/200/0000ff" class="card-img-top img-fluid" alt="..."></div>
+        <div class="card-body">
+          <h5 class="card-title">Mohamed Adel</h5>
+          <p class="card-text">Front-End Development</p>
+        </div>
+        <div class="card-footer">
+          <p class="text-muted d-flex mb-0">
+              <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
+              <i class="fab fa-github-square col-4" aria-hidden="true"></i>
+              <i class="fab fa-linkedin col-4"></i>
+          </p>
+        </div>
+      </div>
+  </div>
+</section> -->
+
+<section class="ourTeam testemolians">
+    <div class="info col-12">
+        <h3 class="placesTitle">Our Team</h3>
+    </div>
+    <section class="container-custome row d-flex justify-content-md-center">
+        <div class="col-3  text-center team-person">
+            <figure><img src="http://placehold.it/200/200" alt=""></figure>
+            <p class="trackTitle">front end Development</p>
+            <div class=" d-flex mb-0 justify-content-md-center">
+                <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
+                <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+        <div class="col-3 text-center team-person">
+            <figure><img src="http://placehold.it/200/200" alt=""></figure>
+            <p class="trackTitle">front end Development</p>
+            <div class=" d-flex mb-0 justify-content-md-center">
+                <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
+                <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+        <div class="col-3 text-center team-person">
+            <figure><img src="http://placehold.it/200/200" alt=""></figure>
+            <p class="trackTitle">front end Development</p>
+            <div class=" d-flex mb-0 justify-content-md-center">
+                <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
+                <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-3 text-center team-person">
+            <figure><img src="http://placehold.it/200/200" alt=""></figure>
+            <p class="trackTitle">front end Development</p>
+            <div class=" d-flex mb-0 justify-content-md-center">
+                <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
+                <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+        <div class="col-3 text-center team-person">
+            <figure><img src="http://placehold.it/200/200" alt=""></figure>
+            <p class="trackTitle">front end Development</p>
+            <div class=" d-flex mb-0 justify-content-md-center">
+                <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
+            <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
+            <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+
+    </section>
+
 </section>
+
 <!-- end our team section -->

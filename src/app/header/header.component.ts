@@ -92,7 +92,7 @@ export class HeaderComponent implements OnInit {
     // search input toggle:
 
     $('#searchBtn').click(function () {
-      $('.form-control').toggle()
+      $('.control-header').toggle()
     })
     this.httpService.notificationCounter.subscribe(data => {
       this.notifications = data;
