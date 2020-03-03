@@ -15,7 +15,7 @@
 
   <!--end add comment -->
 
-  <h4 class="reviewsCustomer pt-3" *ngIf="Writecomments">Customer Reviews</h4>
+  <h4 class="reviewsCustomer pt-3">Customer Reviews</h4>
   <div class="container-fluid   border-bottom pt-3 pb-3 align-items-center rate-commts"
     *ngFor="let comment of showedCommentsReversed |limitTo:limit ; let i=index">
     <div class="row">
@@ -64,7 +64,7 @@
   </div>
 
 
-  <div class="show" *ngIf='showedComments.length>0'>
+  <div class="show" *ngIf='showedCommentsReversed.length>0'>
     <a *ngIf="limit == 4" (click)="showMore()"> Show More </a>
     <a *ngIf="limit > 10" (click)="showLess()"> Show Less </a>
   </div>
