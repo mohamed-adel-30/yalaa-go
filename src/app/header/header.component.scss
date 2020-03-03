@@ -1,92 +1,92 @@
 @import "./../../styles.scss";
 nav {
-  .person {
-    min-width: initial;
-    left: initial;
-    width: 6rem;
-    right: 0;
-  }
-  z-index: 9999;
-  background-color: rgba($color: #000000, $alpha: 0.5);
-  margin: 0 auto;
-  position: fixed;
-  width: 100%;
-  .wrapper {
-    width: 80%;
+    .person {
+        min-width: initial;
+        left: initial;
+        width: 6rem;
+        right: 0;
+    }
+    z-index: 9999;
+    background-color: rgba($color: #000000, $alpha: 0.5);
     margin: 0 auto;
-    li {
-      a {
+    position: fixed;
+    width: 100%;
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+        li {
+            a {
+                font-size: $paragrphSize;
+                color: #fff;
+                white-space: nowrap;
+                padding-right: 40px;
+            }
+            a:hover {
+                color: $hcolors;
+            }
+            p {
+                cursor: pointer;
+                font-size: $paragrphSize;
+            }
+        }
+        p {
+            cursor: pointer;
+        }
+    }
+    i {
         font-size: $paragrphSize;
-        color: #fff;
-        white-space: nowrap;
-        padding-right: 40px;
-      }
-      a:hover {
-        color: $hcolors;
-      }
-      p {
-        cursor: pointer;
-        font-size: $paragrphSize;
-      }
     }
-    p {
-      cursor: pointer;
+    .form {
+        position: relative;
+        input {
+            display: none;
+            font-size: 14px;
+        }
+        .searchResults {
+            position: absolute;
+            left: 0.5%;
+            top: 100%;
+            z-index: 9999;
+            a {
+                text-decoration: none;
+                font-size: $paragrphSize;
+            }
+        }
     }
-  }
-  i {
-    font-size: $paragrphSize;
-  }
-  .form {
-    position: relative;
-    input {
-      display: none;
-      font-size: 14px;
+    .dropdown-menu {
+        min-width: 8rem;
+        text-align: center;
     }
-    .searchResults {
-      position: absolute;
-      left: 0.5%;
-      top: 100%;
-      z-index: 9999;
-      a {
-        text-decoration: none;
-        font-size: $paragrphSize;
-      }
-    }
-  }
-  .dropdown-menu {
-    min-width: 8rem;
-    text-align: center;
-  }
 }
 
 .nav-item {
-  list-style: none;
+    list-style: none;
 }
 
 .signup {
-  color: $hcolors;
-  font-size: $paragrphSize;
-  font-weight: 500;
-  background-color: transparent;
-  border-radius: 10px;
-  &:hover {
-    background-color: $hcolors;
-    cursor: pointer;
-    color: #fff;
-  }
+    color: $hcolors;
+    font-size: $paragrphSize;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 10px;
+    &:hover {
+        background-color: $hcolors;
+        cursor: pointer;
+        color: #fff;
+    }
 }
 
 .navbar-brand {
-  width: 6%;
+    width: 6%;
 }
 
 .navbar-brand img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 560px) {
-  nav {
-    position: static;
-    background-color: #000000;
-  }
+    nav {
+        position: static;
+        background-color: #000000;
+    }
 }

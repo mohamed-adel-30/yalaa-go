@@ -11,13 +11,6 @@ h2 {
     text-transform: capitalize;
 }
 
-img {
-    height: 300px;
-}
-
-// .container-fluid {
-//     max-height: 50vh;
-// }
 .wrapper {
     width: $wrapper;
     padding: 10% 0 5% 0;
@@ -54,6 +47,11 @@ img {
     p {
         font-size: $paragrphSize;
     }
+}
+
+.planContainer img {
+    border-radius: 24px;
+    max-height: 250px;
 }
 
 .time {

@@ -18,6 +18,11 @@ agm-map {
     height: 300px;
 }
 
+.owner-mainimg img {
+    max-height: 300px;
+    min-height: 300px;
+}
+
 // ..........................///
 .unseenBtn,
 .seenBtn {
@@ -197,26 +202,20 @@ input[type="file"] {
 }
 
 // ..............................................///
-.games-section {
-    box-shadow: 0px 0px 24px 1px #dddddd9e;
-}
-
 image {
     width: 100%;
 }
 
-.games-details:hover {
-    box-shadow: -1px 7px 11px 3px #e8e5e580;
-}
-
 .games-details {
     border: 1px solid #dddddda8;
-    background-color: #fff;
+    background-color: #ffffff;
+    border-radius: 20px;
     .game-name {
         background-color: $hcolors;
         color: #fff;
         text-transform: capitalize;
         text-align: center;
+        border-radius: 20px;
     }
     .game-img {
         text-align: center;
@@ -247,6 +246,10 @@ image {
     border-radius: 29px;
     padding: 10px;
     box-shadow: 0px 0px 7px 0px #90a783;
+    .game {
+        height: 100px;
+        border: 2px solid red;
+    }
     input {
         color: black;
         background-color: transparent;
@@ -298,6 +301,10 @@ image {
 
 .delete-history-btn {
     color: $hcolors;
-    border: 2px $hcolors solid;
+    // border: 2px $hcolors solid;
     border-radius: 5px;
+}
+
+.popUp {
+    padding: $sectionMargin 0;
 }

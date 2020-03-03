@@ -16,6 +16,13 @@ agm-map {
     padding-top: 20px;
 }
 
+.master-img img {
+    max-height: 300px;
+    min-height: 300px;
+    max-width: 400px;
+    min-width: 400px;
+}
+
 img.selected {
     opacity: 1 !important;
 }

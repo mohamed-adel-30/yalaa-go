@@ -16,12 +16,12 @@
                         <div class="row justify-content-round  mt-2 mb-5">
                             <div class="col-md-4">
                                 <label for="start">Select date:</label>
-                                <input class="{{i}}" type="date" id="start" name="trip-start" required value="2020-02-18" min="2020-01-01" max="2020-12-31" (input)="getDate($event,i)">
+                                <input class="{{i}} form-control" type="date" id="start" name="trip-start" required value="2020-02-18" min="2020-01-01" max="2020-12-31" (input)="getDate($event,i)">
                             </div>
 
                             <div class="col-md-5">
                                 <div class="btn-group mt-4">
-                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn dropdown-toggle dropHour" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{selctedHour[i]}}
                   </button>
                                     <div class="dropdown-menu">
@@ -86,7 +86,7 @@
 
                 <!-- .................................................................../// -->
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal popUp fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">

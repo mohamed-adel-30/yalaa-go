@@ -23,7 +23,9 @@ body {
     background-attachment: fixed;
 }
 
-input:focus , button:focus ,i:focus{
+input:focus,
+button:focus,
+i:focus {
     outline-color: transparent;
     outline-style: none;
     outline-width: 0px;

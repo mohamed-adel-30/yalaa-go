@@ -73,7 +73,7 @@
 
     <!-- ...............................................//// -->
 
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal popUp fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog  modal-custom" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -308,7 +308,7 @@
                             <button disabled class='seenBtn'> <i class="fas fa-check-circle"></i></button>
                         </ng-template>
                     </div>
-                    <div class="col-md-1 order-1  order-md-0"> <button class="btn delete-history-btn px-2 py-1" (click)=" deletingHistory(i.id)"><i class="fas fa-times"></i></button>
+                    <div class="col-md-1 order-1  order-md-0"> <button class="btn delete-history-btn px-2 py-0" (click)=" deletingHistory(i.id)"><i class="fas fa-times"></i></button>
                     </div>
 
                     <div class="col-md-12">
@@ -345,10 +345,12 @@
                     Options</h2>
             </div>
             <div class=" col-12 d-flex games-card  flex-wrap justify-content-center">
-                <div class="overflow-hidden  col-md-5 col-sm-6 mr-4 my-5  games-details p-0" *ngFor="let i of ownerOptions ; let ii=index">
+                <div class="overflow-hidden   col-md-6 col-sm-6   games-details p-2" *ngFor="let i of ownerOptions ; let ii=index">
 
-                    <div class="overflow-hidden " *ngIf="editArr[ii]==false;">
-                        <h4 class="game-name pt-2 pb-2">{{i.name}}</h4>
+                    <div class="overflow-hidden m-auto " *ngIf="editArr[ii]==false;">
+
+
+                        <h4 class="game-name py-2">{{i.name}}</h4>
 
                         <div class="game-img">
                             <img src="{{i.img}}" class="game-img pt-2 pb-4">
@@ -362,7 +364,7 @@
                             <!-- ....// -->
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal popUp fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -393,7 +395,7 @@
 
                         <!-- <img *ngFor="let x of i.imgs" src="{{x}}"> -->
                         <div class="game-img">
-                            <img src="{{i.img}}" class="game-img pt-2 pb-4">
+                            <img src="{{i.img}}">
                             <label class="custom-file-upload">
                 <input type="file" (change)="readURLOption($event)">
                 <i class="fa fa-cloud-upload"> </i>
@@ -425,7 +427,7 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal popUp fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -437,37 +439,46 @@
                     <div class="modal-body">
 
                         <!-- ............Add Option.................///? -->
+                        <div class="container-fluid">
 
-                        <div class="col-md-3" class="Option-Edit2">
-
-
-                            <h4 class="game-name pt-2 pb-2"><input #OptionName placeholder="Option Name" (input)="verfyingOption(OptionName,optionDesc,optionPrice)"></h4>
-                            <div class="errormsg" *ngIf="OptionName.value.length==0">
-                                *requeired
+                            <div class="row align-items-center">
+                                <div class="input-group col-9">
+                                    <input #OptionName class="form-control" placeholder="Option Name" (input)="verfyingOption(OptionName,optionDesc,optionPrice)">
+                                </div>
+                                <div class="errormsg col-3" *ngIf="OptionName.value.length==0">
+                                    *requeired
+                                </div>
                             </div>
 
-
-                            <div class="game-img">
-                                <img src="../../assets/Home/defaultPlace.png" class="game-img pt-2 pb-4">
-                                <label class="custom-file-upload">
-                  <input #imgOption type="file" (change)="readURL($event)">
-                  <i class="fa fa-cloud-upload"> </i>
-                </label>
+                            <div class="row align-items-center">
+                                <div class="col-12">
+                                    <img class="img-fluid" src="../../assets/Home/defaultPlace.png" class="">
+                                    <label class="custom-file-upload">
+                                    <input #imgOption type="file" (change)="readURL($event)">
+                                    <i class="fa fa-cloud-upload"> </i>
+                                </label>
+                                </div>
                             </div>
-                            <h5 class="game-price pl-3 pr-3"> <input #optionPrice placeholder="Option price" type="number" (input)="verfyingOption(OptionName,optionDesc,optionPrice)"> <span style="font-size: 10px;">EGP</span>
-                            </h5>
-                            <div class="errormsg" *ngIf="optionPrice.value.length==0">
-                                *requeired
+                            <div class="row align-items-center mb-2">
+                                <div class="input-group col-9">
+                                    <input #optionPrice placeholder="Option price EGP" class="form-control" type="number" (input)="verfyingOption(OptionName,optionDesc,optionPrice)">
+                                </div>
+                                <div class="errormsg col-3" *ngIf="optionPrice.value.length==0">
+                                    *requeired
+                                </div>
                             </div>
-
-                            <hr>
-                            <p class="pl-3 pr-3 game-desc"> <input #optionDesc placeholder="Option desc" (input)="verfyingOption(OptionName,optionDesc,optionPrice)"></p>
-                            <div class="errormsg" *ngIf="optionDesc.value.length==0">
-                                *requeired
+                            <div class="row align-items-center mb-2">
+                                <div class="input-group col-9 ">
+                                    <input #optionDesc placeholder="Option desc" class="form-control" (input)="verfyingOption(OptionName,optionDesc,optionPrice)">
+                                </div>
+                                <div class="errormsg col-3" *ngIf="optionDesc.value.length==0">
+                                    *requeired
+                                </div>
                             </div>
 
                             <!-- <button [disabled]="OptionValid==true" (click)="submitiingNewOption()">Submit</button>
                 <button (click)="canseliing()">cansel</button> -->
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -489,7 +500,7 @@
 </agm-map>
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal popUp fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered  modal-custom" role="document">
         <div class="modal-content">
             <div class="modal-header">
