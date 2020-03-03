@@ -1911,21 +1911,6 @@
       "id": 29
     },
     {
-      "comment": "i reaaly enjoy it",
-      "placeId": "9",
-      "userId": 8,
-      "userName": "samaa",
-      "userImg": "",
-      "rate": 4,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "id": 30
-    },
-    {
       "comment": "zzzzzzzzzzzzzzzzzzzzzzz",
       "placeId": "4",
       "userId": 13,
@@ -2040,14 +2025,6 @@
     },
     {
       "comment": "i reaaly enjoy it",
-      "placeId": "19 ",
-      "userId": 16,
-      "userName": "esraa",
-      "userImg": "",
-      "id": 30
-    },
-    {
-      "comment": "i reaaly enjoy it",
       "placeId": "4",
       "userId": 16,
       "userName": "esraa",
@@ -2099,6 +2076,38 @@
       "userName": "esraa",
       "userImg": "",
       "id": 35
+    },
+    {
+      "comment": "amazing place",
+      "placeId": "7",
+      "userId": 20,
+      "userName": "test",
+      "userImg": "",
+      "id": 38
+    },
+    {
+      "comment": "hellooooooo",
+      "placeId": "17",
+      "userId": 20,
+      "userName": "test",
+      "userImg": "",
+      "id": 39
+    },
+    {
+      "comment": "good place",
+      "placeId": "7",
+      "userId": 20,
+      "userName": "test",
+      "userImg": "",
+      "id": 40
+    },
+    {
+      "comment": "first",
+      "placeId": "7",
+      "userId": 20,
+      "userName": "test",
+      "userImg": "",
+      "id": 41
     }
   ],
   "rates": [
@@ -2236,6 +2245,21 @@
       "placeId": 12,
       "userId": 13,
       "id": 19
+    },
+    {
+      "placeId": 7,
+      "userId": 20,
+      "id": 20
+    },
+    {
+      "placeId": 8,
+      "userId": 20,
+      "id": 21
+    },
+    {
+      "placeId": 12,
+      "userId": 20,
+      "id": 22
     }
   ],
   "history": [

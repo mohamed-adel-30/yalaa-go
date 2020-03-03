@@ -15,6 +15,8 @@ export class CommentsComponent implements OnInit {
   Writecomments = false
   CommentsOfSpesificPlace = [];
   showedComments = [];
+  showedCommentsReversed = [];
+
   singlePlaceId;
   placeLoggedin;
   // for star rates
@@ -51,6 +53,7 @@ export class CommentsComponent implements OnInit {
         this.comments = data;
         this.CommentsOfSpesificPlace = [];
         this.showedComments = [];
+        this.showedCommentsReversed = []
         this.gettingCommentsOfSinglePlace(this.singlePlaceId)
         for (let i of this.comments) {
           this.inputDisplay.push(false)
@@ -127,7 +130,8 @@ export class CommentsComponent implements OnInit {
 
         this.httpService.postComments(body, headers).subscribe(data => {
 
-          this.showedComments.unshift(data);
+          this.showedComments.push(data);
+          this.showedCommentsReversed = this.showedComments.reverse();
         })
         param.value = "";
       }, 1000)
@@ -147,6 +151,7 @@ export class CommentsComponent implements OnInit {
       }
     }
     this.showedComments = [...this.CommentsOfSpesificPlace]
+    this.showedCommentsReversed = this.showedComments.reverse();
   }
   // delete comment btn hadling
   deleteComm(id) {
@@ -156,6 +161,7 @@ export class CommentsComponent implements OnInit {
         let index;
         index = this.findingIndex(id);
         this.showedComments.splice(index, 1);
+        this.showedCommentsReversed = this.showedComments.reverse();
 
       }
 
@@ -231,6 +237,7 @@ export class CommentsComponent implements OnInit {
             obj = data;
             console.log(obj);
             this.showedComments.splice(index, 1, obj);
+            this.showedCommentsReversed = this.showedComments.reverse();
           })
 
         }
