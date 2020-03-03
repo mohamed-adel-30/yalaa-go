@@ -2190,29 +2190,15 @@
       "userId": 13,
       "userName": "hend diab",
       "userImg": "",
-      "rate": 4,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "id": 38
+      "id": 29
     },
     {
-      "comment": "ppppppppppppppppppppppppppp",
-      "placeId": "4",
-      "userId": 13,
-      "userName": "hend diab",
+      "comment": "nhhh",
+      "placeId": "2",
+      "userId": 8,
+      "userName": "samaa",
       "userImg": "",
-      "rate": 4,
-      "arrOfRate": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "id": 39
+      "id": 30
     }
   ],
   "rates": [

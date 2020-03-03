@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
 wanteddata
 lowerPlaceSearch;
 lowerPlaceData;
+lowerPlaceDataLocation ;
   customOptions: OwlOptions = {
 
     loop: true,
@@ -131,9 +132,10 @@ lowerPlaceData;
     for (let i = 0; i < this.places.length; i++) {
       this.lowerPlaceSearch = event.target.value.toLowerCase();
       this.lowerPlaceData = this.places[i].name.toLowerCase();
+      this.lowerPlaceDataLocation = this.places[i].location.toLowerCase();
 
-      if (this.lowerPlaceData.includes(this.lowerPlaceSearch) && event.target.value.length !== 0)
-      // || ( this.places[i].location.includes(event.target.value) && event.target.value.length!==0 )
+      if ((this.lowerPlaceData.includes(this.lowerPlaceSearch) && event.target.value.length !== 0)
+      || ( this.lowerPlaceDataLocation.includes(event.target.value) && event.target.value.length!==0 ))
       {
 
         this.wanteddata.push(this.places[i])
