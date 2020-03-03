@@ -510,7 +510,7 @@ export class AboutUsComponent implements OnInit {
       "mainImage": this.imageSrc2,
       "imgs": this.imgs2,
       "status": this.statusOwner,
-      "openHours": this.openStart + "to" + this.openEnd,
+      "openHours": this.openStart + " to " + this.openEnd,
       "desc": this.placeDesc,
       "reservation": this.reservationOwner,
       "kid-friendly": this.kidsOwner,
