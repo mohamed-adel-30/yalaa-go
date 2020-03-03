@@ -49,10 +49,12 @@ export class CommentsComponent implements OnInit {
 
       this.httpService.getComments().subscribe(data => {
         this.comments = data;
+        this.CommentsOfSpesificPlace = [];
+        this.showedComments = [];
         this.gettingCommentsOfSinglePlace(this.singlePlaceId)
         for (let i of this.comments) {
           this.inputDisplay.push(false)
-          console.log(this.inputDisplay);
+          // console.log(this.inputDisplay);
 
         }
 
