@@ -112,9 +112,8 @@ width: 100%;
     }
     .icons i{
         font-size: 20px;
+        color: #fff;
     }
-    .fa-facebook-square{color: #39559F;}
-    .fa-instagram{color: #F24D57;}
 }
 .overlay button.detail-btn:hover{
     background-color: rgba(255, 255, 255, 0.836);
@@ -190,7 +189,7 @@ img{
 
 // team style
 .testemolians{
-background-image: linear-gradient(rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.79)),
+background-image: linear-gradient(rgba(232, 230, 230, 0.73), rgba(255, 255, 255, 0.79)),
 url(../../assets/Home/texture.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -218,6 +217,7 @@ padding: 60px 0;}
     figure img{
         border-radius: 50%;
     }
+   
 }
 .card-img img{width: 150px;}
 .card-img{text-align: center;}
@@ -233,11 +233,13 @@ background-color: #fff;
 .ourTeam {
     figure{
         width: 150px;
+        height: 150px;
         margin: 20px auto;
 
         img{
             border-radius: 50%;
             width: 100%;
+            height: 100%;
         }
     }
     i{font-size: 23px;}
@@ -245,12 +247,20 @@ background-color: #fff;
     .fa-github-square{color: #000;}
     .fa-linkedin{color: #0077B5;}
     .team-person:hover{
-      box-shadow: -1px 9px 5px 3px #e7e6e6bd;
+      box-shadow: -1px 9px 13px 3px #e7e6e6bd;
+      background-color: #fff;
+      h4{
+          color: #ffa21d;
+      }
     }
     .team-person{
         padding-bottom: 3%;
         margin-bottom: 4%;
+        transition: all 0.5s ease;
     }
+    .trackTitle{color: #999999;
+        font-size: 14px;
+    font-weight: 500;}
 }
  //end team style
 
@@ -376,17 +386,38 @@ background-color: #fff;
 
 
 
-@media screen and (max-width:1050px) {
-    .hero {
-        .wrapper {
+// @media screen and (max-width:1050px)
+@media screen and (max-width: 768px){
+    .hero{
+        margin-bottom: 0;
+        .wrapper{
             text-align: center;
-            h1 {
-                padding-top: 30%;
-                font-size: 24px;
+        }
+        h1 {
+             padding-top: 30% !important;
+           font-size: 24px !important;
+           line-height: normal !important;
+                    }
+        .searchResults{
+            width: 100%;
+            left: 0;
+        }
+        }
+        .placesTitle{
+            font-size: 34px;
+        }
+        .signUp{
+            h2{font-size: 18px !important}
+            a{
+                font-size: 12px !important;
             }
         }
-    }
+        .aboutUs h2{font-size: 40px !important;}
     .yallaNo5rog {
+        h2{
+            font-size: 40px !important;
+        }
+        p{font-size: 20px !important;}
         padding-bottom: 10%;
         .first {
             transform: translateX(-5rem) rotate(-25deg);

@@ -6,39 +6,55 @@
     </div>
     <!-- search -->
     <div class="form-inline form my-2 my-lg-0 col-12 d-flex justify-content-md-center">
-        <input #inputSearch class="form-control mr-sm-2 col-6" type="search" placeholder="Search ..... "
+        <input #inputSearch class="form-control mr-sm-2 col-md-6 col-sm-12 mt-4 mt-md-0" type="search" placeholder="Search ..... "
             aria-label="Search " (input)="lookingFor($event) ">
 
-        <button id="searchBtn2" class="btn btn-search  my-2 my-sm-0 " type="button"><i
+        <button id="searchBtn2" class="btn btn-search d-none d-md-block  my-2 my-sm-0 " type="button"><i
                 class="fas fa-search "></i></button>
         <div class=" searchResults bg-light d-block  rounded text-center">
             <a class="d-block text-home-search style-none py-1 w-100" *ngFor="let data of wanteddata "
-                routerLink="/place/{{data.id}} " (click)="handlingSearch(inputSearch) ">{{data.name}}</a>
+                routerLink="/place/{{data.id}} " (click)="handlingSearch(inputSearch) ">{{data.name}}-<small>{{data.location}}</small></a>
         </div>
     </div>
-
-
     <!-- search -->
 </div>
 <!-- end Header section -->
 
 
+
+
 <!-- start our place -->
 <section class="container-custome col-12 order-1 our-places">
     <h2 class='placesTitle mb-4'>Our places</h2>
-    <!-- <div class="col-12 d-flex">
-<figure *ngIf="places" class="col-4 place-img">
-    <img src="{{places[0].mainImage}}" class="img-fluid master-img2">
-</figure>
-<figure *ngIf="places" class="col-4 place-img">
-    <img src="{{places[1].mainImage}}" class="img-fluid master-img2">
-</figure>
-<figure *ngIf="places" class="col-4 place-img">
-    <img src="{{places[9].mainImage}}" class="img-fluid master-img2">
-</figure>
-</div> -->
-
-    <div class="col-12 d-flex">
+<!-- mobile -->
+<div class="card-deck d-block d-md-none" *ngIf="places">
+    <div class="card">
+        <img src="{{places[1].mainImage}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{places[1].name}}</h5>
+          <p class="card-text">{{places[1].shortdesc}}.</p>
+          <p class="card-text" (click)='navigateToId2()'><small class="text-muted">More Details</small></p>
+        </div>
+      </div>
+    <div class="card">
+        <img src="{{places[9].mainImage}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{places[9].name}}</h5>
+          <p class="card-text">{{places[9].shortdesc}}.</p>
+          <p class="card-text" (click)='navigateToId3()'><small class="text-muted">More Details</small></p>
+        </div>
+      </div>
+    <div class="card">
+      <img src="{{places[0].mainImage}}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{places[0].name}}</h5>
+        <p class="card-text">{{places[0].shortdesc}}.</p>
+        <p class="card-text" (click)='navigateToId1()'><small class="text-muted">More Details</small></p>
+      </div>
+    </div>
+  </div>
+<!-- mobile -->
+    <div class="col-12 d-md-flex d-none ">
         <figure *ngIf="places" class="col-4 place-img">
             <div> <img src="{{places[0].mainImage}}" class="img-fluid master-img2"></div>
 
@@ -90,7 +106,7 @@
     <div class="wrapper m-auto">
         <h2 class='placesTitle mb-4'>Our categories</h2>
         <div class="row" *ngIf="options">
-            <div class="col-lg-3 col-md-12">
+            <div class="col-lg-3 col-md-12 d-none d-md-block">
                 <div class="row">
                     <div (click)='toCategory5()' class="mb-4 col-lg-12  col-4 category-img">
                         <div><img class="img-fluid w-100" src="{{options[26].img}}" /></div>
@@ -116,26 +132,21 @@
                 <div class="row mb-4 category-img" (click)='toCategory9()'>
                     <div class="col-12 px-0">
                         <div><img class="w-100" src="{{options[28].img}}" alt="" /></div>
-                        <div class="overlay-cat w-100">
+                        <div class="overlay-cat w-100 d-none d-md-block">
                             <h5>{{options[28].name}}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8 img-div px-0 category-img" (click)='toCategory3()'>
+                    <div class="col-md-8 col-6 img-div px-0 category-img" (click)='toCategory3()'>
                         <div class=" img-div "><img class="w-100  " src="{{options[31].img}}" /></div>
-                        <div class="overlay-cat w-100">
+                        <div class="overlay-cat w-100 d-none d-md-block">
                             <h5>{{options[31].name}}</h5>
                         </div>
-                        <!-- <div class="overlay text-center ">
-                            <a><i class="fas fa-play-circle fa-3x"></i></a>
-
-                            <h3>Kouta Park</h3>
-                        </div> -->
                     </div>
-                    <div class="col-4 pr-0 category-img " (click)='toCategory4()'>
+                    <div class="col-md-4 col-6 pr-0 category-img " (click)='toCategory4()'>
                         <div class=" img-div "><img class="w-100" src="{{options[20].img}}" alt="" /></div>
-                        <div class="specialoverlay-cat">
+                        <div class="specialoverlay-cat d-none d-md-block">
                             <h5>{{options[20].name}}</h5>
                         </div>
                     </div>
@@ -185,7 +196,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-8 p-0 slider-side">
+            <div class="col-lg-4 col-sm-8 p-0 slider-side d-none d-md-block">
                 <div class="wallpaper m-auto"></div>
                 <div class="slider  col-md-8 h-75 m-auto ">
                     <owl-carousel-o [options]="customOptions" #owlCat>
@@ -198,7 +209,13 @@
                         </ng-container>
                     </owl-carousel-o>
                 </div>
+            
+           
             </div>
+            <div class="col-12 d-block d-md-none">
+                <img src="../../assets/Home/uriel-soberanes-MxVkWPiJALs-unsplash.png" class="img-fluid">
+            </div>
+       
         </div>
     </div>
 </div>
@@ -221,7 +238,7 @@
     <div class="wrapper m-auto">
 
         <div class="row justify-content-around">
-            <div class="col-lg-3 col-m-8  text-center">
+            <div class="col-lg-3 col-m-8 d-none d-md-block text-center">
                 <figure class="first">
                     <img class="img-fluid " src="./../../assets/Home/Group 919.png" alt="" />
                 </figure>
@@ -229,11 +246,15 @@
                     <img class="img-fluid" src="./../../assets/Home/Group 920.png" alt="" />
                 </figure>
             </div>
-            <div class="col-6 caption">
-                <h2>why yalla no5rog ?</h2>
+            
+            <div class="col-md-6 col-12 caption">
+                <h2>why yalla GO ?</h2>
+                <div class="mob-img col-12 d-flex d-md-none">
+                    <div class="col-12"><img src="../../assets/Home/Group 919.svg" class="img-fluid"></div>
+                </div>
                 <p class="pt-3">
                     Yalla No5rog Is Your Entertainment Guide In Alexandria ... Let's Go Out. We Don't Have Data And
-                    Data, But Let's Go Out With Integrated And Innovative Entertainment Programs.. Read More
+                    Data, But Let's Go Out With Integrated And Innovative Entertainment Programs.
                 </p>
             </div>
         </div>
@@ -241,194 +262,58 @@
 </div>
 <!-- end Yalla No5rog section -->
 
-
-
-<!-- strat our team section -->
-<!-- <section class="testemolians container-fluid">
-    <section class="testemolians__wrapper container-custome">
-        <div class="info col-12">
-            <h3 class="placesTitle">Our Team</h3>
-        </div>
-
-        <section class="row" style="justify-content: space-evenly;">
-            <article class="col-3 person mb-4">
-                <blockquote class="col-12 mt-4 pb-2">
-                    <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non
-                        mi integer non faucibus</p>
-                </blockquote>
-                <div class="col-12 d-flex">
-                  <figure class="col-3 p-0"><img src="../../assets/avatar.png" class="img-fluid"></figure> 
-                 <div class="col-9 div-lineHieght"><span>- <small>Sara sherif</small> Front-End Developer.</span></div> 
-                </div>
-            </article>
-            <article class="col-3 person">
-                <blockquote class="col-12 mt-4 pb-2">
-                    <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non
-                        mi integer non faucibus</p>
-                </blockquote>
-                <div class="col-12 d-flex">
-                  <figure class="col-3 p-0"><img src="../../assets/avatar.png" class="img-fluid"></figure> 
-                 <div class="col-9 div-lineHieght"><span>- <small>Jane Doe</small> CEO - ABC Inc.</span></div> 
-                </div>
-            </article>
-            <article class="col-3 person">
-                <blockquote class="col-12 mt-4 pb-2">
-                    <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non
-                        mi integer non faucibus</p>
-                </blockquote>
-                <div class="col-12 d-flex">
-                  <figure class="col-3 p-0"><img src="../../assets/avatar.png" class="img-fluid"></figure> 
-                 <div class="col-9 div-lineHieght"><span>- <small>Jane Doe</small> CEO - ABC Inc.</span></div> 
-                </div>
-            </article>
-            <div class="w-100"></div>
-            <article class="col-3 person">
-                <blockquote class="col-12 mt-4 pb-2">
-                    <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non
-                        mi integer non faucibus</p>
-                </blockquote>
-                <div class="col-12 d-flex">
-                  <figure class="col-3 p-0"><img src="../../assets/avatar.png" class="img-fluid"></figure> 
-                 <div class="col-9 div-lineHieght"><span>- <small>Jane Doe</small> CEO - ABC Inc.</span></div> 
-                </div>
-            </article>
-            <article class="col-3 person">
-                <blockquote class="col-12 mt-4 pb-2">
-                    <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non
-                        mi integer non faucibus</p>
-                </blockquote>
-                <div class="col-12 d-flex">
-                  <figure class="col-3 p-0"><img src="../../assets/avatar.png" class="img-fluid"></figure> 
-                 <div class="col-9 div-lineHieght"><span>- <small>Jane Doe</small> CEO - ABC Inc.</span></div> 
-                </div>
-            </article>
-           
-        </section>
-    </section>
-</section> -->
-
-
-<!-- <section class="testemolians container-fluid">
-<div class="card-group container-custome">
-    <div class="card">
-      <div><img src="http://placehold.it/200/200" class="card-img-top img-fluid" alt="..."></div>
-      <div class="card-body">
-        <h5 class="card-title">Sara Sherif</h5>
-        <p class="card-text">Front-End Development</p>
-      </div>
-      <div class="card-footer">
-        <p class="text-muted d-flex mb-0">
-            <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
-            <i class="fab fa-github-square col-4" aria-hidden="true"></i>
-            <i class="fab fa-linkedin col-4"></i>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-        <div><img src="http://placehold.it/200/1000" class="card-img-top img-fluid" alt="..."></div>
-        <div class="card-body">
-          <h5 class="card-title">Samaa Amin</h5>
-          <p class="card-text">Front-End Development</p>
-        </div>
-        <div class="card-footer">
-            <p class="text-muted d-flex mb-0">
-                <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
-                <i class="fab fa-github-square col-4" aria-hidden="true"></i>
-                <i class="fab fa-linkedin col-4"></i>
-            </p>
-        </div>
-      </div>
-      <div class="card">
-        <div><img src="http://placehold.it/200/800" class="card-img-top img-fluid" alt="..."></div>
-        <div class="card-body">
-          <h5 class="card-title">Esraa Akl</h5>
-          <p class="card-text">Front-End Development</p>
-        </div>
-        <div class="card-footer">
-            <p class="text-muted d-flex mb-0">
-                <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
-                <i class="fab fa-github-square col-4" aria-hidden="true"></i>
-                <i class="fab fa-linkedin col-4"></i>
-            </p>
-        </div>
-      </div>
-      <div class="card">
-        <div><img src="http://placehold.it/200/200" class="card-img-top img-fluid" alt="..."></div>
-        <div class="card-body">
-          <h5 class="card-title">Hend dyab</h5>
-          <p class="card-text">Front-End Development</p>
-        </div>
-        <div class="card-footer">
-            <p class="text-muted d-flex mb-0">
-                <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
-                <i class="fab fa-github-square col-4" aria-hidden="true"></i>
-                <i class="fab fa-linkedin col-4"></i>
-            </p>
-        </div>
-      </div>
-      <div class="card">
-        <div><img src="http://placehold.it/200/0000ff" class="card-img-top img-fluid" alt="..."></div>
-        <div class="card-body">
-          <h5 class="card-title">Mohamed Adel</h5>
-          <p class="card-text">Front-End Development</p>
-        </div>
-        <div class="card-footer">
-          <p class="text-muted d-flex mb-0">
-              <i class="fab fa-facebook-square col-4" aria-hidden="true"></i>
-              <i class="fab fa-github-square col-4" aria-hidden="true"></i>
-              <i class="fab fa-linkedin col-4"></i>
-          </p>
-        </div>
-      </div>
-  </div>
-</section> -->
-
+<!-- start our team -->
 <section class="ourTeam testemolians">
     <div class="info col-12">
-        <h3 class="placesTitle">Our Team</h3>
+        <h3 class="placesTitle pb-3">Our Team</h3>
     </div>
-    <section class="container-custome row d-flex justify-content-md-center">
-        <div class="col-3  text-center team-person">
-            <figure><img src="http://placehold.it/200/200" alt=""></figure>
-            <p class="trackTitle">front end Development</p>
-            <div class=" d-flex mb-0 justify-content-md-center">
+    <section class="container-custome row d-flex justify-content-center">
+        <div class="col-md-3  text-center team-person col-12">
+            <figure><img src="https://scontent-hbe1-1.xx.fbcdn.net/v/t1.15752-9/88154601_532955017628035_4089830586972110848_n.png?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=ujQExJH2lEYAX8BvV0-&_nc_ht=scontent-hbe1-1.xx&oh=fcb5d7698e405b646ef11a82c79c2000&oe=5EB99E11" alt=""></figure>
+            <h4>Samaa Amin</h4>
+            <p class="trackTitle">Front-End Development</p>
+            <div class=" d-flex mb-0 justify-content-center">
                 <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
                 <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
                 <i class="fab fa-linkedin"></i>
             </div>
         </div>
-        <div class="col-3 text-center team-person">
-            <figure><img src="http://placehold.it/200/200" alt=""></figure>
-            <p class="trackTitle">front end Development</p>
-            <div class=" d-flex mb-0 justify-content-md-center">
+        <div class="col-md-3 col-12 text-center team-person">
+            <figure><img src="https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/14955915_1355083291198901_998862539517691111_n.jpg?_nc_cat=109&_nc_sid=7aed08&_nc_ohc=wXCyH0GTueEAX_851fG&_nc_ht=scontent-hbe1-1.xx&oh=425cbc2b0b629c06d8429639d5df5a45&oe=5EF05D97" alt=""></figure>
+            <h4>Sara Sherif</h4>
+            <p class="trackTitle">Front-End Development</p>
+            <div class=" d-flex mb-0 justify-content-center">
                 <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
                 <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
                 <i class="fab fa-linkedin"></i>
             </div>
         </div>
-        <div class="col-3 text-center team-person">
-            <figure><img src="http://placehold.it/200/200" alt=""></figure>
-            <p class="trackTitle">front end Development</p>
-            <div class=" d-flex mb-0 justify-content-md-center">
+        <div class="col-md-3 col-12 text-center team-person">
+            <figure><img src="https://scontent-hbe1-1.xx.fbcdn.net/v/t1.15752-9/88020039_1544029409099459_8920831985018994688_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=93l82ZxIyUoAX-n3-52&_nc_ht=scontent-hbe1-1.xx&oh=8bd622864250b18651f7696a7f08ad4f&oe=5F023D38" alt=""></figure>
+            <h4>Hend Diab</h4>
+            <p class="trackTitle">Front-End Development</p>
+            <div class=" d-flex mb-0 justify-content-center">
                 <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
                 <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
                 <i class="fab fa-linkedin"></i>
             </div>
         </div>
         <div class="w-100"></div>
-        <div class="col-3 text-center team-person">
-            <figure><img src="http://placehold.it/200/200" alt=""></figure>
-            <p class="trackTitle">front end Development</p>
-            <div class=" d-flex mb-0 justify-content-md-center">
+        <div class="col-md-3 col-12 text-center team-person">
+            <figure><img src="https://scontent.fcai1-2.fna.fbcdn.net/v/t1.15752-9/89140773_2654108681310967_5796649422171406336_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=_asSfoCyLOYAX9hmIs-&_nc_ht=scontent.fcai1-2.fna&oh=c2bf6215df83e141cb0cbde56b4b6da9&oe=5E97575A" alt=""></figure>
+            <h4>Esraa Akl</h4>
+            <p class="trackTitle">Front-End Development</p>
+            <div class=" d-flex mb-0 justify-content-center">
                 <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
                 <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
                 <i class="fab fa-linkedin"></i>
             </div>
         </div>
-        <div class="col-3 text-center team-person">
+        <div class="col-md-3 col-12 text-center team-person">
             <figure><img src="http://placehold.it/200/200" alt=""></figure>
-            <p class="trackTitle">front end Development</p>
-            <div class=" d-flex mb-0 justify-content-md-center">
+            <h4>Mohamed Adel</h4>
+            <p class="trackTitle">Front-End Development</p>
+            <div class=" d-flex mb-0 justify-content-center">
                 <i class="fab fa-facebook-square pr-3 pl-4" aria-hidden="true"></i>
             <i class="fab fa-github-square pr-3" aria-hidden="true"></i>
             <i class="fab fa-linkedin"></i>
@@ -438,5 +323,4 @@
     </section>
 
 </section>
-
 <!-- end our team section -->
