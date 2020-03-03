@@ -12,9 +12,12 @@ export class UserProfileComponent implements OnInit {
   error = null;
   myForm: FormGroup;
   toggle = false;
+  toggle2 = false;
   newObj;
 
   user;
+  allHistory;
+  userHistory;
   usersData;
   userData;
   checker;
@@ -74,6 +77,16 @@ export class UserProfileComponent implements OnInit {
         })
       }
 
+      this.service.getHistroy().subscribe(data => {
+        this.allHistory = data;
+        for (let i of this.allHistory) {
+          if (this.user.id == i.userId) {
+            this.userHistory = i.reservedGame;
+            break;
+          }
+        }
+        console.log(this.userHistory);
+      })
     });
   }
   removeFav(event) {
@@ -98,6 +111,11 @@ export class UserProfileComponent implements OnInit {
     this.service.gettingUsers().subscribe(data => {
       this.usersData = data;
     })
+
+    this.service.getHistroy().subscribe(data => {
+      this.allHistory = data;
+    })
+
     this.myForm = new FormGroup({
       name: new FormControl(this.user.name, Validators.required),
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(/^[a-z]\w{1,}@[a-z]{1,}.com$/)]),
@@ -124,6 +142,9 @@ export class UserProfileComponent implements OnInit {
   showEditForm() {
     this.toggle = !this.toggle
   }
+  showHistory() {
+    this.toggle2 = !this.toggle2
+  }
 
 
   checkPass(pass, name, mail) {
@@ -146,14 +167,16 @@ export class UserProfileComponent implements OnInit {
 
       let headers = { "Content-Type": "application/json" };
       this.service.updateUserData(this.user.id, this.newObj, headers).subscribe(data => {
-
       }, error => {
         this.error = error.message;
         console.log(error)
         console.log(error.status)
         this.router.navigate(["/error"])
       });
+
       this.service.setData("user", this.newObj);
+      this.user = this.service.getData("user");
+
     }
     else {
       alert('wrong password');

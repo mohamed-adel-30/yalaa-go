@@ -66,7 +66,7 @@ export class AboutUsComponent implements OnInit {
   placecontact = "";
   placeaddres = "";
   placelocation = "";
-  checkbox = false; //byashof hal hoa owener wala la
+  checkbox = false; //checking if he is an owner
   chechDiv = false;
   placeDesc: any = "";
   openStart: any = "";
@@ -83,7 +83,7 @@ export class AboutUsComponent implements OnInit {
 
     // .....................getting owner place from data base................///
     this.celectedArr = [1]
-    this.owner = this.httpService.getData("owneruser"); ///3ayzin n3ml param ablha
+    this.owner = this.httpService.getData("owneruser");
     this.httpService.gettingPlaces().subscribe(data => {
       this.places = data;
       for (let place of this.places) {
@@ -110,7 +110,6 @@ export class AboutUsComponent implements OnInit {
 
           });
 
-          // .....................////
           break;
         }
       }
@@ -122,7 +121,7 @@ export class AboutUsComponent implements OnInit {
           setTimeout(() => {
             this.id = document.getElementById(i.id);
             this.arrOfCats.push(this.id)
-            // console.log(this.arrOfCats)
+
           }, 10)
 
         }
@@ -189,7 +188,7 @@ export class AboutUsComponent implements OnInit {
           this.latitude = position.coords.latitude;
           this.longitude = position.coords.longitude;
           this.zoom = 15;
-          // this.getAddress(this.latitude, this.longitude);
+
         });
       }
 
@@ -201,7 +200,7 @@ export class AboutUsComponent implements OnInit {
     console.log($event);
     this.latitude = $event.coords.lat;
     this.longitude = $event.coords.lng;
-    // this.getAddress(this.latitude, this.longitude);
+
   }
   showmap = false;
   showingMap() {
@@ -311,8 +310,6 @@ export class AboutUsComponent implements OnInit {
 
 
     this.httpService.postOptions(optionObj, headers).subscribe(data => {
-      console.log("heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet")
-      console.log(data)
       this.httpService.gettingPtions().subscribe(data => {
         this.options = data;
         this.ownerOptions = [];
@@ -335,7 +332,6 @@ export class AboutUsComponent implements OnInit {
 
   deletinOption(id) {
     this.httpService.deleteOption(id).subscribe(data => {
-      console.log(data)
       this.httpService.gettingPtions().subscribe(data => {
         this.options = data;
         this.ownerOptions = [];
@@ -349,7 +345,6 @@ export class AboutUsComponent implements OnInit {
     }, error => {
       this.error = error.message;
       console.log(error)
-      console.log(error.status)
       this.router.navigate(["/error"])
     })
   }
@@ -458,17 +453,17 @@ export class AboutUsComponent implements OnInit {
       this.openStart = openHoursStart.value;
       this.openEnd = openHoursEnd.value;
     }
-    // && this.imageSrc != "not yet"
+
     if (this.placename.length > 0 && this.placelocation.length > 0
       && this.placecontact.length > 7 && +this.placecontact / 1 == +this.placecontact && this.placeaddres.length > 0 && this.placeDesc.length > 0
       && this.openStart.length > 0 && this.celectedArr.length != 0 && this.celectedArr.length <= 3 && this.openEnd
       && this.statusOwner && this.reservationOwner && this.kidsOwner) {
-      console.log("finaaaaaaally")
+
       this.chechDiv = true;
     }
     else {
       this.chechDiv = false;
-      console.log("still no");
+
 
     }
 
@@ -510,7 +505,7 @@ export class AboutUsComponent implements OnInit {
       "mainImage": this.imageSrc2,
       "imgs": this.imgs2,
       "status": this.statusOwner,
-      "openHours": this.openStart + "to" + this.openEnd,
+      "openHours": this.openStart + " to " + this.openEnd,
       "desc": this.placeDesc,
       "reservation": this.reservationOwner,
       "kid-friendly": this.kidsOwner,
@@ -524,9 +519,7 @@ export class AboutUsComponent implements OnInit {
 
     this.idPlace = this.owenerplace.id;
     this.httpService.PutPlaces(this.idPlace, this.placeObj, headers).subscribe(data => {
-      console.log("shatreeeeeeeeeeeeeeeen eee7na el 3 ")
 
-      console.log(data);
       this.imageSrc2 = "../../assets/Home/defaultPlace.png";
       this.imgs2 = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
       this.router.navigate(["/place", this.idPlace])

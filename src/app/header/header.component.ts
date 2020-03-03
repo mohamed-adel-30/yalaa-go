@@ -37,10 +37,10 @@ export class HeaderComponent implements OnInit {
         this.cats = data;
 
         for (let regstCat of this.cats) {
-          // console.log("inside for")
+
           if (regstCat.reservation == "true") {
             this.regesterationCats.push(regstCat);
-            // console.log("inside if")
+
           }
         }
 

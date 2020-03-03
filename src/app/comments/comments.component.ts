@@ -12,9 +12,11 @@ export class CommentsComponent implements OnInit {
 
   limit = 4;
   comments;
-  Writecomments = false
+  // Writecomments = false
   CommentsOfSpesificPlace = [];
   showedComments = [];
+  showedCommentsReversed = [];
+
   singlePlaceId;
   placeLoggedin;
   // for star rates
@@ -49,10 +51,13 @@ export class CommentsComponent implements OnInit {
 
       this.httpService.getComments().subscribe(data => {
         this.comments = data;
+        this.CommentsOfSpesificPlace = [];
+        this.showedComments = [];
+        this.showedCommentsReversed = []
         this.gettingCommentsOfSinglePlace(this.singlePlaceId)
         for (let i of this.comments) {
           this.inputDisplay.push(false)
-          console.log(this.inputDisplay);
+
 
         }
 
@@ -84,7 +89,7 @@ export class CommentsComponent implements OnInit {
   }
   addComment(param) {
 
-    this.Writecomments = true
+    // this.Writecomments = true
     this.placeLoggedin = this.httpService.getData("loggedin");
     if (this.placeLoggedin == true) {
       let user;
@@ -92,14 +97,13 @@ export class CommentsComponent implements OnInit {
       // ........rates..//
       this.httpService.getRates().subscribe(data => {
         this.rates = data;
-        console.log(user)
-        console.log(param.value)
+
         for (let rate of this.rates) {
-          console.log(rate, rate.placeId, this.singlePlaceId, rate.userId, user.id)
+
           if (rate.placeId == this.singlePlaceId && rate.userId == user.id) {
             this.SpesificRate = rate.value;
             this.SpesificRateArr = rate.arrOfVals;
-            console.log(rate.value)
+
 
           }
         }
@@ -125,7 +129,9 @@ export class CommentsComponent implements OnInit {
 
         this.httpService.postComments(body, headers).subscribe(data => {
 
-          this.showedComments.unshift(data);
+          this.showedComments.push(data);
+          this.showedCommentsReversed = [...this.showedComments]
+          this.showedCommentsReversed.reverse();
         })
         param.value = "";
       }, 1000)
@@ -145,15 +151,22 @@ export class CommentsComponent implements OnInit {
       }
     }
     this.showedComments = [...this.CommentsOfSpesificPlace]
+    this.showedCommentsReversed = [...this.showedComments]
+    this.showedCommentsReversed.reverse();
   }
   // delete comment btn hadling
   deleteComm(id) {
     this.httpService.deleteComments(id).subscribe(
       (data) => {
-        console.log('deleeeeeeetee')
+
         let index;
         index = this.findingIndex(id);
+
         this.showedComments.splice(index, 1);
+
+        this.showedCommentsReversed = [...this.showedComments]
+        this.showedCommentsReversed.reverse();
+
 
       }
 
@@ -184,13 +197,12 @@ export class CommentsComponent implements OnInit {
     // ........rates..//
     this.httpService.getRates().subscribe(data => {
       this.rates = data;
-      console.log(user)
+
       for (let rate of this.rates) {
-        console.log(rate, rate.placeId, this.singlePlaceId, rate.userId, user.id)
+
         if (rate.placeId == this.singlePlaceId && rate.userId == user.id) {
           this.SpesificRate = rate.value;
           this.SpesificRateArr = rate.arrOfVals;
-          console.log(rate.value)
 
         }
       }
@@ -205,7 +217,7 @@ export class CommentsComponent implements OnInit {
     let input;
     setTimeout(() => {
       input = document.getElementById(id);
-      console.log(input.value)
+
 
       let headers = { "Conetent-Type": "application/json" }
       let body = {
@@ -220,15 +232,16 @@ export class CommentsComponent implements OnInit {
 
       this.httpService.editComment(id, body, headers).subscribe(
         (data) => {
-          console.log('editttt')
 
 
           this.inputDisplay[i] = false;
           let obj;
           this.httpService.getSingleComments(id).subscribe(data => {
             obj = data;
-            console.log(obj);
+
             this.showedComments.splice(index, 1, obj);
+            this.showedCommentsReversed = [...this.showedComments]
+            this.showedCommentsReversed.reverse();
           })
 
         }

@@ -1,4 +1,4 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 nav {
     .person {
         min-width: initial;
@@ -55,7 +55,7 @@ nav {
     }
     .dropdown-menu {
         min-width: 8rem;
-        text-align: center
+        text-align: center;
     }
 }
 
@@ -84,7 +84,7 @@ nav {
     max-width: 100%;
 }
 
-@media screen and (max-width:560px) {
+@media screen and (max-width: 560px) {
     nav {
         position: static;
         background-color: #000000;

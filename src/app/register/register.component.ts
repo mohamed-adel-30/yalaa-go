@@ -1,5 +1,5 @@
 import { UsersService } from '../users.service';
-import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpServiceService } from '../http-service.service';
@@ -187,7 +187,7 @@ export class RegisterComponent implements OnInit {
           "name": form.value.name,
           "email": form.value.email,
           "password": form.value.password,
-          "image": "",
+          "image": "../../assets/avatar.png",
           "visa": 0
         }
         let headers = { "Conetent-Type": "application/json" }
@@ -371,7 +371,7 @@ export class RegisterComponent implements OnInit {
       "mainImage": this.imageSrc,
       "imgs": this.imgs,
       "status": this.statusOwner,
-      "openHours": this.openStart + "to" + this.openEnd,
+      "openHours": this.openStart + " to " + this.openEnd,
       "desc": this.placeDesc,
       "reservation": this.reservationOwner,
       "kid-friendly": this.kidsOwner,

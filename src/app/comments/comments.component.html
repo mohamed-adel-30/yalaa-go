@@ -1,70 +1,71 @@
 <div class="container-fluid all-comm pt-2 pb-2 container-font">
 
-    <!--start add comments -->
+  <!--start add comments -->
 
-    <section class="rating-section pb-5 border-bottom">
-        <h3 class="reviewsRange">Reviews</h3>
-        <div *ngIf="placeLoggedin && placeLoggedin == true" class="rating-person py-3 col-md-6">
-            <app-rates [id]="singlePlaceId"></app-rates>
+  <section class="rating-section pb-5 border-bottom">
+    <h3 class="reviewsRange">Reviews</h3>
+    <div *ngIf="placeLoggedin && placeLoggedin == true" class="rating-person py-3 col-md-6">
+      <app-rates [id]="singlePlaceId"></app-rates>
+    </div>
+    <div *ngIf="placeLoggedin && placeLoggedin == true" class="input-group m-auto mb-3 add-comm row  ">
+      <input placeholder="Your Comment ..." class="input-custome col-10" #inputComment>
+      <button class=" col-2 btn px-0 py-1 customize-btn" (click)="addComment(inputComment)">add</button>
+    </div>
+  </section>
+
+  <!--end add comment -->
+
+  <h4 class="reviewsCustomer pt-3">Customer Reviews</h4>
+  <div class="container-fluid   border-bottom pt-3 pb-3 align-items-center rate-commts"
+    *ngFor="let comment of showedCommentsReversed |limitTo:limit ; let i=index">
+    <div class="row">
+      <figure class="col-3 col-md-2 text-center userImg">
+        <img src={{user.image}} class="img-fluid mb-1">
+
+      </figure>
+      <div class="col-9 p-0 ">
+        <div>
+          <h5 class="userName mb-0">{{comment.userName}}</h5>
+
         </div>
-        <div *ngIf="placeLoggedin && placeLoggedin == true" class="input-group m-auto mb-3 add-comm row  ">
-            <input placeholder="Your Comment ..." class="input-custome col-10" #inputComment>
-            <button class=" col-2 btn px-0 py-1 customize-btn" (click)="addComment(inputComment)">add</button>
-        </div>
-    </section>
-
-    <!--end add comment -->
-
-    <h4 class="reviewsCustomer pt-3" *ngIf="Writecomments">Customer Reviews</h4>
-    <div class="container-fluid   border-bottom pt-3 pb-3 align-items-center rate-commts" *ngFor="let comment of showedComments |limitTo:limit ; let i=index">
-        <div class="row">
-            <figure class="col-3 col-md-2 text-center userImg">
-                <img src={{user.image}} class="img-fluid mb-1">
-
-            </figure>
-            <div class="col-9 p-0 ">
-                <div>
-                    <h5 class="userName mb-0">{{comment.userName}}</h5>
-
-                </div>
-                <div class="">
-                    <svg *ngFor="let rate of comment.arrOfRate" height="25" width="20" class="star rating" viewBox="0 0 30 20">
+        <div class="">
+          <svg *ngFor="let rate of comment.arrOfRate" height="25" width="20" class="star rating" viewBox="0 0 30 20">
             <polygon points="9.9, 1.1, 3.3 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;">
             </polygon>
           </svg>
-                </div>
-
-                <ng-template #visiblePara>
-                    <div id="custome-para" class="col-12 d-flex align-items-center  flex-wrap p-0 justify-content-between">
-                        <div class="comment col-md-6  col-12 p-0">
-                            <p class=" comment-para mb-0 p-2">{{comment.comment}}</p>
-                        </div>
-
-                        <div *ngIf="comment.userId==user.id" class=" editContainer2">
-                            <!-- delet btn for mobile screen-->
-                            <button (click)='deleteComm(comment.id)' type="button" class="btn py-0 deleteBtnMob">
-                <i class="fas fa-trash mb-0"></i></button>
-                            <!-- edit btn for mobile screen-->
-                            <button (click)='editComm(comment.id,i)' type="button" class="btn py-0  editBtnMob ">
-                <i class="fas fa-pen mb-0"></i></button>
-                        </div>
-                    </div>
-                </ng-template>
-
-                <div style="display: none;" class="{{comment.id}} col-12 d-flex flex-wrap d-md-block p-0" *ngIf='inputDisplay[i] && comment.userId==user.id ; else visiblePara'>
-                    <textarea id="{{comment.id}}" type="text" value="{{comment.comment}}" #inputval class="inputEdit inputEditMob w-100" maxlength="700"></textarea>
-                    <button (click)="addingEdidtedComment(comment.id,i)" class="saveBtn saveBtnMob btn">Save</button>
-                </div>
-
-            </div>
         </div>
+
+        <ng-template #visiblePara>
+          <div id="custome-para" class="col-12 d-flex align-items-center  flex-wrap p-0 justify-content-between">
+            <div class="comment col-md-6  col-12 p-0">
+              <p class=" comment-para mb-0 p-2">{{comment.comment}}</p>
+            </div>
+
+            <div *ngIf="comment.userId==user.id" class=" editContainer2">
+              <!-- delet btn for mobile screen-->
+              <button (click)='deleteComm(comment.id)' type="button" class="btn py-0 deleteBtnMob">
+                <i class="fas fa-trash mb-0"></i></button>
+              <!-- edit btn for mobile screen-->
+              <button (click)='editComm(comment.id,i)' type="button" class="btn py-0  editBtnMob ">
+                <i class="fas fa-pen mb-0"></i></button>
+            </div>
+          </div>
+        </ng-template>
+
+        <div style="display: none;" class="{{comment.id}} col-12 d-flex flex-wrap d-md-block p-0"
+          *ngIf='inputDisplay[i] && comment.userId==user.id ; else visiblePara'>
+          <textarea id="{{comment.id}}" type="text" value="{{comment.comment}}" #inputval
+            class="inputEdit inputEditMob w-100" maxlength="700"></textarea>
+          <button (click)="addingEdidtedComment(comment.id,i)" class="saveBtn saveBtnMob btn">Save</button>
+        </div>
+
+      </div>
     </div>
+  </div>
 
 
-    <div class="show" *ngIf='showedComments.length>0'>
-        <a *ngIf="limit == 4" (click)="showMore()"> Show More </a>
-        <a *ngIf="limit > 10" (click)="showLess()"> Show Less </a>
-    </div>
-
-
+  <div class="show" *ngIf='showedCommentsReversed.length>0'>
+    <a *ngIf="limit == 4" (click)="showMore()"> Show More </a>
+    <a *ngIf="limit > 10" (click)="showLess()"> Show Less </a>
+  </div>
 </div>
