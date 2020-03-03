@@ -67,7 +67,7 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
     let count = 0;
     for (let fil of filtered2) {
       this.placeRates += fil.value;
-      console.log(fil.value, this.placeRates);
+
       count++;
     }
     this.placeRates = Math.round(this.placeRates / count);
@@ -103,12 +103,12 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
 
       if (filtered.length > 0) {
         this.service.updateRate(filtered[0].id, body).subscribe(data => {
-          console.log("uppppppdated" + data);
+
         });
       }
       else {
         this.service.postRate(body).subscribe(data => {
-          console.log("posssssted" + data);
+
         })
       }
 
@@ -124,10 +124,10 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
       })
       this.place.avgrate = avgRate;
       this.place.rates = this.avgRateArr;
-      console.log(this.place);
+
 
       this.service.updatePlaceAvgRate(this.id, this.place).subscribe(data => {
-        console.log(data);
+
 
       })
       this.avgRateArr = [];
@@ -153,7 +153,7 @@ export class RatesComponent implements OnInit, ControlValueAccessor {
   ngOnInit(): void {
     this.service.getRates().subscribe(data => {
       this.allRates = data;
-      console.log(this.allRates);
+
     }, error => {
       this.error = error.message;
       console.log(error)

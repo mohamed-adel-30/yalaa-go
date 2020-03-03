@@ -19,20 +19,20 @@ interface Image {
 export class HomeComponent implements OnInit {
   // get placess
   places;
-  singlePlace; 
+  singlePlace;
   singlePlaceId;
   singlePlaceData;
-// get placess
+  // get placess
   // get options
   options;
-  singleOptions; 
+  singleOptions;
   singleOptionsId;
   singleOptionsData;
-// get options
-wanteddata
-lowerPlaceSearch;
-lowerPlaceData;
-lowerPlaceDataLocation ;
+  // get options
+  wanteddata
+  lowerPlaceSearch;
+  lowerPlaceData;
+  lowerPlaceDataLocation;
   customOptions: OwlOptions = {
 
     loop: true,
@@ -64,9 +64,9 @@ lowerPlaceDataLocation ;
   getuser;
   logged;
   userfromlocal
-  constructor(private service: HttpServiceService, 
+  constructor(private service: HttpServiceService,
     private route: ActivatedRoute, private placeService: PlacesService,
-    private router:Router) {
+    private router: Router) {
     this.route.params.subscribe((param: Params) => {
       // get placess data
       this.singlePlaceId = param["id"];
@@ -86,9 +86,9 @@ lowerPlaceDataLocation ;
         }
       )
 
-    // ...............................//
+      // ...............................//
 
-  })
+    })
 
   }
   ngOnInit() {
@@ -114,19 +114,22 @@ lowerPlaceDataLocation ;
 
     return this.singleOptions;
   }
-  navigateToId1(){this.router.navigate(['/place',1])}
-  navigateToId2(){this.router.navigate(['/place',2])}
-  navigateToId3(){this.router.navigate(['/place',10])}
-  toCategory5(){this.router.navigate(['/cat',5])}
-  toCategory8(){this.router.navigate(['/cat',8])}
-  toCategory7(){this.router.navigate(['/cat',7])}
-  toCategory9(){this.router.navigate(['/cat',9])}
-  toCategory3(){this.router.navigate(['/cat',3])}
-  toCategory4(){this.router.navigate(['/cat',4])}
+  navigateToId1() { this.router.navigate(['/place', 1]) }
+  navigateToId2() { this.router.navigate(['/place', 2]) }
+  navigateToId3() { this.router.navigate(['/place', 10]) }
+  toCategory5() { this.router.navigate(['/cat', 5]) }
+  toCategory8() { this.router.navigate(['/cat', 8]) }
+  toCategory7() { this.router.navigate(['/cat', 7]) }
+  toCategory9() { this.router.navigate(['/cat', 9]) }
+  toCategory3() { this.router.navigate(['/cat', 3]) }
+  toCategory4() { this.router.navigate(['/cat', 4]) }
+
+  //to be cleared after the serach
   handlingSearch(inputVal) {
     inputVal.value = "";
     this.wanteddata = [];
   }
+  //filter functions
   lookingFor(event) {
     this.wanteddata = [];
     for (let i = 0; i < this.places.length; i++) {
@@ -135,12 +138,11 @@ lowerPlaceDataLocation ;
       this.lowerPlaceDataLocation = this.places[i].location.toLowerCase();
 
       if ((this.lowerPlaceData.includes(this.lowerPlaceSearch) && event.target.value.length !== 0)
-      || ( this.lowerPlaceDataLocation.includes(event.target.value) && event.target.value.length!==0 ))
-      {
+        || (this.lowerPlaceDataLocation.includes(event.target.value) && event.target.value.length !== 0)) {
 
         this.wanteddata.push(this.places[i])
       }
     }
-    // console.log(this.wanteddata)
+
   }
 }

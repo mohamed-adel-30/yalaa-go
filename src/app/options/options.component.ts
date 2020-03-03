@@ -18,16 +18,13 @@ export class OptionsComponent implements OnInit {
   operation;
   fixBug = false;
 
-  constructor(private service: PlacesService ) {
+  constructor(private service: PlacesService) {
     this.service.counter = 0;
     this.service.arrOfGames = [];
-    console.log(this.i);
-// -----
-
-}
+  }
 
   ngOnInit() {
-}
+  }
 
   removingOption(price, i) {
     if (this.count != 0) {
@@ -35,24 +32,21 @@ export class OptionsComponent implements OnInit {
       this.operation = false;
       this.fixBug = true;
       this.addingToCart(this.operation, price, i)
-      // console.log(i);
+
     }
   }
 
 
   addingOption(price, i) {
     if (this.count < 10) {
-
-
       this.count++;
       this.operation = true;
-
-
-
       this.addingToCart(this.operation, price, i)
-      // console.log(i);
+
     }
   }
+
+  //which will be sendto the option component 
 
   addingToCart(operation, price, i) {
     this.totalOfOneGame = price * this.count;

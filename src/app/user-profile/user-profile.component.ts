@@ -85,7 +85,7 @@ export class UserProfileComponent implements OnInit {
             break;
           }
         }
-        console.log(this.userHistory);
+
       })
     });
   }

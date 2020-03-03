@@ -54,8 +54,6 @@ export class ReservationComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.selectedGames = []
-
   }
 
   getDate(val, i) {
@@ -102,10 +100,8 @@ export class ReservationComponent implements OnInit {
 
 
   cardName = /^[a-zA-Z\s]*$/;
+  // ..checking if the user fillfulled all needed informaion//
   checking() {
-
-    // let cardName=new RegExp("^[a-zA-Z\s]{0,8}$")
-
     for (let item of this.createdArray) {
       if (item.hours == "0" || item.date == "0") {
         return;

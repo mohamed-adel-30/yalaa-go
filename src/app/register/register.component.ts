@@ -87,8 +87,7 @@ export class RegisterComponent implements OnInit {
       }
       this.locationSet = new Set(this.locationsRepated)
       this.locations = [...this.locationSet];
-      console.log("dddddddddddddddddd")
-      console.log(this.locations)
+
     })
 
   }
@@ -147,10 +146,10 @@ export class RegisterComponent implements OnInit {
 
   }
   check(form: FormGroup) {
-    // debugger
+
     for (let index = 0; index < this.userData.length; index++) {
       if (form.value.email === this.userData[index].email) {
-        // console.log(this.userData[index].email);
+
         this.checker = false;
         break;
       }
@@ -165,7 +164,6 @@ export class RegisterComponent implements OnInit {
     // debugger
     for (let index = 0; index < this.OwnerData.length; index++) {
       if (form.value.email === this.OwnerData[index].email) {
-        console.log(this.OwnerData[index].email);
         this.checkerowner = false;
         break;
       }

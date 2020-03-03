@@ -47,7 +47,6 @@ export class WeekendComponent implements OnInit {
     //////
     this.http.gettingPlaces().subscribe(data => {
       this.plans = data;
-      console.log(this.plans);
       for (let singlePlace of this.plans) {
         this.placeLocation.push(singlePlace.location)
       }
@@ -69,11 +68,7 @@ export class WeekendComponent implements OnInit {
       $('.email').css("display", "none")
     })
 
-    // $('.show').click(function () {
-    //   $('.plan').css('display', 'block')
 
-    // })
-    // planForm
     this.planForm = this.formBuilder.group({
       location: ['', Validators.required],
       haveChild: ['', Validators.required],
@@ -82,38 +77,12 @@ export class WeekendComponent implements OnInit {
     })
 
     $('.btn').click(function () {
-      $(".makeYourPlan").css("display","block")
+      $(".makeYourPlan").css("display", "block")
     })
 
 
   }
-  // onSubmit(form) {
-  //   if (form.value.email == "") {
-  //     this.weekEnd = {
-  //       "userId": this.userObj.id,
-  //       "date": form.value.date,
-  //       "time": form.value.time,
-  //       "endTime": form.value.endTime,
-  //       "email": this.userObj.email
-  //     }
 
-
-  //     this.service.addWeekend(this.weekEnd)
-  //   }
-  //   else {
-  //     this.weekEnd = {
-  //       "userId": this.userObj.id,
-  //       "date": form.value.date,
-  //       "time": form.value.time,
-  //       "endTime": form.value.endTime,
-  //       "email": form.value.email
-  //     }
-
-  //     this.service.addWeekend(this.weekEnd)
-  //   }
-  //   console.log(this.weekEnd);
-
-  // }
 
 
 
@@ -129,13 +98,13 @@ export class WeekendComponent implements OnInit {
       }
     }
     // console.log(this.plans);
-    
+
     this.filteredPlans = this.returnedPlans.map(() => this.returnedPlans.splice(0, 3)).filter(returnedPlans => returnedPlans)
     console.log(this.filteredPlans);
 
     for (let index = 0; index < this.filteredPlans.length; index++) {
-      this.filteredPlans[index].prop = index;      
-      
+      this.filteredPlans[index].prop = index;
+
     }
 
   }
@@ -144,13 +113,13 @@ export class WeekendComponent implements OnInit {
 
 
   book(location) {
-    console.log("mohamed ahbal");
+
     this.weekEnd = {
       "userId": this.userObj.id,
       "email": this.userObj.email,
       "location": location.id
     }
-    console.log(this.weekEnd);
+
 
     this.service.addWeekend(this.weekEnd);
   }

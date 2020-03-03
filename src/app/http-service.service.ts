@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class HttpServiceService {
+
+  //behavior subjects
   private headerProfileBehaviour = new BehaviorSubject(null)
   headerProfile = this.headerProfileBehaviour.asObservable();
 
@@ -16,7 +18,7 @@ export class HttpServiceService {
 
   private notificationCounterBehavior = new BehaviorSubject(0);
   notificationCounter = this.notificationCounterBehavior.asObservable();
-
+  //behavior subject functions
   getNotifivations(l) {
     this.notificationCounterBehavior.next(l);
   }
@@ -28,8 +30,7 @@ export class HttpServiceService {
 
   displayProfileIconToOwner(loggedinparamowner) {
     this.headerProfileBehaviourowner.next(loggedinparamowner);
-    console.log("hello from service")
-    console.log(loggedinparamowner)
+
   }
 
 
@@ -44,16 +45,24 @@ export class HttpServiceService {
     return this.http.post("http://localhost:3000/owners", body, header);
   }
 
-
+  ///requests of user
   paddUser(body, header) {
     return this.http.post("http://localhost:3000/users", body, header)
   }
-
-
-  postComments(body, header) {
-    return this.http.post("http://localhost:3000/comments", body, header)
+  getSingleUser(id) {
+    return this.http.get("http://localhost:3000/users/" + id);
   }
 
+
+  gettingUsers() {
+    return this.http.get("http://localhost:3000/users");
+  }
+  updateUserData(id, body, headers) {
+    return this.http.put("http://localhost:3000/users/" + id, body, headers);
+  }
+
+
+  ///catgories requests
   gettingData() {
     return this.http.get("http://localhost:3000/categories");
   }
@@ -68,9 +77,11 @@ export class HttpServiceService {
     return this.http.put("http://localhost:3000/places/" + id, body, header)
   }
 
-  gettingUsers() {
-    return this.http.get("http://localhost:3000/users");
+  getSinglePlace(id) {
+    return this.http.get("http://localhost:3000/places/" + id);
   }
+
+
 
   // ..............options............/////
   PutOptions(id, body, header) {
@@ -94,7 +105,11 @@ export class HttpServiceService {
     return this.http.get("http://localhost:3000/categories/" + id);
   }
 
+  /////comments requests
 
+  postComments(body, header) {
+    return this.http.post("http://localhost:3000/comments", body, header)
+  }
   getSingleComments(id) {
     return this.http.get("http://localhost:3000/comments/" + id)
   }
@@ -102,30 +117,43 @@ export class HttpServiceService {
   getComments() {
     return this.http.get("http://localhost:3000/comments")
   }
-  // delete btn
+
   deleteComments(id) {
     return this.http.delete("http://localhost:3000/comments/" + id)
   }
-  // delete btn
 
-  // delete btn
   editComment(id, body, header) {
     return this.http.put("http://localhost:3000/comments/" + id, body, header)
   }
-  // delete btn
+  postComment(body, headers) {
+    return this.http.post("http://localhost:3000/comments", body, headers);
+  }
 
+  // ............................................///
+  // rates....//
   getRates() {
     return this.http.get("http://localhost:3000/rates");
-  }
-  // id bata3 object el fav nfso??
-
-  getFav() {
-    return this.http.get("http://localhost:3000/favourites");
   }
 
   updateRate(id, body) {
     return this.http.put("http://localhost:3000/rates/" + id, body);
   }
+
+
+  postRate(body) {
+    return this.http.post("http://localhost:3000/rates", body);
+  }
+
+  updatePlaceAvgRate(id, body) {
+    return this.http.put("http://localhost:3000/places/" + id, body);
+  }
+
+
+  // ...........favourites...............///
+  getFav() {
+    return this.http.get("http://localhost:3000/favourites");
+  }
+
 
   deleteFav(id) {
     return this.http.delete("http://localhost:3000/favourites/" + id)
@@ -135,6 +163,8 @@ export class HttpServiceService {
     return this.http.post("http://localhost:3000/favourites", body, headers);
   }
 
+
+  // ..................history reservaions................///
   postHistory(body, headers) {
     return this.http.post("http://localhost:3000/history", body, headers);
   }
@@ -150,29 +180,8 @@ export class HttpServiceService {
   }
 
 
-  postComment(body, headers) {
-    return this.http.post("http://localhost:3000/comments", body, headers);
-  }
 
-  postRate(body) {
-    return this.http.post("http://localhost:3000/rates", body);
-  }
 
-  updateUserData(id, body, headers) {
-    return this.http.put("http://localhost:3000/users/" + id, body, headers);
-  }
-
-  getSinglePlace(id) {
-    return this.http.get("http://localhost:3000/places/" + id);
-  }
-
-  getSingleUser(id) {
-    return this.http.get("http://localhost:3000/users/" + id);
-  }
-
-  updatePlaceAvgRate(id, body) {
-    return this.http.put("http://localhost:3000/places/" + id, body);
-  }
 
 
   // ...........general geters and getters functions from session storge...............//

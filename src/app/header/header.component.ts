@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit() {
-    // da 3shan yasm3 fi s3thaaaaaaaa
+
     this.httpService.headerProfile.subscribe(data => { ///object behavior
       this.headerLoggedin = data;
     }, error => {
@@ -119,9 +119,7 @@ export class HeaderComponent implements OnInit {
             this.ownerHistory.push(i);
           }
         }
-        console.log("hiiiiiiiiiiiiistroy")
-        console.log(data)
-        console.log(this.ownerHistory)
+
         this.alertArr = []
         for (let i of this.ownerHistory) {
           if (i.state == false) {
@@ -139,11 +137,6 @@ export class HeaderComponent implements OnInit {
       console.log(error.status)
       this.router.navigate(["/error"])
     })
-
-
-    // .....................................................///
-
-
 
   }
 
@@ -166,7 +159,6 @@ export class HeaderComponent implements OnInit {
   }
   lookingFor(event) {
     this.wanteddata = [];
-    // .....hangeb el places hena tany //?
     this.httpService.gettingPlaces().subscribe(data => {
       this.places = data;
 
@@ -174,9 +166,7 @@ export class HeaderComponent implements OnInit {
         this.lowerPlaceSearch = event.target.value.toLowerCase();
         this.lowerPlaceData = this.places[i].name.toLowerCase();
 
-        if (this.lowerPlaceData.includes(this.lowerPlaceSearch) && event.target.value.length !== 0)
-        // || ( this.places[i].location.includes(event.target.value) && event.target.value.length!==0 )
-        {
+        if (this.lowerPlaceData.includes(this.lowerPlaceSearch) && event.target.value.length !== 0) {
 
           this.wanteddata.push(this.places[i])
         }
@@ -184,7 +174,6 @@ export class HeaderComponent implements OnInit {
 
     })
 
-    // console.log(this.wanteddata)
   }
   handlingError() {
     this.error = null;

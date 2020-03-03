@@ -125,7 +125,6 @@ export class PlacesComponent implements OnInit {
 
     this.mainImg = document.getElementsByClassName('master-img2')[0]
     this.mainImg.src = img.src
-    console.log(this.mainImg)
     img.classList.add("selected");
     img.nextElementSibling.classList.remove('selected')
     img.previousElementSibling.classList.remove('selected');
@@ -151,8 +150,7 @@ export class PlacesComponent implements OnInit {
 
 
   savingSelectedGames() {
-    console.log("heeeeeeeeeeeello");
-    console.log(this.placeService.arrOfGames)
+
     this.loggin = this.httpService.getData("loggedin");
     if (this.loggin == true) {
       if (this.finalTotal != 0) {
@@ -177,15 +175,13 @@ export class PlacesComponent implements OnInit {
 
 
   gettingSpesificOfFavs() {
-    //  awl ma render el page bayshof hawa mawgod wala la?
+    //  check if this place is a favourite 
     for (let fav of this.favs) {
-      // console.log("na gawaaaaa el for")
       if (fav.placeId == this.singlePlaceId && fav.userId == this.user.id) {
-        //da bta3 el2lwan 3shan yab2a a7mr
+        //color checking
         this.checkFav = true;
         this.spesifcFavId = fav.id;
-        // console.log("na gawaaaaa el if")
-        // lw mawgod hasglha fi el local storge lw msh mwgod 5alas
+        // if it;s exites it will be stored in local storge
         this.httpService.setData("favid", this.spesifcFavId);
         break;
       }
@@ -302,9 +298,7 @@ export class PlacesComponent implements OnInit {
         this.MAX3.push(this.nearByPlacses[i])
       }
     }
-    console.log("..........................")
-    console.log(this.MAX3)
-    console.log(this.nearByPlacses)
+
   }
 
 
