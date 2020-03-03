@@ -167,14 +167,16 @@ export class UserProfileComponent implements OnInit {
 
       let headers = { "Content-Type": "application/json" };
       this.service.updateUserData(this.user.id, this.newObj, headers).subscribe(data => {
-
+        this.service.setData("user", this.newObj);
+        this.user = this.service.getData("user");
       }, error => {
         this.error = error.message;
         console.log(error)
         console.log(error.status)
         this.router.navigate(["/error"])
       });
-      this.service.setData("user", this.newObj);
+
+
     }
     else {
       alert('wrong password');
