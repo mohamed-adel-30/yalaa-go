@@ -2297,6 +2297,16 @@
       "placeId": "2",
       "userId": 20,
       "id": 20
+    },
+    {
+      "placeId": 2,
+      "userId": 21,
+      "id": 21
+    },
+    {
+      "placeId": 3,
+      "userId": 21,
+      "id": 22
     }
   ],
   "history": [
@@ -2521,6 +2531,27 @@
         }
       ],
       "id": 9
+    },
+    {
+      "userName": "test2",
+      "userId": 21,
+      "state": false,
+      "totalPrice": 400,
+      "visaNumber": "123412341234",
+      "reservedGame": [
+        {
+          "id": 43,
+          "name": "africano trip",
+          "price": "200",
+          "desc": " Most of the landscapes and their accompanying plants and animals in a national park are kept in their natural state..",
+          "count": 2,
+          "placeId": "2",
+          "img": "https://previews.123rf.com/images/dclipart/dclipart1501/dclipart150100066/35292153-travel-africa-african-landscape-vector-emblem-.jpg",
+          "hours": "4-6",
+          "date": "2020-02-05"
+        }
+      ],
+      "id": 10
     }
   ],
   "weekEnd": [
