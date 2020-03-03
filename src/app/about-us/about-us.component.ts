@@ -519,9 +519,7 @@ export class AboutUsComponent implements OnInit {
 
     this.idPlace = this.owenerplace.id;
     this.httpService.PutPlaces(this.idPlace, this.placeObj, headers).subscribe(data => {
-      console.log("shatreeeeeeeeeeeeeeeen eee7na el 3 ")
 
-      console.log(data);
       this.imageSrc2 = "../../assets/Home/defaultPlace.png";
       this.imgs2 = ["../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png", "../../assets/Home/defaultPlace.png"]
       this.router.navigate(["/place", this.idPlace])
