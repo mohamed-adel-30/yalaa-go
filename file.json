@@ -315,7 +315,9 @@
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
         "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
-      }
+      },
+      "lat": 31.199467353466414,
+      "long": 29.926646930316164
     },
     {
       "id": 2,
@@ -1120,7 +1122,7 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "open now",
-      "openHours": "08:56to20:56",
+      "openHours": "08:56to20:56to08:56to20:56to08:56to20:56to08:56to20:56",
       "desc": "gerat plaw sjd1111js",
       "reservation": "true",
       "kid-friendly": "true",
@@ -1130,9 +1132,7 @@
         "instagram": "instgrame Page"
       },
       "ownerId": 6,
-      "id": 20,
-      "lat": 31.22393359091141,
-      "long": 29.940633117860436
+      "id": 20
     },
     {
       "name": "kjhgfdsz",
@@ -1766,15 +1766,15 @@
       "id": 59
     },
     {
-      "name": "esraa",
+      "name": "gagag",
       "imgs": [
         "../../assets/Home/defaultPlace.png"
       ],
-      "desc": "eeee",
-      "price": "21",
+      "desc": "ddd",
+      "price": "121",
       "placeId": 20,
       "img": "../../assets/Home/defaultPlace.png",
-      "id": 62
+      "id": 60
     }
   ],
   "comments": [
@@ -1804,36 +1804,6 @@
       "rate": 3,
       "saraaa": 2,
       "id": 8
-    },
-    {
-      "comment": "asdfg",
-      "placeId": "2",
-      "userId": 13,
-      "userName": "henddiab",
-      "userImg": "",
-      "rate": 5,
-      "saraaa": 2,
-      "id": 10
-    },
-    {
-      "comment": "",
-      "placeId": "2",
-      "userId": 13,
-      "userName": "henddiab",
-      "userImg": "",
-      "rate": 5,
-      "saraaa": 2,
-      "id": 11
-    },
-    {
-      "comment": "",
-      "placeId": "2",
-      "userId": 13,
-      "userName": "henddiab",
-      "userImg": "",
-      "rate": 5,
-      "saraaa": 2,
-      "id": 12
     },
     {
       "comment": "esesesgsgsgsgs",
@@ -2199,6 +2169,30 @@
       "userName": "samaa",
       "userImg": "",
       "id": 30
+    },
+    {
+      "comment": "hfjhfy",
+      "placeId": "2",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 38
+    },
+    {
+      "comment": "hjhffjfkjgfl",
+      "placeId": "2",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 39
+    },
+    {
+      "comment": "gjhkjgjlg",
+      "placeId": "2",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 40
     }
   ],
   "rates": [
@@ -2246,6 +2240,19 @@
         0
       ],
       "id": 6
+    },
+    {
+      "value": 5,
+      "placeId": "2",
+      "userId": 13,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 7
     }
   ],
   "favourites": [

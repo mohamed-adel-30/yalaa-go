@@ -77,12 +77,12 @@ export class WeekendComponent implements OnInit {
     this.planForm = this.formBuilder.group({
       location: ['', Validators.required],
       haveChild: ['', Validators.required],
-      time: ['', Validators.required],
-      endTime: ['', Validators.required]
+      time: [''],
+      endTime: ['']
     })
 
-    $('.userName').click(function () {
-      alert('clicked');
+    $('.btn').click(function () {
+      $(".makeYourPlan").css("display","block")
     })
 
 

@@ -4,287 +4,300 @@
 //     max-width: 70% ;
 //   }
 // }
+
 /* On screens that are 600px wide or less, the background color is olive */
+
 @media screen and (max-width: 578px) {
-  .modal-custom {
-    max-width: 100% !important ;
-  }
+    .modal-custom {
+        max-width: 100% !important;
+    }
 }
 
 // ............google map .............///
 agm-map {
-  height: 300px;
+    height: 300px;
 }
-// ..........................///
 
+// ..........................///
 .unseenBtn,
 .seenBtn {
-  background-color: transparent;
-  border: none;
+    background-color: transparent;
+    border: none;
 }
+
 .seenBtn i {
-  color: green;
+    color: green;
 }
+
 .unseenBtn i {
-  color: red;
+    color: red;
 }
 
 .container-custom {
-  padding-top: $sectionMargin;
-  margin: 0 auto;
-  width: 90%;
+    padding-top: $sectionMargin;
+    margin: 0 auto;
+    width: 90%;
 }
+
 img {
-  width: 100%;
+    width: 100%;
 }
 
 h1 {
-  font-weight: 900;
+    font-weight: 900;
 }
-h1:hover {
-  color: $hcolors;
-}
-.Option-Title {
-  font-family: Montserrat;
-  font-weight: $labelsBold;
-  font-size: 28px;
-  text-align: left;
-  margin-left: 6%;
-  border-radius: 30px;
-  border: 2px solid $hcolors;
-  // width: 13%;
-  padding: 10px 22px;
-  background-color: white;
-}
-.specificSpan {
-  font-weight: 700;
-  padding-right: 10px;
-}
-.status {
-  color: #00b467;
-  line-height: 1.2;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: bold;
-}
-.owener-btns {
-  font-weight: bolder;
-  background-color: $hcolors;
-  text-align: center;
-  border: none;
-  color: white;
-}
-.owener-edit-btns {
-  font-weight: bolder;
-  text-align: center;
-  border-width: 2px;
-}
-// ..............styling model,,,,,,,,,//
 
+h1:hover {
+    color: $hcolors;
+}
+
+.Option-Title {
+    font-family: Montserrat;
+    font-weight: $labelsBold;
+    font-size: 28px;
+    text-align: left;
+    margin-left: 6%;
+    border-radius: 30px;
+    border: 2px solid $hcolors;
+    // width: 13%;
+    padding: 10px 22px;
+    background-color: white;
+}
+
+.specificSpan {
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+.status {
+    color: #00b467;
+    line-height: 1.2;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.owener-btns {
+    font-weight: bolder;
+    background-color: $hcolors;
+    text-align: center;
+    border: none;
+    color: white;
+}
+
+.owener-edit-btns {
+    font-weight: bolder;
+    text-align: center;
+    border-width: 2px;
+}
+
+// ..............styling model,,,,,,,,,//
 input[type="file"] {
-  display: none;
+    display: none;
 }
 
 .custom-file-upload {
-  border: 2px solid $hcolors;
-  display: inline-block;
-  padding: 4px 6px;
-  cursor: pointer;
-  border-radius: 30px;
-  background-color: $hcolors;
-  color: white;
-  margin: 5px;
-  font-family: Montserrat;
-  font-size: $inputSize;
-  i {
+    border: 2px solid $hcolors;
+    display: inline-block;
+    padding: 4px 6px;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: $hcolors;
     color: white;
-  }
+    margin: 5px;
+    font-family: Montserrat;
+    font-size: $inputSize;
+    i {
+        color: white;
+    }
 }
 
 .custom-file-upload:hover {
-  color: $hcolors;
-  border: $hcolors 2px solid;
-  background-color: white;
-  i {
     color: $hcolors;
-  }
+    border: $hcolors 2px solid;
+    background-color: white;
+    i {
+        color: $hcolors;
+    }
 }
 
 .model-container {
-  padding: 30px;
-  margin: auto;
-  width: 100%;
+    padding: 30px;
+    margin: auto;
+    width: 100%;
 }
 
 .modal-custom {
-  .moreInfoCheck {
-    // width: 3%;
-    border: none;
-  }
-  .mainImg {
-    border: none;
-    width: 50%;
-  }
-  max-width: 70%;
-  label {
-    font-weight: bold;
-    color: black;
-    line-height: 1.2;
-    font-family: Montserrat;
-    font-size: $paragrphSize;
-    display: inline;
-  }
-  textarea,
-  input {
-    // width: 75%;
-    border: none;
-    border-bottom: 0.5px solid #ddd;
-    background-color: transparent;
-    // font-weight: bold;
-    color: grey;
-    line-height: 1.2;
-    font-family: Montserrat;
-    font-size: $inputSize;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    padding-left: 30px;
-  }
-  textarea {
-    border: 1px solid #ddd;
-    border-radius: 30px;
-  }
-  .time {
-    border: none;
-    display: inline;
-    // width: 25%;
-  }
-  .specialInput {
-    // width: 10%;
-  }
-  .dropDowns {
-    button {
-      line-height: 1.2;
-      font-family: Montserrat;
-      font-size: $paragrphSize;
-      font-weight: bold;
-      color: black;
+    .moreInfoCheck {
+        // width: 3%;
+        border: none;
     }
-  }
-  .extraInfo-wrapper {
-    padding: 10px;
-    // margin: 34px;
-    transition: 1s;
-    border-radius: 30px;
-    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.219);
-    border: none;
-  }
-  .Options-Wrapper {
-    overflow: hidden;
-  }
-  .cats-btn {
-    // width: 20%;
-    margin-bottom: 10px;
-  }
+    .mainImg {
+        border: none;
+        width: 50%;
+    }
+    max-width: 70%;
+    label {
+        font-weight: bold;
+        color: black;
+        line-height: 1.2;
+        font-family: Montserrat;
+        font-size: $paragrphSize;
+        display: inline;
+    }
+    textarea,
+    input {
+        // width: 75%;
+        border: none;
+        border-bottom: 0.5px solid #ddd;
+        background-color: transparent;
+        // font-weight: bold;
+        color: grey;
+        line-height: 1.2;
+        font-family: Montserrat;
+        font-size: $inputSize;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 10px;
+        padding-left: 30px;
+    }
+    textarea {
+        border: 1px solid #ddd;
+        border-radius: 30px;
+    }
+    .time {
+        border: none;
+        display: inline;
+        // width: 25%;
+    }
+    .dropDowns {
+        button {
+            line-height: 1.2;
+            font-family: Montserrat;
+            font-size: $paragrphSize;
+            font-weight: bold;
+            color: black;
+        }
+    }
+    .extraInfo-wrapper {
+        padding: 10px;
+        // margin: 34px;
+        transition: 1s;
+        border-radius: 30px;
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.219);
+        border: none;
+    }
+    .Options-Wrapper {
+        overflow: hidden;
+    }
+    .cats-btn {
+        // width: 20%;
+        margin-bottom: 10px;
+    }
 }
+
 // ..............................................///
 .games-section {
-  box-shadow: 0px 0px 24px 1px #dddddd9e;
+    box-shadow: 0px 0px 24px 1px #dddddd9e;
 }
+
 image {
-  width: 100%;
+    width: 100%;
 }
 
 .games-details:hover {
-  box-shadow: -1px 7px 11px 3px #e8e5e580;
+    box-shadow: -1px 7px 11px 3px #e8e5e580;
 }
+
 .games-details {
-  border: 1px solid #dddddda8;
-  background-color: #fff;
-  .game-name {
-    background-color: $hcolors;
-    color: #fff;
-    text-transform: capitalize;
-    text-align: center;
-  }
-  .game-img {
-    text-align: center;
-  }
+    border: 1px solid #dddddda8;
+    background-color: #fff;
+    .game-name {
+        background-color: $hcolors;
+        color: #fff;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    .game-img {
+        text-align: center;
+    }
 }
+
 .game-price {
-  font-weight: 900;
-  color: $hcolors;
-  font-size: 25px;
-  span {
-    font-weight: 100;
-    font-size: $inputSize;
-  }
+    font-weight: 900;
+    color: $hcolors;
+    font-size: 25px;
+    span {
+        font-weight: 100;
+        font-size: $inputSize;
+    }
 }
 
 .Option-Edit {
-  input {
-    color: black;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px dotted gray;
-    padding-bottom: 5px;
-  }
+    input {
+        color: black;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px dotted gray;
+        padding-bottom: 5px;
+    }
 }
 
 .Option-Edit2 {
-  border-radius: 29px;
-  padding: 10px;
-  box-shadow: 0px 0px 7px 0px #90a783;
-  input {
-    color: black;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px dotted gray;
-    padding-bottom: 5px;
-  }
+    border-radius: 29px;
+    padding: 10px;
+    box-shadow: 0px 0px 7px 0px #90a783;
+    input {
+        color: black;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px dotted gray;
+        padding-bottom: 5px;
+    }
 }
 
 .games-section {
-  button {
-    font-weight: bold;
-    border-width: 2px;
-  }
+    button {
+        font-weight: bold;
+        border-width: 2px;
+    }
 }
+
 // ........................history .....................//
 .ownerRregisterationHistory-wrapper {
-  // width: 80%;
-  // margin: 0 auto;
-  // background-color:white;
-  border-radius: 30px;
-  padding: 20px;
-  .ownerReegisterationHistory-solo {
     // width: 80%;
     // margin: 0 auto;
-    background-color: #111;
+    // background-color:white;
     border-radius: 30px;
-    border: none;
-    color: white;
-    p {
-      line-height: 1.2;
-      font-size: $paragrphSize;
+    padding: 20px;
+    .ownerReegisterationHistory-solo {
+        // width: 80%;
+        // margin: 0 auto;
+        background-color: #111;
+        border-radius: 30px;
+        border: none;
+        color: white;
+        p {
+            line-height: 1.2;
+            font-size: $paragrphSize;
+        }
     }
-  }
-  span {
-    color: $hcolors;
-  }
-  .moreinfo-btn {
-    font-weight: bold;
-    color: black;
-    border-radius: 10px;
-  }
-  .moreinfo-btn:hover {
-    background-color: black;
-    color: $hcolors;
-  }
+    span {
+        color: $hcolors;
+    }
+    .moreinfo-btn {
+        font-weight: bold;
+        color: black;
+        border-radius: 10px;
+    }
+    .moreinfo-btn:hover {
+        background-color: black;
+        color: $hcolors;
+    }
 }
 
 .delete-history-btn {
-  color: $hcolors;
-  border: 2px $hcolors solid;
-  border-radius: 5px;
+    color: $hcolors;
+    border: 2px $hcolors solid;
+    border-radius: 5px;
 }
