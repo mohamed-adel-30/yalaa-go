@@ -84,7 +84,7 @@
       "name": "samaa amin",
       "email": "samaa@dsfgh.com",
       "password": "123aA!",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 8
     },
@@ -95,7 +95,7 @@
       "name": "saraaaa",
       "email": "sara@gmail.com",
       "password": "1234Aa@",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 10
     },
@@ -103,7 +103,7 @@
       "name": "samaa amin",
       "email": "sama@gmail.com",
       "password": "1234Aa@",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 11
     },
@@ -111,7 +111,7 @@
       "name": "esraaaaaaaaaaaaaaaaaaa",
       "email": "soso@yahoo.com",
       "password": "123A!a",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 12
     },
@@ -119,7 +119,7 @@
       "name": "hend",
       "email": "henddiab132@gmail.com",
       "password": "Ma.12",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 13
     },
@@ -127,7 +127,7 @@
       "name": "omarrrrrrr",
       "email": "omar@gmail.com",
       "password": "12345Aa@",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 14
     },
@@ -135,7 +135,7 @@
       "name": "hend",
       "email": "henddiab77@gmail.com",
       "password": "Aa12.",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 15
     },
@@ -143,7 +143,7 @@
       "name": "esraa",
       "email": "esraa@gmail.com",
       "password": "1234Aa@",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 16
     },
@@ -151,7 +151,7 @@
       "name": "samaa user",
       "email": "samaa@gmail.com",
       "password": "123A!a",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 17
     },
@@ -159,7 +159,7 @@
       "name": "samaaaaa ",
       "email": "samaa123@yahoo.com",
       "password": "123A!a",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 18
     },
@@ -167,9 +167,17 @@
       "name": "samaa",
       "email": "samaaamin2@gmail.com",
       "password": "123A!a",
-      "image": "",
+      "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 19
+    },
+    {
+      "name": "test",
+      "email": "test1@gmail.com",
+      "password": "1234Aa@",
+      "image": "../../assets/avatar.png",
+      "visa": 0,
+      "id": 20
     }
   ],
   "categories": [
@@ -277,20 +285,6 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "Mustafa Kamel",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [
         0,
         1,
@@ -315,7 +309,9 @@
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
         "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
-      }
+      },
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436
     },
     {
       "id": 2,
@@ -326,23 +322,6 @@
       ],
       "address": " Alexandria Desert Rd, Gharb El Noubareya",
       "location": "Alexandria Desert Rd",
-      "comments": [
-        {
-          "userId": 1,
-          "comment": "The place isn’t the best in condition but it’s fair enough."
-        },
-        {
-          "userId": 4,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
-      "rates": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
       "avgrate": 5,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/v8KgktNr/africano-Park.png",
@@ -357,6 +336,8 @@
       "status": "open now",
       "reservation": "true",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -373,22 +354,6 @@
       ],
       "address": "Kom Hafin, Abu El Matamir, ",
       "location": "Kom Hafin",
-      "comments": [
-        {
-          "userId": 1,
-          "comment": "The place isn’t the best in condition but it’s fair enough."
-        },
-        {
-          "userId": 4,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
-      "rates": [
-        0,
-        1,
-        2,
-        3
-      ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/RFNRxJG8/taverna-Aqua.jpg",
@@ -402,6 +367,8 @@
       "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
       "reservation": "true",
       "kid-friendly": "true",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -422,16 +389,6 @@
       ],
       "address": "Gate 4 - 1st Alexandria Cairo Desert Road - Alexandria, Alexandria Governorate 11432",
       "location": "Gate 4 - 1st Alexandria",
-      "comments": [
-        {
-          "userId": 2,
-          "comment": "I love this place very much because I can buy what I need easily there. Everything, clothes,food, shoes... etc And I can eat from different restaurants and sit on a Cafe. There is a wonderful cinema and a funfair for kids."
-        },
-        {
-          "userId": 1,
-          "comment": "really good time for shopping and have a good time there.  alot of places to visit coffee is good alot of brands and market is amazing too . really enjoyable  time and place I recommended for all people"
-        }
-      ],
       "rates": [],
       "avgrate": null,
       "paymentMethod": "Ticket",
@@ -446,6 +403,8 @@
       "status": "open now",
       "reservation": "true",
       "kid-friendly": "true",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -465,16 +424,6 @@
       ],
       "address": "El-Gaish Rd, San Stifano, Qism El-Raml, Alexandria Governorate",
       "location": "san stifano",
-      "comments": [
-        {
-          "userId": 2,
-          "comment": "It is one of the places where you can enjoy drinking your cup of coffee ☕ without being bothered by anyone.. It has many shops and restaurants for shopping. I personally like going there each now and then."
-        },
-        {
-          "userId": 3,
-          "comment": "I like this place but the only problem is the sitting in the food court once you buy the food you can’t sit and enjoy your food it needed to be bigger than that more seats and tables the cinema up there is cool it’s clean and nice a bit high “price-wise” but it’s fine for me"
-        }
-      ],
       "rates": [
         1,
         2,
@@ -495,6 +444,8 @@
       "status": "open now",
       "reservation": "false",
       "kid-friendly": "true",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -511,18 +462,6 @@
       ],
       "address": "El-Gaish Rd, San Stifano, Qism El-Raml, Alexandria Governorate",
       "location": "san stifano",
-      "comments": [
-        {
-          "userId": 2,
-          "comment": "Perfect for beginners, the staff are good at what they do, fairly priced. I recommend 2 hours, and the ski pack for the adults,whole package for children."
-        }
-      ],
-      "rates": [
-        1,
-        2,
-        3,
-        4
-      ],
       "avgrate": 4,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/7YwYq8Sw/skateboard.jpg",
@@ -536,6 +475,8 @@
       "status": "open now",
       "reservation": "true",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -550,20 +491,6 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "agami",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [
         0,
         1,
@@ -583,6 +510,8 @@
       "status": "closed",
       "reservation": "true",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -597,20 +526,6 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "miami",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [],
       "avgrate": null,
       "paymentMethod": "Ticket",
@@ -625,6 +540,8 @@
       "status": "closed",
       "reservation": "true",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -640,20 +557,6 @@
       ],
       "address": " Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "sidi gaber",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [
         1,
         2,
@@ -672,6 +575,8 @@
       "status": "open now",
       "reservation": "false",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -690,20 +595,6 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "Bahri",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [
         1,
         2,
@@ -725,6 +616,8 @@
       "status": "open now",
       "reservation": "true",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -741,20 +634,6 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "Bahri",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [
         1,
         2,
@@ -773,6 +652,8 @@
       "status": "open now",
       "reservation": "false",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -787,20 +668,6 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "Bahri",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [],
       "avgrate": null,
       "paymentMethod": "Ticket",
@@ -815,6 +682,8 @@
       "status": "open now",
       "reservation": "false",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -830,24 +699,14 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "roushdy",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [
-        1
+        0,
+        1,
+        2,
+        3,
+        4
       ],
-      "avgrate": 1,
+      "avgrate": 5,
       "paymentMethod": "Ticket",
       "mainImage": "https://i.postimg.cc/Ghm1mkhS/alienz-game.png",
       "imgs": [
@@ -860,6 +719,8 @@
       "status": "open now",
       "reservation": "false",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -875,20 +736,6 @@
       ],
       "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
       "location": "janakleece",
-      "comments": [
-        {
-          "userId": 3,
-          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
-        },
-        {
-          "userId": 4,
-          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
-        },
-        {
-          "userId": 5,
-          "comment": "Amazing and unique place suitable for kids and Adults."
-        }
-      ],
       "rates": [
         1,
         2,
@@ -908,6 +755,8 @@
       "status": "open now",
       "reservation": "false",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
@@ -915,13 +764,13 @@
       }
     },
     {
-      "name": "new plaaaaaaace",
+      "name": "Gleem pay",
       "catId": [
         "1",
         "2"
       ],
-      "address": "esraaaaaaaaa",
-      "location": "esraaaaaaaaaa",
+      "address": "Mustafa Kamel Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "Mustafa Kamel",
       "rates": [
         1,
         2,
@@ -938,10 +787,12 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKz1NJwH13z3qGk2sRFbgZBaTB-pSqxyKNWe87bDDld0DpXnu"
       ],
       "status": "open now",
-      "openHours": "11:11to11:11",
-      "desc": "esraaaaaaaaaaaaaaaaaaa",
+      "openHours": "11:11 to 11:11",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "828276382",
         "facebook": "",
@@ -951,12 +802,12 @@
       "id": 15
     },
     {
-      "name": "aaaaaaaaa",
+      "name": "Scareing Cave",
       "catId": [
         "1"
       ],
-      "address": "aaaaaaaaaaaaa",
-      "location": "aaaaaaaaaaaaaaaaa",
+      "address": "Mustafa Kamel Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "Mustafa Kamel",
       "rates": [
         1,
         2,
@@ -973,10 +824,12 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKz1NJwH13z3qGk2sRFbgZBaTB-pSqxyKNWe87bDDld0DpXnu"
       ],
       "status": "open now",
-      "openHours": "11:11to14:22",
-      "desc": "aaaaaaaaaaaaaaaaaaaaa",
+      "openHours": "11:11 to 14:22",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "false",
       "kid-friendly": "true",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "01211111111",
         "facebook": "",
@@ -985,13 +838,14 @@
       "id": 16
     },
     {
-      "name": "placeeeee",
+      "name": "Santorina",
       "catId": [
-        "1",
-        "2"
+        4,
+        5,
+        6
       ],
-      "address": "1111111111111111111",
-      "location": "1111111111111111111111",
+      "address": "Loran Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "Loran",
       "rates": [
         1,
         2,
@@ -1009,9 +863,11 @@
       ],
       "status": "open now",
       "openHours": "11:11to11:01",
-      "desc": "11111111111111",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "false",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "772828209292",
         "facebook": "",
@@ -1020,18 +876,16 @@
       "id": 17
     },
     {
-      "name": "yaaraaaaaaaaaaaaaab",
+      "name": "VR blurSky",
       "catId": [
         "1"
       ],
-      "address": "aaaaaaaaaaaaaaaaaa",
-      "location": "aaaaaaaaaaaaaaaaaaaa",
+      "address": "Loran Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "Loran",
       "rates": [
         1,
-        2,
-        3,
-        4,
-        5
+        10,
+        11
       ],
       "paymentMethod": "Ticket",
       "avgrate": 5,
@@ -1043,9 +897,11 @@
       ],
       "status": "open now",
       "openHours": "11:11to14:22",
-      "desc": "aaaaaaaaaaaaaaaaaaaaaaa",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "contact": {
         "phone": "727272727272",
         "facebook": "",
@@ -1055,12 +911,12 @@
       "id": 18
     },
     {
-      "name": "saraaaaaaaaa edited",
+      "name": "Lemon Ps4",
       "catId": [
         "1"
       ],
-      "address": "5555555555hkjhds",
-      "location": "55555555555",
+      "address": "Loran Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "Loran",
       "rates": [
         1,
         2,
@@ -1077,8 +933,8 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKz1NJwH13z3qGk2sRFbgZBaTB-pSqxyKNWe87bDDld0DpXnu"
       ],
       "status": "open now",
-      "openHours": "11:11to02:02",
-      "desc": "samaa esraa saraaaaaaaaaa heeeeeeeeend",
+      "openHours": "11:11 to 02:02",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
       "contact": {
@@ -1092,12 +948,14 @@
       "long": 29.926646930316164
     },
     {
-      "name": "esraa",
+      "name": "Panda Escapr Room",
       "catId": [
-        1
+        1,
+        10,
+        11
       ],
-      "address": "sedi gabr",
-      "location": "sedigabrgswgs",
+      "address": "sedi gabr Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "sedi gabr",
       "rates": [
         1,
         2,
@@ -1114,8 +972,8 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "open now",
-      "openHours": "08:56to20:56",
-      "desc": "gerat plaw sjd1111js",
+      "openHours": "08:56 to 20:56",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
       "contact": {
@@ -1129,12 +987,14 @@
       "long": 29.940633117860436
     },
     {
-      "name": "kjhgfdsz",
+      "name": "panorama",
       "catId": [
-        "1"
+        "8",
+        "9",
+        "7"
       ],
-      "address": "111111111111",
-      "location": "1111111111",
+      "address": "sedi gabr Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "sedi gabr",
       "rates": [
         1,
         2,
@@ -1151,8 +1011,10 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKz1NJwH13z3qGk2sRFbgZBaTB-pSqxyKNWe87bDDld0DpXnu"
       ],
       "status": "open now",
-      "openHours": "11:11to01:11",
-      "desc": "111111111111111",
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
+      "openHours": "11:11 to 01:11",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
       "contact": {
@@ -1164,12 +1026,14 @@
       "id": 21
     },
     {
-      "name": "samaaaaa",
+      "name": "Malipo Playstaion",
       "catId": [
-        "1"
+        1,
+        10,
+        11
       ],
-      "address": "11111111111111111",
-      "location": "1111111111111111111",
+      "address": "Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "janakleece",
       "rates": [
         1,
         2,
@@ -1186,10 +1050,12 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "open now",
-      "openHours": "11:11to11:11",
-      "desc": "11111111111111111",
+      "openHours": "11:11 to 11:11",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
+      "lat": 31.199467353466414,
+      "long": 29.926646930316164,
       "contact": {
         "phone": "52525252552",
         "facebook": "",
@@ -1199,12 +1065,14 @@
       "id": 22
     },
     {
-      "name": "fat7alah",
+      "name": "Costrica skating",
       "catId": [
-        "1"
+        4,
+        5,
+        6
       ],
       "address": "295 jankles fat7alah",
-      "location": "i",
+      "location": "janakleece",
       "rates": [
         1,
         2,
@@ -1221,8 +1089,8 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "open now",
-      "openHours": "11:11to11:11",
-      "desc": "ssgsggsgsgsgsgsgsg",
+      "openHours": "11:11 to 11:11",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
       "contact": {
@@ -1230,15 +1098,19 @@
         "facebook": "",
         "instagram": ""
       },
+      "lat": 31.199467353466414,
+      "long": 29.926646930316164,
       "ownerId": 9,
       "id": 23
     },
     {
-      "name": "heeeeeeeeendplace",
+      "name": "Taverna Park",
       "catId": [
-        "1"
+        12,
+        13,
+        2
       ],
-      "address": "esrafsabsghhs",
+      "address": "roushdy Bolkli, Sidi Gaber, Alexandria Governorate",
       "location": "roushdy",
       "rates": [
         1,
@@ -1256,8 +1128,8 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "open now",
-      "openHours": "11:11to11:11",
-      "desc": "esraagsggssgsg",
+      "openHours": "11:11 to 11:11",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
       "contact": {
@@ -1265,16 +1137,20 @@
         "facebook": "",
         "instagram": ""
       },
+      "lat": 31.199467353466414,
+      "long": 29.926646930316164,
       "ownerId": 10,
       "id": 24
     },
     {
-      "name": "test edited",
+      "name": "Birght Bridge",
       "catId": [
+        11,
+        10,
         1
       ],
-      "address": "esesesesess",
-      "location": "roushdy",
+      "address": "janakleece Bolkli, Sidi Gaber, Alexandria Governorate",
+      "location": "janakleece",
       "rates": [
         1,
         2,
@@ -1291,8 +1167,8 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "closed",
-      "openHours": "08:56to20:56",
-      "desc": "aaaaaaaaaaaaaaaaaaaaa",
+      "openHours": "08:56 to 20:56",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "reservation": "true",
       "kid-friendly": "true",
       "contact": {
@@ -1300,6 +1176,8 @@
         "facebook": "facebook Page",
         "instagram": "instgrame Page"
       },
+      "lat": 31.22393359091141,
+      "long": 29.940633117860436,
       "ownerId": 12,
       "id": 25
     }
@@ -1714,11 +1592,11 @@
     },
     {
       "id": 45,
-      "name": "gwekgekyjjj",
+      "name": "Waterina Game",
       "imgs": [
         "../../assets/Home/defaultPlace.png"
       ],
-      "desc": "1111",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "qweuiyique",
       "placeId": 19,
@@ -1726,11 +1604,11 @@
     },
     {
       "id": 46,
-      "name": "esraaaaaa",
+      "name": "Panorema Game",
       "imgs": [
         "http://placehold.it/200/200"
       ],
-      "desc": "esraaaa",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "3838",
       "placeId": 19,
@@ -1738,33 +1616,33 @@
     },
     {
       "id": 58,
-      "name": "esraaaaaww",
+      "name": "AIRS Games",
       "imgs": [
         "../../assets/Home/defaultPlace.png"
       ],
-      "desc": "1111",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "longDesc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room.Let's escape!",
       "price": "qweqe",
       "placeId": 21,
       "img": ""
     },
     {
-      "name": "esraaaaa",
+      "name": "kuta game",
       "imgs": [
         "../../assets/Home/defaultPlace.png"
       ],
-      "desc": "1212",
-      "price": "1111",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
+      "price": "111",
       "placeId": 21,
       "img": "../../assets/Home/defaultPlace.png",
       "id": 59
     },
     {
-      "name": "esraa",
+      "name": "Race Game",
       "imgs": [
         "../../assets/Home/defaultPlace.png"
       ],
-      "desc": "eeee",
+      "desc": "You are locked up in a strange room  Explore the room, find hidden items and solve riddles.Then you will be able to escape from the room",
       "price": "21",
       "placeId": 20,
       "img": "../../assets/Home/defaultPlace.png",
@@ -1773,7 +1651,7 @@
   ],
   "comments": [
     {
-      "comment": "kqkwgkqgyjqef",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
       "placeId": "6",
       "userName": "esraaa",
       "userImg": "",
@@ -1782,8 +1660,8 @@
       "id": 6
     },
     {
-      "comment": "",
-      "placeId": "6",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "1",
       "userName": "esraaa",
       "userImg": "",
       "rate": 5,
@@ -1791,8 +1669,8 @@
       "id": 7
     },
     {
-      "comment": "saraaaaaaaa",
-      "placeId": "6",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "2",
       "userName": "sara",
       "userImg": "",
       "rate": 3,
@@ -1800,8 +1678,8 @@
       "id": 8
     },
     {
-      "comment": "asdfg",
-      "placeId": "2",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "3",
       "userId": 13,
       "userName": "henddiab",
       "userImg": "",
@@ -1810,8 +1688,8 @@
       "id": 10
     },
     {
-      "comment": "",
-      "placeId": "2",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "5",
       "userId": 13,
       "userName": "henddiab",
       "userImg": "",
@@ -1820,8 +1698,8 @@
       "id": 11
     },
     {
-      "comment": "",
-      "placeId": "2",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "4",
       "userId": 13,
       "userName": "henddiab",
       "userImg": "",
@@ -1830,8 +1708,8 @@
       "id": 12
     },
     {
-      "comment": "esesesgsgsgsgs",
-      "placeId": "3",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "6",
       "userId": 16,
       "userName": "esraa",
       "userImg": "",
@@ -1846,8 +1724,8 @@
       "id": 13
     },
     {
-      "comment": "esraaaaaaa again",
-      "placeId": "3",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "7",
       "userId": 16,
       "userName": "esraa",
       "userImg": "",
@@ -1877,8 +1755,8 @@
       "id": 16
     },
     {
-      "comment": "",
-      "placeId": "2",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "10",
       "userId": 10,
       "userName": "saraaaa",
       "userImg": "",
@@ -1907,8 +1785,8 @@
       "id": 18
     },
     {
-      "comment": "fff",
-      "placeId": "7",
+      "comment": "not that good ,could be better ",
+      "placeId": "11",
       "userId": 10,
       "userName": "saraaaa",
       "userImg": "",
@@ -1922,8 +1800,8 @@
       "id": 19
     },
     {
-      "comment": "sasa",
-      "placeId": "7",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "12",
       "userId": 10,
       "userName": "saraaaa",
       "userImg": "",
@@ -1937,8 +1815,8 @@
       "id": 20
     },
     {
-      "comment": "",
-      "placeId": "7",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you",
+      "placeId": "13",
       "userId": 10,
       "userName": "saraaaa",
       "userImg": "",
@@ -1952,8 +1830,8 @@
       "id": 21
     },
     {
-      "comment": "ddd",
-      "placeId": "7",
+      "comment": "place was very great and the satff was very professional i am realllly recommended for you,",
+      "placeId": "15",
       "userId": 10,
       "userName": "saraaaa",
       "userImg": "",
@@ -1967,8 +1845,8 @@
       "id": 22
     },
     {
-      "comment": "dddddeeeeee",
-      "placeId": "7",
+      "comment": "nice place and nice activites",
+      "placeId": "16",
       "userId": 10,
       "userName": "saraaaa",
       "userImg": "",
@@ -1982,8 +1860,8 @@
       "id": 23
     },
     {
-      "comment": "hhh",
-      "placeId": "6",
+      "comment": "i reaaly enjoy it",
+      "placeId": "1",
       "userId": 8,
       "userName": "samaa amin",
       "userImg": "",
@@ -1991,7 +1869,7 @@
     },
     {
       "comment": "gooood",
-      "placeId": "1",
+      "placeId": "2",
       "userId": 8,
       "userName": "samaa amin",
       "userImg": "",
@@ -2006,7 +1884,7 @@
     },
     {
       "comment": "unlike",
-      "placeId": "1",
+      "placeId": "3",
       "userId": 8,
       "userName": "samaa amin",
       "userImg": "",
@@ -2017,7 +1895,7 @@
       "id": 26
     },
     {
-      "comment": "",
+      "comment": "i reaaly enjoy it",
       "placeId": "7",
       "userId": 8,
       "userName": "samaa",
@@ -2025,20 +1903,82 @@
       "id": 27
     },
     {
-      "comment": "",
-      "placeId": "7",
+      "comment": "i reaaly enjoy it",
+      "placeId": "9",
       "userId": 8,
       "userName": "samaa",
       "userImg": "",
       "id": 28
     },
     {
-      "comment": "",
-      "placeId": "7",
+      "comment": "i reaaly enjoy it",
+      "placeId": "10",
       "userId": 8,
       "userName": "samaa",
       "userImg": "",
       "id": 29
+    },
+    {
+      "comment": "i reaaly enjoy it",
+      "placeId": "19 ",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 30
+    },
+    {
+      "comment": "i reaaly enjoy it",
+      "placeId": "4",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 31
+    },
+    {
+      "comment": "i reaally enjoy it",
+      "placeId": "15",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 32
+    },
+    {
+      "comment": "i reaaly enjoy it",
+      "placeId": "21",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 33
+    },
+    {
+      "comment": "i reaaly enjoy it",
+      "placeId": "19",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 34
+    },
+    {
+      "comment": "el salaaaaaam2",
+      "placeId": "1",
+      "userId": 16,
+      "userName": "esraa",
+      "userImg": "",
+      "id": 35
     }
   ],
   "rates": [
@@ -2086,6 +2026,19 @@
         0
       ],
       "id": 6
+    },
+    {
+      "value": 5,
+      "placeId": "13",
+      "userId": 16,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 7
     }
   ],
   "favourites": [

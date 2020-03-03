@@ -24,7 +24,7 @@ export class PlacesComponent implements OnInit {
   // ...........................................///
   error = null;
   places;
-  singlePlace; 
+  singlePlace;
   // ........///
   singlePlaceId;
   singlePlaceData; //obj
@@ -48,6 +48,7 @@ export class PlacesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private placeService: PlacesService, private httpService: HttpServiceService, private router: Router, private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone) {
+
     this.loggin = this.httpService.getData("loggedin");
 
     this.route.params.subscribe((param: Params) => {
@@ -67,6 +68,7 @@ export class PlacesComponent implements OnInit {
       )
 
       this.httpService.gettingPtions().subscribe(data => {
+        this.optionsOfSpesificPlace = [];
         this.options = data;
         this.gettingSpesifcOptions(this.singlePlaceId)
       }, error => {
@@ -97,6 +99,7 @@ export class PlacesComponent implements OnInit {
   }
 
   ngOnInit() {
+
 
     this.finalTotal = 0;
     // .........google map......///
@@ -284,6 +287,7 @@ export class PlacesComponent implements OnInit {
   }
 
   gettingNearByPlacses() {
+    this.MAX3 = []
     this.nearByPlacses = [];
     for (let place of this.places) {
       if (place.location == this.singlePlaceData.location && place.id != this.singlePlaceData.id) {
@@ -298,6 +302,9 @@ export class PlacesComponent implements OnInit {
         this.MAX3.push(this.nearByPlacses[i])
       }
     }
+    console.log("..........................")
+    console.log(this.MAX3)
+    console.log(this.nearByPlacses)
   }
 
 
