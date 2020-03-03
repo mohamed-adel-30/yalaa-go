@@ -12,9 +12,12 @@ export class UserProfileComponent implements OnInit {
   error = null;
   myForm: FormGroup;
   toggle = false;
+  toggle2 = false;
   newObj;
 
   user;
+  allHistory;
+  userHistory;
   usersData;
   userData;
   checker;
@@ -74,6 +77,16 @@ export class UserProfileComponent implements OnInit {
         })
       }
 
+      this.service.getHistroy().subscribe(data => {
+        this.allHistory = data;
+        for (let i of this.allHistory) {
+          if (this.user.id == i.userId) {
+            this.userHistory = i.reservedGame;
+            break;
+          }
+        }
+        console.log(this.userHistory);
+      })
     });
   }
   removeFav(event) {
@@ -98,6 +111,11 @@ export class UserProfileComponent implements OnInit {
     this.service.gettingUsers().subscribe(data => {
       this.usersData = data;
     })
+
+    this.service.getHistroy().subscribe(data => {
+      this.allHistory = data;
+    })
+
     this.myForm = new FormGroup({
       name: new FormControl(this.user.name, Validators.required),
       email: new FormControl(this.user.email, [Validators.required, Validators.pattern(/^[a-z]\w{1,}@[a-z]{1,}.com$/)]),
@@ -123,6 +141,9 @@ export class UserProfileComponent implements OnInit {
 
   showEditForm() {
     this.toggle = !this.toggle
+  }
+  showHistory() {
+    this.toggle2 = !this.toggle2
   }
 
 
