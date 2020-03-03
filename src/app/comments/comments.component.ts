@@ -12,7 +12,7 @@ export class CommentsComponent implements OnInit {
 
   limit = 4;
   comments;
-  Writecomments = false
+  // Writecomments = false
   CommentsOfSpesificPlace = [];
   showedComments = [];
   showedCommentsReversed = [];
@@ -89,7 +89,7 @@ export class CommentsComponent implements OnInit {
   }
   addComment(param) {
 
-    this.Writecomments = true
+    // this.Writecomments = true
     this.placeLoggedin = this.httpService.getData("loggedin");
     if (this.placeLoggedin == true) {
       let user;
@@ -131,7 +131,13 @@ export class CommentsComponent implements OnInit {
         this.httpService.postComments(body, headers).subscribe(data => {
 
           this.showedComments.push(data);
-          this.showedCommentsReversed = this.showedComments.reverse();
+          this.showedCommentsReversed = [...this.showedComments]
+          this.showedCommentsReversed.reverse();
+
+          console.log(this.showedComments)
+          console.log(this.showedCommentsReversed)
+
+
         })
         param.value = "";
       }, 1000)
@@ -151,7 +157,8 @@ export class CommentsComponent implements OnInit {
       }
     }
     this.showedComments = [...this.CommentsOfSpesificPlace]
-    this.showedCommentsReversed = this.showedComments.reverse();
+    this.showedCommentsReversed = [...this.showedComments]
+    this.showedCommentsReversed.reverse();
   }
   // delete comment btn hadling
   deleteComm(id) {
@@ -160,8 +167,12 @@ export class CommentsComponent implements OnInit {
         console.log('deleeeeeeetee')
         let index;
         index = this.findingIndex(id);
+        console.log(this.showedComments)
         this.showedComments.splice(index, 1);
-        this.showedCommentsReversed = this.showedComments.reverse();
+        console.log(this.showedComments)
+        this.showedCommentsReversed = [...this.showedComments]
+        this.showedCommentsReversed.reverse();
+        console.log(this.showedCommentsReversed)
 
       }
 
@@ -230,14 +241,14 @@ export class CommentsComponent implements OnInit {
         (data) => {
           console.log('editttt')
 
-
           this.inputDisplay[i] = false;
           let obj;
           this.httpService.getSingleComments(id).subscribe(data => {
             obj = data;
             console.log(obj);
             this.showedComments.splice(index, 1, obj);
-            this.showedCommentsReversed = this.showedComments.reverse();
+            this.showedCommentsReversed = [...this.showedComments]
+            this.showedCommentsReversed.reverse();
           })
 
         }

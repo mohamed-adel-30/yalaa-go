@@ -176,6 +176,14 @@
       "image": "../../assets/avatar.png",
       "visa": 0,
       "id": 20
+    },
+    {
+      "name": "test2",
+      "email": "test2@gmail.com",
+      "password": "123A!a",
+      "image": "../../assets/avatar.png",
+      "visa": 0,
+      "id": 21
     }
   ],
   "categories": [{
@@ -338,7 +346,14 @@
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
         "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
-      }
+      },
+      "rates": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
     },
     {
       "id": 3,
@@ -2102,6 +2117,21 @@
       "userName": "test",
       "userImg": "",
       "id": 41
+    },
+    {
+      "comment": "good",
+      "placeId": "2",
+      "userId": 20,
+      "userName": "test",
+      "userImg": "",
+      "rate": 4,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 42
     }
   ],
   "rates": [{
@@ -2161,6 +2191,18 @@
         4
       ],
       "id": 7
+    },
+    {
+      "value": 4,
+      "placeId": "2",
+      "userId": 20,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 8
     }
   ],
   "favourites": [{
@@ -2244,19 +2286,9 @@
       "id": 19
     },
     {
-      "placeId": 7,
+      "placeId": "2",
       "userId": 20,
       "id": 20
-    },
-    {
-      "placeId": 8,
-      "userId": 20,
-      "id": 21
-    },
-    {
-      "placeId": 12,
-      "userId": 20,
-      "id": 22
     }
   ],
   "history": [{
