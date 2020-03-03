@@ -1,147 +1,143 @@
 <div class="container-fluid">
-  <div class="wrapper m-auto">
+    <div class="wrapper m-auto">
 
-    <div class="container">
-      <div class="row user-section">
-        <div class="col-md-6 col-12">
-          <!-- userImg -->
-          <div class="addimg">
-            <div class="avatar-upload">
-              <div class="avatar-edit">
-                <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" (change)="readURL($event)" />
-                <label for="imageUpload"></label>
-              </div>
+        <div class="container">
+            <div class="row user-section">
+                <div class="col-md-6 col-12">
+                    <!-- userImg -->
+                    <div class="addimg">
+                        <div class="avatar-upload">
+                            <div class="avatar-edit">
+                                <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" (change)="readURL($event)" />
+                                <label for="imageUpload"></label>
+                            </div>
 
-              <div *ngIf='user.image else elseBlock' class="avatar-preview">
-                <img id="imagePreview" [src]="user.image" #Datavalue />
-              </div>
-              <ng-template #elseBlock>
-                <img id="imagePreview" [src]="imageSrc" #Datavalue />
-              </ng-template>
+                            <div *ngIf='user.image else elseBlock' class="avatar-preview">
+                                <img id="imagePreview" [src]="user.image" #Datavalue />
+                            </div>
+                            <ng-template #elseBlock>
+                                <img id="imagePreview" [src]="imageSrc" #Datavalue />
+                            </ng-template>
 
-            </div>
+                        </div>
 
-            <!-- username -->
-            <div class="userName">
-              <h1>{{user.name}}</h1>
-            </div>
-          </div>
+                        <!-- username -->
+                        <div class="userName">
+                            <h1>{{user.name}}</h1>
+                        </div>
+                    </div>
 
 
-          <!-- edit data -->
-          <div class="edit">
-            <button type="button" class="btn btn-dark editButton" (click)="showEditForm()">edit <i
+                    <!-- edit data -->
+                    <div class="edit">
+                        <button type="button" class="btn btn-dark editButton" (click)="showEditForm()">edit <i
                 class="far fa-edit"></i></button>
-            <div *ngIf="toggle" class="userDataForm">
-              <form class="form-group container" [formGroup]='myForm'>
-                <div class="name">
-                  <input #nameVal formControlName="name" placeholder="edit your name">
-                </div>
-                <div class="text-danger my-1" *ngIf="myForm.get('name').hasError('required') && myForm.touched">
-                  this name is requeired
-                </div>
+                        <div *ngIf="toggle" class="userDataForm">
+                            <form class="form-group container" [formGroup]='myForm'>
+                                <div class="name">
+                                    <input #nameVal formControlName="name" placeholder="edit your name">
+                                </div>
+                                <div class="text-danger my-1" *ngIf="myForm.get('name').hasError('required') && myForm.touched">
+                                    this name is requeired
+                                </div>
 
-                <div class="email">
-                  <input #mailVal formControlName="email" placeholder="edit Your email">
-                </div>
-                <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('pattern')">
-                  mail must be "abc@abc.com"
-                </div>
-                <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('required') && myForm.touched ">
-                  mail is requeired
-                </div>
+                                <div class="email">
+                                    <input #mailVal formControlName="email" placeholder="edit Your email">
+                                </div>
+                                <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('pattern')">
+                                    mail must be "abc@abc.com"
+                                </div>
+                                <div class="text-danger my-1" *ngIf="myForm.controls.email.hasError('required') && myForm.touched ">
+                                    mail is requeired
+                                </div>
 
-                <button [disabled]="!myForm.valid" data-toggle="modal" data-target="#exampleModal"
-                  class="saveButton btn btn-dark">save changes <i class="fas fa-check"></i></button>
+                                <button [disabled]="!myForm.valid" data-toggle="modal" data-target="#exampleModal" class="saveButton btn btn-dark">save changes <i class="fas fa-check"></i></button>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                  aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">confirm password to continue</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <div class="modal popUp fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">confirm password to continue</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="password">
-                          <input #pass placeholder="enter your password" type="password" style="color: black;"
-                            appPassword>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="password">
+                                                    <input #pass placeholder="enter your password" type="password" style="color: black;" appPassword>
+                                                </div>
+                                                <button (click)="checkPass(pass,nameVal,mailVal)" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <button (click)="checkPass(pass,nameVal,mailVal)" type="button" class="btn btn-primary"
-                          data-dismiss="modal">OK</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </form>
+
+                <div class="col-6 text-right">
+                    <button class="viewHistory mb-2  btn btn-dark" (click)='showHistory()'>view your history</button>
+                    <div *ngIf="toggle2" class="scroll flex-column row">
+                        <div class="text-white  col-12" *ngFor='let history of userHistory'>
+                            <div class=" history col-12 text-center ">
+                                <p><span>Game:</span>{{history.name}}</p>
+                                <p><span>Desc:</span>{{history.desc}}</p>
+                                <p><span>Num Of Games:</span>{{history.count}}</p>
+                                <p><span>Time Available:</span>{{history.hours}}</p>
+                                <p><span>Date:</span>{{history.date}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
 
-        <div class="col-6 text-right">
-          <button class="viewHistory mb-2  btn btn-dark" (click)='showHistory()'>view your history</button>
-          <div *ngIf="toggle2" class=" flex-column row">
-            <div class="text-white col-12" *ngFor='let history of userHistory'>
-              <div class=" history col-12 text-center ">
-                <p><span>Game:</span>{{history.name}}</p>
-                <p><span>Desc:</span>{{history.desc}}</p>
-                <p><span>Num Of Games:</span>{{history.count}}</p>
-                <p><span>Time Available:</span>{{history.hours}}</p>
-                <p><span>Date:</span>{{history.date}}</p>
-              </div>
+
+
+
+        <!-- placesData -->
+        <div class="user-favs">
+            <h2 *ngIf='userFavouritesPlaces.length>0' class="fav-heading">take a look on your favourites 😄 </h2>
+            <div class="container" *ngFor='let fav of userFavouritesPlaces ' style="margin-bottom: 100px;">
+                <div class="row fav-display" [id]=fav.id>
+                    <div class="text-center all-imgs col-md-4 col-12">
+                        <div class="fav-img">
+                            <img [src]="fav.mainImage" alt="">
+                        </div>
+
+                        <div class="fav-imgs">
+                            <div *ngFor='let img of fav.imgs'>
+                                <img [src]="img" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="col-md-8 col-12">
+                        <li>
+                            <a routerLink="/place/{{fav.id}}">{{fav.name}}</a>
+                        </li>
+                        <li>
+                            <p>{{fav.address}}</p>
+                        </li>
+                        <li>
+                            <p>{{fav.location}}</p>
+                        </li>
+                        <li>
+                            <p>{{fav.desc}}</p>
+                        </li>
+                    </ul>
+                    <i (click)="removeFav($event)" class="fas fa-heart"></i>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-
-
-
-    <!-- placesData -->
-    <div class="user-favs">
-      <h2 *ngIf='userFavouritesPlaces.length>0' class="fav-heading">take a look on your favourites 😄 </h2>
-      <div class="container" *ngFor='let fav of userFavouritesPlaces ' style="margin-bottom: 100px;">
-        <div class="row fav-display" [id]=fav.id>
-          <div class="text-center all-imgs col-md-4 col-12">
-            <div class="fav-img">
-              <img [src]="fav.mainImage" alt="">
-            </div>
-
-            <div class="fav-imgs">
-              <div *ngFor='let img of fav.imgs'>
-                <img [src]="img" alt="">
-              </div>
-            </div>
-          </div>
-
-          <ul class="col-md-8 col-12">
-            <li>
-              <a routerLink="/place/{{fav.id}}">{{fav.name}}</a>
-            </li>
-            <li>
-              <p>{{fav.address}}</p>
-            </li>
-            <li>
-              <p>{{fav.location}}</p>
-            </li>
-            <li>
-              <p>{{fav.desc}}</p>
-            </li>
-          </ul>
-          <i (click)="removeFav($event)" class="fas fa-heart"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class=" pb-0 pt-3 d-flex justify-content-center">
+        <!-- <div class=" pb-0 pt-3 d-flex justify-content-center">
       <jw-pagination [items]="userFavouritesPlaces" (changePage)="onChangePage($event)"></jw-pagination>
   </div> -->
 
 
 
-  </div>
+    </div>
 </div>

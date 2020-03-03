@@ -27,7 +27,7 @@
 
 
                 <div class="form-group row">
-                    <label for="time" class="col-sm-2  col-md-3 ">Prefrred Time:</label>
+                    <label for="time" class="col-sm-2  col-md-3 ">Prefered Time:</label>
                     <div class="col-sm-10 col-md-9 d-flex align-items-center">
                         <input type="time" class="form-control time col-sm-5 col-md-3 mr-12 " formControlName="time" id="time">
                         <p class="mb-0 mr-2">To</p>
@@ -36,7 +36,7 @@
 
                 <div class="form-group row">
                     <div class="col-md-3">
-                        <label for="">Have a Childrens:</label>
+                        <label for="">Have Children:</label>
                     </div>
                     <div class="col-sm-8 col-md-9">
                         <div class="form-check form-check-inline">
@@ -66,7 +66,7 @@
                 <h2 class="mr-4"> plan {{plan.prop+1}}</h2>
                 <div class="plan d-block d-md-flex  text-center align-items-center p-5 ">
                     <div *ngFor='let p of plan' class="planContainer  text-center ">
-                        <img class="w-100  m-auto p-2" src="{{p.imgs[1]}}" alt="">
+                        <img class="w-100  m-auto p-2 " src="{{p.imgs[1]}}" alt="">
                         <p class="plans">{{p.name}}</p>
                         <p>{{p.openHours}}</p>
                     </div>
