@@ -64,7 +64,7 @@
 
             <div class="row py-3" *ngFor='let plan of filteredPlans'>
                 <h2 class="mr-4"> plan {{plan.prop+1}}</h2>
-                <div class="plan d-flex d-md-block  text-center align-items-center p-5 ">
+                <div class="plan d-block d-md-flex  text-center align-items-center p-5 ">
                     <div *ngFor='let p of plan' class="planContainer  text-center ">
                         <img class="w-100  m-auto p-2" src="{{p.imgs[1]}}" alt="">
                         <p class="plans">{{p.name}}</p>
