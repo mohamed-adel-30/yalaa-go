@@ -1,42 +1,49 @@
 @import './../../styles.scss';
+@font-face {
+    font-family: caviardreams;
+    src: url("./../../assets/fonts/caviar_dreams/CaviarDreams_Bold.ttf");
+}
+
 h2 {
     font-size: $h3;
     color: $hcolors;
+    font-family: caviardreams;
+    text-transform: capitalize;
 }
 
+img {
+    height: 300px;
+}
+
+// .container-fluid {
+//     max-height: 50vh;
+// }
 .wrapper {
     width: $wrapper;
-    padding: 10% 0;
-    .form-group {
-        p {
-            font-size: $paragrphSize;
-        }
-        label {
-            font-size: $paragrphSize;
-        }
-        input,
-        option,
-        select {
-            font-size: $paragrphSize;
-        }
-        button {
-            font-size: $paragrphSize;
-        }
-        .email {
-            display: none;
-        }
+    padding: 10% 0 5% 0;
+    p {
+        font-size: $paragrphSize;
+    }
+    label {
+        font-size: $paragrphSize;
+    }
+    input,
+    option,
+    select {
+        font-size: $paragrphSize;
+    }
+    button {
+        font-size: $paragrphSize;
+    }
+    .email {
+        display: none;
     }
 }
 
-.userName {
-    h1 {
-        font-size: 4rem;
-    }
-}
-
-.confirm {
-    margin-top: 0;
+.makeYourPlan {
     display: none;
+    background-color: #f2f2f2;
+    width: 100%;
 }
 
 .plan {

@@ -49,10 +49,6 @@ h3.reviewsRange {
     padding-bottom: 30px;
 }
 
-.add-comm {
-    padding: 20px 0 0 0;
-}
-
 .rate-commts {
     .userName {
         font-size: 13px;
@@ -103,38 +99,21 @@ polygon.empty-start-color {
     padding: 7px 15px;
 }
 
-// ul:before{
-//   content: "";
-//   display: block;
-//   position: absolute;
-//   right: 87%;
-//   width: 0;
-//   height: 0;
-//   top: 21px;
-//   border-style: solid;
-//   border-width: 0 7px 11px 7px;
-//   border-color: transparent transparent #007bff transparent;
-// }
 .toggleIcon {
     color: rgb(189, 188, 188);
     font-size: 25px;
     cursor: pointer;
 }
 
-// .rate-commts:hover .toggleIcon{
-//   display: block;
-// }
-.editContainer {
+.editContainer2 {
     display: none;
 }
 
-.rate-commts:hover .editContainer {
-    display: block;
+.rate-commts:hover .editContainer2 {
+    display: flex;
+    margin-bottom: 0;
 }
 
-// .editContainer2{
-//   display: block;
-// }
 .deleteBtn {
     color: red;
     border: 1px solid red;
@@ -201,9 +180,6 @@ textarea {
 }
 
 .input-custome {
-    width: 76%;
-    height: 10%;
-    padding: 7px;
     border: 1px solid #ddd;
     border-right: none;
 }
@@ -226,5 +202,8 @@ textarea {
     color: rgb(209, 207, 207);
 }
 
-// .deleteBtnMob {color: red;}
-// .editBtnMob{color: green;}
+@media screen and (max-width:1024px) {
+    .editContainer2 {
+        display: flex;
+    }
+}

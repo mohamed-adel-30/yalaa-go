@@ -291,7 +291,9 @@
         "phone": "0123456859",
         "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
         "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
-      }
+      },
+      "lat": 31.199467353466414,
+      "long": 29.926646930316164
     },
     {
       "id": 2,
@@ -1090,7 +1092,7 @@
         "../../assets/Home/defaultPlace.png"
       ],
       "status": "open now",
-      "openHours": "08:56to20:56",
+      "openHours": "08:56to20:56to08:56to20:56to08:56to20:56to08:56to20:56",
       "desc": "gerat plaw sjd1111js",
       "reservation": "true",
       "kid-friendly": "true",
@@ -1100,9 +1102,7 @@
         "instagram": "instgrame Page"
       },
       "ownerId": 6,
-      "id": 20,
-      "lat": 31.22393359091141,
-      "long": 29.940633117860436
+      "id": 20
     },
     {
       "name": "kjhgfdsz",
@@ -1173,6 +1173,165 @@
       },
       "ownerId": 8,
       "id": 22
+    },
+    {
+      "id": 23,
+      "name": "Al Mamurah",
+      "catId": [
+        6,
+        4,
+        3,
+        2,
+        12
+      ],
+      "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
+      "location": "Bahri",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avgrate": 5,
+      "paymentMethod": "Ticket",
+      "mainImage": "https://i.postimg.cc/d3CjLMbj/almamurah2.jpg",
+      "imgs": [
+        "https://i.postimg.cc/3wrgP8qk/29597227-765184363682115-8821015101476391077-n-3x.png",
+        "https://i.postimg.cc/qqQDvLNN/71651163-3026233807391152-2258242780025323520-o-3x.png",
+        "https://i.postimg.cc/Mp6MGsm4/71225889-1159888144211733-5196100801054900224-o-3x.png"
+      ],
+      "openHours": "11:00 AM - 3:00 AM",
+      "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
+      "shortdesc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate!",
+      "status": "open now",
+      "reservation": "true",
+      "kid-friendly": "false",
+      "contact": {
+        "phone": "0123456859",
+        "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
+        "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
+      }
+    },
+    {
+      "id": 24,
+      "name": "Al Mamurah",
+      "catId": [
+        6,
+        4,
+        3,
+        2,
+        12
+      ],
+      "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
+      "location": "Bahri",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avgrate": 5,
+      "paymentMethod": "Ticket",
+      "mainImage": "https://i.postimg.cc/d3CjLMbj/almamurah2.jpg",
+      "imgs": [
+        "https://i.postimg.cc/3wrgP8qk/29597227-765184363682115-8821015101476391077-n-3x.png",
+        "https://i.postimg.cc/qqQDvLNN/71651163-3026233807391152-2258242780025323520-o-3x.png",
+        "https://i.postimg.cc/Mp6MGsm4/71225889-1159888144211733-5196100801054900224-o-3x.png"
+      ],
+      "openHours": "11:00 AM - 3:00 AM",
+      "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
+      "shortdesc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate!",
+      "status": "open now",
+      "reservation": "true",
+      "kid-friendly": "false",
+      "contact": {
+        "phone": "0123456859",
+        "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
+        "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
+      }
+    },
+    {
+      "id": 25,
+      "name": "Al Mamurah",
+      "catId": [
+        6,
+        4,
+        3,
+        2,
+        12
+      ],
+      "address": " Al Mandarah Bahri, Montaza 2, Alexandria Governorate",
+      "location": "Bahri",
+      "comments": [
+        {
+          "userId": 3,
+          "comment": "Excellent place for toddlers. With Avery affordable price. Only lacks the air conditioning rendering it bad for parents."
+        },
+        {
+          "userId": 4,
+          "comment": "The place is really wonderful and it has all the tools of entertainment but I would recommend to have a drink there"
+        },
+        {
+          "userId": 5,
+          "comment": "Amazing and unique place suitable for kids and Adults."
+        }
+      ],
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avgrate": 5,
+      "paymentMethod": "Ticket",
+      "mainImage": "https://i.postimg.cc/d3CjLMbj/almamurah2.jpg",
+      "imgs": [
+        "https://i.postimg.cc/3wrgP8qk/29597227-765184363682115-8821015101476391077-n-3x.png",
+        "https://i.postimg.cc/qqQDvLNN/71651163-3026233807391152-2258242780025323520-o-3x.png",
+        "https://i.postimg.cc/Mp6MGsm4/71225889-1159888144211733-5196100801054900224-o-3x.png"
+      ],
+      "openHours": "11:00 AM - 3:00 AM",
+      "desc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate! So gather with all the family or friends who make you the happiest and come to have the best experience of fun ever",
+      "shortdesc": "This Place offers a chance to the most amazing entertainments. this is the place to celebrate!",
+      "status": "open now",
+      "reservation": "true",
+      "kid-friendly": "false",
+      "contact": {
+        "phone": "0123456859",
+        "facebook": "facebook.com/FourSeasonsHotelAlexandria/",
+        "instagram": "facebook.com/FourSeasonsHotelAlexandria/"
+      }
     }
   ],
   "options": [
@@ -1631,15 +1790,15 @@
       "id": 59
     },
     {
-      "name": "esraa",
+      "name": "gagag",
       "imgs": [
         "../../assets/Home/defaultPlace.png"
       ],
-      "desc": "eeee",
-      "price": "21",
+      "desc": "ddd",
+      "price": "121",
       "placeId": 20,
       "img": "../../assets/Home/defaultPlace.png",
-      "id": 62
+      "id": 60
     }
   ],
   "comments": [
@@ -1669,36 +1828,6 @@
       "rate": 3,
       "saraaa": 2,
       "id": 8
-    },
-    {
-      "comment": "asdfg",
-      "placeId": "2",
-      "userId": 13,
-      "userName": "henddiab",
-      "userImg": "",
-      "rate": 5,
-      "saraaa": 2,
-      "id": 10
-    },
-    {
-      "comment": "",
-      "placeId": "2",
-      "userId": 13,
-      "userName": "henddiab",
-      "userImg": "",
-      "rate": 5,
-      "saraaa": 2,
-      "id": 11
-    },
-    {
-      "comment": "",
-      "placeId": "2",
-      "userId": 13,
-      "userName": "henddiab",
-      "userImg": "",
-      "rate": 5,
-      "saraaa": 2,
-      "id": 12
     },
     {
       "comment": "esesesgsgsgsgs",
@@ -1910,6 +2039,38 @@
       "userName": "samaa",
       "userImg": "",
       "id": 29
+    },
+    {
+      "comment": "hdhdhdhdhdhd",
+      "placeId": "2",
+      "userId": 13,
+      "userName": "hend",
+      "userImg": "",
+      "rate": 5,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 31
+    },
+    {
+      "comment": "ay7aga",
+      "placeId": "2",
+      "userId": 13,
+      "userName": "hend",
+      "userImg": "",
+      "rate": 5,
+      "arrOfRate": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 32
     }
   ],
   "rates": [
@@ -1957,6 +2118,19 @@
         0
       ],
       "id": 6
+    },
+    {
+      "value": 5,
+      "placeId": "2",
+      "userId": 13,
+      "arrOfVals": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 7
     }
   ],
   "favourites": [
