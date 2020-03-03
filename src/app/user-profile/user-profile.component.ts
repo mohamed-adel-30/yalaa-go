@@ -17,7 +17,7 @@ export class UserProfileComponent implements OnInit {
 
   user;
   allHistory;
-  userHistory;
+  userHistory = [];
   usersData;
   userData;
   checker;
@@ -81,11 +81,9 @@ export class UserProfileComponent implements OnInit {
         this.allHistory = data;
         for (let i of this.allHistory) {
           if (this.user.id == i.userId) {
-            this.userHistory = i.reservedGame;
-            break;
+            this.userHistory.push(i.reservedGame);
           }
         }
-
       })
     });
   }

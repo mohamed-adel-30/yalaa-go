@@ -228,6 +228,8 @@ export class RegisterComponent implements OnInit {
           "password": form.value.password
         }
         let headers = { "Conetent-Type": "application/json" }
+        let notificarions = 0;
+        this.httpService.getNotifivations(notificarions);
         // this.service.addUsers(this.obj)
         this.httpService.postownerdata(this.obj, headers).subscribe(data => {
 

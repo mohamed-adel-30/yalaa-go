@@ -84,13 +84,15 @@
         <div class="col-6 text-right">
           <button class="viewHistory mb-2  btn btn-dark" (click)='showHistory()'>view your history</button>
           <div *ngIf="toggle2" class=" flex-column row">
-            <div class="text-white col-12" *ngFor='let history of userHistory'>
-              <div class=" history col-12 text-center ">
-                <p><span>Game:</span>{{history.name}}</p>
-                <p><span>Desc:</span>{{history.desc}}</p>
-                <p><span>Num Of Games:</span>{{history.count}}</p>
-                <p><span>Time Available:</span>{{history.hours}}</p>
-                <p><span>Date:</span>{{history.date}}</p>
+            <div class="text-white col-12" *ngFor='let history1 of userHistory'>
+              <div *ngFor='let history of history1'>
+                <div class=" history col-12 text-center ">
+                  <p><span>Game:</span>{{history.name}}</p>
+                  <p><span>Desc:</span>{{history.desc}}</p>
+                  <p><span>Num Of Games:</span>{{history.count}}</p>
+                  <p><span>Time Available:</span>{{history.hours}}</p>
+                  <p><span>Date:</span>{{history.date}}</p>
+                </div>
               </div>
             </div>
           </div>

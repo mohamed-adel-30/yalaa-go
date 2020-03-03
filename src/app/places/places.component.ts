@@ -244,6 +244,7 @@ export class PlacesComponent implements OnInit {
         this.error = error.message;
         console.log(error)
         console.log(error.status)
+
         this.router.navigate(["/error"])
       })
 

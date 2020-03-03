@@ -257,6 +257,7 @@ export class AboutUsComponent implements OnInit {
   readURLOption(event: any) {
     this.fileDataOption = <File>event.target.files[0];
     this.previewOption();
+    this.allowAddEdit = true
   }
   previewOption() {
     var mimeType = this.fileDataOption.type;

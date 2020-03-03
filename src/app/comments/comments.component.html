@@ -20,7 +20,7 @@
     *ngFor="let comment of showedCommentsReversed |limitTo:limit ; let i=index">
     <div class="row">
       <figure class="col-3 col-md-2 text-center userImg">
-        <img src={{user.image}} class="img-fluid mb-1">
+        <img src={{comment.userImg}} class="img-fluid mb-1">
 
       </figure>
       <div class="col-9 p-0 ">

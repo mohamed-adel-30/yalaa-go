@@ -122,7 +122,7 @@ export class CommentsComponent implements OnInit {
           "placeId": this.singlePlaceId,
           "userId": user.id,
           "userName": user.name,
-          "userImg": "",
+          "userImg": user.image,
           "rate": this.SpesificRate,
           "arrOfRate": this.SpesificRateArr
         }
