@@ -77,6 +77,12 @@
       "email": "test@test.com",
       "password": "1234Aa@",
       "id": 12
+    },
+    {
+      "name": "sara sherif",
+      "email": "sarasherif63@yahoo.com",
+      "password": "1234!Qq",
+      "id": 13
     }
   ],
   "users": [
@@ -1308,6 +1314,43 @@
       },
       "ownerId": 12,
       "id": 25
+    },
+    {
+      "name": "pablo cafe",
+      "catId": [
+        "13"
+      ],
+      "address": "smoha",
+      "location": "san stifano",
+      "rates": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "paymentMethod": "Ticket",
+      "avgrate": 5,
+      "mainImage": "../../assets/Home/defaultPlace.png",
+      "imgs": [
+        "../../assets/Home/defaultPlace.png",
+        "../../assets/Home/defaultPlace.png",
+        "../../assets/Home/defaultPlace.png"
+      ],
+      "status": "open now",
+      "openHours": "11:01to12:11",
+      "desc": "jdhdcsodjpasikkkkkasljxd",
+      "reservation": "true",
+      "kid-friendly": "true",
+      "contact": {
+        "phone": "12345678901",
+        "facebook": "",
+        "instagram": ""
+      },
+      "ownerId": 13,
+      "id": 26,
+      "lat": 31.225858185199247,
+      "long": 29.940457357861323
     }
   ],
   "options": [
@@ -1775,6 +1818,17 @@
       "placeId": 20,
       "img": "../../assets/Home/defaultPlace.png",
       "id": 62
+    },
+    {
+      "name": "halloween games",
+      "imgs": [
+        "../../assets/Home/defaultPlace.png"
+      ],
+      "desc": "horror games",
+      "price": "200",
+      "placeId": 26,
+      "img": "../../assets/Home/defaultPlace.png",
+      "id": 63
     }
   ],
   "comments": [
@@ -2323,6 +2377,16 @@
       "placeId": 12,
       "userId": 13,
       "id": 19
+    },
+    {
+      "placeId": "1",
+      "userId": 10,
+      "id": 20
+    },
+    {
+      "placeId": "26",
+      "userId": 10,
+      "id": 21
     }
   ],
   "history": [
@@ -2547,6 +2611,59 @@
         }
       ],
       "id": 9
+    },
+    {
+      "userName": "saraaaa",
+      "userId": 10,
+      "state": false,
+      "totalPrice": 170,
+      "visaNumber": "111111111111",
+      "reservedGame": [
+        {
+          "id": 40,
+          "name": "billiards",
+          "price": "60",
+          "desc": " Spin and Smash Table Tennis & Ping Pong Center",
+          "count": 2,
+          "placeId": "1",
+          "img": "https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_3DBilliardsPoolAndSnooker_image1600w.jpg",
+          "hours": "1-3",
+          "date": "2020-02-12"
+        },
+        {
+          "id": 38,
+          "name": "bowling",
+          "price": "50",
+          "desc": " For all bowling lovers in alexandria.",
+          "count": 1,
+          "placeId": "1",
+          "img": "https://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg-2.jpg",
+          "hours": "4-6",
+          "date": "2020-02-13"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "userName": "samaa amin",
+      "userId": 8,
+      "state": false,
+      "totalPrice": 400,
+      "visaNumber": "111111111111",
+      "reservedGame": [
+        {
+          "id": 63,
+          "name": "halloween games",
+          "price": "200",
+          "desc": "horror games",
+          "count": 2,
+          "placeId": 26,
+          "img": "../../assets/Home/defaultPlace.png",
+          "hours": "4-6",
+          "date": "2020-02-14"
+        }
+      ],
+      "id": 11
     }
   ],
   "weekEnd": [

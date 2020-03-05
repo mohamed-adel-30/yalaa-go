@@ -135,7 +135,7 @@ lowerPlaceDataLocation ;
       this.lowerPlaceDataLocation = this.places[i].location.toLowerCase();
 
       if ((this.lowerPlaceData.includes(this.lowerPlaceSearch) && event.target.value.length !== 0)
-      || ( this.lowerPlaceDataLocation.includes(event.target.value) && event.target.value.length!==0 ))
+      || ( this.lowerPlaceDataLocation.includes(this.lowerPlaceSearch) && event.target.value.length!==0 ))
       {
 
         this.wanteddata.push(this.places[i])
