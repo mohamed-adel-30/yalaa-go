@@ -41,7 +41,7 @@
                 <button id="searchBtn" class="btn  my-2 my-sm-0 " type="button"><i
                         class="fas fa-search text-white"></i></button>
                 <div class=" searchResults bg-light d-block  rounded text-center w-100 ">
-                    <a class="d-block text-dark style-none py-1 w-100" *ngFor="let data of wanteddata " routerLink="/place/{{data.id}} " (click)="handlingSearch(inputSearch) ">{{data.name}}-{{data.id}}</a>
+                    <a class="d-block text-dark style-none py-1 w-100" *ngFor="let data of wanteddata " routerLink="/place/{{data.id}}" (click)="handlingSearch(inputSearch) ">{{data.name}}-{{data.id}}</a>
                 </div>
             </div>
 

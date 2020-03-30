@@ -40,6 +40,8 @@ export class CommentsComponent implements OnInit {
 
       this.httpService.getComments().subscribe(data => {
         this.comments = data;
+        this.CommentsOfSpesificPlace = [];
+  this.showedComments = [];
         this.gettingCommentsOfSinglePlace(this.singlePlaceId)
         for (let i of this.comments) {
           this.inputDisplay.push(false)
@@ -47,7 +49,6 @@ export class CommentsComponent implements OnInit {
 
         }
         
-
       })
 
     })
@@ -94,7 +95,7 @@ this.dropDown=!this.dropDown
 
           }
         }
-
+      
       })
 
       setTimeout(() => {
@@ -144,6 +145,7 @@ this.dropDown=!this.dropDown
       }
 
     )
+    
   }
 
   //function to know he index od specific Comment

@@ -56,6 +56,7 @@ export class PlacesComponent implements OnInit {
       this.user = this.httpService.getData("user");
 
       this.httpService.gettingPlaces().subscribe(
+        
 
         data => {
           this.places = data;
@@ -65,12 +66,14 @@ export class PlacesComponent implements OnInit {
           this.longitude = this.singlePlaceData.long;
 
         }
+        
       )
 
       this.httpService.gettingPtions().subscribe(data => {
         this.options = data;
         this.gettingSpesifcOptions(this.singlePlaceId)
       })
+      this.optionsOfSpesificPlace = []
 
       this.httpService.getFav().subscribe(data => {
         this.favs = data;
