@@ -171,6 +171,7 @@ export class CommentsComponent implements OnInit {
       }
 
     )
+    
   }
 
   //function to know the index of specific Comment
