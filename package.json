@@ -23,7 +23,7 @@
     "@angular/router": "~8.2.14",
     "@types/google-maps": "^3.2.2",
     "animate.css": "^3.7.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "json-server": "^0.16.0",
     "jw-angular-pagination": "^1.1.0",
     "ngx-owl-carousel-o": "^2.0.3",
